@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NBA Front Office — Uğur</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0c10;
+  --surface: #111318;
+  --surface2: #1a1d24;
+  --border: #252830;
+  --text: #e8eaf0;
+  --muted: #5a6070;
+  --dim: #8a94a8;
+
+  --phi: #006BB6;
+  --phi2: #ED174C;
+  --phi-dim: rgba(0,107,182,0.12);
+
+  --ut: #002B5C;
+  --ut2: #F9A01B;
+  --ut-dim: rgba(249,160,27,0.12);
+
+  --green: #00c07a;
+  --green-dim: rgba(0,192,122,0.1);
+  --red: #ff4560;
+  --red-dim: rgba(255,69,96,0.1);
+  --orange: #f59e0b;
+  --orange-dim: rgba(245,158,11,0.1);
+  --yellow: #eab308;
+
+  --accent: #006BB6;
+  --accent-dim: rgba(0,107,182,0.12);
+
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-body: 'IBM Plex Sans', sans-serif;
+}
+
+/* ── LIGHT MODE ── */
+body.light {
+  --bg: #f0f2f5;
+  --surface: #ffffff;
+  --surface2: #f5f7fa;
+  --border: #dde1e9;
+  --text: #111318;
+  --muted: #8a94a8;
+  --dim: #4a5568;
+
+  --phi-dim: rgba(0,107,182,0.10);
+  --ut-dim: rgba(249,160,27,0.12);
+
+  --green: #059669;
+  --green-dim: rgba(5,150,105,0.10);
+  --red: #dc2626;
+  --red-dim: rgba(220,38,38,0.08);
+  --orange: #d97706;
+  --orange-dim: rgba(217,119,6,0.10);
+  --yellow: #b45309;
+
+  --accent: #006BB6;
+  --accent-dim: rgba(0,107,182,0.10);
+}
+
+body.light .roster-table th {
+  background: #f5f7fa;
+}
+body.light .cap-bar-track {
+  background: #e2e8f0;
+}
+body.light .sim-input {
+  background: #f5f7fa;
+  border-color: #dde1e9;
+}
+body.light ::-webkit-scrollbar-thumb {
+  background: #c4cad4;
+}
+body.light .roster-table tr.player-row:hover {
+  background: #f0f4f8;
+}
+body.light .proj-bar-wrap {
+  background: #e2e8f0;
+}
+
+/* ── THEME TOGGLE ── */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+.theme-toggle-track {
+  width: 36px;
+  height: 20px;
+  border-radius: 10px;
+  background: #252830;
+  position: relative;
+  transition: background .2s;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+body.light .theme-toggle-track {
+  background: #d1d5db;
+}
+.theme-toggle-thumb {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--muted);
+  top: 2px;
+  left: 2px;
+  transition: transform .2s, background .2s;
+}
+body.light .theme-toggle-thumb {
+  transform: translateX(16px);
+  background: #006BB6;
+}
+.theme-toggle-label {
+  font-size: 11px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  letter-spacing: .5px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 56px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: var(--text);
+}
+.header-logo span { color: var(--phi); }
+
+.team-tabs {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+.team-tab {
+  padding: 6px 18px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .15s;
+  letter-spacing: .5px;
+}
+.team-tab.active-phi {
+  background: var(--phi-dim);
+  border-color: var(--phi);
+  color: var(--phi);
+}
+.team-tab.active-ut {
+  background: var(--ut-dim);
+  border-color: var(--ut2);
+  color: var(--ut2);
+}
+
+/* ── MAIN LAYOUT ── */
+.main {
+  display: grid;
+  grid-template-columns: 280px 1fr 320px;
+  min-height: calc(100vh - 56px);
+}
+
+/* ── LEFT SIDEBAR ── */
+.sidebar {
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.team-badge {
+  text-align: center;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.team-badge .team-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  margin-bottom: 4px;
+}
+.team-badge .team-abbr {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+.cap-summary { display: flex; flex-direction: column; gap: 6px; }
+.cap-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.cap-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 6px;
+  background: var(--surface2);
+  font-size: 12px;
+}
+.cap-row .label { color: var(--dim); }
+.cap-row .value {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+}
+.cap-row.total {
+  border: 1px solid var(--border);
+  background: transparent;
+}
+.cap-row.total .label { color: var(--text); font-weight: 600; }
+.cap-row.total .value { font-size: 13px; }
+
+.val-green { color: var(--green) !important; }
+.val-red { color: var(--red) !important; }
+.val-orange { color: var(--orange) !important; }
+.val-yellow { color: var(--yellow) !important; }
+
+.cap-bar-wrap { margin: 6px 0 2px; }
+.cap-bar-track {
+  height: 6px;
+  background: var(--surface2);
+  border-radius: 3px;
+  overflow: visible;
+  position: relative;
+  margin-bottom: 4px;
+}
+.cap-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width .4s ease;
+}
+.cap-bar-markers { display: flex; justify-content: space-between; }
+.cap-bar-marker { font-size: 9px; color: var(--muted); font-family: var(--font-mono); }
+
+.exceptions-list { display: flex; flex-direction: column; gap: 4px; }
+.exc-chip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 11px;
+  border: 1px solid var(--border);
+}
+.exc-chip.available { border-color: rgba(0,192,122,.3); background: var(--green-dim); }
+.exc-chip.available .exc-val { color: var(--green); font-family: var(--font-mono); font-weight: 600; }
+.exc-chip.unavailable { opacity: .4; }
+.exc-chip.unavailable .exc-val { color: var(--muted); font-family: var(--font-mono); }
+.exc-name { color: var(--dim); }
+
+.status-pills { display: flex; flex-wrap: wrap; gap: 4px; }
+.status-pill {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+.filter-row {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: all .12s;
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+.filter-btn.active, .filter-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* ── ROSTER TABLE ── */
+.roster-area {
+  padding: 20px 24px;
+  overflow-x: auto;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-title .count {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  padding: 2px 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.roster-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.roster-table th {
+  text-align: left;
+  padding: 8px 10px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+.roster-table th:hover { color: var(--dim); }
+.roster-table th.sorted { color: var(--text); }
+
+.roster-table tr.player-row {
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background .1s;
+}
+.roster-table tr.player-row:hover { background: var(--surface2); }
+.roster-table tr.player-row.selected { background: var(--accent-dim); }
+
+.roster-table td {
+  padding: 10px 10px;
+  vertical-align: middle;
+}
+
+.player-name {
+  font-weight: 600;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.player-name .expiring-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--orange);
+  flex-shrink: 0;
+}
+.player-name .warning-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  flex-shrink: 0;
+}
+
+.pos-badges { display: flex; gap: 2px; }
+.pos-badge {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 5px;
+  border-radius: 3px;
+  background: var(--surface2);
+  color: var(--dim);
+  border: 1px solid var(--border);
+  font-family: var(--font-mono);
+}
+
+.salary-cell {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.salary-cell.big { color: var(--red); }
+.salary-cell.medium { color: var(--orange); }
+.salary-cell.small { color: var(--dim); }
+
+.year-cell {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.year-cell.has-val { color: var(--dim); }
+.year-cell.jump { color: var(--orange) !important; }
+.year-cell.empty { color: var(--border); }
+
+.bird-badge {
+  font-size: 9px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.bird-badge.full { background: rgba(0,192,122,.15); color: var(--green); }
+.bird-badge.early { background: rgba(245,158,11,.15); color: var(--orange); }
+.bird-badge.non { background: var(--surface2); color: var(--muted); }
+
+.signed-cell { font-size: 10px; color: var(--muted); max-width: 100px; }
+
+.tradable-cell {
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: var(--muted);
+}
+.tradable-cell.yes { color: var(--green); }
+
+/* ── DETAIL PANEL ── */
+.detail-panel {
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  padding: 20px 16px;
+  position: sticky;
+  top: 56px;
+  height: calc(100vh - 56px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detail-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.detail-name {
+  font-family: var(--font-display);
+  font-size: 24px;
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+.detail-meta { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+.detail-section {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+.detail-section-title {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.contract-years {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.contract-year {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 8px;
+  border-radius: 5px;
+  background: var(--surface2);
+  font-size: 12px;
+}
+.contract-year.current {
+  border: 1px solid var(--accent);
+  background: var(--accent-dim);
+}
+.contract-year.jump {
+  border: 1px solid var(--orange);
+  background: var(--orange-dim);
+}
+.contract-year .yr-label { color: var(--dim); font-size: 11px; }
+.contract-year .yr-val {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 13px;
+}
+.contract-year .yr-note {
+  font-size: 10px;
+  color: var(--orange);
+}
+
+.extension-option {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  margin-bottom: 6px;
+}
+.ext-type {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 3px;
+}
+.ext-detail { font-size: 10px; color: var(--muted); line-height: 1.5; }
+.ext-calc {
+  margin-top: 6px;
+  padding: 5px 7px;
+  border-radius: 4px;
+  background: var(--bg);
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: var(--dim);
+}
+
+.warning-box {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,69,96,.3);
+  background: var(--red-dim);
+  font-size: 11px;
+  color: var(--red);
+  line-height: 1.5;
+}
+.warning-box + .warning-box { margin-top: 4px; }
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  font-size: 11px;
+  border-bottom: 1px solid var(--border);
+}
+.info-row:last-child { border-bottom: none; }
+.info-row .label { color: var(--muted); }
+.info-row .val { font-weight: 600; font-family: var(--font-mono); }
+
+/* ── CAP PROJECTION SECTION ── */
+.projection-section {
+  margin-top: 8px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface2);
+}
+.proj-year-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+}
+.proj-year-row:last-child { border-bottom: none; }
+.proj-year-label { color: var(--muted); width: 55px; font-family: var(--font-mono); font-size: 10px; }
+.proj-bar-wrap { flex: 1; height: 4px; background: var(--border); border-radius: 2px; overflow: visible; position: relative; }
+.proj-bar { height: 100%; border-radius: 2px; transition: width .4s; }
+.proj-val { font-family: var(--font-mono); font-size: 10px; font-weight: 600; min-width: 50px; text-align: right; }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+/* ── TOOLTIP ── */
+.tooltip-wrap { position: relative; display: inline-block; }
+.tooltip-content {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 11px;
+  white-space: nowrap;
+  color: var(--text);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .15s;
+  z-index: 200;
+}
+.tooltip-wrap:hover .tooltip-content { opacity: 1; }
+
+/* ── TWO-WAY SECTION ── */
+.two-way-section {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── APRON INDICATOR ── */
+.apron-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+.apron-indicator.over { background: var(--red-dim); color: var(--red); border: 1px solid rgba(255,69,96,.3); }
+.apron-indicator.clear { background: var(--green-dim); color: var(--green); border: 1px solid rgba(0,192,122,.3); }
+
+/* ── CALC SIMULATOR ── */
+.simulator {
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 6px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+.sim-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.sim-row { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+.sim-label { font-size: 10px; color: var(--muted); min-width: 40px; }
+.sim-input {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  width: 80px;
+  text-align: right;
+}
+.sim-result {
+  margin-top: 8px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+}
+.sim-result.ok { background: var(--green-dim); color: var(--green); }
+.sim-result.warn { background: var(--orange-dim); color: var(--orange); }
+.sim-result.bad { background: var(--red-dim); color: var(--red); }
+
+/* ── SIGN SIMULATOR BUTTON ── */
+.btn-sim {
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--accent);
+  background: var(--accent-dim);
+  color: var(--accent);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 600;
+  transition: all .12s;
+}
+.btn-sim:hover { background: var(--accent); color: white; }
+
+@media (max-width: 1200px) {
+  .main { grid-template-columns: 240px 1fr 280px; }
+}
+@media (max-width: 900px) {
+  .main { grid-template-columns: 1fr; }
+  .sidebar, .detail-panel { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-logo">NBA <span>FRONT</span> OFFICE</div>
+  <div style="font-size:11px;color:var(--muted);font-family:var(--font-mono)">GM: Uğur · 2026-27</div>
+  <div class="theme-toggle" onclick="toggleTheme()" title="Light/Dark Mode">
+    <div class="theme-toggle-track">
+      <div class="theme-toggle-thumb"></div>
+    </div>
+    <span class="theme-toggle-label" id="theme-label">DARK</span>
+  </div>
+  <div class="team-tabs">
+    <button class="team-tab active-phi" onclick="switchTeam('PHI')" id="tab-PHI">76ERS</button>
+    <button class="team-tab" onclick="switchTeam('UT')" id="tab-UT">JAZZ</button>
+  </div>
+</div>
+
+<div class="main">
+  <!-- LEFT SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <!-- dynamically filled -->
+  </div>
+
+  <!-- ROSTER TABLE -->
+  <div class="roster-area">
+    <div class="section-title" id="roster-title">
+      ROSTER <span class="count" id="roster-count"></span>
+    </div>
+
+    <!-- Filter buttons -->
+    <div class="filter-row" style="margin-bottom:12px" id="filter-row">
+      <button class="filter-btn active" onclick="setFilter('all')" id="f-all">ALL</button>
+      <button class="filter-btn" onclick="setFilter('expiring')" id="f-expiring">EXPIRING</button>
+      <button class="filter-btn" onclick="setFilter('warning')" id="f-warning">⚠ CAP RISKS</button>
+      <button class="filter-btn" onclick="setFilter('tradable')" id="f-tradable">TRADABLE</button>
+      <button class="filter-btn" onclick="setFilter('bird')" id="f-bird">BIRD RIGHTS</button>
+    </div>
+
+    <table class="roster-table" id="roster-table">
+      <thead>
+        <tr>
+          <th onclick="sortBy('name')">PLAYER</th>
+          <th onclick="sortBy('pos')">POS</th>
+          <th onclick="sortBy('sal')" class="sorted">2026-27 ↓</th>
+          <th>2027-28</th>
+          <th>2028-29</th>
+          <th>2029-30</th>
+          <th>2030-31</th>
+          <th>BIRD RIGHTS</th>
+          <th>SIGNED VIA</th>
+          <th>TRADABLE</th>
+        </tr>
+      </thead>
+      <tbody id="roster-tbody"></tbody>
+    </table>
+
+    <!-- Two-Way -->
+    <div class="two-way-section" id="two-way-section" style="display:none">
+      <div class="section-title" style="font-size:14px;margin-bottom:8px">
+        TWO-WAY CONTRACTS
+      </div>
+      <div id="two-way-list"></div>
+    </div>
+
+    <!-- Cap Projection -->
+    <div style="margin-top:28px">
+      <div class="section-title" style="font-size:16px;margin-bottom:12px">
+        TEAM CAP PROJECTION
+      </div>
+      <div class="projection-section" id="projection-section"></div>
+    </div>
+  </div>
+
+  <!-- DETAIL PANEL -->
+  <div class="detail-panel" id="detail-panel">
+    <div class="detail-empty">
+      Spieler auswählen<br>für Details & Optionen
+    </div>
+  </div>
+</div>
+
+<script>
+// ── DATA ──
+const DATA = {"teams":{"PHI":{"name":"PHILADELPHIA 76ERS","abbr":"PHI","players":[{"name":"Daniss Jenkins","pos":["PG"],"years":{"2026-27":2458192},"signed_via":"2w => MPE","bird_rights":["Non-Bird"],"extension_options":[{"type":"Non-Bird Rights","description":"Re-sign up to 120% of prior salary","max_pct":"120% of prior salary","raises":"5% per year","max_years":4}],"tradable_alone":false,"tradable_agg":false,"notes":"2025.0","years_remaining":1,"expiring":true,"warnings":[]},{"name":"Cade Cunningham","pos":["PG","SG"],"years":{"2026-27":41034781,"2027-28":41034781,"2028-29":44074394,"2029-30":47114008,"2030-31":50153621},"signed_via":"LBR","bird_rights":["Full Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5}],"tradable_alone":false,"tradable_agg":false,"notes":"2021, 2025","years_remaining":5,"expiring":false,"warnings":[]},{"name":"Cam Spencer","pos":["SG"],"years":{"2026-27":2411090,"2027-28":2411090},"signed_via":"MPE","bird_rights":["Early Bird"],"extension_options":[{"type":"Early Bird Rights","description":"Re-sign up to 175% of prior salary or avg salary","max_pct":"130% of prior year or avg salary","raises":"8% per year","max_years":4}],"tradable_alone":false,"tradable_agg":false,"notes":"2025.0","years_remaining":2,"expiring":false,"warnings":[]},{"name":"Trey Murphy","pos":["PG","SG","SF"],"years":{"2026-27":27389505,"2027-28":27389505,"2028-29":29418357,"2029-30":31447209,"2030-31":33476061},"signed_via":"1st Round Pick","bird_rights":["Full Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5}],"tradable_alone":false,"tradable_agg":false,"notes":"2021.0","years_remaining":5,"expiring":false,"warnings":[]},{"name":"Ausar Thompson","pos":["SG"],"years":{"2026-27":11141638,"2027-28":11141638},"signed_via":"1st Round Pick","bird_rights":["Full Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5}],"tradable_alone":false,"tradable_agg":false,"notes":"2023.0","years_remaining":2,"expiring":false,"warnings":[]},{"name":"Josh Green","pos":["SG","SF"],"years":{"2026-27":14822483,"2027-28":14822483,"2028-29":15844723,"2029-30":16866963},"signed_via":"LBR","bird_rights":["Full Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5}],"tradable_alone":false,"tradable_agg":false,"notes":"2020, 2024","years_remaining":4,"expiring":false,"warnings":[]},{"name":"Aaron Nesmith","pos":["SG","SF"],"years":{"2026-27":14104200,"2027-28":14104200,"2028-29":14745299},"signed_via":"LBR RFA match","bird_rights":["Full Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5}],"tradable_alone":false,"tradable_agg":false,"notes":"2020, 2024","years_remaining":3,"expiring":false,"warnings":[]},{"name":"Kawhi Leonard","pos":["SG","SF"],"years":{"2026-27":61414824,"2027-28":61414824},"signed_via":"Bird Rights","bird_rights":["Full Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5}],"tradable_alone":true,"tradable_agg":true,"notes":"2015, 2019, later extended","years_remaining":2,"expiring":false,"warnings":[]},{"name":"Max Shulga","pos":["PG","SG"],"years":{"2026-27":2150918,"2027-28":2150918},"signed_via":"2y 2RE","bird_rights":["Early Bird","Non-Bird"],"extension_options":[{"type":"Early Bird Rights","description":"Re-sign up to 175% of prior salary or avg salary","max_pct":"130% of prior year or avg salary","raises":"8% per year","max_years":4},{"type":"Non-Bird Rights","description":"Re-sign up to 120% of prior salary","max_pct":"120% of prior salary","raises":"5% per year","max_years":4}],"tradable_alone":false,"tradable_agg":false,"notes":"2025.0","years_remaining":2,"expiring":false,"warnings":[]},{"name":"Alijah Martin","pos":["PG","SG"],"years":{"2026-27":2150918,"2027-28":2150918,"2028-29":2525902},"signed_via":"3y 2RE","bird_rights":["Full Bird","Early Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5},{"type":"Early Bird Rights","description":"Re-sign up to 175% of prior salary or avg salary","max_pct":"130% of prior year or avg salary","raises":"8% per year","max_years":4}],"tradable_alone":false,"tradable_agg":false,"notes":"2025.0","years_remaining":3,"expiring":false,"warnings":["⚠️ Salary jumps from $2.2M to $2.5M in 2028-29"]},{"name":"Tristan da Silva","pos":["SF","PF"],"years":{"2026-27":3831408,"2027-28":3831408,"2028-29":5900368},"signed_via":"1st Round Pick","bird_rights":["Full Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5}],"tradable_alone":true,"tradable_agg":false,"notes":"2024.0","years_remaining":3,"expiring":false,"warnings":["⚠️ Salary jumps from $3.8M to $5.9M in 2028-29"]},{"name":"Jabari Smith","pos":["PF"],"years":{"2026-27":37135475},"signed_via":"1st Round Pick","bird_rights":["Full Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5}],"tradable_alone":false,"tradable_agg":false,"notes":"2022.0","years_remaining":1,"expiring":true,"warnings":[]},{"name":"Jaylen Clark","pos":[],"years":{"2026-27":2755528},"signed_via":"MPE","bird_rights":["Non-Bird"],"extension_options":[{"type":"Non-Bird Rights","description":"Re-sign up to 120% of prior salary","max_pct":"120% of prior salary","raises":"5% per year","max_years":4}],"tradable_alone":false,"tradable_agg":false,"notes":"2025.0","years_remaining":1,"expiring":true,"warnings":[]},{"name":"Ryan Kalkbrenner","pos":["C"],"years":{"2026-27":3540852,"2027-28":3540852,"2028-29":3717895,"2029-30":6115937},"signed_via":"1st Round Pick","bird_rights":["Full Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5}],"tradable_alone":false,"tradable_agg":false,"notes":"2025.0","years_remaining":4,"expiring":false,"warnings":["⚠️ Salary jumps from $3.7M to $6.1M in 2029-30"]},{"name":"Nikola Vučević","pos":["PF","C"],"years":{"2026-27":33750000},"signed_via":"LBR","bird_rights":["Full Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5}],"tradable_alone":false,"tradable_agg":false,"notes":"2019, 2023","years_remaining":1,"expiring":true,"warnings":[]}],"two_way":[],"waived":["Jalen Wilson"],"financials":{"total_salary":260091812,"cap_space":-95091812,"tax_room":-59091812,"apron1_room":-51091812,"apron2_room":-38091812,"over_tax":true,"over_apron1":true,"over_apron2":true}},"UT":{"name":"UTAH JAZZ","abbr":"UT","players":[{"name":"Jared Butler","pos":["PG"],"years":{"2026-27":3054451},"signed_via":"MPE","bird_rights":["Early Bird","Non-Bird"],"extension_options":[{"type":"Early Bird Rights","description":"Re-sign up to 175% of prior salary or avg salary","max_pct":"130% of prior year or avg salary","raises":"8% per year","max_years":4},{"type":"Non-Bird Rights","description":"Re-sign up to 120% of prior salary","max_pct":"120% of prior salary","raises":"5% per year","max_years":4}],"tradable_alone":false,"tradable_agg":false,"notes":"2024.0","years_remaining":1,"expiring":true,"warnings":[]},{"name":"Walter Clayton Jr.","pos":["PG","SG"],"years":{"2026-27":4190886,"2027-28":4190886,"2028-29":4400430,"2029-30":6767862},"signed_via":"1st Round Pick","bird_rights":["Full Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5}],"tradable_alone":false,"tradable_agg":false,"notes":"2025.0","years_remaining":4,"expiring":false,"warnings":["⚠️ Salary jumps from $4.4M to $6.8M in 2029-30"]},{"name":"Nolan Traore","pos":["PG","SG"],"years":{"2026-27":4002138,"2027-28":4002138,"2028-29":4202245,"2029-30":6471457},"signed_via":"1st Round Pick","bird_rights":["Full Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5}],"tradable_alone":false,"tradable_agg":false,"notes":"2025.0","years_remaining":4,"expiring":false,"warnings":["⚠️ Salary jumps from $4.2M to $6.5M in 2029-30"]},{"name":"Max Christie","pos":["SG"],"years":{"2026-27":4156155},"signed_via":"Chandler, cap","bird_rights":["Full Bird","Early Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5},{"type":"Early Bird Rights","description":"Re-sign up to 175% of prior salary or avg salary","max_pct":"130% of prior year or avg salary","raises":"8% per year","max_years":4}],"tradable_alone":false,"tradable_agg":false,"notes":"2022.0","years_remaining":1,"expiring":true,"warnings":[]},{"name":"Nickeil Alexander-Walker","pos":["SG"],"years":{"2026-27":15051582,"2027-28":15051582,"2028-29":16166513},"signed_via":"MPE, MLE, EBR","bird_rights":["Full Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5}],"tradable_alone":true,"tradable_agg":true,"notes":"2023, 2024, 2025","years_remaining":3,"expiring":false,"warnings":[]},{"name":"Luke Kennard","pos":["SG","SF"],"years":{"2026-27":23142000},"signed_via":"EBR","bird_rights":["Full Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5}],"tradable_alone":false,"tradable_agg":false,"notes":"2021, 2022, 2023","years_remaining":1,"expiring":true,"warnings":[]},{"name":"Grayson Allen","pos":["SG"],"years":{"2026-27":15581374,"2027-28":15581374,"2028-29":15581374},"signed_via":"LBR","bird_rights":["Full Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5}],"tradable_alone":true,"tradable_agg":true,"notes":"2018, 2022, 2025","years_remaining":3,"expiring":false,"warnings":[]},{"name":"Brandon Williams","pos":[],"years":{"2026-27":2755528},"signed_via":"MPE","bird_rights":["Non-Bird"],"extension_options":[{"type":"Non-Bird Rights","description":"Re-sign up to 120% of prior salary","max_pct":"120% of prior salary","raises":"5% per year","max_years":4}],"tradable_alone":false,"tradable_agg":false,"notes":"2025.0","years_remaining":1,"expiring":true,"warnings":[]},{"name":"Georges Niang","pos":["SF","PF"],"years":{"2026-27":12350000},"signed_via":"LBR","bird_rights":["Full Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5}],"tradable_alone":false,"tradable_agg":false,"notes":"2019, 2021, 2022, 2024","years_remaining":1,"expiring":true,"warnings":[]},{"name":"Brooks Barnhizer","pos":[],"years":{"2026-27":2150918,"2027-28":2150918},"signed_via":"2y 2RE","bird_rights":["Early Bird","Non-Bird"],"extension_options":[{"type":"Early Bird Rights","description":"Re-sign up to 175% of prior salary or avg salary","max_pct":"130% of prior year or avg salary","raises":"8% per year","max_years":4},{"type":"Non-Bird Rights","description":"Re-sign up to 120% of prior salary","max_pct":"120% of prior salary","raises":"5% per year","max_years":4}],"tradable_alone":false,"tradable_agg":false,"notes":"2025.0","years_remaining":2,"expiring":false,"warnings":[]},{"name":"Dean Wade","pos":["PF"],"years":{"2026-27":3504130,"2027-28":3504130},"signed_via":"MPE, NBR","bird_rights":["Full Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5}],"tradable_alone":false,"tradable_agg":false,"notes":"2023.0","years_remaining":2,"expiring":false,"warnings":[]},{"name":"Anthony Davis","pos":["PF","C"],"years":{"2026-27":59024000,"2027-28":59024000,"2028-29":62832000},"signed_via":"1st Round Pick","bird_rights":["Full Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5}],"tradable_alone":true,"tradable_agg":true,"notes":"Traded 07.15.18","years_remaining":3,"expiring":false,"warnings":[]},{"name":"Giannis Antetokounmpo","pos":["PF","C"],"years":{"2026-27":58456566,"2027-28":58456566,"2028-29":62786681,"2029-30":67116798,"2030-31":71446914},"signed_via":"Des. Veteran","bird_rights":["Full Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5}],"tradable_alone":true,"tradable_agg":true,"notes":"2021, 2025","years_remaining":5,"expiring":false,"warnings":[]},{"name":"Deandre Ayton","pos":["C"],"years":{"2026-27":39415031},"signed_via":"Cap Space","bird_rights":["Full Bird"],"extension_options":[{"type":"Full Bird Rights","description":"Re-sign up to max salary (no cap space needed)","max_pct":"Max (25%/30%/35% of cap)","raises":"8% per year (Bird)","max_years":5}],"tradable_alone":false,"tradable_agg":false,"notes":"2022.0","years_remaining":1,"expiring":true,"warnings":[]},{"name":"Jackson Hayes","pos":["C"],"years":{"2026-27":3566908},"signed_via":"MPE","bird_rights":["Early Bird"],"extension_options":[{"type":"Early Bird Rights","description":"Re-sign up to 175% of prior salary or avg salary","max_pct":"130% of prior year or avg salary","raises":"8% per year","max_years":4}],"tradable_alone":false,"tradable_agg":false,"notes":"2024.0","years_remaining":1,"expiring":true,"warnings":[]}],"two_way":["Tolu Smith","Jordan Walsh"],"waived":[],"financials":{"total_salary":250401667,"cap_space":-85401667,"tax_room":-49401667,"apron1_room":-41401667,"apron2_room":-28401667,"over_tax":true,"over_apron1":true,"over_apron2":true}}},"cba":{"salary_cap":165000000,"luxury_tax":201000000,"first_apron":209000000,"second_apron":222000000,"bi_annual":5478000,"mle_nontax":15048000,"mle_tax":6065000,"mle_room":9369000,"roster_charge":1358084,"vet_min_1y":2185633,"vet_min_2y":2450000},"years":["2026-27","2027-28","2028-29","2029-30","2030-31"]};
+
+const CBA = DATA.cba;
+const YEARS = DATA.years;
+
+// ── STATE ──
+let currentTeam = 'PHI';
+let selectedPlayer = null;
+let currentFilter = 'all';
+let sortKey = 'sal';
+let sortDir = -1;
+
+// ── HELPERS ──
+function fmt(n) {
+  if (!n) return '—';
+  if (n >= 1e6) return '$' + (n/1e6).toFixed(1) + 'M';
+  return '$' + Math.round(n/1000) + 'K';
+}
+function fmtFull(n) {
+  if (!n) return '—';
+  return '$' + n.toLocaleString('en-US');
+}
+function salColor(n) {
+  if (n >= 40e6) return 'big';
+  if (n >= 15e6) return 'medium';
+  return 'small';
+}
+function teamColor(abbr) {
+  return abbr === 'PHI' ? 'var(--phi)' : 'var(--ut2)';
+}
+
+// ── SWITCH TEAM ──
+function switchTeam(abbr) {
+  currentTeam = abbr;
+  selectedPlayer = null;
+  currentFilter = 'all';
+
+  // Update tab styles
+  document.getElementById('tab-PHI').className = 'team-tab' + (abbr === 'PHI' ? ' active-phi' : '');
+  document.getElementById('tab-UT').className = 'team-tab' + (abbr === 'UT' ? ' active-ut' : '');
+
+  // Update accent color
+  document.documentElement.style.setProperty('--accent', abbr === 'PHI' ? 'var(--phi)' : 'var(--ut2)');
+  document.documentElement.style.setProperty('--accent-dim', abbr === 'PHI' ? 'var(--phi-dim)' : 'var(--ut-dim)');
+
+  renderAll();
+}
+
+// ── FILTER ──
+function setFilter(f) {
+  currentFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('f-' + f).classList.add('active');
+  renderRoster();
+}
+
+function filterPlayers(players) {
+  switch(currentFilter) {
+    case 'expiring': return players.filter(p => p.expiring);
+    case 'warning': return players.filter(p => p.warnings.length > 0);
+    case 'tradable': return players.filter(p => p.tradable_alone || p.tradable_agg);
+    case 'bird': return players.filter(p => p.bird_rights.includes('Full Bird') || p.bird_rights.includes('Early Bird'));
+    default: return players;
+  }
+}
+
+// ── SORT ──
+function sortBy(key) {
+  if (sortKey === key) sortDir *= -1;
+  else { sortKey = key; sortDir = -1; }
+  renderRoster();
+}
+
+function sortPlayers(players) {
+  return [...players].sort((a, b) => {
+    if (sortKey === 'sal') return sortDir * ((b.years['2026-27']||0) - (a.years['2026-27']||0));
+    if (sortKey === 'name') return sortDir * a.name.localeCompare(b.name);
+    if (sortKey === 'pos') return sortDir * (a.pos[0]||'Z').localeCompare(b.pos[0]||'Z');
+    return 0;
+  });
+}
+
+// ── RENDER SIDEBAR ──
+function renderSidebar() {
+  const team = DATA.teams[currentTeam];
+  const fin = team.financials;
+  const color = teamColor(currentTeam);
+
+  const pct = Math.min(110, (fin.total_salary / CBA.second_apron) * 100);
+  const barColor = fin.over_apron2 ? 'var(--red)' : fin.over_apron1 ? 'var(--orange)' : fin.over_tax ? 'var(--yellow)' : 'var(--green)';
+
+  // Exceptions based on cap situation
+  const overApron1 = fin.over_apron1;
+  const overApron2 = fin.over_apron2;
+
+  let html = `
+    <div class="team-badge">
+      <div class="team-name" style="color:${color}">${team.name}</div>
+      <div class="team-abbr">${team.abbr} · 2026-27</div>
+    </div>
+
+    <div>
+      <div class="cap-label">CAP SITUATION</div>
+      <div class="cap-summary">
+        <div class="cap-row total">
+          <span class="label">Team Salary</span>
+          <span class="value">${fmt(fin.total_salary)}</span>
+        </div>
+        <div class="cap-bar-wrap">
+          <div class="cap-bar-track">
+            <div class="cap-bar-fill" style="width:${pct}%;background:${barColor}"></div>
+          </div>
+          <div class="cap-bar-markers">
+            <span class="cap-bar-marker">Cap</span>
+            <span class="cap-bar-marker">Tax</span>
+            <span class="cap-bar-marker">Ap1</span>
+            <span class="cap-bar-marker">Ap2</span>
+          </div>
+        </div>
+        <div class="cap-row">
+          <span class="label">Salary Cap</span>
+          <span class="value">${fmt(CBA.salary_cap)}</span>
+        </div>
+        <div class="cap-row">
+          <span class="label">Lux. Tax Line</span>
+          <span class="value ${fin.over_tax ? 'val-red' : 'val-green'}">${fmt(CBA.luxury_tax)}</span>
+        </div>
+        <div class="cap-row">
+          <span class="label">Tax Room</span>
+          <span class="value ${fin.over_tax ? 'val-red' : 'val-green'}">${fmt(fin.tax_room)}</span>
+        </div>
+        <div class="cap-row">
+          <span class="label">1st Apron</span>
+          <span class="value ${fin.over_apron1 ? 'val-red' : 'val-green'}">${fmt(CBA.first_apron)}</span>
+        </div>
+        <div class="cap-row">
+          <span class="label">1st Apron Room</span>
+          <span class="value ${fin.over_apron1 ? 'val-red' : 'val-green'}">${fmt(fin.apron1_room)}</span>
+        </div>
+        <div class="cap-row">
+          <span class="label">2nd Apron</span>
+          <span class="value ${fin.over_apron2 ? 'val-red' : 'val-green'}">${fmt(CBA.second_apron)}</span>
+        </div>
+        <div class="cap-row">
+          <span class="label">2nd Apron Room</span>
+          <span class="value ${fin.over_apron2 ? 'val-red' : 'val-green'}">${fmt(fin.apron2_room)}</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="cap-label">APRON STATUS</div>
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <div class="apron-indicator ${fin.over_apron2 ? 'over' : 'clear'}">
+          ${fin.over_apron2 ? '🔴' : '🟢'} 2nd Apron: ${fin.over_apron2 ? 'ÜBER' : 'DARUNTER'}
+        </div>
+        <div class="apron-indicator ${fin.over_apron1 ? 'over' : 'clear'}">
+          ${fin.over_apron1 ? '🔴' : '🟢'} 1st Apron: ${fin.over_apron1 ? 'ÜBER' : 'DARUNTER'}
+        </div>
+        <div class="apron-indicator ${fin.over_tax ? 'over' : 'clear'}">
+          ${fin.over_tax ? '🟡' : '🟢'} Luxury Tax: ${fin.over_tax ? 'ZAHLER' : 'KEIN ZAHLER'}
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="cap-label">EXCEPTIONS</div>
+      <div class="exceptions-list">
+        ${overApron2 ? `
+          <div class="exc-chip unavailable"><span class="exc-name">Non-Tax MLE</span><span class="exc-val">—</span></div>
+          <div class="exc-chip unavailable"><span class="exc-name">Tax MLE</span><span class="exc-val">—</span></div>
+          <div class="exc-chip unavailable"><span class="exc-name">BAE</span><span class="exc-val">—</span></div>
+          <div class="exc-chip unavailable"><span class="exc-name">Room MLE</span><span class="exc-val">—</span></div>
+        ` : overApron1 ? `
+          <div class="exc-chip unavailable"><span class="exc-name">Non-Tax MLE</span><span class="exc-val">—</span></div>
+          <div class="exc-chip available"><span class="exc-name">Tax MLE</span><span class="exc-val">${fmt(CBA.mle_tax)}</span></div>
+          <div class="exc-chip unavailable"><span class="exc-name">BAE</span><span class="exc-val">—</span></div>
+        ` : fin.over_tax ? `
+          <div class="exc-chip available"><span class="exc-name">Non-Tax MLE</span><span class="exc-val">${fmt(CBA.mle_nontax)}</span></div>
+          <div class="exc-chip available"><span class="exc-name">BAE</span><span class="exc-val">${fmt(CBA.bi_annual)}</span></div>
+        ` : `
+          <div class="exc-chip available"><span class="exc-name">Non-Tax MLE</span><span class="exc-val">${fmt(CBA.mle_nontax)}</span></div>
+          <div class="exc-chip available"><span class="exc-name">BAE</span><span class="exc-val">${fmt(CBA.bi_annual)}</span></div>
+          <div class="exc-chip available"><span class="exc-name">Room MLE</span><span class="exc-val">${fmt(CBA.mle_room)}</span></div>
+        `}
+        <div class="exc-chip available">
+          <span class="exc-name">Vet Min (2yr)</span>
+          <span class="exc-val">${fmt(CBA.vet_min_2y)}</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="cap-label">ROSTER</div>
+      <div class="cap-summary">
+        <div class="cap-row">
+          <span class="label">Standard</span>
+          <span class="value">${team.players.length}/15</span>
+        </div>
+        <div class="cap-row">
+          <span class="label">Two-Way</span>
+          <span class="value">${team.two_way.length}/3</span>
+        </div>
+        <div class="cap-row">
+          <span class="label">Expiring</span>
+          <span class="value val-orange">${team.players.filter(p=>p.expiring).length} Spieler</span>
+        </div>
+        <div class="cap-row">
+          <span class="label">Cap Risks</span>
+          <span class="value val-red">${team.players.filter(p=>p.warnings.length>0).length} Spieler</span>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('sidebar').innerHTML = html;
+}
+
+// ── RENDER ROSTER ──
+function renderRoster() {
+  const team = DATA.teams[currentTeam];
+  let players = filterPlayers(team.players);
+  players = sortPlayers(players);
+
+  document.getElementById('roster-title').innerHTML =
+    `${team.name.split(' ').pop()} ROSTER <span class="count">${players.length}/${team.players.length} SPIELER</span>`;
+
+  let html = '';
+  players.forEach(p => {
+    const sal = p.years['2026-27'] || 0;
+    const yr2 = p.years['2027-28'];
+    const yr3 = p.years['2028-29'];
+    const yr4 = p.years['2029-30'];
+    const yr5 = p.years['2030-31'];
+
+    const isSelected = selectedPlayer && selectedPlayer.name === p.name;
+
+    // Check for jumps
+    function jumpCheck(a, b) {
+      if (!a || !b) return false;
+      return b > a * 1.15;
+    }
+
+    const nameIndicator = p.warnings.length > 0
+      ? '<span class="warning-dot" title="Cap-Risiko"></span>'
+      : p.expiring
+        ? '<span class="expiring-dot" title="Expiring"></span>'
+        : '';
+
+    const birdBadge = p.bird_rights.includes('Full Bird')
+      ? '<span class="bird-badge full">Full</span>'
+      : p.bird_rights.includes('Early Bird')
+        ? '<span class="bird-badge early">Early</span>'
+        : '<span class="bird-badge non">Non</span>';
+
+    html += `<tr class="player-row ${isSelected ? 'selected' : ''}" onclick="selectPlayer('${p.name.replace(/'/g,"\\'")}')">
+      <td>
+        <div class="player-name">
+          ${nameIndicator}
+          ${p.name}
+        </div>
+      </td>
+      <td>
+        <div class="pos-badges">
+          ${p.pos.map(pos => `<span class="pos-badge">${pos}</span>`).join('')}
+          ${p.pos.length === 0 ? '<span class="pos-badge" style="opacity:.4">—</span>' : ''}
+        </div>
+      </td>
+      <td><span class="salary-cell ${salColor(sal)}">${fmt(sal)}</span></td>
+      <td><span class="year-cell ${yr2 ? 'has-val' : 'empty'}">${yr2 ? fmt(yr2) : '—'}</span></td>
+      <td><span class="year-cell ${yr3 ? 'has-val' : 'empty'} ${jumpCheck(yr2||sal, yr3) ? 'jump' : ''}">${yr3 ? fmt(yr3) : '—'}</span></td>
+      <td><span class="year-cell ${yr4 ? 'has-val' : 'empty'} ${jumpCheck(yr3||yr2||sal, yr4) ? 'jump' : ''}">${yr4 ? fmt(yr4) : '—'}</span></td>
+      <td><span class="year-cell ${yr5 ? 'has-val' : 'empty'}">${yr5 ? fmt(yr5) : '—'}</span></td>
+      <td>${birdBadge}</td>
+      <td><span class="signed-cell">${p.signed_via}</span></td>
+      <td>
+        <span class="tradable-cell ${p.tradable_alone ? 'yes' : ''}">
+          ${p.tradable_alone ? 'Allein' : p.tradable_agg ? 'Agg.' : '—'}
+        </span>
+      </td>
+    </tr>`;
+  });
+
+  document.getElementById('roster-tbody').innerHTML = html;
+
+  // Two-way
+  const twSection = document.getElementById('two-way-section');
+  if (team.two_way.length > 0) {
+    twSection.style.display = 'block';
+    document.getElementById('two-way-list').innerHTML = team.two_way.map(name =>
+      `<div style="display:inline-block;margin:2px 4px 2px 0;padding:4px 10px;border-radius:4px;border:1px solid var(--border);font-size:12px;color:var(--dim)">${name}</div>`
+    ).join('');
+  } else {
+    twSection.style.display = 'none';
+  }
+
+  // Cap projection
+  renderProjection();
+}
+
+// ── CAP PROJECTION ──
+function renderProjection() {
+  const team = DATA.teams[currentTeam];
+  const maxSal = Math.max(...YEARS.map(yr => {
+    return team.players.reduce((s, p) => s + (p.years[yr] || 0), 0);
+  }));
+
+  let html = '';
+  YEARS.forEach(yr => {
+    const total = team.players.reduce((s, p) => s + (p.years[yr] || 0), 0);
+    if (total === 0) return;
+    const pct = (total / (CBA.second_apron * 1.1)) * 100;
+    const color = total > CBA.second_apron ? 'var(--red)'
+      : total > CBA.first_apron ? 'var(--orange)'
+      : total > CBA.luxury_tax ? 'var(--yellow)'
+      : 'var(--green)';
+
+    html += `<div class="proj-year-row">
+      <span class="proj-year-label">${yr}</span>
+      <div class="proj-bar-wrap">
+        <div class="proj-bar" style="width:${Math.min(100,pct)}%;background:${color}"></div>
+      </div>
+      <span class="proj-val" style="color:${color}">${fmt(total)}</span>
+    </div>`;
+  });
+  document.getElementById('projection-section').innerHTML = html;
+}
+
+// ── SELECT PLAYER ──
+function selectPlayer(name) {
+  const team = DATA.teams[currentTeam];
+  selectedPlayer = team.players.find(p => p.name === name);
+  renderRoster();
+  renderDetail();
+}
+
+// ── RENDER DETAIL ──
+function renderDetail() {
+  const panel = document.getElementById('detail-panel');
+  if (!selectedPlayer) {
+    panel.innerHTML = '<div class="detail-empty">Spieler auswählen<br>für Details & Optionen</div>';
+    return;
+  }
+  const p = selectedPlayer;
+  const currentSal = p.years['2026-27'] || 0;
+
+  // Bird rights extension calculations
+  const extCalcs = p.extension_options.map(opt => {
+    let maxSal = 0;
+    let maxDesc = '';
+    if (opt.type === 'Full Bird Rights') {
+      maxSal = CBA.salary_cap * 0.35; // simplified (depends on YOS)
+      maxDesc = `Max: ${fmt(maxSal)} (35% cap) · bis zu 5 Jahre · 8% Erhöhung/Jahr`;
+    } else if (opt.type === 'Early Bird Rights') {
+      maxSal = Math.max(currentSal * 1.75, CBA.salary_cap * 0.25);
+      maxDesc = `Max: ${fmt(maxSal)} · bis zu 4 Jahre · 8% Erhöhung/Jahr`;
+    } else {
+      maxSal = currentSal * 1.20;
+      maxDesc = `Max: ${fmt(maxSal)} (120% des letzten Gehalts) · 5% Erhöhung/Jahr`;
+    }
+    return { ...opt, maxSal, maxDesc };
+  });
+
+  // Year-by-year
+  const yearEntries = Object.entries(p.years);
+  let yearHtml = '';
+  yearEntries.forEach(([yr, val], i) => {
+    const prevVal = i > 0 ? yearEntries[i-1][1] : null;
+    const isJump = prevVal && val > prevVal * 1.15;
+    const isCurrent = yr === '2026-27';
+    yearHtml += `<div class="contract-year ${isCurrent ? 'current' : ''} ${isJump ? 'jump' : ''}">
+      <span class="yr-label">${yr}</span>
+      <div style="text-align:right">
+        <div class="yr-val">${fmt(val)}</div>
+        ${isJump ? `<div class="yr-note">+${fmt(val - prevVal)} vs Vorjahr</div>` : ''}
+      </div>
+    </div>`;
+  });
+
+  // Extension simulator
+  let simHtml = '';
+  if (p.bird_rights.includes('Full Bird')) {
+    simHtml = `
+      <div class="simulator">
+        <div class="sim-title">EXTENSION SIMULATOR</div>
+        <div class="sim-row">
+          <span class="sim-label">Jahr 1</span>
+          <input class="sim-input" id="sim-sal" type="number" value="${Math.round(currentSal/1e6)}" onchange="simCalc()"> M
+          <span class="sim-label">Jahre</span>
+          <select class="sim-input" id="sim-yrs" onchange="simCalc()" style="width:50px">
+            <option>1</option><option>2</option><option>3</option><option selected>4</option><option>5</option>
+          </select>
+        </div>
+        <div id="sim-result" class="sim-result"></div>
+      </div>`;
+  }
+
+  let html = `
+    <div>
+      <div class="detail-name">${p.name}</div>
+      <div class="detail-meta">
+        ${p.pos.join(' · ')} · Signed via ${p.signed_via}
+        ${p.notes ? `· ${p.notes}` : ''}
+      </div>
+    </div>
+
+    ${p.warnings.length > 0 ? `
+      <div class="detail-section">
+        <div class="detail-section-title">⚠️ CAP RISIKEN</div>
+        ${p.warnings.map(w => `<div class="warning-box">${w}</div>`).join('')}
+      </div>` : ''}
+
+    <div class="detail-section">
+      <div class="detail-section-title">VERTRAGSSTRUKTUR</div>
+      <div class="contract-years">${yearHtml}</div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">BIRD RIGHTS & EXTENSION-OPTIONEN</div>
+      ${extCalcs.length === 0 ? '<div style="font-size:11px;color:var(--muted)">Keine Bird Rights</div>' : ''}
+      ${extCalcs.map(opt => `
+        <div class="extension-option">
+          <div class="ext-type">${opt.type}</div>
+          <div class="ext-detail">${opt.description}</div>
+          <div class="ext-calc">${opt.maxDesc}</div>
+        </div>
+      `).join('')}
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">TRADE-STATUS</div>
+      <div class="info-row">
+        <span class="label">Tradable allein</span>
+        <span class="val" style="color:${p.tradable_alone ? 'var(--green)' : 'var(--muted)'}">${p.tradable_alone ? 'Ja' : 'Nein'}</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Tradable aggregiert</span>
+        <span class="val" style="color:${p.tradable_agg ? 'var(--green)' : 'var(--muted)'}">${p.tradable_agg ? 'Ja' : 'Nein'}</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Vertragsende</span>
+        <span class="val">${p.expiring ? '2026-27 (Expiring)' : YEARS[p.years_remaining - 1] || '—'}</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Verbleibende Jahre</span>
+        <span class="val">${p.years_remaining}</span>
+      </div>
+    </div>
+
+    ${simHtml}
+  `;
+
+  panel.innerHTML = html;
+  if (p.bird_rights.includes('Full Bird')) simCalc();
+}
+
+// ── SIMULATION ──
+function simCalc() {
+  const salInput = document.getElementById('sim-sal');
+  const yrsInput = document.getElementById('sim-yrs');
+  if (!salInput || !yrsInput) return;
+  const sal = parseFloat(salInput.value) * 1e6;
+  const yrs = parseInt(yrsInput.value);
+  const raise = 0.08;
+  let total = 0;
+  let breakdown = [];
+  for (let i = 0; i < yrs; i++) {
+    const yr = sal * Math.pow(1 + raise, i);
+    total += yr;
+    breakdown.push(`${YEARS[i] || ('Y' + (i+1))}: ${fmt(yr)}`);
+  }
+
+  const resultEl = document.getElementById('sim-result');
+  const team = DATA.teams[currentTeam];
+  const currentTotal = team.financials.total_salary;
+  const currentSalary = selectedPlayer.years['2026-27'] || 0;
+  const newTotal = currentTotal + sal - currentSalary;
+
+  const status = newTotal > CBA.second_apron ? 'bad'
+    : newTotal > CBA.first_apron ? 'warn'
+    : 'ok';
+
+  resultEl.className = 'sim-result ' + status;
+  resultEl.innerHTML = `Gesamt: ${fmt(total)} / ${yrs}yr (${fmt(sal)}/yr Y1)<br>
+    Team-Salary danach: ${fmt(newTotal)}<br>
+    ${breakdown.join(' · ')}`;
+}
+
+// ── RENDER ALL ──
+function renderAll() {
+  renderSidebar();
+  renderRoster();
+  renderDetail();
+}
+
+// ── THEME ──
+function toggleTheme() {
+  const isLight = document.body.classList.toggle('light');
+  document.getElementById('theme-label').textContent = isLight ? 'LIGHT' : 'DARK';
+  localStorage.setItem('nba_fo_theme', isLight ? 'light' : 'dark');
+}
+
+// Restore saved theme
+(function() {
+  const saved = localStorage.getItem('nba_fo_theme');
+  if (saved === 'light') {
+    document.body.classList.add('light');
+    // label set after DOM ready — handled below
+  }
+})();
+
+// ── INIT ──
+renderAll();
+// Set correct label after render
+if (document.body.classList.contains('light')) {
+  document.getElementById('theme-label').textContent = 'LIGHT';
+}
+</script>
+</body>
+</html>
