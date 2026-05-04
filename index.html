@@ -232,6 +232,7 @@ body.light .manual-input{background:var(--surface3)}
 .tool-tab.active{color:var(--team-c1);border-bottom-color:var(--team-c1)}
 .tool-panel{display:none;padding:20px;flex-direction:column;gap:16px;overflow:auto;flex:1}
 .tool-panel.active{display:flex}
+#tool-offseason{overflow-y:auto;flex:1;min-height:0;flex-direction:column}
 .tool-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 20px}
 .tool-card-title{font-family:var(--font-display);font-size:18px;letter-spacing:.5px;margin-bottom:12px}
 .form-row{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;margin-bottom:10px}
@@ -508,7 +509,7 @@ tr.team-row:hover{background:var(--surface2)}
       </div>
       <!-- TOOLS PAGE -->
       <div class="page" id="page-tools">
-        <div style="display:flex;flex-direction:column;height:100%;overflow:hidden">
+        <div style="display:flex;flex-direction:column;height:100%;overflow:hidden;min-height:0">
           <div class="tools-tabs" id="tools-tabs">
             <button class="tool-tab active" onclick="showTool('finder')">🔍 Trade Finder</button>
             <button class="tool-tab" onclick="showTool('maxcalc')">💰 Max Angebot</button>
@@ -618,7 +619,7 @@ tr.team-row:hover{background:var(--surface2)}
           </div>
 
           <!-- OFF SEASON PLANER -->
-          <div class="tool-panel" id="tool-offseason" style="overflow:auto">
+          <div class="tool-panel" id="tool-offseason" style="overflow-y:auto;display:flex;flex-direction:column;gap:16px">
             <div class="tool-card" style="padding-bottom:0">
               <div class="tool-card-title">📅 Off Season Planer</div>
               <p style="font-size:12px;color:var(--dim);margin-bottom:12px">Plane deine Roster-Entscheidungen: Wer bleibt, wie, zu welchem Preis?</p>
@@ -1471,6 +1472,8 @@ function populateOSTeamSelect(){
     sel.appendChild(opt);
   });
   renderOffSeason();
+  // Ensure summary renders after DOM is ready
+  setTimeout(() => updateOSSummary(sel.value || MY_TEAMS[0]), 50);
 }
 
 function renderOffSeason(){
@@ -1540,6 +1543,7 @@ function osSetAction(abbr, name, action){
   if(!osDecisions[key]) osDecisions[key] = {};
   osDecisions[key].action = action;
   renderOffSeason();
+  updateOSSummary(abbr);
 }
 function osSetMethod(abbr, name, method){
   const key = abbr+name;
@@ -1556,7 +1560,7 @@ function osSetMethod(abbr, name, method){
     else if(method==='min') osDecisions[key].salary = 2296272;
     else if(method==='non') osDecisions[key].salary = 10000000;
   }
-  renderOffSeason();
+  renderOffSeason();  updateOSSummary(abbr);
 }
 function osSetSalary(abbr, name, val){
   const key = abbr+name;
