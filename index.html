@@ -618,7 +618,7 @@ tr.team-row:hover{background:var(--surface2)}
           </div>
 
           <!-- OFF SEASON PLANER -->
-          <div class="tool-panel" id="tool-offseason">
+          <div class="tool-panel" id="tool-offseason" style="overflow:auto">
             <div class="tool-card" style="padding-bottom:0">
               <div class="tool-card-title">📅 Off Season Planer</div>
               <p style="font-size:12px;color:var(--dim);margin-bottom:12px">Plane deine Roster-Entscheidungen: Wer bleibt, wie, zu welchem Preis?</p>
@@ -626,12 +626,14 @@ tr.team-row:hover{background:var(--surface2)}
                 <div class="form-group">
                   <label class="form-label">Team</label>
                   <select class="form-select" id="os-team" onchange="renderOffSeason()">
+                    <option value="PHI">Philadelphia 76ers</option>
+                    <option value="UT">Utah Jazz</option>
                   </select>
                 </div>
               </div>
             </div>
             <div id="os-roster-cards" style="display:flex;flex-direction:column;gap:10px"></div>
-            <div class="tool-card" id="os-summary" style="position:sticky;bottom:0;background:var(--surface);border-top:2px solid var(--team-c1)"></div>
+            <div class="tool-card" id="os-summary" style="background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden"></div>
           </div>
         </div>
       </div>
