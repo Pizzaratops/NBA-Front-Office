@@ -231,8 +231,8 @@ body.light .manual-input{background:var(--surface3)}
 .tool-tab:hover{color:var(--text)}
 .tool-tab.active{color:var(--team-c1);border-bottom-color:var(--team-c1)}
 .tool-panel{display:none;padding:20px;flex-direction:column;gap:16px;overflow:auto;flex:1}
-.tool-panel.active{display:flex}
-#tool-offseason{overflow-y:auto;flex:1;min-height:0;flex-direction:column}
+.tool-panel.active{display:flex;flex-direction:column}
+#tool-offseason{overflow-y:auto !important;flex-direction:column}
 .tool-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 20px}
 .tool-card-title{font-family:var(--font-display);font-size:18px;letter-spacing:.5px;margin-bottom:12px}
 .form-row{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;margin-bottom:10px}
@@ -509,7 +509,7 @@ tr.team-row:hover{background:var(--surface2)}
       </div>
       <!-- TOOLS PAGE -->
       <div class="page" id="page-tools">
-        <div style="display:flex;flex-direction:column;height:100%;overflow:hidden;min-height:0">
+<div style="display:flex;flex-direction:column;height:100%;min-height:0;overflow:hidden">
           <div class="tools-tabs" id="tools-tabs">
             <button class="tool-tab active" onclick="showTool('finder')">🔍 Trade Finder</button>
             <button class="tool-tab" onclick="showTool('maxcalc')">💰 Max Angebot</button>
@@ -619,7 +619,7 @@ tr.team-row:hover{background:var(--surface2)}
           </div>
 
           <!-- OFF SEASON PLANER -->
-          <div class="tool-panel" id="tool-offseason" style="overflow-y:auto;display:flex;flex-direction:column;gap:16px">
+<div class="tool-panel" id="tool-offseason" style="gap:16px">
             <div class="tool-card" style="padding-bottom:0">
               <div class="tool-card-title">📅 Off Season Planer</div>
               <p style="font-size:12px;color:var(--dim);margin-bottom:12px">Plane deine Roster-Entscheidungen: Wer bleibt, wie, zu welchem Preis?</p>
