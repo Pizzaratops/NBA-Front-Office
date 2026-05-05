@@ -620,7 +620,7 @@ tr.team-row:hover{background:var(--surface2)}
 
           <!-- OFF SEASON PLANER -->
 <div class="tool-panel" id="tool-offseason" style="gap:16px">
-            <div class="tool-card" style="padding-bottom:0">
+            <div class="tool-card" style="padding-bottom:16">
               <div class="tool-card-title">📅 Off Season Planer</div>
               <p style="font-size:12px;color:var(--dim);margin-bottom:12px">Plane deine Roster-Entscheidungen: Wer bleibt, wie, zu welchem Preis?</p>
               <div class="form-row" style="margin-bottom:0">
@@ -634,7 +634,7 @@ tr.team-row:hover{background:var(--surface2)}
               </div>
             </div>
             <div id="os-roster-cards" style="display:flex;flex-direction:column;gap:10px"></div>
-            <div class="tool-card" id="os-summary" style="background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden"></div>
+            <div class="tool-card" id="os-summary" style="background:var(--surface);border:1px solid var(--border);border-radius:10px"></div>
           </div>
         </div>
       </div>
@@ -1521,7 +1521,7 @@ function renderOffSeason(){
         </div>
         <div class="os-decision-row" id="os-sal-row-${abbr}_${p.name.replace(/[^a-z0-9]/gi,'_')}" style="${d.action!=='keep'?'opacity:.4;pointer-events:none':''}">
           <span class="os-decision-label">Gehalt</span>
-          <input class="os-salary-input" type="number" value="${Math.round(d.salary)}" 
+          <input class="os-salary-input" type="number" value="${Math.round(d.salary)}"
             onchange="osSetSalary('${abbr}','${p.name}',this.value)"
             placeholder="Gehalt $">
           <span style="font-size:11px;color:var(--dim);font-family:var(--font-mono)">${fmtM(p.sal_26)} aktuell</span>
@@ -1574,10 +1574,10 @@ function updateOSSummary(abbr){
   if(!t) return;
   const oc = OWNER_CAPS[abbr] || {};
   const players = t.players.filter(p => p.sal_26 > 100);
-  
+
   let keepTotal = 0, keepCount = 0, cutCount = 0, tradeCount = 0;
   let lockedSal = 0; // players with multi-year deals we can't easily cut
-  
+
   players.forEach(p => {
     const key = abbr+p.name;
     const d = osDecisions[key] || {action:'keep', salary: p.sal_26};
@@ -1656,7 +1656,7 @@ function updateOSSummary(abbr){
         <div class="os-summary-val" style="font-size:12px">✓${keepCount} ✗${cutCount} →${tradeCount}</div>
       </div>
     </div>
-    ${restrictions.length > 0 
+    ${restrictions.length > 0
       ? `<div class="os-restrictions"><div style="font-weight:700;margin-bottom:6px">⚠️ Apron-Restriktionen bei ${fmtM(keepTotal)}:</div>${restrictions.map(r=>`<div class="os-restriction-item">${r}</div>`).join('')}</div>`
       : `<div class="os-ok">✅ Kein Apron-Problem — alle CBA-Tools verfügbar</div>`
     }`;
