@@ -233,6 +233,7 @@ body.light .manual-input{background:var(--surface3)}
 .tool-panel{display:none;padding:20px;flex-direction:column;gap:16px;overflow:auto;flex:1}
 .tool-panel.active{display:flex;flex-direction:column}
 #tool-offseason{overflow-y:auto !important;flex-direction:column}
+#tool-ownercap{overflow-y:auto !important;flex-direction:column}
 .tool-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 20px}
 .tool-card-title{font-family:var(--font-display);font-size:18px;letter-spacing:.5px;margin-bottom:12px}
 .form-row{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;margin-bottom:10px}
@@ -336,6 +337,34 @@ tr.team-row:hover{background:var(--surface2)}
   .filter-btn{font-size:10px;padding:5px 8px}
 }
 
+/* SPARKLINE */
+.sparkline-wrap{display:inline-flex;align-items:flex-end;gap:2px;height:18px;padding:1px 0}
+.sparkline-bar{width:6px;border-radius:2px 2px 0 0;background:var(--team-c1);opacity:.55;transition:opacity .15s}
+.sparkline-bar:hover{opacity:1}
+.sparkline-bar.jump{background:var(--orange)}
+.sparkline-bar.expiring{background:var(--yellow)}
+/* OWNER CAP DASHBOARD */
+.oc-table-wrap{flex:1;overflow:auto}
+table.oc-table{width:100%;border-collapse:collapse;font-size:12px}
+table.oc-table th{position:sticky;top:0;background:var(--surface2);padding:8px 12px;text-align:left;font-size:10px;font-weight:700;letter-spacing:.8px;color:var(--muted);text-transform:uppercase;border-bottom:1px solid var(--border);white-space:nowrap}
+table.oc-table th.right{text-align:right}
+table.oc-table td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
+table.oc-table td.right{text-align:right;font-family:var(--font-mono)}
+tr.oc-row{transition:background .1s}
+tr.oc-row:hover{background:var(--surface2)}
+.oc-bar-wrap{display:flex;align-items:center;gap:8px}
+.oc-bar-track{flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden;min-width:80px}
+.oc-bar-fill{height:100%;border-radius:3px}
+.oc-pct{font-family:var(--font-mono);font-size:10px;width:32px;text-align:right}
+.compat-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700}
+.compat-badge.great{background:var(--green-dim);color:var(--green)}
+.compat-badge.cok{background:var(--blue-dim);color:var(--blue)}
+.compat-badge.cwarn{background:var(--orange-dim);color:var(--orange)}
+.compat-badge.bad{background:var(--red-dim);color:var(--red)}
+.export-btn{padding:5px 10px;border-radius:5px;font-size:11px;font-weight:600;background:var(--surface2);border:1px solid var(--border);color:var(--dim);cursor:pointer;transition:all .15s;font-family:var(--font-mono)}
+.export-btn:hover{background:var(--surface3);color:var(--text)}
+.export-btn.copied{background:var(--green-dim);border-color:var(--green);color:var(--green)}
+  
 /* OFF SEASON PLANER */
 .os-player-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden}
 .os-player-header{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--surface2);cursor:pointer;transition:background .1s}
@@ -409,7 +438,7 @@ tr.team-row:hover{background:var(--surface2)}
           <button class="filter-btn" onclick="setFilter('tradable',this)">Tradable</button>
           <button class="filter-btn" onclick="setFilter('bird',this)">Bird Rights</button>
           <button class="filter-btn" onclick="setFilter('options',this)">PO/TO</button>
-          <input class="search-box" id="roster-search" type="text" placeholder="Suche..." oninput="renderRoster()">
+          <input class="search-box" id="roster-search" type="text" placeholder="Suche..." oninput="renderRoster()"><button class="export-btn" id="export-csv-btn" onclick="exportRosterCSV()">⬇ CSV</button><button class="export-btn" id="export-md-btn" onclick="exportRosterMarkdown()">📋 MD</button>
         </div>
         <div class="roster-wrap" id="roster-table-wrap"></div>
       </div>
@@ -514,8 +543,9 @@ tr.team-row:hover{background:var(--surface2)}
             <button class="tool-tab active" onclick="showTool('finder')">🔍 Trade Finder</button>
             <button class="tool-tab" onclick="showTool('maxcalc')">💰 Max Angebot</button>
             <button class="tool-tab" onclick="showTool('fairval')">⭐ Fair Value</button>
-            <button class="tool-tab" onclick="showTool('offseason')">📅 Off Season</button>
+<button class="tool-tab" onclick="showTool('offseason')">📅 Off Season</button><button class="tool-tab" onclick="showTool('ownercap')">💰 Owner Cap</button>
           </div>
+  
           <!-- TRADE FINDER -->
           <div class="tool-panel active" id="tool-finder">
             <div class="tool-card">
@@ -638,6 +668,22 @@ tr.team-row:hover{background:var(--surface2)}
           </div>
         </div>
       </div>
+
+<!-- OWNER CAP DASHBOARD -->
+          <div class="tool-panel" id="tool-ownercap" style="gap:16px">
+            <div class="tool-card" style="flex-shrink:0">
+              <div class="tool-card-title">💰 Owner Cap Dashboard</div>
+              <p style="font-size:12px;color:var(--dim);margin-bottom:12px">Alle 30 Teams und ihre individuelle Owner Cap Auslastung.</p>
+              <select class="form-select" id="oc-sort-select" onchange="renderOwnerCapDashboard()" style="max-width:180px">
+                <option value="pct">Auslastung ↓</option>
+                <option value="left">Verbleibend ↓</option>
+                <option value="cap">Owner Cap ↓</option>
+                <option value="name">Team Name</option>
+              </select>
+            </div>
+            <div class="oc-table-wrap" id="oc-table-wrap"></div>
+          </div>
+      
       <!-- TEAMS PAGE -->
       <div class="page" id="page-teams">
         <div class="teams-toolbar">
@@ -800,6 +846,7 @@ function showTool(t){
   document.getElementById('tool-'+t).classList.add('active');
   event.target.classList.add('active');
   if(t==='fairval') renderFairValueTable();
+  if(t==='ownercap') renderOwnerCapDashboard();
 }
 
 // ══ RENDER TEAM ══════════════════
@@ -1675,6 +1722,146 @@ renderTradeVerdict();
 renderTeamsTable();
 renderFairValueTable();
 populateOSTeamSelect();
+
+// ══ FEATURES v5: Sparklines, Compat, Owner Cap, Export, Shortcuts ══
+function makeSparkline(player) {
+  const Y=['sal_26','sal_27','sal_28','sal_29','sal_30'];
+  const vals=Y.map(y=>player[y]||0);
+  const nz=vals.filter(v=>v>0);
+  if(nz.length<2) return '';
+  const max=Math.max(...nz);
+  return '<div class="sparkline-wrap">'+vals.map((v,i)=>{
+    if(!v) return '';
+    const h=Math.max(2,Math.round((v/max)*16));
+    const prev=i>0?vals[i-1]:null;
+    let cls=!vals[i+1]&&v?'expiring':prev&&prev>0&&(v-prev)/prev>0.15?'jump':'';
+    return `<div class="sparkline-bar ${cls}" style="height:${h}px" title="$${(v/1e6).toFixed(1)}M"></div>`;
+  }).join('')+'</div>';
+}
+function calcCompatScore(abbr,inSal,outSal){
+  if(!abbr||!TEAMS[abbr]) return null;
+  const t=TEAMS[abbr],oc=OWNER_CAPS[abbr]||{};
+  const newT=t.total_salary-outSal+inSal,cap=oc.owner_cap||0;
+  let s=100,notes=[];
+  if(newT>=CBA.apron2){s-=40;notes.push('2nd Apron');}
+  else if(newT>=CBA.apron1){s-=20;notes.push('1st Apron');}
+  else if(newT>=CBA.tax){s-=8;notes.push('Luxury Tax');}
+  else if(newT<CBA.cap){s+=5;notes.push('Under Cap ✓');}
+  if(cap>0){const p=newT/cap;if(p>1){s-=30;notes.push('Owner Cap ÜBER');}else if(p>0.92){s-=10;notes.push('Owner Cap knapp');}}
+  s=Math.max(0,Math.min(100,s));
+  const cls=s>=80?'great':s>=60?'cok':s>=40?'cwarn':'bad';
+  const label=s>=80?'✓ Solid':s>=60?'~ OK':s>=40?'⚠ Risky':'✗ Problem';
+  return{score:s,cls,label,notes,newTotal:newT};
+}
+// Wrap renderTradeVerdict to inject compat scores
+(function(){
+  const orig=renderTradeVerdict;
+  renderTradeVerdict=function(){
+    orig();
+    const totA=tradePlayers.a.reduce((s,p)=>s+(p.sal||0),0);
+    const totB=tradePlayers.b.reduce((s,p)=>s+(p.sal||0),0);
+    if(!totA&&!totB) return;
+    const cA=calcCompatScore(tradeTeam.a,totB,totA);
+    const cB=calcCompatScore(tradeTeam.b,totA,totB);
+    const verdict=document.getElementById('trade-verdict');
+    if(!verdict) return;
+    const items=[...verdict.querySelectorAll('.verdict-item')];
+    [cA,cB].forEach((c,i)=>{
+      const el=items[items.length-2+i];
+      if(!c||!el||el.querySelector('.compat-badge')) return;
+      const d=document.createElement('div');
+      d.style.marginTop='6px';
+      d.innerHTML=`<span class="compat-badge ${c.cls}">${c.label} ${c.score}/100</span><div style="font-size:10px;color:var(--dim);margin-top:2px">${c.notes.join(' · ')}</div>`;
+      el.appendChild(d);
+    });
+  };
+})();
+// Wrap renderRoster to inject sparklines
+(function(){
+  const orig=renderRoster;
+  renderRoster=function(){
+    orig();
+    const t=TEAMS[currentTeam];if(!t) return;
+    const wrap=document.getElementById('roster-table-wrap');if(!wrap) return;
+    const thead=wrap.querySelector('thead tr');
+    if(thead&&!thead.querySelector('[data-spark]')){
+      const th=document.createElement('th');
+      th.setAttribute('data-spark','1');
+      th.style.cssText='text-align:center;font-size:9px;letter-spacing:.5px;color:var(--muted)';
+      th.textContent='TREND';
+      const ths=thead.querySelectorAll('th');
+      if(ths.length>=7) thead.insertBefore(th,ths[7]);
+    }
+    wrap.querySelectorAll('tr.player-row').forEach(row=>{
+      if(row.querySelector('.sparkline-wrap')) return;
+      const nameEl=row.querySelector('.player-name-cell span:last-child');
+      if(!nameEl) return;
+      const p=t.players.find(x=>x.name===nameEl.textContent);
+      if(!p) return;
+      const td=document.createElement('td');
+      td.style.textAlign='center';
+      td.innerHTML=makeSparkline(p);
+      const cells=row.querySelectorAll('td');
+      if(cells[7]) row.insertBefore(td,cells[7]);
+    });
+  };
+})();
+// Owner Cap Dashboard
+function renderOwnerCapDashboard(){
+  const sortBy=(document.getElementById('oc-sort-select')||{}).value||'pct';
+  let teams=Object.entries(TEAMS).map(([abbr,t])=>{
+    const oc=OWNER_CAPS[abbr]||{},cap=oc.owner_cap||0,used=t.total_salary;
+    return{abbr,name:t.name,gm:t.gm||'—',c1:t.c1,cap,used,left:cap-used,pct:cap>0?used/cap*100:0,isMine:MY_TEAMS.includes(abbr)};
+  });
+  if(sortBy==='pct') teams.sort((a,b)=>b.pct-a.pct);
+  else if(sortBy==='left') teams.sort((a,b)=>b.left-a.left);
+  else if(sortBy==='cap') teams.sort((a,b)=>b.cap-a.cap);
+  else teams.sort((a,b)=>a.name.localeCompare(b.name));
+  let html=`<table class="oc-table"><thead><tr><th>Team</th><th>GM</th><th class="right">Owner Cap</th><th class="right">Salary</th><th class="right">Verbleibend</th><th>Auslastung</th></tr></thead><tbody>`;
+  teams.forEach(t=>{
+    const over=t.left<0,pb=Math.min(t.pct,100);
+    const bc=t.pct>=100?'var(--red)':t.pct>=92?'var(--orange)':t.pct>=80?'var(--yellow)':'var(--green)';
+    const lc=over?'var(--red)':t.left<8e6?'var(--orange)':'var(--green)';
+    html+=`<tr class="oc-row"><td><div style="display:flex;align-items:center;gap:8px"><div class="team-dot" style="background:${t.c1}"></div><span style="font-weight:${t.isMine?700:400}">${t.name}${t.isMine?' ⭐':''}</span></div></td><td style="color:var(--dim);font-size:11px">${t.gm}</td><td class="right">$${(t.cap/1e6).toFixed(1)}M</td><td class="right">$${(t.used/1e6).toFixed(1)}M</td><td class="right" style="color:${lc};font-family:var(--font-mono);font-weight:600">${over?'–':'+'}$${(Math.abs(t.left)/1e6).toFixed(1)}M</td><td><div class="oc-bar-wrap"><div class="oc-bar-track"><div class="oc-bar-fill" style="width:${pb}%;background:${bc}"></div></div><span class="oc-pct" style="color:${bc}">${t.pct.toFixed(0)}%</span></div></td></tr>`;
+  });
+  const el=document.getElementById('oc-table-wrap');
+  if(el) el.innerHTML=html+'</tbody></table>';
+}
+// Export functions
+function exportRosterCSV(){
+  const t=TEAMS[currentTeam];if(!t) return;
+  const Y=['sal_26','sal_27','sal_28','sal_29','sal_30'],L=['2026-27','2027-28','2028-29','2029-30','2030-31'];
+  const csv=['Name,Pos,Bird,Trade,'+L.join(','),...t.players.filter(p=>p.sal_26>1).map(p=>[`"${p.name}"`,p.pos,p.bird||'',p.tradable_alone?'Y':p.tradable_agg?'Agg':'',...Y.map(y=>p[y]?Math.round(p[y]):'')].join(','))].join('\n');
+  navigator.clipboard.writeText(csv).then(()=>{const b=document.getElementById('export-csv-btn');if(b){b.textContent='✓ Kopiert!';b.classList.add('copied');setTimeout(()=>{b.textContent='⬇ CSV';b.classList.remove('copied');},2000);}});
+}
+function exportRosterMarkdown(){
+  const t=TEAMS[currentTeam];if(!t) return;
+  let md=`**${t.name}** — $${(t.total_salary/1e6).toFixed(1)}M\n\n| Spieler | Pos | '26-27 | '27-28 | Bird | Trade |\n|---------|-----|--------|--------|------|-------|\n`;
+  t.players.filter(p=>p.sal_26>100).forEach(p=>{md+=`| ${p.name} | ${p.pos} | $${(p.sal_26/1e6).toFixed(1)}M | ${p.sal_27?'$'+(p.sal_27/1e6).toFixed(1)+'M':'—'} | ${p.bird||'—'} | ${p.tradable_alone?'✓':'—'} |\n`;});
+  navigator.clipboard.writeText(md).then(()=>{const b=document.getElementById('export-md-btn');if(b){b.textContent='✓ Kopiert!';b.classList.add('copied');setTimeout(()=>{b.textContent='📋 MD';b.classList.remove('copied');},2000);}});
+}
+// Keyboard shortcuts
+(function(){
+  const PAGES={r:'roster',f:'fa',t:'trade',k:'tools',l:'teams'};
+  const TOOLS={'1':'finder','2':'maxcalc','3':'fairval','4':'offseason','5':'ownercap'};
+  document.addEventListener('keydown',e=>{
+    if(['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)||e.metaKey||e.ctrlKey||e.altKey) return;
+    const k=e.key.toLowerCase();
+    if(PAGES[k]){showPage(PAGES[k]);setMobileNav(PAGES[k]);return;}
+    if(k==='escape'){closeDetail();return;}
+    if(document.getElementById('page-tools').classList.contains('active')&&TOOLS[k]){
+      showTool(TOOLS[k]);
+      document.querySelectorAll('.tool-tab').forEach((b,i)=>{if(String(i+1)===k)b.classList.add('active');else b.classList.remove('active');});
+      if(k==='5') renderOwnerCapDashboard();
+    }
+  });
+})();
+// Wrap showTool to init Owner Cap
+(function(){
+  const orig=showTool;
+  showTool=function(t){orig(t);if(t==='ownercap')renderOwnerCapDashboard();};
+})();
+  
 </script>
 </body>
 </html>
