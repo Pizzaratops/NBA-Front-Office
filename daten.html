@@ -27,13 +27,13 @@
     <div class="val" id="last-updated">lädt…</div>
     <div class="label" style="margin-top:10px">Quelle</div>
     <div class="val" id="source">lädt…</div>
-    <div class="label" style="margin-top:10px">Anzahl geladener Rohzeilen (letzter Sheet-Fetch)</div>
+    <div class="label" style="margin-top:10px">Geladen (Teams / Spieler / Free Agents)</div>
     <div class="val" id="row-count">lädt…</div>
   </div>
 
   <div class="card">
     <div class="label">Google Sheet (Quelle)</div>
-    <div class="val"><a href="https://docs.google.com/spreadsheets/d/1REnOtl5b7IQSbxBaeGPPs6KnPwhHmwY8vltQcVh6jgQ/edit#gid=82" target="_blank" rel="noopener">Sheet öffnen ↗</a></div>
+    <div class="val"><a href="https://docs.google.com/spreadsheets/d/1REnOtl5b7IQSbxBaeGPPs6KnPwhHmwY8vltQcVh6jgQ/edit" target="_blank" rel="noopener">Sheet öffnen ↗</a></div>
   </div>
 
   <div class="card">
@@ -50,7 +50,8 @@
           ? '<span class="ok">' + new Date(meta.last_updated).toLocaleString('de-DE') + '</span>'
           : '<span class="warn">noch nie automatisch aktualisiert</span>';
         document.getElementById('source').textContent = meta.source || '—';
-        document.getElementById('row-count').textContent = meta.raw_row_count ?? '—';
+        document.getElementById('row-count').textContent =
+          (meta.teams_count ?? '—') + ' / ' + (meta.players_count ?? '—') + ' / ' + (meta.fas_count ?? '—');
         document.getElementById('raw').textContent = JSON.stringify(d, null, 2).slice(0, 8000) + '\n… (gekürzt)';
       })
       .catch(err => {
