@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daten — NBA Front Office</title>
+<style>
+  body{font-family:'IBM Plex Sans',sans-serif;background:#0a0c10;color:#e8eaf0;margin:0;padding:24px;line-height:1.6}
+  a{color:#3b82f6}
+  h1{font-family:'Bebas Neue',sans-serif;letter-spacing:1px;font-size:28px;margin-bottom:4px}
+  .card{background:#111318;border:1px solid #252830;border-radius:10px;padding:16px 20px;margin:16px 0}
+  .label{font-size:11px;color:#8a94a8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+  .val{font-family:'IBM Plex Mono',monospace;font-size:14px}
+  #raw{white-space:pre-wrap;font-family:'IBM Plex Mono',monospace;font-size:11px;max-height:500px;overflow:auto;background:#0a0c10;border:1px solid #252830;border-radius:8px;padding:12px}
+  .back{display:inline-block;margin-bottom:12px}
+  .warn{color:#f59e0b}
+  .ok{color:#00c07a}
+</style>
+</head>
+<body>
+  <a class="back" href="index.html">← zurück zur App</a>
+  <h1>Daten-Status</h1>
+  <p style="color:#8a94a8">Diese Seite zeigt, wann <code>data/data.json</code> zuletzt automatisch aktualisiert wurde und woher die Daten stammen.</p>
+
+  <div class="card">
+    <div class="label">Letztes Update</div>
+    <div class="val" id="last-updated">lädt…</div>
+    <div class="label" style="margin-top:10px">Quelle</div>
+    <div class="val" id="source">lädt…</div>
+    <div class="label" style="margin-top:10px">Anzahl geladener Rohzeilen (letzter Sheet-Fetch)</div>
+    <div class="val" id="row-count">lädt…</div>
+  </div>
+
+  <div class="card">
+    <div class="label">Google Sheet (Quelle)</div>
+    <div class="val"><a href="https://docs.google.com/spreadsheets/d/1REnOtl5b7IQSbxBaeGPPs6KnPwhHmwY8vltQcVh6jgQ/edit#gid=82" target="_blank" rel="noopener">Sheet öffnen ↗</a></div>
+  </div>
+
+  <div class="card">
+    <div class="label">Rohdaten-Vorschau (data/data.json)</div>
+    <div id="raw">lädt…</div>
+  </div>
+
+  <script>
+    fetch('data/data.json', {cache:'no-store'})
+      .then(r => r.json())
+      .then(d => {
+        const meta = d.meta || {};
+        document.getElementById('last-updated').innerHTML = meta.last_updated
+          ? '<span class="ok">' + new Date(meta.last_updated).toLocaleString('de-DE') + '</span>'
+          : '<span class="warn">noch nie automatisch aktualisiert</span>';
+        document.getElementById('source').textContent = meta.source || '—';
+        document.getElementById('row-count').textContent = meta.raw_row_count ?? '—';
+        document.getElementById('raw').textContent = JSON.stringify(d, null, 2).slice(0, 8000) + '\n… (gekürzt)';
+      })
+      .catch(err => {
+        document.getElementById('last-updated').innerHTML = '<span class="warn">Fehler beim Laden: ' + err + '</span>';
+      });
+  </script>
+</body>
+</html>
