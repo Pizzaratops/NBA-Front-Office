@@ -27,7 +27,7 @@
     <div class="val" id="last-updated">lädt…</div>
     <div class="label" style="margin-top:10px">Quelle</div>
     <div class="val" id="source">lädt…</div>
-    <div class="label" style="margin-top:10px">Geladen (Teams / Spieler / Free Agents)</div>
+    <div class="label" style="margin-top:10px">Geladen (Teams / Spieler / FA-Pool / davon frei)</div>
     <div class="val" id="row-count">lädt…</div>
   </div>
 
@@ -51,7 +51,8 @@
           : '<span class="warn">noch nie automatisch aktualisiert</span>';
         document.getElementById('source').textContent = meta.source || '—';
         document.getElementById('row-count').textContent =
-          (meta.teams_count ?? '—') + ' / ' + (meta.players_count ?? '—') + ' / ' + (meta.fas_count ?? '—');
+          (meta.teams_count ?? '—') + ' / ' + (meta.players_count ?? '—') + ' / ' +
+          (meta.fas_count ?? '—') + ' / ' + (meta.fas_available_count ?? '—');
         document.getElementById('raw').textContent = JSON.stringify(d, null, 2).slice(0, 8000) + '\n… (gekürzt)';
       })
       .catch(err => {

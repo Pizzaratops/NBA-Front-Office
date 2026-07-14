@@ -237,7 +237,14 @@ def parse_ctrlpanel(wb) -> dict:
     return cba
 
 
-def parse_fa26(wb, rostered_names: set) -> list:
+def parse_fa26(wb, rostered: dict) -> list:
+    """Liest den FA26-Tab komplett aus.
+
+    `rostered` ist ein dict {Spielername: Team-Abkürzung} für alle Spieler,
+    die auf einem Team-Roster stehen. Statt diese Spieler auszufiltern,
+    markieren wir sie mit `signed_team`, damit man auf der Webseite sieht:
+    "steht zwar im FA-Pool des Sheets, ist aber schon vergeben".
+    """
     ws = wb["FA26"]
     fas = []
     for row in ws.iter_rows(min_row=2, values_only=True):
@@ -245,14 +252,16 @@ def parse_fa26(wb, rostered_names: set) -> list:
         if not isinstance(name, str) or not name.strip():
             continue
         name = name.strip()
-        if name in rostered_names:
-            continue
         fpg_raw = row[2] if len(row) > 2 else None
         try:
             fpg = round(float(fpg_raw), 2) if fpg_raw is not None else None
         except (TypeError, ValueError):
             fpg = None
-        fas.append({"name": name, "fpg": fpg})
+        fas.append({
+            "name": name,
+            "fpg": fpg,
+            "signed_team": rostered.get(name),
+        })
     fas.sort(key=lambda p: (p["fpg"] is None, -(p["fpg"] or 0)))
     return fas
 
@@ -260,7 +269,7 @@ def parse_fa26(wb, rostered_names: set) -> list:
 def build_data(wb, existing: dict) -> dict:
     teams = {}
     directions = {}
-    rostered_names = set()
+    rostered = {}  # Spielername -> Team-Abkürzung
 
     for abbr in TEAM_ABBRS:
         if abbr not in wb.sheetnames:
@@ -281,11 +290,12 @@ def build_data(wb, existing: dict) -> dict:
             "players": players,
             "total_salary": total_salary,
         }
-        rostered_names.update(p["name"] for p in players)
+        for p in players:
+            rostered[p["name"]] = abbr
 
     owner_caps = parse_finances(wb)
     cba = parse_ctrlpanel(wb)
-    fas = parse_fa26(wb, rostered_names)
+    fas = parse_fa26(wb, rostered)
 
     my_teams = existing.get("my_teams") or DEFAULT_MY_TEAMS
 
@@ -302,6 +312,7 @@ def build_data(wb, existing: dict) -> dict:
             "teams_count": len(teams),
             "players_count": sum(len(t["players"]) for t in teams.values()),
             "fas_count": len(fas),
+            "fas_available_count": sum(1 for f in fas if not f["signed_team"]),
         },
     }
 

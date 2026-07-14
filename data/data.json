@@ -6363,1116 +6363,1839 @@
   },
   "fas": [
     {
+      "name": "Shai Gilgeous-Alexander",
+      "fpg": 131.5,
+      "signed_team": "LAC"
+    },
+    {
+      "name": "Luka Dončić",
+      "fpg": 127.99,
+      "signed_team": "SAS"
+    },
+    {
+      "name": "Jayson Tatum",
+      "fpg": 105.93,
+      "signed_team": "DET"
+    },
+    {
+      "name": "Kevin Durant",
+      "fpg": 105.84,
+      "signed_team": "LAC"
+    },
+    {
+      "name": "Walker Kessler",
+      "fpg": 100.1,
+      "signed_team": "MIA"
+    },
+    {
+      "name": "Jalen Duren",
+      "fpg": 99.74,
+      "signed_team": "SAC"
+    },
+    {
+      "name": "Jimmy Butler",
+      "fpg": 98.78,
+      "signed_team": "DET"
+    },
+    {
+      "name": "LeBron James",
+      "fpg": 93.55,
+      "signed_team": "POR"
+    },
+    {
+      "name": "Paolo Banchero",
+      "fpg": 90.91,
+      "signed_team": "WA"
+    },
+    {
+      "name": "Fred VanVleet",
+      "fpg": 86.3,
+      "signed_team": "NOP"
+    },
+    {
+      "name": "Jabari Smith",
+      "fpg": 85.1,
+      "signed_team": "PHI"
+    },
+    {
       "name": "Alondes Williams",
-      "fpg": 83.45
+      "fpg": 83.45,
+      "signed_team": null
+    },
+    {
+      "name": "Norman Powell",
+      "fpg": 78.68,
+      "signed_team": "LAL"
+    },
+    {
+      "name": "Miles Bridges",
+      "fpg": 77.93,
+      "signed_team": "BRK"
     },
     {
       "name": "Nikola Vucevic",
-      "fpg": 77.5
+      "fpg": 77.5,
+      "signed_team": null
+    },
+    {
+      "name": "Peyton Watson",
+      "fpg": 77.09,
+      "signed_team": "SAC"
+    },
+    {
+      "name": "Julian Champagnie",
+      "fpg": 76.79,
+      "signed_team": "ATL"
+    },
+    {
+      "name": "Neemias Queta",
+      "fpg": 76.73,
+      "signed_team": "MEM"
+    },
+    {
+      "name": "Duncan Robinson",
+      "fpg": 71.74,
+      "signed_team": "BOS"
+    },
+    {
+      "name": "Shaedon Sharpe",
+      "fpg": 69.17,
+      "signed_team": "SAS"
+    },
+    {
+      "name": "Bennedict Mathurin",
+      "fpg": 68.85,
+      "signed_team": "DAL"
+    },
+    {
+      "name": "Davion Mitchell",
+      "fpg": 68.34,
+      "signed_team": "CHA"
+    },
+    {
+      "name": "Andrew Nembhard",
+      "fpg": 67.0,
+      "signed_team": "ATL"
+    },
+    {
+      "name": "Ayo Dosunmu",
+      "fpg": 66.26,
+      "signed_team": "WA"
+    },
+    {
+      "name": "Mark Williams",
+      "fpg": 66.26,
+      "signed_team": "PHX"
     },
     {
       "name": "Kadary Richmond",
-      "fpg": 65.93
+      "fpg": 65.93,
+      "signed_team": null
     },
     {
       "name": "Tim Hardaway",
-      "fpg": 64.94
+      "fpg": 64.94,
+      "signed_team": null
     },
     {
       "name": "Royce O'Neale",
-      "fpg": 64.13
+      "fpg": 64.13,
+      "signed_team": null
+    },
+    {
+      "name": "Tari Eason",
+      "fpg": 63.52,
+      "signed_team": "CHI"
+    },
+    {
+      "name": "Keegan Murray",
+      "fpg": 63.37,
+      "signed_team": "POR"
+    },
+    {
+      "name": "Sandro Mamukelashvili",
+      "fpg": 61.44,
+      "signed_team": "LAL"
+    },
+    {
+      "name": "Harrison Barnes",
+      "fpg": 61.11,
+      "signed_team": "GS"
     },
     {
       "name": "Leaky Black",
-      "fpg": 61.02
+      "fpg": 61.02,
+      "signed_team": null
     },
     {
       "name": "Julian Reese",
-      "fpg": 60.58
+      "fpg": 60.58,
+      "signed_team": null
+    },
+    {
+      "name": "Pelle Larsson",
+      "fpg": 60.42,
+      "signed_team": "LAC"
     },
     {
       "name": "Draymond Green",
-      "fpg": 60.21
+      "fpg": 60.21,
+      "signed_team": null
+    },
+    {
+      "name": "Mitchell Robinson",
+      "fpg": 59.86,
+      "signed_team": "DAL"
     },
     {
       "name": "Lawson Lovering",
-      "fpg": 59.63
+      "fpg": 59.63,
+      "signed_team": null
+    },
+    {
+      "name": "Kris Dunn",
+      "fpg": 59.42,
+      "signed_team": "OKC"
     },
     {
       "name": "Andersson Garcia",
-      "fpg": 57.55
+      "fpg": 57.55,
+      "signed_team": null
+    },
+    {
+      "name": "Collin Sexton",
+      "fpg": 57.47,
+      "signed_team": "NOP"
     },
     {
       "name": "Max Strus",
-      "fpg": 57.4
+      "fpg": 57.4,
+      "signed_team": null
+    },
+    {
+      "name": "Jordan Goodwin",
+      "fpg": 57.2,
+      "signed_team": "POR"
+    },
+    {
+      "name": "Al Horford",
+      "fpg": 56.32,
+      "signed_team": "MIL"
     },
     {
       "name": "Kennedy Chandler",
-      "fpg": 55.83
+      "fpg": 55.83,
+      "signed_team": null
+    },
+    {
+      "name": "Jock Landale",
+      "fpg": 55.02,
+      "signed_team": "OKC"
     },
     {
       "name": "Landry Shamet",
-      "fpg": 54.34
+      "fpg": 54.34,
+      "signed_team": null
+    },
+    {
+      "name": "Daniel Gafford",
+      "fpg": 54.28,
+      "signed_team": "DEN"
+    },
+    {
+      "name": "Robert Williams",
+      "fpg": 54.23,
+      "signed_team": "CHA"
+    },
+    {
+      "name": "Jake LaRavia",
+      "fpg": 53.99,
+      "signed_team": "NOP"
+    },
+    {
+      "name": "Aaron Wiggins",
+      "fpg": 53.93,
+      "signed_team": "ATL"
+    },
+    {
+      "name": "AJ Green",
+      "fpg": 53.62,
+      "signed_team": "TOR"
+    },
+    {
+      "name": "Max Christie",
+      "fpg": 53.45,
+      "signed_team": "UT"
     },
     {
       "name": "Dominick Barlow",
-      "fpg": 52.56
+      "fpg": 52.56,
+      "signed_team": null
     },
     {
       "name": "Zach Collins",
-      "fpg": 52.37
+      "fpg": 52.37,
+      "signed_team": null
+    },
+    {
+      "name": "Jaylen Wells",
+      "fpg": 52.36,
+      "signed_team": "MIA"
     },
     {
       "name": "Dylan Cardwell",
-      "fpg": 51.66
+      "fpg": 51.66,
+      "signed_team": null
+    },
+    {
+      "name": "Brandon Williams",
+      "fpg": 51.6,
+      "signed_team": "UT"
+    },
+    {
+      "name": "Precious Achiuwa",
+      "fpg": 51.17,
+      "signed_team": "POR"
+    },
+    {
+      "name": "Day'Ron Sharpe",
+      "fpg": 51.08,
+      "signed_team": "TOR"
     },
     {
       "name": "Brook Lopez",
-      "fpg": 51.07
+      "fpg": 51.07,
+      "signed_team": null
     },
     {
       "name": "Jalen Slawson",
-      "fpg": 50.92
+      "fpg": 50.92,
+      "signed_team": null
     },
     {
       "name": "Blake Hinson",
-      "fpg": 50.5
+      "fpg": 50.5,
+      "signed_team": null
+    },
+    {
+      "name": "Jay Huff",
+      "fpg": 50.38,
+      "signed_team": "DEN"
+    },
+    {
+      "name": "Gui Santos",
+      "fpg": 49.8,
+      "signed_team": "PHX"
+    },
+    {
+      "name": "Marvin Bagley",
+      "fpg": 49.74,
+      "signed_team": "SAC"
+    },
+    {
+      "name": "Jordan Miller",
+      "fpg": 49.49,
+      "signed_team": "CHA"
+    },
+    {
+      "name": "Daniss Jenkins",
+      "fpg": 48.73,
+      "signed_team": "PHI"
     },
     {
       "name": "Jaxson Hayes",
-      "fpg": 48.55
+      "fpg": 48.55,
+      "signed_team": null
+    },
+    {
+      "name": "Luke Kennard",
+      "fpg": 48.17,
+      "signed_team": "UT"
     },
     {
       "name": "DaQuan Jeffries",
-      "fpg": 48.13
+      "fpg": 48.13,
+      "signed_team": null
+    },
+    {
+      "name": "Andre Drummond",
+      "fpg": 47.94,
+      "signed_team": "DEN"
+    },
+    {
+      "name": "Scotty Pippen",
+      "fpg": 46.99,
+      "signed_team": "CHI"
     },
     {
       "name": "Vit Krejci",
-      "fpg": 46.8
+      "fpg": 46.8,
+      "signed_team": null
     },
     {
       "name": "Svi Mykhailiuk",
-      "fpg": 46.72
+      "fpg": 46.72,
+      "signed_team": null
     },
     {
       "name": "Micah Potter",
-      "fpg": 45.94
+      "fpg": 45.94,
+      "signed_team": null
+    },
+    {
+      "name": "Javonte Green",
+      "fpg": 45.84,
+      "signed_team": "MIN"
+    },
+    {
+      "name": "Luka Garza",
+      "fpg": 45.29,
+      "signed_team": "DAL"
     },
     {
       "name": "Alex Morales",
-      "fpg": 45.0
+      "fpg": 45.0,
+      "signed_team": null
+    },
+    {
+      "name": "Spencer Jones",
+      "fpg": 44.6,
+      "signed_team": "ATL"
     },
     {
       "name": "Klay Thompson",
-      "fpg": 44.34
+      "fpg": 44.34,
+      "signed_team": null
     },
     {
       "name": "T.J. McConnell",
-      "fpg": 44.13
+      "fpg": 44.13,
+      "signed_team": null
+    },
+    {
+      "name": "Craig Porter",
+      "fpg": 43.62,
+      "signed_team": "TOR"
     },
     {
       "name": "Kyle Anderson",
-      "fpg": 43.32
+      "fpg": 43.32,
+      "signed_team": null
+    },
+    {
+      "name": "Simone Fontecchio",
+      "fpg": 43.13,
+      "signed_team": "BRK"
+    },
+    {
+      "name": "Jaden Ivey",
+      "fpg": 42.76,
+      "signed_team": "HOU"
     },
     {
       "name": "DeAndre Jordan",
-      "fpg": 42.52
+      "fpg": 42.52,
+      "signed_team": null
     },
     {
       "name": "Bryce McGowens",
-      "fpg": 41.89
+      "fpg": 41.89,
+      "signed_team": null
     },
     {
       "name": "Chaney Johnson",
-      "fpg": 41.86
+      "fpg": 41.86,
+      "signed_team": null
     },
     {
       "name": "Bez Mbeng",
-      "fpg": 41.83
+      "fpg": 41.83,
+      "signed_team": null
     },
     {
       "name": "Caris LeVert",
-      "fpg": 41.46
+      "fpg": 41.46,
+      "signed_team": null
     },
     {
       "name": "Elijah Harkless",
-      "fpg": 41.2
+      "fpg": 41.2,
+      "signed_team": null
+    },
+    {
+      "name": "Kevin Love",
+      "fpg": 41.1,
+      "signed_team": "MEM"
     },
     {
       "name": "Dru Smith",
-      "fpg": 40.82
+      "fpg": 40.82,
+      "signed_team": null
     },
     {
       "name": "Daeqwon Plowden",
-      "fpg": 40.26
+      "fpg": 40.26,
+      "signed_team": null
     },
     {
       "name": "John Konchar",
-      "fpg": 40.24
+      "fpg": 40.24,
+      "signed_team": null
     },
     {
       "name": "Malachi Smith",
-      "fpg": 40.12
+      "fpg": 40.12,
+      "signed_team": null
     },
     {
       "name": "D'Angelo Russell",
-      "fpg": 39.74
+      "fpg": 39.74,
+      "signed_team": null
+    },
+    {
+      "name": "Jarred Vanderbilt",
+      "fpg": 38.53,
+      "signed_team": "BOS"
     },
     {
       "name": "Pat Spencer",
-      "fpg": 38.53
+      "fpg": 38.53,
+      "signed_team": null
+    },
+    {
+      "name": "Jordan Clarkson",
+      "fpg": 38.3,
+      "signed_team": "MIN"
     },
     {
       "name": "Kenrich Williams",
-      "fpg": 38.06
+      "fpg": 38.06,
+      "signed_team": null
     },
     {
       "name": "Nikola Jovic",
-      "fpg": 37.72
+      "fpg": 37.72,
+      "signed_team": null
+    },
+    {
+      "name": "Oscar Tshiebwe",
+      "fpg": 37.71,
+      "signed_team": "OKC"
     },
     {
       "name": "Tyler Burton",
-      "fpg": 37.48
+      "fpg": 37.48,
+      "signed_team": null
+    },
+    {
+      "name": "Sidy Cissoko",
+      "fpg": 36.87,
+      "signed_team": "MIL"
     },
     {
       "name": "Colby Jones",
-      "fpg": 36.82
+      "fpg": 36.82,
+      "signed_team": null
     },
     {
       "name": "MarJon Beauchamp",
-      "fpg": 35.99
+      "fpg": 35.99,
+      "signed_team": null
+    },
+    {
+      "name": "Nicolas Batum",
+      "fpg": 35.65,
+      "signed_team": "PHX"
+    },
+    {
+      "name": "Josh Okogie",
+      "fpg": 35.24,
+      "signed_team": "DAL"
     },
     {
       "name": "L.J. Cryer",
-      "fpg": 35.19
+      "fpg": 35.19,
+      "signed_team": null
+    },
+    {
+      "name": "Trendon Watford",
+      "fpg": 34.7,
+      "signed_team": "IND"
     },
     {
       "name": "Wendell Moore",
-      "fpg": 34.09
+      "fpg": 34.09,
+      "signed_team": null
     },
     {
       "name": "Buddy Hield",
-      "fpg": 33.79
+      "fpg": 33.79,
+      "signed_team": null
     },
     {
       "name": "Jericho Sims",
-      "fpg": 33.02
+      "fpg": 33.02,
+      "signed_team": null
     },
     {
       "name": "Dwight Powell",
-      "fpg": 32.98
+      "fpg": 32.98,
+      "signed_team": null
+    },
+    {
+      "name": "Thomas Bryant",
+      "fpg": 32.85,
+      "signed_team": "MEM"
     },
     {
       "name": "Skal Labissiere",
-      "fpg": 32.85
+      "fpg": 32.85,
+      "signed_team": null
     },
     {
       "name": "Adama Bal",
-      "fpg": 32.77
+      "fpg": 32.77,
+      "signed_team": null
     },
     {
       "name": "Jamaree Bouyea",
-      "fpg": 32.64
+      "fpg": 32.64,
+      "signed_team": null
     },
     {
       "name": "Jalen Pickett",
-      "fpg": 32.57
+      "fpg": 32.57,
+      "signed_team": null
     },
     {
       "name": "John Poulakidas",
-      "fpg": 31.96
+      "fpg": 31.96,
+      "signed_team": null
     },
     {
       "name": "DeJon Jarreau",
-      "fpg": 31.95
+      "fpg": 31.95,
+      "signed_team": null
     },
     {
       "name": "Colin Castleton",
-      "fpg": 31.82
+      "fpg": 31.82,
+      "signed_team": null
+    },
+    {
+      "name": "Ousmane Dieng",
+      "fpg": 31.8,
+      "signed_team": "MIN"
     },
     {
       "name": "Jevon Carter",
-      "fpg": 31.75
+      "fpg": 31.75,
+      "signed_team": null
     },
     {
       "name": "Ethan Thompson",
-      "fpg": 31.54
+      "fpg": 31.54,
+      "signed_team": null
     },
     {
       "name": "Isaiah Stevens",
-      "fpg": 31.43
+      "fpg": 31.43,
+      "signed_team": null
+    },
+    {
+      "name": "Jaden Hardy",
+      "fpg": 30.57,
+      "signed_team": "DET"
     },
     {
       "name": "Gabe Vincent",
-      "fpg": 30.49
+      "fpg": 30.49,
+      "signed_team": null
     },
     {
       "name": "Nick Richards",
-      "fpg": 29.36
+      "fpg": 29.36,
+      "signed_team": null
+    },
+    {
+      "name": "Pete Nance",
+      "fpg": 29.31,
+      "signed_team": "MIL"
     },
     {
       "name": "Tyrese Martin",
-      "fpg": 29.05
+      "fpg": 29.05,
+      "signed_team": null
     },
     {
       "name": "Guerschon Yabusele",
-      "fpg": 28.92
+      "fpg": 28.92,
+      "signed_team": null
     },
     {
       "name": "Seth Curry",
-      "fpg": 28.91
+      "fpg": 28.91,
+      "signed_team": null
+    },
+    {
+      "name": "Myron Gardner",
+      "fpg": 28.88,
+      "signed_team": "IND"
     },
     {
       "name": "Jabari Walker",
-      "fpg": 28.78
+      "fpg": 28.78,
+      "signed_team": null
     },
     {
       "name": "Garrison Mathews",
-      "fpg": 28.64
+      "fpg": 28.64,
+      "signed_team": null
     },
     {
       "name": "Ochai Agbaji",
-      "fpg": 28.55
+      "fpg": 28.55,
+      "signed_team": null
     },
     {
       "name": "Sharife Cooper",
-      "fpg": 28.48
+      "fpg": 28.48,
+      "signed_team": null
     },
     {
       "name": "Christian Koloko",
-      "fpg": 28.3
+      "fpg": 28.3,
+      "signed_team": null
+    },
+    {
+      "name": "Kevon Looney",
+      "fpg": 27.49,
+      "signed_team": "MIN"
     },
     {
       "name": "Anthony Gill",
-      "fpg": 27.47
+      "fpg": 27.47,
+      "signed_team": null
+    },
+    {
+      "name": "Jeremiah Robinson-Earl",
+      "fpg": 27.12,
+      "signed_team": "NOP"
+    },
+    {
+      "name": "Jaylen Clark",
+      "fpg": 26.71,
+      "signed_team": "PHI"
     },
     {
       "name": "Branden Carlson",
-      "fpg": 26.51
+      "fpg": 26.51,
+      "signed_team": null
     },
     {
       "name": "Yuki Kawamura",
-      "fpg": 26.45
+      "fpg": 26.45,
+      "signed_team": null
     },
     {
       "name": "PJ Hall",
-      "fpg": 26.21
+      "fpg": 26.21,
+      "signed_team": null
+    },
+    {
+      "name": "Bradley Beal",
+      "fpg": 26.07,
+      "signed_team": "CHA"
     },
     {
       "name": "Kobe Brown",
-      "fpg": 25.94
+      "fpg": 25.94,
+      "signed_team": null
     },
     {
       "name": "Tyson Etienne",
-      "fpg": 25.76
+      "fpg": 25.76,
+      "signed_team": null
     },
     {
       "name": "Caleb Martin",
-      "fpg": 25.22
+      "fpg": 25.22,
+      "signed_team": null
     },
     {
       "name": "Dalen Terry",
-      "fpg": 24.92
+      "fpg": 24.92,
+      "signed_team": null
     },
     {
       "name": "Larry Nance",
-      "fpg": 24.92
+      "fpg": 24.92,
+      "signed_team": null
     },
     {
       "name": "Jamal Cain",
-      "fpg": 24.34
+      "fpg": 24.34,
+      "signed_team": null
+    },
+    {
+      "name": "Drew Eubanks",
+      "fpg": 24.24,
+      "signed_team": "DET"
+    },
+    {
+      "name": "Rayan Rupert",
+      "fpg": 24.15,
+      "signed_team": "TOR"
     },
     {
       "name": "Doug McDermott",
-      "fpg": 23.98
+      "fpg": 23.98,
+      "signed_team": null
     },
     {
       "name": "Ron Harper",
-      "fpg": 23.84
+      "fpg": 23.84,
+      "signed_team": null
     },
     {
       "name": "David Jones Garcia",
-      "fpg": 23.45
+      "fpg": 23.45,
+      "signed_team": null
     },
     {
       "name": "Chris Boucher",
-      "fpg": 23.3
+      "fpg": 23.3,
+      "signed_team": null
     },
     {
       "name": "Grant Nelson",
-      "fpg": 23.13
+      "fpg": 23.13,
+      "signed_team": null
     },
     {
       "name": "Taj Gibson",
-      "fpg": 22.99
+      "fpg": 22.99,
+      "signed_team": null
     },
     {
       "name": "Zeke Nnaji",
-      "fpg": 22.91
+      "fpg": 22.91,
+      "signed_team": null
     },
     {
       "name": "Mo Bamba",
-      "fpg": 22.45
+      "fpg": 22.45,
+      "signed_team": null
+    },
+    {
+      "name": "Blake Wesley",
+      "fpg": 22.43,
+      "signed_team": "MEM"
     },
     {
       "name": "Gary Harris",
-      "fpg": 21.93
+      "fpg": 21.93,
+      "signed_team": null
     },
     {
       "name": "Nate Williams",
-      "fpg": 21.78
+      "fpg": 21.78,
+      "signed_team": null
     },
     {
       "name": "Jamison Battle",
-      "fpg": 21.27
+      "fpg": 21.27,
+      "signed_team": null
     },
     {
       "name": "Mason Plumlee",
-      "fpg": 20.92
+      "fpg": 20.92,
+      "signed_team": null
     },
     {
       "name": "Keshad Johnson",
-      "fpg": 20.74
+      "fpg": 20.74,
+      "signed_team": null
     },
     {
       "name": "Tre Mann",
-      "fpg": 20.72
+      "fpg": 20.72,
+      "signed_team": null
     },
     {
       "name": "Cormac Ryan",
-      "fpg": 20.69
+      "fpg": 20.69,
+      "signed_team": null
+    },
+    {
+      "name": "Malaki Branham",
+      "fpg": 20.64,
+      "signed_team": "OKC"
     },
     {
       "name": "Chris Paul",
-      "fpg": 20.5
+      "fpg": 20.5,
+      "signed_team": null
     },
     {
       "name": "Ariel Hukporti",
-      "fpg": 20.09
+      "fpg": 20.09,
+      "signed_team": null
     },
     {
       "name": "Keaton Wallace",
-      "fpg": 20.06
+      "fpg": 20.06,
+      "signed_team": null
     },
     {
       "name": "Mohamed Diawara",
-      "fpg": 19.89
+      "fpg": 19.89,
+      "signed_team": null
     },
     {
       "name": "Patrick Baldwin",
-      "fpg": 19.83
+      "fpg": 19.83,
+      "signed_team": null
     },
     {
       "name": "Jayson Kent",
-      "fpg": 19.81
+      "fpg": 19.81,
+      "signed_team": null
+    },
+    {
+      "name": "Jeremy Sochan",
+      "fpg": 19.51,
+      "signed_team": "OKC"
     },
     {
       "name": "James Wiseman",
-      "fpg": 18.99
+      "fpg": 18.99,
+      "signed_team": null
     },
     {
       "name": "Tony Bradley",
-      "fpg": 18.93
+      "fpg": 18.93,
+      "signed_team": null
     },
     {
       "name": "Isaiah Livers",
-      "fpg": 18.91
+      "fpg": 18.91,
+      "signed_team": null
     },
     {
       "name": "Antonio Reeves",
-      "fpg": 18.77
+      "fpg": 18.77,
+      "signed_team": null
     },
     {
       "name": "Amir Coffey",
-      "fpg": 18.16
+      "fpg": 18.16,
+      "signed_team": null
     },
     {
       "name": "Chris Livingston",
-      "fpg": 18.14
+      "fpg": 18.14,
+      "signed_team": null
     },
     {
       "name": "Miles Kelly",
-      "fpg": 17.87
+      "fpg": 17.87,
+      "signed_team": null
     },
     {
       "name": "Mac McClung",
-      "fpg": 17.84
+      "fpg": 17.84,
+      "signed_team": null
     },
     {
       "name": "RayJ Dennis",
-      "fpg": 17.82
+      "fpg": 17.82,
+      "signed_team": null
     },
     {
       "name": "E.J. Liddell",
-      "fpg": 17.7
+      "fpg": 17.7,
+      "signed_team": null
     },
     {
       "name": "Tyler Smith",
-      "fpg": 17.5
+      "fpg": 17.5,
+      "signed_team": null
     },
     {
       "name": "Cam Christie",
-      "fpg": 17.06
+      "fpg": 17.06,
+      "signed_team": null
     },
     {
       "name": "Malevy Leons",
-      "fpg": 16.32
+      "fpg": 16.32,
+      "signed_team": null
     },
     {
       "name": "Duop Reath",
-      "fpg": 15.85
+      "fpg": 15.85,
+      "signed_team": null
     },
     {
       "name": "Pat Connaughton",
-      "fpg": 15.52
+      "fpg": 15.52,
+      "signed_team": null
     },
     {
       "name": "Enrique Freeman",
-      "fpg": 15.49
+      "fpg": 15.49,
+      "signed_team": null
     },
     {
       "name": "Luke Travers",
-      "fpg": 14.72
+      "fpg": 14.72,
+      "signed_team": null
     },
     {
       "name": "Charles Bassey",
-      "fpg": 14.65
+      "fpg": 14.65,
+      "signed_team": null
     },
     {
       "name": "Riley Minix",
-      "fpg": 14.44
+      "fpg": 14.44,
+      "signed_team": null
     },
     {
       "name": "Jae'Sean Tate",
-      "fpg": 14.12
+      "fpg": 14.12,
+      "signed_team": null
     },
     {
       "name": "JD Davison",
-      "fpg": 14.07
+      "fpg": 14.07,
+      "signed_team": null
     },
     {
       "name": "Brandon Clarke",
-      "fpg": 13.97
+      "fpg": 13.97,
+      "signed_team": null
     },
     {
       "name": "Cody Martin",
-      "fpg": 13.92
+      "fpg": 13.92,
+      "signed_team": null
     },
     {
       "name": "N'Faly Dante",
-      "fpg": 13.1
+      "fpg": 13.1,
+      "signed_team": null
     },
     {
       "name": "Lindy Waters",
-      "fpg": 13.09
+      "fpg": 13.09,
+      "signed_team": null
     },
     {
       "name": "Hunter Tyson",
-      "fpg": 12.73
+      "fpg": 12.73,
+      "signed_team": null
     },
     {
       "name": "Tristan Enaruna",
-      "fpg": 12.53
+      "fpg": 12.53,
+      "signed_team": null
     },
     {
       "name": "Omer Yurtseven",
-      "fpg": 12.43
+      "fpg": 12.43,
+      "signed_team": null
+    },
+    {
+      "name": "Rocco Zikarsky",
+      "fpg": 12.31,
+      "signed_team": "LAC"
     },
     {
       "name": "Mark Sears",
-      "fpg": 11.72
+      "fpg": 11.72,
+      "signed_team": null
     },
     {
       "name": "Monte Morris",
-      "fpg": 11.6
+      "fpg": 11.6,
+      "signed_team": null
     },
     {
       "name": "Jordan McLaughlin",
-      "fpg": 11.48
+      "fpg": 11.48,
+      "signed_team": null
     },
     {
       "name": "Jacob Toppin",
-      "fpg": 11.37
+      "fpg": 11.37,
+      "signed_team": null
     },
     {
       "name": "Drew Peterson",
-      "fpg": 11.3
+      "fpg": 11.3,
+      "signed_team": null
     },
     {
       "name": "Dario Saric",
-      "fpg": 11.05
+      "fpg": 11.05,
+      "signed_team": null
     },
     {
       "name": "Chris Manon",
-      "fpg": 10.51
+      "fpg": 10.51,
+      "signed_team": null
     },
     {
       "name": "Orlando Robinson",
-      "fpg": 10.45
+      "fpg": 10.45,
+      "signed_team": null
     },
     {
       "name": "Isaiah Crawford",
-      "fpg": 10.21
+      "fpg": 10.21,
+      "signed_team": null
     },
     {
       "name": "Bobi Klintman",
-      "fpg": 10.12
+      "fpg": 10.12,
+      "signed_team": null
     },
     {
       "name": "Thanasis Antetokounmpo",
-      "fpg": 9.79
+      "fpg": 9.79,
+      "signed_team": null
     },
     {
       "name": "Emanuel Miller",
-      "fpg": 9.71
+      "fpg": 9.71,
+      "signed_team": null
+    },
+    {
+      "name": "Kyle Lowry",
+      "fpg": 9.7,
+      "signed_team": "DET"
+    },
+    {
+      "name": "Adou Thiero",
+      "fpg": 9.57,
+      "signed_team": "SAS"
     },
     {
       "name": "Xavier Tillman",
-      "fpg": 9.33
+      "fpg": 9.33,
+      "signed_team": null
     },
     {
       "name": "TyTy Washington",
-      "fpg": 9.28
+      "fpg": 9.28,
+      "signed_team": null
     },
     {
       "name": "Caleb Houstan",
-      "fpg": 8.79
+      "fpg": 8.79,
+      "signed_team": null
     },
     {
       "name": "Joe Ingles",
-      "fpg": 8.68
+      "fpg": 8.68,
+      "signed_team": null
     },
     {
       "name": "Curtis Jones",
-      "fpg": 8.61
+      "fpg": 8.61,
+      "signed_team": null
     },
     {
       "name": "Zyon Pullin",
-      "fpg": 8.37
+      "fpg": 8.37,
+      "signed_team": null
     },
     {
       "name": "Trey Jemison",
-      "fpg": 8.23
+      "fpg": 8.23,
+      "signed_team": null
     },
     {
       "name": "Jeff Green",
-      "fpg": 8.21
+      "fpg": 8.21,
+      "signed_team": null
     },
     {
       "name": "Buddy Boeheim",
-      "fpg": 8.0
+      "fpg": 8.0,
+      "signed_team": null
     },
     {
       "name": "Sean Pedulla",
-      "fpg": 7.82
+      "fpg": 7.82,
+      "signed_team": null
     },
     {
       "name": "CJ Huntley",
-      "fpg": 7.74
+      "fpg": 7.74,
+      "signed_team": null
     },
     {
       "name": "Nigel Hayes-Davis",
-      "fpg": 7.3
+      "fpg": 7.3,
+      "signed_team": null
     },
     {
       "name": "Norchad Omier",
-      "fpg": 6.72
+      "fpg": 6.72,
+      "signed_team": null
     },
     {
       "name": "Dalano Banton",
-      "fpg": 6.63
+      "fpg": 6.63,
+      "signed_team": null
     },
     {
       "name": "David Roddy",
-      "fpg": 6.37
+      "fpg": 6.37,
+      "signed_team": null
     },
     {
       "name": "Kobe Bufkin",
-      "fpg": 6.32
+      "fpg": 6.32,
+      "signed_team": null
     },
     {
       "name": "Keshon Gilbert",
-      "fpg": 5.58
+      "fpg": 5.58,
+      "signed_team": null
     },
     {
       "name": "Jahmir Young",
-      "fpg": 5.17
+      "fpg": 5.17,
+      "signed_team": null
     },
     {
       "name": "Garrett Temple",
-      "fpg": 5.08
+      "fpg": 5.08,
+      "signed_team": null
     },
     {
       "name": "Trentyn Flowers",
-      "fpg": 5.02
+      "fpg": 5.02,
+      "signed_team": null
     },
     {
       "name": "Alex Antetokounmpo",
-      "fpg": 4.3
+      "fpg": 4.3,
+      "signed_team": null
     },
     {
       "name": "Bismack Biyombo",
-      "fpg": 4.29
+      "fpg": 4.29,
+      "signed_team": null
     },
     {
       "name": "Isaac Jones",
-      "fpg": 3.61
+      "fpg": 3.61,
+      "signed_team": null
     },
     {
       "name": "Vladislav Goldin",
-      "fpg": 3.07
+      "fpg": 3.07,
+      "signed_team": null
     },
     {
       "name": "Jahmyl Telfort",
-      "fpg": 2.38
+      "fpg": 2.38,
+      "signed_team": null
     },
     {
       "name": "Hunter Sallis",
-      "fpg": 2.31
+      "fpg": 2.31,
+      "signed_team": null
     },
     {
       "name": "Javonte Cooke",
-      "fpg": 2.25
+      "fpg": 2.25,
+      "signed_team": null
+    },
+    {
+      "name": "Malik Beasley",
+      "fpg": 0.0,
+      "signed_team": "ATL"
+    },
+    {
+      "name": "Georges Niang",
+      "fpg": 0.0,
+      "signed_team": "UT"
+    },
+    {
+      "name": "Spencer Dinwiddie",
+      "fpg": 0.0,
+      "signed_team": "DAL"
     },
     {
       "name": "Keon Johnson",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Dariq Whitehead",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Alex Toohey",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Emoni Bates",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Dante Exum",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Jalen Hood-Schifino",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Brandon Boston",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Ricky Council",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Bol Bol",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Malcolm Brogdon",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Tamar Bates",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Jaden Springer",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Tristen Newton",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Kenyon Martin",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
+    },
+    {
+      "name": "Jared Butler",
+      "fpg": 0.0,
+      "signed_team": "UT"
     },
     {
       "name": "Melvin Ajinca",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Juan Nunez",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Amari Bailey",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Trey Lyles",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Alec Burks",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Saliou Niang",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Eric Dixon",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Kessler Edwards",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
+    },
+    {
+      "name": "Talen Horton-Tucker",
+      "fpg": 0.0,
+      "signed_team": "NOP"
     },
     {
       "name": "Maxwell Lewis",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "RJ Luis",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Christian Wood",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Reece Beekman",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Jalen Bridges",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Kai Jones",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Eli John Ndiaye",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Cam Reddish",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Josh Christopher",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Torrey Craig",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Vasilije Micic",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Victor Oladipo",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Gabriele Procida",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Jalen McDaniels",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Shake Milton",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Lester Quinones",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Tarik Biberovic",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Jaylen Martin",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Adama Sanogo",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "LiAngelo Ball",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
+    },
+    {
+      "name": "Johnny Davis",
+      "fpg": 0.0,
+      "signed_team": "DET"
     },
     {
       "name": "RJ Davis",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Keyontae Johnson",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Rokas Jokubaitis",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Josh Richardson",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Kendall Brown",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Ismael Kamagate",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Mojave King",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Damion Lee",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Kenneth Lofton",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Dennis Smith",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Damion Baugh",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Kylor Kelley",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "James Nnaji",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Ibou Badji",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "James Bouknight",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Khalifa Diop",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "AJ Griffin",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Alex Len",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Seth Lundy",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Jaylen Nowell",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Elfrid Payton",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Joshua Primo",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Matteo Spagnolo",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Daniel Theis",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "JT Thor",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Quincy Acy",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Kostas Antetokounmpo",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Charles Bediako",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Greg Brown",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Caleb Daniels",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Jesse Edwards",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Reggie Jackson",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Yam Madar",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Isaiah Mobley",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Yannick Nzosa",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Chuma Okeke",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Jared Rhoden",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Dereon Seabron",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Armel Traore",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "P.J. Tucker",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Isaiah Wong",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Alberto Abalde",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Marcus Bagley",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Juhann Begarin",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Hugo Besson",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Oshae Brissett",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Keion Brooks",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Moses Brown",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "John Butler",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Jazian Gortman",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Mouhamadou Gueye",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Cory Joseph",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Nassir Little",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Trevelin Queen",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Alex Reese",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Jackson Rowe",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Jamarion Sharp",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Lonnie Walker",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Max Abmas",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Taran Armstrong",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Armando Bacot",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "RaeQuan Battle",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Garrison Brooks",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "DJ Burns",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Matthew Cleveland",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Jae Crowder",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Jeff Dowtin",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     },
     {
       "name": "Chris Duarte",
-      "fpg": 0.0
+      "fpg": 0.0,
+      "signed_team": null
     }
   ],
   "my_teams": [
@@ -7487,10 +8210,11 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-07-13T23:48:59.968581+00:00",
+    "last_updated": "2026-07-13T20:45:25.913538+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
     "players_count": 452,
-    "fas_count": 278
+    "fas_count": 367,
+    "fas_available_count": 278
   }
 }

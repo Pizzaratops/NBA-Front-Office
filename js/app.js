@@ -339,11 +339,13 @@ function setFASort(){
 }
 function renderFA(){
   const search=(document.getElementById('fa-search').value||'').toLowerCase();
-  const totalFPG=FAS.reduce((s,f)=>s+(f.fpg||0),0);
+  // Fair-Value-Verteilung nur unter den WIRKLICH verfügbaren Free Agents.
+  const availableFAS=FAS.filter(f=>!f.signed_team);
+  const totalFPG=availableFAS.reduce((s,f)=>s+(f.fpg||0),0);
   const ligaPot=12*CBA.cap;
   let fas=[...FAS].map(f=>({
     ...f,
-    fairVal: totalFPG>0 ? Math.round((f.fpg/totalFPG)*ligaPot) : 0
+    fairVal: (!f.signed_team && totalFPG>0) ? Math.round((f.fpg/totalFPG)*ligaPot) : null
   }));
   if(search) fas=fas.filter(f=>f.name.toLowerCase().includes(search));
   fas.sort((a,b)=>{
@@ -352,7 +354,8 @@ function renderFA(){
     return va<vb?faSort.dir:-faSort.dir;
   });
   const maxFpg=Math.max(...FAS.map(f=>f.fpg||0));
-  function recBadge(rank,fpg,fairVal){
+  function recBadge(rank,fpg,fairVal,signedTeam){
+    if(signedTeam) return `<span class="rec-badge" style="opacity:.6">vergeben</span>`;
     if(rank<=10||fpg>=90) return `<span class="rec-badge max">Max oder nichts</span>`;
     if(rank<=30||fpg>=65) return `<span class="rec-badge high">25–30M/J</span>`;
     if(rank<=60||fpg>=45) return `<span class="rec-badge mid">15–20M/J</span>`;
@@ -369,15 +372,21 @@ function renderFA(){
     const fpgPct=f.fpg&&maxFpg?Math.round(f.fpg/maxFpg*100):0;
     const origRank=FAS.findIndex(x=>x.name===f.name)+1;
     const safeName=f.name.replace(/'/g,"\\'");
-    html+=`<tr class="fa-row" onclick="selectFAForTools('${safeName}',${f.fpg||0},${f.fairVal||0})">
-      <td><span style="font-weight:600">${f.name}</span></td>
+    const signedTeamName=f.signed_team ? (TEAMS[f.signed_team]?.name || f.signed_team) : null;
+    const rowStyle=f.signed_team ? ' style="opacity:.5"' : '';
+    const nameCell=f.signed_team
+      ? `${f.name} <span title="Bereits vergeben an: ${signedTeamName}" style="color:var(--dim);cursor:help">*</span>`
+      : f.name;
+    html+=`<tr class="fa-row"${rowStyle} onclick="selectFAForTools('${safeName}',${f.fpg||0},${f.fairVal||0})">
+      <td><span style="font-weight:600">${nameCell}</span></td>
       <td class="right"><div class="fpg-bar-wrap"><div class="fpg-bar-track"><div class="fpg-bar-fill" style="width:${fpgPct}%"></div></div><span class="fpg-val">${f.fpg?.toFixed(1)||'—'}</span></div></td>
       <td style="color:var(--muted);font-family:var(--font-mono);font-size:11px">#${origRank}</td>
-      <td class="right"><span class="fair-val">${fmtM(f.fairVal)}</span></td>
-      <td>${recBadge(origRank,f.fpg,f.fairVal)}</td>
+      <td class="right"><span class="fair-val">${f.fairVal!=null?fmtM(f.fairVal):'—'}</span></td>
+      <td>${recBadge(origRank,f.fpg,f.fairVal,f.signed_team)}</td>
     </tr>`;
   });
-  document.getElementById('fa-table-wrap').innerHTML=html+'</tbody></table>';
+  document.getElementById('fa-table-wrap').innerHTML=html+'</tbody></table>'
+    +'<div style="font-size:11px;color:var(--dim);margin-top:8px">* bereits einem Team zugeordnet (im Sheet als Referenzwert gelistet, aber kein echter Free Agent mehr)</div>';
 }
 function selectFAForTools(name,fpg,fairVal){
   // Pre-fill max calc
@@ -702,7 +711,7 @@ function runTradeFinder(){
 function populateMaxCalcFA(){
   const sel=document.getElementById('maxcalc-player');
   sel.innerHTML='<option value="">— oder manuell eingeben —</option>';
-  FAS.forEach(f=>{
+  FAS.filter(f=>!f.signed_team).forEach(f=>{
     const opt=document.createElement('option');
     opt.value=JSON.stringify({name:f.name,fpg:f.fpg});
     opt.textContent=f.name+` (${f.fpg?.toFixed(1)||'?'} FPG)`;
@@ -755,7 +764,7 @@ function renderFairValueTable(){
   const factor=parseFloat(document.getElementById('fv-factor').value)||1.0;
   // Use top N players by FPG as the league pool
   const topN=nTeams*nSpots;
-  const pool=FAS.filter(f=>f.fpg>0).sort((a,b)=>b.fpg-a.fpg).slice(0,topN);
+  const pool=FAS.filter(f=>f.fpg>0&&!f.signed_team).sort((a,b)=>b.fpg-a.fpg).slice(0,topN);
   const totalFPG=pool.reduce((s,f)=>s+f.fpg,0);
   const ligaPot=nTeams*CBA.cap*factor;
   const maxFpg=pool[0]?.fpg||1;
