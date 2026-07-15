@@ -4966,19 +4966,6 @@
           "tradable_agg": true
         },
         {
-          "name": "Nicolas Batum",
-          "pos": "SF/PF",
-          "sal_26": 9500000,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "EBR",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "DeMar DeRozan",
           "pos": "SG/SF",
           "sal_26": 37831054,
@@ -5044,7 +5031,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 220210185
+      "total_salary": 210710185
     },
     "POR": {
       "abbr": "POR",
@@ -5495,9 +5482,48 @@
           "tradable_agg": false
         },
         {
+          "name": "Delon Wright",
+          "pos": "?",
+          "sal_26": null,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Kelly Olynyk",
+          "pos": "?",
+          "sal_26": null,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Richaun Holmes",
           "pos": "?",
           "sal_26": 4000000,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Terry Rozier",
+          "pos": "?",
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -6905,7 +6931,7 @@
     {
       "name": "Nicolas Batum",
       "fpg": 35.65,
-      "signed_team": "PHX"
+      "signed_team": null
     },
     {
       "name": "Josh Okogie",
@@ -8210,11 +8236,11 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-07-15T04:24:16.852542+00:00",
+    "last_updated": "2026-07-15T09:14:34.279759+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
-    "players_count": 452,
+    "players_count": 454,
     "fas_count": 367,
-    "fas_available_count": 278
+    "fas_available_count": 279
   }
 }
