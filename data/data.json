@@ -134,7 +134,7 @@
     },
     "SAC": {
       "owner_cap": 214253246,
-      "left": 55071211
+      "left": 72015796
     },
     "SAS": {
       "owner_cap": 217599098,
@@ -142,7 +142,7 @@
     },
     "TOR": {
       "owner_cap": 211000401,
-      "left": 15964926
+      "left": 24461329
     },
     "UT": {
       "owner_cap": 213001356,
@@ -5261,32 +5261,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Delon Wright",
-          "pos": "PG",
-          "sal_26": 6898029,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "LBR",
-          "tradable_alone": true,
-          "tradable_agg": true
-        },
-        {
-          "name": "Terry Rozier",
-          "pos": "PG/SG",
-          "sal_26": 16000000,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "Cap Space",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Ja’Kobe Walter",
           "pos": "PG/SG",
           "sal_26": 3677940,
@@ -5430,15 +5404,15 @@
           "tradable_agg": false
         },
         {
-          "name": "Kelly Olynyk",
-          "pos": "PF/C",
-          "sal_26": 15263450,
+          "name": "Jarace Walker",
+          "pos": "SF/PF",
+          "sal_26": 8496403,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
-          "signed_via": "s&t",
+          "signed_via": "1st Round Pick",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -5484,9 +5458,9 @@
         {
           "name": "Delon Wright",
           "pos": "?",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
+          "sal_26": 2299343,
+          "sal_27": 2299343,
+          "sal_28": 2299343,
           "sal_29": null,
           "sal_30": null,
           "bird": null,
@@ -5497,9 +5471,9 @@
         {
           "name": "Kelly Olynyk",
           "pos": "?",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
+          "sal_26": 5087816,
+          "sal_27": 5087816,
+          "sal_28": 5087816,
           "sal_29": null,
           "sal_30": null,
           "bird": null,
@@ -5523,9 +5497,9 @@
         {
           "name": "Terry Rozier",
           "pos": "?",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
+          "sal_26": 5333333,
+          "sal_27": 5333333,
+          "sal_28": 5333333,
           "sal_29": null,
           "sal_30": null,
           "bird": null,
@@ -5534,7 +5508,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 206524622
+      "total_salary": 189580038
     },
     "SAS": {
       "abbr": "SAS",
@@ -5855,19 +5829,6 @@
           "tradable_agg": true
         },
         {
-          "name": "Jarace Walker",
-          "pos": "PF/C",
-          "sal_26": 8496403,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "1st Round Pick",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Grant Williams",
           "pos": "SF/PF",
           "sal_26": 15500000,
@@ -5946,7 +5907,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 207906058
+      "total_salary": 199409655
     },
     "UT": {
       "abbr": "UT",
@@ -8236,10 +8197,10 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-07-15T09:14:34.279759+00:00",
+    "last_updated": "2026-07-15T16:13:12.205855+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
-    "players_count": 454,
+    "players_count": 451,
     "fas_count": 367,
     "fas_available_count": 279
   }
