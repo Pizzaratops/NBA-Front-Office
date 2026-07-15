@@ -152,7 +152,10 @@ def parse_team_sheet(ws):
     for r in range(3, ws.max_row + 1):
         col1 = ws.cell(row=r, column=2).value
         if isinstance(col1, str) and col1.strip() == "Total salaries":
-            total_salary = num(ws.cell(row=r, column=3).value)
+            # Spalte C = "CAP HIT", Spalte D = "2026-27" (aktuelle Saison).
+            # Für Cap-/Apron-Vergleiche muss die aktuelle Saison genommen werden,
+            # nicht der Cap Hit (der z.B. Signing-Bonus-Verteilung o.ä. enthalten kann).
+            total_salary = num(ws.cell(row=r, column=4).value)
             break
         if not isinstance(col1, str) or not col1.strip():
             continue
@@ -176,7 +179,7 @@ def parse_team_sheet(ws):
         players.append({
             "name": name,
             "pos": pos,
-            "sal_26": num(row[2]),
+            "sal_26": num(row[3]),
             "sal_27": num(row[4]),
             "sal_28": num(row[5]),
             "sal_29": num(row[6]),
