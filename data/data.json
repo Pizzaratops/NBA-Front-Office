@@ -178,7 +178,7 @@
         {
           "name": "Andrew Nembhard",
           "pos": "PG",
-          "sal_26": 4156155,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -217,7 +217,7 @@
         {
           "name": "Aaron Wiggins",
           "pos": "SG/SF",
-          "sal_26": 7600000,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -256,7 +256,7 @@
         {
           "name": "Spencer Jones",
           "pos": "SF",
-          "sal_26": 2458192,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -282,7 +282,7 @@
         {
           "name": "Julian Champagnie",
           "pos": "SG/SF/PF",
-          "sal_26": 7600000,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -410,7 +410,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 224606711
+      "total_salary": 202792362
     },
     "BOS": {
       "abbr": "BOS",
@@ -475,7 +475,7 @@
         {
           "name": "Duncan Robinson",
           "pos": "SG/SF",
-          "sal_26": 7760025,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -618,7 +618,7 @@
         {
           "name": "Jarred Vanderbilt",
           "pos": "PF",
-          "sal_26": 2951955,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -629,7 +629,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 191771690
+      "total_salary": 181059709
     },
     "BRK": {
       "abbr": "BRK",
@@ -681,7 +681,7 @@
         {
           "name": "Miles Bridges",
           "pos": "SF",
-          "sal_26": 50025000,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -694,7 +694,7 @@
         {
           "name": "Simone Fontecchio",
           "pos": "SF",
-          "sal_26": 3359900,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -783,7 +783,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 221019581
+      "total_salary": 167634681
     },
     "CHA": {
       "abbr": "CHA",
@@ -809,7 +809,7 @@
         {
           "name": "Bradley Beal",
           "pos": "SG",
-          "sal_26": 54928732,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -822,7 +822,7 @@
         {
           "name": "Davion Mitchell",
           "pos": "PG/SG",
-          "sal_26": 15907974,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -952,7 +952,7 @@
         {
           "name": "Robert Williams",
           "pos": "C",
-          "sal_26": 25047000,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -976,7 +976,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 240990376
+      "total_salary": 145106669
     },
     "CHI": {
       "abbr": "CHI",
@@ -989,7 +989,7 @@
         {
           "name": "Scotty Pippen",
           "pos": "PG",
-          "sal_26": 4220535,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -1106,7 +1106,7 @@
         {
           "name": "Tari Eason",
           "pos": "SF/PF",
-          "sal_26": 17941432,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -1208,7 +1208,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 190845884
+      "total_salary": 168683915
     },
     "CLE": {
       "abbr": "CLE",
@@ -1453,7 +1453,7 @@
         {
           "name": "Bennedict Mathurin",
           "pos": "SG/SF",
-          "sal_26": 25257588,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -1492,7 +1492,7 @@
         {
           "name": "Josh Okogie",
           "pos": "SG/SF",
-          "sal_26": 2755528,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -1531,7 +1531,7 @@
         {
           "name": "Luka Garza",
           "pos": "PF/C",
-          "sal_26": 2951955,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -1594,7 +1594,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 237847572
+      "total_salary": 206882499
     },
     "DEN": {
       "abbr": "DEN",
@@ -1724,7 +1724,7 @@
         {
           "name": "Daniel Gafford",
           "pos": "C",
-          "sal_26": 17736290,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -1737,7 +1737,7 @@
         {
           "name": "Nikola Jović",
           "pos": "SF/PF",
-          "sal_26": 13754753,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -1776,7 +1776,7 @@
         {
           "name": "Andre Drummond",
           "pos": "C",
-          "sal_26": 7054320,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -1789,7 +1789,7 @@
         {
           "name": "Jay Huff",
           "pos": "C",
-          "sal_26": 2951955,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -1800,7 +1800,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 212032646
+      "total_salary": 170535328
     },
     "DET": {
       "abbr": "DET",
@@ -1878,7 +1878,7 @@
         {
           "name": "Jaden Hardy",
           "pos": "SG",
-          "sal_26": 13098023,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -1891,7 +1891,7 @@
         {
           "name": "Kyle Lowry",
           "pos": "PG",
-          "sal_26": 4509648,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -1917,7 +1917,7 @@
         {
           "name": "Jimmy Butler",
           "pos": "SF/PF",
-          "sal_26": 33750000,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -1930,7 +1930,7 @@
         {
           "name": "Johnny Davis",
           "pos": "SG/SF",
-          "sal_26": 19493069,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -1956,7 +1956,7 @@
         {
           "name": "Jayson Tatum",
           "pos": "SF/PF",
-          "sal_26": 55644930,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -2008,7 +2008,7 @@
         {
           "name": "Drew Eubanks",
           "pos": "C",
-          "sal_26": 14630000,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -2019,7 +2019,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 239278500
+      "total_salary": 98152829
     },
     "GS": {
       "abbr": "GS",
@@ -2123,7 +2123,7 @@
         {
           "name": "Harrison Barnes",
           "pos": "SF/PF",
-          "sal_26": 8334300,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -2186,7 +2186,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 124737611
+      "total_salary": 116403311
     },
     "HOU": {
       "abbr": "HOU",
@@ -2212,7 +2212,7 @@
         {
           "name": "Jaden Ivey",
           "pos": "SG",
-          "sal_26": 33507212,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -2327,7 +2327,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 181331534
+      "total_salary": 147824322
     },
     "IND": {
       "abbr": "IND",
@@ -2405,7 +2405,7 @@
         {
           "name": "Myron Gardner",
           "pos": "SF",
-          "sal_26": 2755528,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -2457,7 +2457,7 @@
         {
           "name": "Trendon Watford",
           "pos": "PF",
-          "sal_26": 4464198,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -2546,7 +2546,7 @@
           "tradable_agg": true
         }
       ],
-      "total_salary": 207293305
+      "total_salary": 200073578
     },
     "LAC": {
       "abbr": "LAC",
@@ -2572,7 +2572,7 @@
         {
           "name": "Shai Gilgeous-Alexander",
           "pos": "PG",
-          "sal_26": 58100000,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -2663,7 +2663,7 @@
         {
           "name": "Kevin Durant",
           "pos": "SF/PF",
-          "sal_26": 61706073,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -2765,7 +2765,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 194147253
+      "total_salary": 74341180
     },
     "LAL": {
       "abbr": "LAL",
@@ -2817,7 +2817,7 @@
         {
           "name": "Norman Powell",
           "pos": "SF",
-          "sal_26": 18335460,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -2856,7 +2856,7 @@
         {
           "name": "Sandro Mamukelashvili",
           "pos": "PF",
-          "sal_26": 3054451,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -2893,7 +2893,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 113422374
+      "total_salary": 92032463
     },
     "MEM": {
       "abbr": "MEM",
@@ -2919,7 +2919,7 @@
         {
           "name": "Blake Wesley",
           "pos": "PG",
-          "sal_26": 13194021,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -3049,7 +3049,7 @@
         {
           "name": "Kevin Love",
           "pos": "PF/C",
-          "sal_26": 2755528,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -3088,7 +3088,7 @@
         {
           "name": "Thomas Bryant",
           "pos": "C",
-          "sal_26": 2755528,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -3101,7 +3101,7 @@
         {
           "name": "Neemias Queta",
           "pos": "C",
-          "sal_26": 3054451,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -3112,7 +3112,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 224237643
+      "total_salary": 202478112
     },
     "MIA": {
       "abbr": "MIA",
@@ -3190,7 +3190,7 @@
         {
           "name": "Jaylen Wells",
           "pos": "SF",
-          "sal_26": 2541991,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -3216,7 +3216,7 @@
         {
           "name": "Walker Kessler",
           "pos": "C",
-          "sal_26": 13289303,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -3253,7 +3253,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 122690367
+      "total_salary": 106859071
     },
     "MIL": {
       "abbr": "MIL",
@@ -3370,7 +3370,7 @@
         {
           "name": "Sidy Cissoko",
           "pos": "SF",
-          "sal_26": 2755528,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -3396,7 +3396,7 @@
         {
           "name": "Pete Nance",
           "pos": "PF",
-          "sal_26": 2755528,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -3409,7 +3409,7 @@
         {
           "name": "Al Horford",
           "pos": "PF/C",
-          "sal_26": 25922270,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -3472,7 +3472,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 242346198
+      "total_salary": 210912870
     },
     "MIN": {
       "abbr": "MIN",
@@ -3511,7 +3511,7 @@
         {
           "name": "Javonte Green",
           "pos": "PG",
-          "sal_26": 2755528,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -3550,7 +3550,7 @@
         {
           "name": "Jordan Clarkson",
           "pos": "PG/SG",
-          "sal_26": 24755925,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -3602,7 +3602,7 @@
         {
           "name": "Ousmane Dieng",
           "pos": "SF",
-          "sal_26": 19193724,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -3628,7 +3628,7 @@
         {
           "name": "Kevon Looney",
           "pos": "PF/C",
-          "sal_26": 12783984,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -3691,7 +3691,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 227830644
+      "total_salary": 168341481
     },
     "NOP": {
       "abbr": "NOP",
@@ -3730,7 +3730,7 @@
         {
           "name": "Collin Sexton",
           "pos": "PG/SG",
-          "sal_26": 24150000,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -3756,7 +3756,7 @@
         {
           "name": "Fred VanVleet",
           "pos": "PG",
-          "sal_26": 49251247,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -3795,7 +3795,7 @@
         {
           "name": "Jake LaRavia",
           "pos": "SF",
-          "sal_26": 16234444,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -3808,7 +3808,7 @@
         {
           "name": "Talen Horton-Tucker",
           "pos": "SG/SF",
-          "sal_26": 3054451,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -3873,7 +3873,7 @@
         {
           "name": "Jeremiah Robinson-Earl",
           "pos": "PF/C",
-          "sal_26": 11311992,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -3949,7 +3949,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 267011886
+      "total_salary": 163009751
     },
     "NY": {
       "abbr": "NY",
@@ -4207,7 +4207,7 @@
         {
           "name": "Kris Dunn",
           "pos": "PG",
-          "sal_26": 9100000,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -4259,7 +4259,7 @@
         {
           "name": "Malaki Branham",
           "pos": "SG/SF",
-          "sal_26": 3101446,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -4298,7 +4298,7 @@
         {
           "name": "Jock Landale",
           "pos": "C",
-          "sal_26": 3600000,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -4337,7 +4337,7 @@
         {
           "name": "Jeremy Sochan",
           "pos": "PF",
-          "sal_26": 20057267,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -4413,7 +4413,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 188730586
+      "total_salary": 152871872
     },
     "ORL": {
       "abbr": "ORL",
@@ -4530,7 +4530,7 @@
         {
           "name": "Julian Phillips",
           "pos": "SF",
-          "sal_26": 4571082,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -4619,7 +4619,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 166240241
+      "total_salary": 161669159
     },
     "PHI": {
       "abbr": "PHI",
@@ -4632,7 +4632,7 @@
         {
           "name": "Daniss Jenkins",
           "pos": "PG",
-          "sal_26": 2458192,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -4788,7 +4788,7 @@
         {
           "name": "Jabari Smith",
           "pos": "PF",
-          "sal_26": 37135475,
+          "sal_26": 23202067,
           "sal_27": 25058232,
           "sal_28": 26914397,
           "sal_29": 28770563,
@@ -4801,7 +4801,7 @@
         {
           "name": "Jaylen Clark",
           "pos": "?",
-          "sal_26": 2755528,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -4840,7 +4840,7 @@
         {
           "name": "Nikola Vučević",
           "pos": "PF/C",
-          "sal_26": 33750000,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -4864,7 +4864,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 274328161
+      "total_salary": 221431031
     },
     "PHX": {
       "abbr": "PHX",
@@ -4994,7 +4994,7 @@
         {
           "name": "Gui Santos",
           "pos": "PF",
-          "sal_26": 4221186,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -5007,7 +5007,7 @@
         {
           "name": "Mark Williams",
           "pos": "C",
-          "sal_26": 18872222,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -5031,7 +5031,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 210710185
+      "total_salary": 187616776
     },
     "POR": {
       "abbr": "POR",
@@ -5083,7 +5083,7 @@
         {
           "name": "Jordan Goodwin",
           "pos": "PG",
-          "sal_26": 3054451,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -5148,7 +5148,7 @@
         {
           "name": "LeBron James",
           "pos": "SF/PF",
-          "sal_26": 57736350,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -5174,7 +5174,7 @@
         {
           "name": "Precious Achiuwa",
           "pos": "PF",
-          "sal_26": 5200000,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -5187,7 +5187,7 @@
         {
           "name": "Keegan Murray",
           "pos": "SF/PF",
-          "sal_26": 30391087,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -5237,7 +5237,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 233046988
+      "total_salary": 136665100
     },
     "SAC": {
       "abbr": "SAC",
@@ -5328,7 +5328,7 @@
         {
           "name": "Peyton Watson",
           "pos": "SF",
-          "sal_26": 4156155,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -5380,7 +5380,7 @@
         {
           "name": "Marvin Bagley",
           "pos": "PF/C",
-          "sal_26": 21850000,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -5419,7 +5419,7 @@
         {
           "name": "Jalen Duren",
           "pos": "C",
-          "sal_26": 21336432,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -5508,7 +5508,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 189580038
+      "total_salary": 142237449
     },
     "SAS": {
       "abbr": "SAS",
@@ -5521,7 +5521,7 @@
         {
           "name": "Luka Dončić",
           "pos": "PG/SF",
-          "sal_26": 58100000,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -5599,7 +5599,7 @@
         {
           "name": "Shaedon Sharpe",
           "pos": "SG/SF",
-          "sal_26": 27624446,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -5701,7 +5701,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 233148164
+      "total_salary": 147423718
     },
     "TOR": {
       "abbr": "TOR",
@@ -5740,7 +5740,7 @@
         {
           "name": "Craig Porter",
           "pos": "PG",
-          "sal_26": 2755528,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -5792,7 +5792,7 @@
         {
           "name": "AJ Green",
           "pos": "SG",
-          "sal_26": 2951955,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -5844,7 +5844,7 @@
         {
           "name": "Day'Ron Sharpe",
           "pos": "C",
-          "sal_26": 7163100,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -5907,7 +5907,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 199409655
+      "total_salary": 186539071
     },
     "UT": {
       "abbr": "UT",
@@ -5920,7 +5920,7 @@
         {
           "name": "Jared Butler",
           "pos": "PG",
-          "sal_26": 3054451,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -6011,7 +6011,7 @@
         {
           "name": "Brandon Williams",
           "pos": "?",
-          "sal_26": 2755528,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -6024,7 +6024,7 @@
         {
           "name": "Georges Niang",
           "pos": "SF/PF",
-          "sal_26": 12350000,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -6115,7 +6115,7 @@
         {
           "name": "Jackson Hayes",
           "pos": "C",
-          "sal_26": 3566908,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -6152,7 +6152,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 224761402
+      "total_salary": 203034513
     },
     "WA": {
       "abbr": "WA",
@@ -6165,7 +6165,7 @@
         {
           "name": "Ayo Dosunmu",
           "pos": "PG",
-          "sal_26": 10450000,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -6230,7 +6230,7 @@
         {
           "name": "Tim Hardaway Jr.",
           "pos": "SG/SF",
-          "sal_26": 19152000,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -6308,7 +6308,7 @@
         {
           "name": "Paolo Banchero",
           "pos": "PF/C",
-          "sal_26": 38423520,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -6345,7 +6345,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 247161571
+      "total_salary": 179136050
     }
   },
   "fas": [
@@ -8197,7 +8197,7 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-07-15T16:13:12.205855+00:00",
+    "last_updated": "2026-07-15T18:50:45.494263+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
     "players_count": 451,
