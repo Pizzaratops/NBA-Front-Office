@@ -34,7 +34,7 @@
   "owner_caps": {
     "ATL": {
       "owner_cap": 218686296,
-      "left": 15893933
+      "left": 20530148
     },
     "BOS": {
       "owner_cap": 216493641,
@@ -42,7 +42,7 @@
     },
     "BRK": {
       "owner_cap": 213988679,
-      "left": 46353998
+      "left": 46491975
     },
     "CHA": {
       "owner_cap": 211381286,
@@ -82,7 +82,7 @@
     },
     "LAC": {
       "owner_cap": 217356167,
-      "left": 143014986
+      "left": 144803576
     },
     "LAL": {
       "owner_cap": 212978602,
@@ -94,7 +94,7 @@
     },
     "MIA": {
       "owner_cap": 210181846,
-      "left": 103322774
+      "left": 101534184
     },
     "MIL": {
       "owner_cap": 216256754,
@@ -118,7 +118,7 @@
     },
     "ORL": {
       "owner_cap": 208919409,
-      "left": 47250249
+      "left": 42476057
     },
     "PHI": {
       "owner_cap": 221431032,
@@ -213,6 +213,19 @@
           "signed_via": "1st Round Pick",
           "tradable_alone": true,
           "tradable_agg": true
+        },
+        {
+          "name": "Ben Saraf",
+          "pos": "PG/SG",
+          "sal_26": 2150918,
+          "sal_27": 2525902,
+          "sal_28": 2735697,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "4y 2RE",
+          "tradable_alone": false,
+          "tradable_agg": false
         },
         {
           "name": "Aaron Wiggins",
@@ -345,19 +358,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Zach Edey",
-          "pos": "C",
-          "sal_26": 6925111,
-          "sal_27": 8808741,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "1st Round Pick",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Nikola Jokić",
           "pos": "C",
           "sal_26": 51145969,
@@ -371,15 +371,15 @@
           "tradable_agg": true
         },
         {
-          "name": "Tristan Vukčević",
+          "name": "Luke Kornet",
           "pos": "C",
-          "sal_26": 3000000,
+          "sal_26": 3137977,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
-          "bird": null,
-          "signed_via": "MLE",
+          "bird": "Early",
+          "signed_via": "MPE",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -410,7 +410,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 202792362
+      "total_salary": 198156147
     },
     "BOS": {
       "abbr": "BOS",
@@ -757,15 +757,15 @@
           "tradable_agg": false
         },
         {
-          "name": "Luke Kornet",
+          "name": "Tristan Vukčević",
           "pos": "C",
-          "sal_26": 3137977,
+          "sal_26": 3000000,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
-          "bird": "Early",
-          "signed_via": "MPE",
+          "bird": null,
+          "signed_via": "MLE",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -783,7 +783,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 167634681
+      "total_salary": 167496704
     },
     "CHA": {
       "abbr": "CHA",
@@ -2648,15 +2648,15 @@
           "tradable_agg": false
         },
         {
-          "name": "Justin Edwards",
-          "pos": "SG/SF",
-          "sal_26": 5336810,
+          "name": "Isaiah Joe",
+          "pos": "PG/SG",
+          "sal_26": 7000000,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
-          "signed_via": "MLE RFA match",
+          "signed_via": "EBR",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -2672,19 +2672,6 @@
           "signed_via": "Bird Rights",
           "tradable_alone": true,
           "tradable_agg": true
-        },
-        {
-          "name": "Ben Simmons",
-          "pos": "?",
-          "sal_26": 3451779,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Early",
-          "signed_via": "MPE",
-          "tradable_alone": false,
-          "tradable_agg": false
         },
         {
           "name": "Kyle Filipowski",
@@ -2765,7 +2752,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 74341180
+      "total_salary": 72552590
     },
     "LAL": {
       "abbr": "LAL",
@@ -3175,15 +3162,28 @@
           "tradable_agg": false
         },
         {
-          "name": "Isaiah Joe",
-          "pos": "PG/SG",
-          "sal_26": 7000000,
+          "name": "Justin Edwards",
+          "pos": "SG/SF",
+          "sal_26": 5336810,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
-          "signed_via": "EBR",
+          "signed_via": "MLE RFA match",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Ben Simmons",
+          "pos": "PG/SF",
+          "sal_26": 3451779,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Early",
+          "signed_via": "MPE",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -3253,7 +3253,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 106859071
+      "total_salary": 108647661
     },
     "MIL": {
       "abbr": "MIL",
@@ -4463,19 +4463,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Ben Saraf",
-          "pos": "PG/SG",
-          "sal_26": 2150918,
-          "sal_27": 2525902,
-          "sal_28": 2735697,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "4y 2RE",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Rob Dillingham",
           "pos": "PG",
           "sal_26": 9117058,
@@ -4554,19 +4541,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Colin Murray-Boyles",
-          "pos": "PF/C",
-          "sal_26": 5145336,
-          "sal_27": 5402603,
-          "sal_28": 8001255,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "1st Round Pick",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Joshua Jefferson",
           "pos": "PF",
           "sal_26": 2948280,
@@ -4589,6 +4563,32 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "Des. Rookie",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Colin Murray-Boyles",
+          "pos": "PF/C",
+          "sal_26": 5145336,
+          "sal_27": 5402603,
+          "sal_28": 8001255,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "1st Round Pick",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Zach Edey",
+          "pos": "C",
+          "sal_26": 6925111,
+          "sal_27": 8808741,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "1st Round Pick",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -4619,7 +4619,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 161669159
+      "total_salary": 166443351
     },
     "PHI": {
       "abbr": "PHI",
@@ -8197,7 +8197,7 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-07-16T23:54:13.374027+00:00",
+    "last_updated": "2026-07-17T09:14:11.389196+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
     "players_count": 451,
