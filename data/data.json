@@ -5039,7 +5039,7 @@
       "c1": "#E03A3E",
       "c2": "#000000",
       "coach": "",
-      "gm": "Joni",
+      "gm": "Mike",
       "players": [
         {
           "name": "Marcus Smart",
@@ -8197,7 +8197,7 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-07-18T15:43:59.682862+00:00",
+    "last_updated": "2026-07-18T23:47:46.389872+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
     "players_count": 451,
