@@ -82,7 +82,7 @@
     },
     "LAC": {
       "owner_cap": 217356167,
-      "left": 144803576
+      "left": 144489353
     },
     "LAL": {
       "owner_cap": 212978602,
@@ -98,7 +98,7 @@
     },
     "MIL": {
       "owner_cap": 216256754,
-      "left": 5343883
+      "left": 5658106
     },
     "MIN": {
       "owner_cap": 210943834,
@@ -2557,19 +2557,6 @@
       "gm": "Mat",
       "players": [
         {
-          "name": "Tre Jones",
-          "pos": "PG",
-          "sal_26": 7125000,
-          "sal_27": 7125000,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "LBR",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Shai Gilgeous-Alexander",
           "pos": "PG",
           "sal_26": null,
@@ -2592,6 +2579,32 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "RFA MPE match",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Isaiah Joe",
+          "pos": "PG/SG",
+          "sal_26": 7000000,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "EBR",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Kevin Porter Jr.",
+          "pos": "PG/SG",
+          "sal_26": 16660000,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": null,
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -2622,41 +2635,15 @@
           "tradable_agg": false
         },
         {
-          "name": "Kyshawn George",
-          "pos": "PG/SG",
-          "sal_26": 3124265,
-          "sal_27": 5464339,
+          "name": "Moses Moody",
+          "pos": "SG/SF",
+          "sal_26": 14809200,
+          "sal_27": 15514400,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
           "signed_via": "1st Round Pick",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "Kevin Porter Jr.",
-          "pos": "PG/SG/SF",
-          "sal_26": 16660000,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": null,
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "Isaiah Joe",
-          "pos": "PG/SG",
-          "sal_26": 7000000,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "EBR",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -2674,6 +2661,19 @@
           "tradable_agg": true
         },
         {
+          "name": "Deni Avdija",
+          "pos": "SF",
+          "sal_26": 13125000,
+          "sal_27": 11875000,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "Rook Extension",
+          "tradable_alone": true,
+          "tradable_agg": true
+        },
+        {
           "name": "Kyle Filipowski",
           "pos": "PF/C",
           "sal_26": 2998844,
@@ -2683,19 +2683,6 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "1st Round Pick",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "Santi Aldama",
-          "pos": "PF",
-          "sal_26": 17370711,
-          "sal_27": 18197888,
-          "sal_28": 19025065,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "LBR",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -2752,7 +2739,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 72552590
+      "total_salary": 72866813
     },
     "LAL": {
       "abbr": "LAL",
@@ -3277,19 +3264,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Terrence Shannon",
-          "pos": "SF/PF",
-          "sal_26": 2798409,
-          "sal_27": 5051129,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "1st Round Pick",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Anfernee Simons",
           "pos": "SG",
           "sal_26": 19687500,
@@ -3316,6 +3290,32 @@
           "tradable_agg": false
         },
         {
+          "name": "Tre Jones",
+          "pos": "PG",
+          "sal_26": 7125000,
+          "sal_27": 7125000,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "LBR",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Kyshawn George",
+          "pos": "SG/SF",
+          "sal_26": 3124265,
+          "sal_27": 5464339,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "1st Round Pick",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Christian Braun",
           "pos": "SG",
           "sal_26": 22000000,
@@ -3329,17 +3329,17 @@
           "tradable_agg": false
         },
         {
-          "name": "Deni Avdija",
-          "pos": "SF",
-          "sal_26": 13125000,
-          "sal_27": 11875000,
+          "name": "Terrence Shannon",
+          "pos": "SG/SF/PF",
+          "sal_26": 2798409,
+          "sal_27": 5051129,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
-          "signed_via": "Rook Extension",
-          "tradable_alone": true,
-          "tradable_agg": true
+          "signed_via": "1st Round Pick",
+          "tradable_alone": false,
+          "tradable_agg": false
         },
         {
           "name": "Andrew Wiggins",
@@ -3355,19 +3355,6 @@
           "tradable_agg": true
         },
         {
-          "name": "Moses Moody",
-          "pos": "SG/SF",
-          "sal_26": 14809200,
-          "sal_27": 15514400,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "1st Round Pick",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Sidy Cissoko",
           "pos": "SF",
           "sal_26": null,
@@ -3377,6 +3364,19 @@
           "sal_30": null,
           "bird": "Non",
           "signed_via": "2w => MPE",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Santi Aldama",
+          "pos": "PF",
+          "sal_26": 17370711,
+          "sal_27": 18197888,
+          "sal_28": 19025065,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "LBR",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -3472,7 +3472,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 210912870
+      "total_salary": 210598647
     },
     "MIN": {
       "abbr": "MIN",
@@ -4528,6 +4528,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Zion Williamson",
+          "pos": "SF/PF",
+          "sal_26": 42160000,
+          "sal_27": 44880000,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "Des. Rookie",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Caleb Wilson",
           "pos": "PF",
           "sal_26": 10683720,
@@ -4550,19 +4563,6 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "1st Round Pick",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "Zion Williamson",
-          "pos": "SF/PF",
-          "sal_26": 42160000,
-          "sal_27": 44880000,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "Des. Rookie",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -8197,7 +8197,7 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-07-18T08:52:37.090933+00:00",
+    "last_updated": "2026-07-18T15:43:59.682862+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
     "players_count": 451,
