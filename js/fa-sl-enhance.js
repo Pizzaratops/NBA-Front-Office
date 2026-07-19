@@ -1,10 +1,12 @@
 // ══════════════════════════════════════════════════════════════════
-// FA — SUMMER LEAGUE 2026 ENHANCEMENT
-// Attaches 2026-Summer-League participation (games played, per-game
-// stat line) onto the existing FAS objects so the Free-Agents page can
-// sort by it ("🏀 SL 2026 GP ↓") and filter to "nur mit SL-2026-Sample".
-// Source: data/fa-sl2026.json — static snapshot (nbadraft.app Summer
-// League Explorer export), does not auto-refresh like data/data.json.
+// FA — SUMMER LEAGUE 25+26 ENHANCEMENT
+// Attaches Summer-League participation (2025 + 2026 combined, games
+// played, per-game stat line) onto the existing FAS objects so the
+// Free-Agents page can sort by it ("🏀 SL GP (25+26) ↓") and filter
+// to "nur mit SL-Sample".
+// Source: data/fa-sl-sample.json — static snapshot (nbadraft.app
+// Summer League Explorer export, combined 2025+2026), does not
+// auto-refresh like data/data.json.
 // ══════════════════════════════════════════════════════════════════
 
 let FASL_DATA = {};
@@ -13,7 +15,7 @@ let FASL_READY = false;
 async function faslInit() {
   if (FASL_READY) return;
   try {
-    const res = await fetch('data/fa-sl2026.json', { cache: 'no-store' });
+    const res = await fetch('data/fa-sl-sample.json', { cache: 'no-store' });
     FASL_DATA = res.ok ? await res.json() : {};
   } catch (e) { FASL_DATA = {}; }
   FASL_READY = true;
@@ -31,10 +33,10 @@ function faslBadge(name) {
   const sl = FASL_DATA[name];
   if (!sl || !sl.gp) return '';
   const line = `${sl.pts ?? '—'}/${sl.reb ?? '—'}/${sl.ast ?? '—'} · ${sl.min}min`;
-  return `<span class="fasl-badge" title="2026 Summer League: ${sl.gp} Spiele, ${line}">🏀 ${sl.gp}</span>`;
+  return `<span class="fasl-badge" title="Summer League 25+26: ${sl.gp} Spiele, ${line}">🏀 ${sl.gp}</span>`;
 }
 
-// wrap renderFA: attach sl data, honor the "nur mit SL-2026-Sample" checkbox,
+// wrap renderFA: attach sl data, honor the "nur mit SL-Sample" checkbox,
 // then decorate the rendered rows with a small badge — same non-invasive
 // pattern as the other fa-*.js additions (wrapping showTool etc.)
 (function () {
@@ -64,8 +66,34 @@ function faslBadge(name) {
         nameCell.insertAdjacentHTML('beforeend', ' ' + badge);
       }
     });
+
+    // make FPG / Rang / Fair Value column headers clickable to sort,
+    // in addition to the existing dropdown
+    const headRow = document.querySelector('#fa-table-wrap table.fa-table thead tr');
+    if (headRow) {
+      const ths = headRow.querySelectorAll('th');
+      // ths order: Spieler, FPG, Rang, Fair Value, Empfehlung
+      faslWireHeader(ths[1], 'fpg');
+      faslWireHeader(ths[2], 'fpg'); // Rang folgt der ursprünglichen FPG-Reihenfolge
+      faslWireHeader(ths[3], 'fairVal');
+    }
   };
 })();
+
+function faslWireHeader(th, col) {
+  if (!th) return;
+  th.style.cursor = 'pointer';
+  th.classList.toggle('sorted', faSort.col === col);
+  const baseLabel = th.dataset.faslLabel || th.textContent.replace(/[↑↓]\s*$/, '').trim();
+  th.dataset.faslLabel = baseLabel;
+  const arrow = faSort.col === col ? (faSort.dir === 1 ? ' ↑' : ' ↓') : '';
+  th.textContent = baseLabel + arrow;
+  th.onclick = () => {
+    if (faSort.col === col) faSort.dir *= -1;
+    else { faSort.col = col; faSort.dir = -1; }
+    renderFA();
+  };
+}
 
 // re-render once the SL data is loaded (data/data.json + FAS may already be
 // ready by the time this script runs, so trigger an initial paint too)

@@ -69,13 +69,21 @@ function farSortBy(col) {
   farRender();
 }
 
+// Ohne reales NBA-Team ist der Spieler nicht signable — unabhängig vom
+// Composite-Score darf hier kein Vertrags-Tier (Max, MLE, BAE, …)
+// ausgespielt werden (z.B. Chris Duarte: hoher SL-StickyScore, aber
+// aktuell bei keinem NBA-Team unter Vertrag). null = "kein echtes Tier",
+// taucht dann auch in keinem der Tier-Filter mehr auf.
+function farHasTeam(r) { return !!(r.t && r.t !== '(N/A)'); }
+function farEffectiveTier(r) { return farHasTeam(r) ? r.tier : null; }
+
 function farRender() {
   const wrap = document.getElementById('far-table-wrap');
   if (!wrap) return;
   const search = (document.getElementById('far-search').value || '').toLowerCase();
   let rows = FAR_DATA;
   if (search) rows = rows.filter(r => r.n.toLowerCase().includes(search));
-  if (FAR_TIER_FILTER) rows = rows.filter(r => r.tier === FAR_TIER_FILTER);
+  if (FAR_TIER_FILTER) rows = rows.filter(r => farEffectiveTier(r) === FAR_TIER_FILTER);
 
   const col = FAR_SORT.col, dir = FAR_SORT.dir;
   rows = [...rows].sort((a, b) => {
@@ -107,8 +115,9 @@ function farRender() {
   </tr></thead><tbody>`;
 
   rows.forEach(r => {
-    const tierCls = FAR_TIER_CLASS[r.tier] || 'min';
-    const tierLabel = FAR_TIER_LABEL[r.tier] || r.tier;
+    const hasTeam = farHasTeam(r);
+    const tierCls = hasTeam ? (FAR_TIER_CLASS[r.tier] || 'min') : 'min';
+    const tierLabel = hasTeam ? (FAR_TIER_LABEL[r.tier] || r.tier) : 'Ohne NBA-Team';
     html += `<tr class="fa-row">
       <td><span style="font-weight:600">${r.n}</span></td>
       <td style="color:var(--dim);font-size:11px">${r.p || '—'}</td>
@@ -118,7 +127,7 @@ function farRender() {
       <td class="right">${r.tz != null ? r.tz.toFixed(1) + (r.tgp ? ' (' + r.tgp + ' Sp.)' : '') : '—'}</td>
       <td class="right">${r.espn || '—'}</td>
       <td class="right" style="font-weight:700">${r.c.toFixed(2)}</td>
-      <td><span class="rec-badge ${tierCls}">${tierLabel}</span></td>
+      <td><span class="rec-badge ${tierCls}"${hasTeam ? '' : ' title="Composite-Score entspräche ' + (FAR_TIER_LABEL[r.tier] || r.tier) + ', aber kein NBA-Roster-Spot"'}>${tierLabel}</span></td>
     </tr>`;
   });
   wrap.innerHTML = html + '</tbody></table>';
