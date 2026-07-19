@@ -384,3 +384,45 @@ tr.oc-row:hover{background:var(--surface2)}
 .os-restriction-item{padding:3px 0;display:flex;gap:6px;align-items:baseline}
 .os-ok{padding:12px 16px;background:var(--green-dim);border-top:1px solid var(--green);font-size:11px;color:var(--green)}
 
+
+/* ══ FA OFFER SHEET BUILDER ══════════════════════ */
+.fab-pill{font-family:var(--font-mono);font-size:10px;padding:2px 9px;border-radius:12px;border:1px solid var(--border);color:var(--dim);font-weight:400}
+.fab-pill.over{border-color:var(--red);color:var(--red);background:var(--red-dim)}
+.fab-pill.ok{border-color:var(--green);color:var(--green);background:var(--green-dim)}
+.fab-target-row{border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:10px;background:var(--surface2)}
+.fab-target-top{display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.fab-rank{font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--muted);width:18px;text-align:center;flex-shrink:0}
+.fab-reorder{display:flex;flex-direction:column;gap:1px}
+.fab-reorder button{width:16px;height:14px;font-size:9px;line-height:1;border:none;background:var(--border);color:var(--dim);cursor:pointer;border-radius:2px}
+.fab-reorder button:hover{background:var(--team-c1);color:#fff}
+.fab-name-wrap{position:relative;flex:1;min-width:160px}
+.fab-ac-list{position:absolute;top:100%;left:0;right:0;background:var(--surface);border:1px solid var(--border);border-radius:6px;max-height:220px;overflow-y:auto;z-index:50;margin-top:2px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.fab-ac-item{padding:7px 10px;font-size:12px;cursor:pointer;display:flex;justify-content:space-between;gap:8px}
+.fab-ac-item:hover{background:var(--team-c1);color:#fff}
+.fab-ac-item .fab-ac-name{font-weight:600}
+.fab-ac-item .fab-ac-meta{color:var(--muted);font-family:var(--font-mono);font-size:10px;white-space:nowrap}
+.fab-ac-item:hover .fab-ac-meta{color:rgba(255,255,255,.8)}
+.fab-tier{font-size:9px;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;font-family:var(--font-mono)}
+.fab-tier-star{background:var(--purple-dim);color:var(--purple)}
+.fab-tier-mle{background:var(--green-dim);color:var(--green)}
+.fab-tier-bae{background:var(--blue-dim);color:var(--blue)}
+.fab-tier-vetmin{background:var(--orange-dim);color:var(--orange)}
+.fab-tier-tway,.fab-tier-unknown{background:var(--surface);color:var(--muted);border:1px solid var(--border)}
+.fab-mpe-toggle{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--muted);cursor:pointer;white-space:nowrap}
+.fab-mpe-toggle input{accent-color:var(--team-c1)}
+.fab-del{background:var(--red-dim);color:var(--red);border:1px solid transparent;border-radius:5px;width:22px;height:22px;font-size:12px;cursor:pointer;flex-shrink:0}
+.fab-del:hover{background:var(--red);color:#fff}
+.fab-field-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-top:8px}
+.fab-mini-field{display:flex;flex-direction:column;gap:3px}
+.fab-mini-field label{font-size:9px;font-weight:700;letter-spacing:.6px;color:var(--muted);text-transform:uppercase}
+.fab-mini-field input,.fab-mini-field select,.fab-mini-field textarea{padding:6px 8px;background:var(--surface);border:1px solid var(--border);border-radius:5px;color:var(--text);font-size:11.5px;font-family:var(--font-body);width:100%;resize:vertical}
+.fab-mini-field.fab-check{justify-content:flex-end}
+.fab-mini-field.fab-check label{display:flex;align-items:center;gap:5px;font-size:11px;text-transform:none;font-weight:600;color:var(--dim);cursor:pointer}
+.fab-mini-field.fab-check input{width:auto;accent-color:var(--team-c1)}
+.fab-group-row{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.fab-group-row input:first-child{max-width:220px}
+.fab-preview{font-family:var(--font-mono);font-size:11px;color:var(--dim);margin-top:10px;padding:7px 9px;background:var(--bg);border-radius:5px;line-height:1.5}
+.fab-tway-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.fab-empty{font-size:12px;color:var(--muted);text-align:center;padding:18px;border:1px dashed var(--border);border-radius:8px}
+.fab-export{font-family:var(--font-mono);font-size:11.5px;white-space:pre-wrap;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px;max-height:420px;overflow-y:auto;line-height:1.6}
+.fab-copied{font-size:11px;color:var(--green);font-family:var(--font-mono)}

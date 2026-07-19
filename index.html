@@ -157,7 +157,7 @@
             <button class="tool-tab active" onclick="showTool('finder')">🔍 Trade Finder</button>
             <button class="tool-tab" onclick="showTool('maxcalc')">💰 Max Angebot</button>
             <button class="tool-tab" onclick="showTool('fairval')">⭐ Fair Value</button>
-<button class="tool-tab" onclick="showTool('offseason')">📅 Off Season</button><button class="tool-tab" onclick="showTool('ownercap')">💰 Owner Cap</button>
+<button class="tool-tab" onclick="showTool('offseason')">📅 Off Season</button><button class="tool-tab" onclick="showTool('ownercap')">💰 Owner Cap</button><button class="tool-tab" onclick="showTool('fabidding')">💵 FA Bidding</button>
           </div>
   
           <!-- TRADE FINDER -->
@@ -280,6 +280,9 @@
             <div id="os-roster-cards" style="display:flex;flex-direction:column;gap:10px"></div>
             <div class="tool-card" id="os-summary" style="background:var(--surface);border:1px solid var(--border);border-radius:10px"></div>
           </div>
+
+          <!-- FA OFFER SHEET BUILDER -->
+          <div class="tool-panel" id="tool-fabidding" style="gap:16px"></div>
         </div>
       </div>
 
@@ -329,5 +332,6 @@
   </div>
 </div><!-- /app -->
 <script src="js/app.js"></script>
+<script src="js/fa-bidding.js"></script>
 </body>
 </html>
