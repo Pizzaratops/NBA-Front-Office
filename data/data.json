@@ -42,7 +42,7 @@
     },
     "BRK": {
       "owner_cap": 213988679,
-      "left": 46491975
+      "left": 40491975
     },
     "CHA": {
       "owner_cap": 211381286,
@@ -50,11 +50,11 @@
     },
     "CHI": {
       "owner_cap": 213608478,
-      "left": 44924562
+      "left": 38672425
     },
     "CLE": {
       "owner_cap": 209715554,
-      "left": 24878434
+      "left": 7378434
     },
     "DAL": {
       "owner_cap": 217383504,
@@ -66,15 +66,15 @@
     },
     "DET": {
       "owner_cap": 200528000,
-      "left": 102375170
+      "left": 52886870
     },
     "GS": {
       "owner_cap": 217401467,
-      "left": 100998156
+      "left": 80998156
     },
     "HOU": {
       "owner_cap": 204637244,
-      "left": 56812921
+      "left": 41768921
     },
     "IND": {
       "owner_cap": 218518038,
@@ -82,15 +82,15 @@
     },
     "LAC": {
       "owner_cap": 217356167,
-      "left": 144489353
+      "left": 86753003
     },
     "LAL": {
       "owner_cap": 212978602,
-      "left": 120946139
+      "left": 97385714
     },
     "MEM": {
       "owner_cap": 217373916,
-      "left": 14895803
+      "left": 8395803
     },
     "MIA": {
       "owner_cap": 210181846,
@@ -98,7 +98,7 @@
     },
     "MIL": {
       "owner_cap": 216256754,
-      "left": 5658106
+      "left": 14680528
     },
     "MIN": {
       "owner_cap": 210943834,
@@ -110,7 +110,7 @@
     },
     "NY": {
       "owner_cap": 219970768,
-      "left": 26803366
+      "left": 20956162
     },
     "OKC": {
       "owner_cap": 213636805,
@@ -118,7 +118,7 @@
     },
     "ORL": {
       "owner_cap": 208919409,
-      "left": 42476057
+      "left": 34376057
     },
     "PHI": {
       "owner_cap": 221431032,
@@ -130,15 +130,15 @@
     },
     "POR": {
       "owner_cap": 205388761,
-      "left": 68723660
+      "left": 36723660
     },
     "SAC": {
       "owner_cap": 214253246,
-      "left": 72015796
+      "left": 30775546
     },
     "SAS": {
       "owner_cap": 217599098,
-      "left": 70175379
+      "left": 12439029
     },
     "TOR": {
       "owner_cap": 211000401,
@@ -150,7 +150,7 @@
     },
     "WA": {
       "owner_cap": 212269393,
-      "left": 33133342
+      "left": -8106907
     }
   },
   "teams": {
@@ -718,6 +718,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Gui Santos",
+          "pos": "?",
+          "sal_26": 6000000,
+          "sal_27": 6000000,
+          "sal_28": 6000000,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "MLE",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Anton Watson",
           "pos": "SF/PF",
           "sal_26": 2296272,
@@ -783,7 +796,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 167496704
+      "total_salary": 173496704
     },
     "CHA": {
       "abbr": "CHA",
@@ -1013,11 +1026,11 @@
           "tradable_agg": false
         },
         {
-          "name": "Jeremiah Fears",
-          "pos": "PG",
-          "sal_26": 7896042,
-          "sal_27": 8290844,
-          "sal_28": 10529372,
+          "name": "Cedric Coward",
+          "pos": "SG",
+          "sal_26": 6316884,
+          "sal_27": 6632728,
+          "sal_28": 8456728,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
@@ -1026,15 +1039,15 @@
           "tradable_agg": false
         },
         {
-          "name": "Cedric Coward",
+          "name": "Russell Westbrook",
           "pos": "PG",
-          "sal_26": 6316884,
-          "sal_27": 6632728,
-          "sal_28": 8456728,
+          "sal_26": 8000000,
+          "sal_27": null,
+          "sal_28": null,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
-          "signed_via": "1st Round Pick",
+          "signed_via": "Cap, LBR",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -1052,15 +1065,15 @@
           "tradable_agg": false
         },
         {
-          "name": "Ryan Rollins",
-          "pos": "PG",
-          "sal_26": 5250000,
-          "sal_27": 5500000,
+          "name": "Amen Thompson",
+          "pos": "SF",
+          "sal_26": 12284187,
+          "sal_27": null,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
-          "signed_via": "Room MLE",
+          "signed_via": "1st Round Pick",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -1078,6 +1091,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Ryan Dunn",
+          "pos": "SF/PF",
+          "sal_26": 2296272,
+          "sal_27": 2486994,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "Chandler, cap",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Immanuel Quickley",
           "pos": "SG/SF",
           "sal_26": 17370711,
@@ -1087,19 +1113,6 @@
           "sal_30": null,
           "bird": null,
           "signed_via": null,
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "Chris Cenac Jr.",
-          "pos": "PF/C",
-          "sal_26": 3182280,
-          "sal_27": 3341394,
-          "sal_28": 3508464,
-          "sal_29": 6318743,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "1st Round Pick",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -1208,7 +1221,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 168683915
+      "total_salary": 174936053
     },
     "CLE": {
       "abbr": "CLE",
@@ -1254,6 +1267,19 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "LBR RFA match",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Andrew Nembhard",
+          "pos": "?",
+          "sal_26": 17500000,
+          "sal_27": 18375000,
+          "sal_28": 19250000,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "s&t into TPE",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -1401,7 +1427,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 184837119
+      "total_salary": 202337119
     },
     "DAL": {
       "abbr": "DAL",
@@ -1808,7 +1834,7 @@
       "c1": "#C8102E",
       "c2": "#006BB6",
       "coach": "",
-      "gm": "Elias",
+      "gm": "none",
       "players": [
         {
           "name": "Cameron Payne",
@@ -1956,8 +1982,8 @@
         {
           "name": "Jayson Tatum",
           "pos": "SF/PF",
-          "sal_26": null,
-          "sal_27": null,
+          "sal_26": 49488300,
+          "sal_27": 53447364,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
@@ -2019,7 +2045,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 98152829
+      "total_salary": 147641129
     },
     "GS": {
       "abbr": "GS",
@@ -2078,6 +2104,19 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "1st Round Pick",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Bennedict Mathurin",
+          "pos": "SG/SF",
+          "sal_26": 20000000,
+          "sal_27": 20000000,
+          "sal_28": 20000000,
+          "sal_29": 20000000,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "Cap Space",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -2186,7 +2225,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 116403311
+      "total_salary": 136403311
     },
     "HOU": {
       "abbr": "HOU",
@@ -2206,6 +2245,19 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "1st Round Pick",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Davion Mitchell",
+          "pos": "?",
+          "sal_26": 15044000,
+          "sal_27": 15796200,
+          "sal_28": 16548400,
+          "sal_29": 17300600,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "MLE",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -2327,7 +2379,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 147824322
+      "total_salary": 162868322
     },
     "IND": {
       "abbr": "IND",
@@ -2559,11 +2611,11 @@
         {
           "name": "Shai Gilgeous-Alexander",
           "pos": "PG",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
+          "sal_26": 57736350,
+          "sal_27": 62355258,
+          "sal_28": 66974166,
+          "sal_29": 71593074,
+          "sal_30": 76211982,
           "bird": "Full",
           "signed_via": "LBR",
           "tradable_alone": true,
@@ -2739,7 +2791,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 72866813
+      "total_salary": 130603163
     },
     "LAL": {
       "abbr": "LAL",
@@ -2791,9 +2843,9 @@
         {
           "name": "Norman Powell",
           "pos": "SF",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
+          "sal_26": 23560425,
+          "sal_27": 24738446,
+          "sal_28": 25916467,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
@@ -2867,7 +2919,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 92032463
+      "total_salary": 115592888
     },
     "MEM": {
       "abbr": "MEM",
@@ -2917,7 +2969,7 @@
           "tradable_agg": true
         },
         {
-          "name": "Nikola Topic",
+          "name": "Nikola Topić",
           "pos": "PG",
           "sal_26": 5184837,
           "sal_27": 7409132,
@@ -3008,6 +3060,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Marvin Bagley",
+          "pos": "PF/C",
+          "sal_26": 6500000,
+          "sal_27": 6500000,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Early",
+          "signed_via": "MLE",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Toumani Camara",
           "pos": "SF/PF/C",
           "sal_26": 2405832,
@@ -3086,7 +3151,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 202478112
+      "total_salary": 208978112
     },
     "MIA": {
       "abbr": "MIA",
@@ -3264,6 +3329,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Keyonte George",
+          "pos": "PG",
+          "sal_26": 6256515,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "1st Round Pick",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Anfernee Simons",
           "pos": "SG",
           "sal_26": 19687500,
@@ -3277,15 +3355,15 @@
           "tradable_agg": true
         },
         {
-          "name": "Tyrese Proctor",
+          "name": "Sergio De Larrea",
           "pos": "PG/SG",
-          "sal_26": 2150918,
-          "sal_27": 2525902,
-          "sal_28": null,
-          "sal_29": null,
+          "sal_26": 3076920,
+          "sal_27": 3230766,
+          "sal_28": 3392304,
+          "sal_29": 6116325,
           "sal_30": null,
           "bird": "Full",
-          "signed_via": "3y 2RE",
+          "signed_via": "1st Round Pick",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -3299,6 +3377,19 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "LBR",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Gary Payton II",
+          "pos": "SG",
+          "sal_26": 3815861,
+          "sal_27": 3997570,
+          "sal_28": 4179277,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "NBR",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -3381,15 +3472,15 @@
           "tradable_agg": false
         },
         {
-          "name": "Lauri Markkanen",
+          "name": "Saddiq Bey",
           "pos": "SF/PF",
-          "sal_26": 34125000,
-          "sal_27": 35750000,
-          "sal_28": 37375000,
+          "sal_26": 14104200,
+          "sal_27": 14745300,
+          "sal_28": null,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
-          "signed_via": "LBR",
+          "signed_via": "MLE",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -3472,7 +3563,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 210598647
+      "total_salary": 201576225
     },
     "MIN": {
       "abbr": "MIN",
@@ -3960,28 +4051,28 @@
       "gm": "Dave",
       "players": [
         {
-          "name": "Keyonte George",
-          "pos": "PG",
-          "sal_26": 6256515,
-          "sal_27": null,
+          "name": "Tyrese Proctor",
+          "pos": "PG/SG",
+          "sal_26": 2150918,
+          "sal_27": 2525902,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
-          "signed_via": "1st Round Pick",
+          "signed_via": "3y 2RE",
           "tradable_alone": false,
           "tradable_agg": false
         },
         {
-          "name": "Gary Payton II",
-          "pos": "SG",
-          "sal_26": 3815861,
-          "sal_27": 3997570,
-          "sal_28": 4179277,
+          "name": "Ryan Rollins",
+          "pos": "PG",
+          "sal_26": 5250000,
+          "sal_27": 5500000,
+          "sal_28": null,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
-          "signed_via": "NBR",
+          "signed_via": "Room MLE",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -3999,15 +4090,15 @@
           "tradable_agg": false
         },
         {
-          "name": "Russell Westbrook",
+          "name": "Jeremiah Fears",
           "pos": "PG",
-          "sal_26": 8000000,
-          "sal_27": null,
-          "sal_28": null,
+          "sal_26": 7896042,
+          "sal_27": 8290844,
+          "sal_28": 10529372,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
-          "signed_via": "Cap, LBR",
+          "signed_via": "1st Round Pick",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -4077,19 +4168,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Amen Thompson",
-          "pos": "SF",
-          "sal_26": 12284187,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "1st Round Pick",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Justin Champagnie",
           "pos": "SF/PF",
           "sal_26": 2801346,
@@ -4103,28 +4181,15 @@
           "tradable_agg": false
         },
         {
-          "name": "Ryan Dunn",
+          "name": "Lauri Markkanen",
           "pos": "SF/PF",
-          "sal_26": 2296272,
-          "sal_27": 2486994,
-          "sal_28": null,
+          "sal_26": 34125000,
+          "sal_27": 35750000,
+          "sal_28": 37375000,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
-          "signed_via": "Chandler, cap",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "Saddiq Bey",
-          "pos": "SF/PF",
-          "sal_26": 14104200,
-          "sal_27": 14745300,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "MLE",
+          "signed_via": "LBR",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -4181,6 +4246,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Chris Cenac Jr.",
+          "pos": "PF/C",
+          "sal_26": 3182280,
+          "sal_27": 3341394,
+          "sal_28": 3508464,
+          "sal_29": 6318743,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "1st Round Pick",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Javon Small",
           "pos": "?",
           "sal_26": 2,
@@ -4194,7 +4272,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 193167401
+      "total_salary": 199014606
     },
     "OKC": {
       "abbr": "OKC",
@@ -4593,6 +4671,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Nikola Vučević",
+          "pos": "C",
+          "sal_26": 8100000,
+          "sal_27": 8100000,
+          "sal_28": 8100000,
+          "sal_29": 8100000,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "MLE",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Quenton Jackson",
           "pos": "?",
           "sal_26": 2,
@@ -4619,7 +4710,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 166443351
+      "total_salary": 174543351
     },
     "PHI": {
       "abbr": "PHI",
@@ -5187,9 +5278,9 @@
         {
           "name": "Keegan Murray",
           "pos": "SF/PF",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
+          "sal_26": 32000000,
+          "sal_27": 33600000,
+          "sal_28": 35200000,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
@@ -5237,7 +5328,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 136665100
+      "total_salary": 168665100
     },
     "SAC": {
       "abbr": "SAC",
@@ -5419,11 +5510,11 @@
         {
           "name": "Jalen Duren",
           "pos": "C",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
+          "sal_26": 41240250,
+          "sal_27": 44539470,
+          "sal_28": 47838690,
+          "sal_29": 51137910,
+          "sal_30": 54437130,
           "bird": "Full",
           "signed_via": "1st Round Pick",
           "tradable_alone": false,
@@ -5508,7 +5599,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 142237449
+      "total_salary": 183477699
     },
     "SAS": {
       "abbr": "SAS",
@@ -5521,8 +5612,8 @@
         {
           "name": "Luka Dončić",
           "pos": "PG/SF",
-          "sal_26": null,
-          "sal_27": null,
+          "sal_26": 57736350,
+          "sal_27": 61604685,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
@@ -5701,7 +5792,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 147423718
+      "total_salary": 205160068
     },
     "TOR": {
       "abbr": "TOR",
@@ -6308,10 +6399,10 @@
         {
           "name": "Paolo Banchero",
           "pos": "PF/C",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
+          "sal_26": 41240250,
+          "sal_27": 43302262,
+          "sal_28": 45364275,
+          "sal_29": 47426287,
           "sal_30": null,
           "bird": "Full",
           "signed_via": "1st Round Pick",
@@ -6345,7 +6436,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 179136050
+      "total_salary": 220376300
     }
   },
   "fas": [
@@ -6420,9 +6511,9 @@
       "signed_team": "BRK"
     },
     {
-      "name": "Nikola Vucevic",
+      "name": "Nikola Vučević",
       "fpg": 77.5,
-      "signed_team": null
+      "signed_team": "PHI"
     },
     {
       "name": "Peyton Watson",
@@ -6452,17 +6543,17 @@
     {
       "name": "Bennedict Mathurin",
       "fpg": 68.85,
-      "signed_team": "DAL"
+      "signed_team": "GS"
     },
     {
       "name": "Davion Mitchell",
       "fpg": 68.34,
-      "signed_team": "CHA"
+      "signed_team": "HOU"
     },
     {
       "name": "Andrew Nembhard",
       "fpg": 67.0,
-      "signed_team": "ATL"
+      "signed_team": "CLE"
     },
     {
       "name": "Ayo Dosunmu",
@@ -6528,11 +6619,6 @@
       "name": "Draymond Green",
       "fpg": 60.21,
       "signed_team": null
-    },
-    {
-      "name": "Mitchell Robinson",
-      "fpg": 59.86,
-      "signed_team": "DAL"
     },
     {
       "name": "Lawson Lovering",
@@ -8197,11 +8283,11 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-07-30T16:19:57.219211+00:00",
+    "last_updated": "2026-07-30T23:57:50.619734+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
-    "players_count": 451,
-    "fas_count": 367,
-    "fas_available_count": 279
+    "players_count": 458,
+    "fas_count": 366,
+    "fas_available_count": 278
   }
 }
