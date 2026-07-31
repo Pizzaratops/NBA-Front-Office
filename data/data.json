@@ -42,7 +42,7 @@
     },
     "BRK": {
       "owner_cap": 213988679,
-      "left": 40491975
+      "left": 46491975
     },
     "CHA": {
       "owner_cap": 211381286,
@@ -126,7 +126,7 @@
     },
     "PHX": {
       "owner_cap": 216566517,
-      "left": 28949740
+      "left": 0
     },
     "POR": {
       "owner_cap": 205388761,
@@ -705,19 +705,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Gui Santos",
-          "pos": "?",
-          "sal_26": 6000000,
-          "sal_27": 6000000,
-          "sal_28": 6000000,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "MLE",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Anton Watson",
           "pos": "SF/PF",
           "sal_26": 2296272,
@@ -783,7 +770,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 173496704
+      "total_salary": 167496704
     },
     "CHA": {
       "abbr": "CHA",
@@ -5033,7 +5020,7 @@
         {
           "name": "Gui Santos",
           "pos": "PF",
-          "sal_26": null,
+          "sal_26": 10885740,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -5044,9 +5031,22 @@
           "tradable_agg": false
         },
         {
+          "name": "mini MLE",
+          "pos": "?",
+          "sal_26": 6064000,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Mark Williams",
           "pos": "C",
-          "sal_26": null,
+          "sal_26": 12000000,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -5070,7 +5070,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 187616776
+      "total_salary": 216566516
     },
     "POR": {
       "abbr": "POR",
@@ -8218,7 +8218,7 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-07-31T09:49:40.349274+00:00",
+    "last_updated": "2026-07-31T16:29:29.529170+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
     "players_count": 453,
