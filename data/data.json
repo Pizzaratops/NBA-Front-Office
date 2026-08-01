@@ -86,7 +86,7 @@
     },
     "LAL": {
       "owner_cap": 212978602,
-      "left": 48562614
+      "left": 33327114
     },
     "MEM": {
       "owner_cap": 217373916,
@@ -2830,9 +2830,9 @@
         {
           "name": "Sandro Mamukelashvili",
           "pos": "PF",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
+          "sal_26": 15235500,
+          "sal_27": 16454340,
+          "sal_28": 17673180,
           "sal_29": null,
           "sal_30": null,
           "bird": "Early",
@@ -2893,7 +2893,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 164415988
+      "total_salary": 179651488
     },
     "MEM": {
       "abbr": "MEM",
@@ -5469,6 +5469,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Richaun Holmes",
+          "pos": "?",
+          "sal_26": 4000000,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Delon Wright",
           "pos": "?",
           "sal_26": 2299343,
@@ -5487,19 +5500,6 @@
           "sal_26": 5087816,
           "sal_27": 5087816,
           "sal_28": 5087816,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": null,
-          "signed_via": null,
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "Richaun Holmes",
-          "pos": "?",
-          "sal_26": 4000000,
-          "sal_27": null,
-          "sal_28": null,
           "sal_29": null,
           "sal_30": null,
           "bird": null,
@@ -8205,7 +8205,7 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-08-01T09:10:44.696863+00:00",
+    "last_updated": "2026-08-01T15:52:03.016137+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
     "players_count": 452,
