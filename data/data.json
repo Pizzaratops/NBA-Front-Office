@@ -110,7 +110,7 @@
     },
     "NY": {
       "owner_cap": 219970768,
-      "left": 26434642
+      "left": 29511562
     },
     "OKC": {
       "owner_cap": 213636805,
@@ -134,7 +134,7 @@
     },
     "SAC": {
       "owner_cap": 214253246,
-      "left": 30775546
+      "left": 5238546
     },
     "SAS": {
       "owner_cap": 217599098,
@@ -2322,7 +2322,7 @@
       "c1": "#002D62",
       "c2": "#FDBB30",
       "coach": "Rick Carlisle",
-      "gm": "Steven",
+      "gm": "Steve",
       "players": [
         {
           "name": "Derrick White",
@@ -2802,19 +2802,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Yanic Konan Niederhauser",
-          "pos": "PF/C",
-          "sal_26": 2880990,
-          "sal_27": 3025040,
-          "sal_28": 5460196,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "1st Round Pick",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "remaining cap space",
           "pos": "?",
           "sal_26": 7582850,
@@ -2876,6 +2863,19 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "Offer Sheet",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Yanic Konan Niederhauser",
+          "pos": "PF/C",
+          "sal_26": 2880990,
+          "sal_27": 3025040,
+          "sal_28": 5460196,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "1st Round Pick",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -3532,7 +3532,7 @@
       "c1": "#0C2340",
       "c2": "#236192",
       "coach": "",
-      "gm": "Steven",
+      "gm": "Steve",
       "players": [
         {
           "name": "Mike Conley",
@@ -4038,19 +4038,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Sergio De Larrea",
-          "pos": "PG/SG",
-          "sal_26": 3076920,
-          "sal_27": 3230766,
-          "sal_28": 3392304,
-          "sal_29": 6116325,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "1st Round Pick",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Jeremiah Fears",
           "pos": "PG",
           "sal_26": 7896042,
@@ -4220,7 +4207,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 193536126
+      "total_salary": 190459206
     },
     "OKC": {
       "abbr": "OKC",
@@ -5367,13 +5354,13 @@
         {
           "name": "Peyton Watson",
           "pos": "SF",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
+          "sal_26": 25537000,
+          "sal_27": 27579960,
+          "sal_28": 29622920,
+          "sal_29": 31665880,
+          "sal_30": 33708840,
           "bird": "Full",
-          "signed_via": "Chandler, MLE",
+          "signed_via": "LBR",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -5534,7 +5521,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 183477699
+      "total_salary": 209014699
     },
     "SAS": {
       "abbr": "SAS",
@@ -8218,10 +8205,10 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-07-31T23:56:50.728022+00:00",
+    "last_updated": "2026-08-01T09:10:44.696863+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
-    "players_count": 453,
+    "players_count": 452,
     "fas_count": 366,
     "fas_available_count": 280
   }
