@@ -66,7 +66,7 @@
     },
     "GS": {
       "owner_cap": 217401467,
-      "left": 80998156
+      "left": 60998156
     },
     "HOU": {
       "owner_cap": 204637244,
@@ -78,7 +78,7 @@
     },
     "LAC": {
       "owner_cap": 217356167,
-      "left": 86753003
+      "left": 54753003
     },
     "LAL": {
       "owner_cap": 212978602,
@@ -86,7 +86,7 @@
     },
     "MEM": {
       "owner_cap": 217373916,
-      "left": 8395803
+      "left": 8831803
     },
     "MIA": {
       "owner_cap": 210181846,
@@ -98,7 +98,7 @@
     },
     "MIN": {
       "owner_cap": 210943834,
-      "left": 33827762
+      "left": 18783762
     },
     "NOP": {
       "owner_cap": 208469929,
@@ -126,7 +126,7 @@
     },
     "POR": {
       "owner_cap": 205388761,
-      "left": 36723660
+      "left": 19723660
     },
     "SAC": {
       "owner_cap": 214253246,
@@ -146,7 +146,7 @@
     },
     "WA": {
       "owner_cap": 212269393,
-      "left": 3936011
+      "left": 9069342
     }
   },
   "teams": {
@@ -1765,7 +1765,7 @@
       "c1": "#C8102E",
       "c2": "#006BB6",
       "coach": "",
-      "gm": "none",
+      "gm": "Elias",
       "players": [
         {
           "name": "Cameron Payne",
@@ -2466,7 +2466,7 @@
         {
           "name": "Kevin Durant",
           "pos": "SF/PF",
-          "sal_26": null,
+          "sal_26": 32000000,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -2555,7 +2555,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 130603163
+      "total_salary": 162603163
     },
     "LAL": {
       "abbr": "LAL",
@@ -2852,8 +2852,8 @@
         {
           "name": "Marvin Bagley",
           "pos": "PF/C",
-          "sal_26": 6500000,
-          "sal_27": 6500000,
+          "sal_26": 6064000,
+          "sal_27": 6367200,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
@@ -2928,7 +2928,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 208978112
+      "total_salary": 208542112
     },
     "MIA": {
       "abbr": "MIA",
@@ -3494,6 +3494,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Julian Champagnie",
+          "pos": "SF",
+          "sal_26": 15044000,
+          "sal_27": 15796200,
+          "sal_28": 16548400,
+          "sal_29": 17300600,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "MLE",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Kevon Looney",
           "pos": "PF/C",
           "sal_26": null,
@@ -3559,7 +3572,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 177116071
+      "total_salary": 192160071
     },
     "NOP": {
       "abbr": "NOP",
@@ -4782,10 +4795,23 @@
           "tradable_agg": false
         },
         {
+          "name": "Noah Penda",
+          "pos": "SF/PF",
+          "sal_26": 2150918,
+          "sal_27": 2525902,
+          "sal_28": 2735697,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "4y 2RE",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "LeBron James",
           "pos": "SF/PF",
-          "sal_26": null,
-          "sal_27": null,
+          "sal_26": 17000000,
+          "sal_27": 17000000,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
@@ -4795,11 +4821,11 @@
           "tradable_agg": true
         },
         {
-          "name": "Noah Clowney",
-          "pos": "PF",
-          "sal_26": 5326797,
-          "sal_27": null,
-          "sal_28": null,
+          "name": "Keegan Murray",
+          "pos": "SF/PF",
+          "sal_26": 32000000,
+          "sal_27": 33600000,
+          "sal_28": 35200000,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
@@ -4821,28 +4847,15 @@
           "tradable_agg": false
         },
         {
-          "name": "Keegan Murray",
-          "pos": "SF/PF",
-          "sal_26": 32000000,
-          "sal_27": 33600000,
-          "sal_28": 35200000,
+          "name": "Noah Clowney",
+          "pos": "PF/C",
+          "sal_26": 5326797,
+          "sal_27": null,
+          "sal_28": null,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
           "signed_via": "1st Round Pick",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "Noah Penda",
-          "pos": "SF/PF",
-          "sal_26": 2150918,
-          "sal_27": 2525902,
-          "sal_28": 2735697,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "4y 2RE",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -4873,7 +4886,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 168665100
+      "total_salary": 185665100
     },
     "SAC": {
       "abbr": "SAC",
@@ -5630,7 +5643,7 @@
     {
       "name": "Julian Champagnie",
       "fpg": 76.79,
-      "signed_team": "ATL"
+      "signed_team": "MIN"
     },
     {
       "name": "Neemias Queta",
@@ -7390,10 +7403,10 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-08-02T09:13:30.092011+00:00",
+    "last_updated": "2026-08-02T15:52:41.780358+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
-    "players_count": 393,
+    "players_count": 394,
     "fas_count": 366,
     "fas_available_count": 288
   }
