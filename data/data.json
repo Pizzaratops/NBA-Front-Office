@@ -146,7 +146,7 @@
     },
     "WA": {
       "owner_cap": 212269393,
-      "left": 33133342
+      "left": 3936011
     }
   },
   "teams": {
@@ -7390,7 +7390,7 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-08-01T23:52:08.232589+00:00",
+    "last_updated": "2026-08-02T09:13:30.092011+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
     "players_count": 393,
