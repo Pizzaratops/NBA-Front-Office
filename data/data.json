@@ -30,19 +30,19 @@
   "owner_caps": {
     "ATL": {
       "owner_cap": 218686296,
-      "left": 20530148
+      "left": 20109639
     },
     "BOS": {
       "owner_cap": 216493641,
-      "left": 35433931
+      "left": 10852408
     },
     "BRK": {
       "owner_cap": 213988679,
-      "left": 46491975
+      "left": 4973679
     },
     "CHA": {
       "owner_cap": 211381286,
-      "left": 47778049
+      "left": 46419964
     },
     "CHI": {
       "owner_cap": 213608478,
@@ -54,7 +54,7 @@
     },
     "DAL": {
       "owner_cap": 217383504,
-      "left": 10501004
+      "left": 9142921
     },
     "DEN": {
       "owner_cap": 206884586,
@@ -62,11 +62,11 @@
     },
     "DET": {
       "owner_cap": 200528000,
-      "left": 52886870
+      "left": 38949296
     },
     "GS": {
       "owner_cap": 217401467,
-      "left": 60998156
+      "left": 50254835
     },
     "HOU": {
       "owner_cap": 204637244,
@@ -78,23 +78,23 @@
     },
     "LAC": {
       "owner_cap": 217356167,
-      "left": 54753003
+      "left": 50209535
     },
     "LAL": {
       "owner_cap": 212978602,
-      "left": 33327114
+      "left": 14163430
     },
     "MEM": {
       "owner_cap": 217373916,
-      "left": 8831803
+      "left": 3932961
     },
     "MIA": {
       "owner_cap": 210181846,
-      "left": 60284184
+      "left": 58098552
     },
     "MIL": {
       "owner_cap": 216256754,
-      "left": 14680528
+      "left": 0
     },
     "MIN": {
       "owner_cap": 210943834,
@@ -106,15 +106,15 @@
     },
     "NY": {
       "owner_cap": 219970768,
-      "left": 29511562
+      "left": 27325930
     },
     "OKC": {
       "owner_cap": 213636805,
-      "left": 60764932
+      "left": 56393669
     },
     "ORL": {
       "owner_cap": 208919409,
-      "left": 34376057
+      "left": 34376056
     },
     "PHI": {
       "owner_cap": 221431032,
@@ -126,7 +126,7 @@
     },
     "POR": {
       "owner_cap": 205388761,
-      "left": 19723660
+      "left": 4679660
     },
     "SAC": {
       "owner_cap": 214253246,
@@ -134,15 +134,15 @@
     },
     "SAS": {
       "owner_cap": 217599098,
-      "left": 12439029
+      "left": 11080947
     },
     "TOR": {
       "owner_cap": 211000401,
-      "left": 18982849
+      "left": 834376
     },
     "UT": {
       "owner_cap": 213001356,
-      "left": 9966842
+      "left": 5065045
     },
     "WA": {
       "owner_cap": 212269393,
@@ -237,17 +237,17 @@
           "tradable_agg": false
         },
         {
-          "name": "Herbert Jones",
-          "pos": "SG/SF/PF",
-          "sal_26": 13937574,
-          "sal_27": 14898786,
-          "sal_28": null,
+          "name": "Jimmy Butler",
+          "pos": "SF/PF",
+          "sal_26": 13000000,
+          "sal_27": 13000000,
+          "sal_28": 13000000,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
-          "signed_via": "Chandler vet ext",
-          "tradable_alone": false,
-          "tradable_agg": false
+          "signed_via": "s&t LBR",
+          "tradable_alone": true,
+          "tradable_agg": true
         },
         {
           "name": "Spencer Jones",
@@ -276,15 +276,15 @@
           "tradable_agg": false
         },
         {
-          "name": "Julian Champagnie",
-          "pos": "SG/SF/PF",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
+          "name": "Bryce Hopkins",
+          "pos": "?",
+          "sal_26": 1358082,
+          "sal_27": 2294914,
+          "sal_28": 2695001,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
-          "signed_via": "Cap Space",
+          "signed_via": "3y 2RE",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -380,6 +380,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Rafael Castro",
+          "pos": "?",
+          "sal_26": 1,
+          "sal_27": 2,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Malik Beasley",
           "pos": "?",
           "sal_26": 6000000,
@@ -393,7 +406,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 198156147
+      "total_salary": 198576656
     },
     "BOS": {
       "abbr": "BOS",
@@ -403,6 +416,19 @@
       "coach": "",
       "gm": "Denver",
       "players": [
+        {
+          "name": "Keyshawn Hall",
+          "pos": "?",
+          "sal_26": 1357761,
+          "sal_27": 2294371,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Early",
+          "signed_via": "2y 2RE",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
         {
           "name": "Killian Hayes",
           "pos": "PG/SG",
@@ -458,8 +484,8 @@
         {
           "name": "Duncan Robinson",
           "pos": "SG/SF",
-          "sal_26": null,
-          "sal_27": null,
+          "sal_26": 6822000,
+          "sal_27": 7163100,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
@@ -534,6 +560,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Nate Bittle",
+          "pos": "?",
+          "sal_26": 1357761,
+          "sal_27": 2294371,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Early",
+          "signed_via": "2y 2RE",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Daron Holmes",
           "pos": "SF/PF",
           "sal_26": 3530822,
@@ -586,19 +625,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Nicolas Claxton",
-          "pos": "PF/C",
-          "sal_26": 42160000,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "Bird Rights",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Jarred Vanderbilt",
           "pos": "PF",
           "sal_26": null,
@@ -610,9 +636,35 @@
           "signed_via": "MPE",
           "tradable_alone": false,
           "tradable_agg": false
+        },
+        {
+          "name": "Draymond Green",
+          "pos": "PF/C",
+          "sal_26": 15044000,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Non",
+          "signed_via": "MLE",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Nicolas Claxton",
+          "pos": "PF/C",
+          "sal_26": 42160000,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "Bird Rights",
+          "tradable_alone": false,
+          "tradable_agg": false
         }
       ],
-      "total_salary": 181059709
+      "total_salary": 205641232
     },
     "BRK": {
       "abbr": "BRK",
@@ -662,12 +714,64 @@
           "tradable_agg": false
         },
         {
-          "name": "Miles Bridges",
-          "pos": "SF",
-          "sal_26": null,
+          "name": "MPE 1st dude",
+          "pos": "?",
+          "sal_26": 2449421,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "MPE 2nd dude",
+          "pos": "?",
+          "sal_26": 2449421,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "MPE 3rd dude",
+          "pos": "?",
+          "sal_26": 2449421,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "MPE 4th dude",
+          "pos": "?",
+          "sal_26": 2449421,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Miles Bridges",
+          "pos": "SF",
+          "sal_26": 16676612,
+          "sal_27": 18010740,
+          "sal_28": 18010740,
+          "sal_29": 17301905,
           "sal_30": null,
           "bird": "Full",
           "signed_via": "s&t LBR",
@@ -710,6 +814,32 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "4y 2RE",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "MLE 1st dude est",
+          "pos": "?",
+          "sal_26": 8000000,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "MLE 2nd dude est",
+          "pos": "?",
+          "sal_26": 7044000,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -766,7 +896,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 167496704
+      "total_salary": 209015000
     },
     "CHA": {
       "abbr": "CHA",
@@ -855,6 +985,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Emanuel Sharp",
+          "pos": "?",
+          "sal_26": 1358082,
+          "sal_27": 2294914,
+          "sal_28": 2695001,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "3y 2RE",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Sam Hauser",
           "pos": "SF/PF",
           "sal_26": 7983000,
@@ -920,6 +1063,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Izaiyah Nelson",
+          "pos": "?",
+          "sal_26": 1,
+          "sal_27": 2,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Jordan Miller",
           "pos": "?",
           "sal_26": null,
@@ -931,9 +1087,22 @@
           "signed_via": null,
           "tradable_alone": false,
           "tradable_agg": false
+        },
+        {
+          "name": "Nick Martinelli",
+          "pos": "?",
+          "sal_26": 1,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
         }
       ],
-      "total_salary": 163603236
+      "total_salary": 164961321
     },
     "CHI": {
       "abbr": "CHI",
@@ -1460,6 +1629,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Tyler Bilodeau",
+          "pos": "?",
+          "sal_26": 1358082,
+          "sal_27": 2294914,
+          "sal_28": 2695001,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "3y 2RE",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Franz Wagner",
           "pos": "SF",
           "sal_26": 41368072,
@@ -1551,7 +1733,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 206882499
+      "total_salary": 208240582
     },
     "DEN": {
       "abbr": "DEN",
@@ -1559,7 +1741,7 @@
       "c1": "#0E2240",
       "c2": "#FEC524",
       "coach": "Andre Miller",
-      "gm": "Victor",
+      "gm": "Victor (retiring 2027)",
       "players": [
         {
           "name": "Darius Acuff Jr.",
@@ -1846,15 +2028,15 @@
           "tradable_agg": false
         },
         {
-          "name": "Kyle Lowry",
-          "pos": "PG",
-          "sal_26": null,
-          "sal_27": null,
+          "name": "Herbert Jones",
+          "pos": "SG/SF/PF",
+          "sal_26": 13937574,
+          "sal_27": 14898786,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
-          "bird": "Early",
-          "signed_via": "MPE",
+          "bird": "Full",
+          "signed_via": "Chandler vet ext",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -1872,17 +2054,17 @@
           "tradable_agg": false
         },
         {
-          "name": "Jimmy Butler",
-          "pos": "SF/PF",
+          "name": "Bruce Thornton",
+          "pos": "?",
           "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
-          "bird": "Full",
-          "signed_via": "LBR",
-          "tradable_alone": true,
-          "tradable_agg": true
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
         },
         {
           "name": "Johnny Davis",
@@ -1950,6 +2132,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Maliq Brown",
+          "pos": "?",
+          "sal_26": null,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Tidjane Salaun",
           "pos": "PF",
           "sal_26": 5744863,
@@ -1959,6 +2154,19 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "1st Round Pick",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Tyler Nickel",
+          "pos": "?",
+          "sal_26": null,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -1974,9 +2182,22 @@
           "signed_via": "Room MLE",
           "tradable_alone": false,
           "tradable_agg": false
+        },
+        {
+          "name": "Jaden Bradley",
+          "pos": "?",
+          "sal_26": null,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
         }
       ],
-      "total_salary": 147641129
+      "total_salary": 161578703
     },
     "HOU": {
       "abbr": "HOU",
@@ -2074,6 +2295,19 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "1st Round Pick",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Tobi Lawal",
+          "pos": "?",
+          "sal_26": null,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -2464,6 +2698,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Jack Kayil",
+          "pos": "?",
+          "sal_26": 2185631,
+          "sal_27": 2294914,
+          "sal_28": 2695001,
+          "sal_29": 2918841,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "4y 2re",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Kevin Durant",
           "pos": "SF/PF",
           "sal_26": 32000000,
@@ -2499,6 +2746,19 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "1st Round Pick",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "cap space",
+          "pos": "?",
+          "sal_26": 2357836,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -2555,7 +2815,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 162603163
+      "total_salary": 167146631
     },
     "LAL": {
       "abbr": "LAL",
@@ -2565,6 +2825,32 @@
       "coach": "",
       "gm": "LA Chris",
       "players": [
+        {
+          "name": "MPE 1st dude",
+          "pos": "?",
+          "sal_26": 2449421,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "MPE 2nd dude",
+          "pos": "?",
+          "sal_26": 2449421,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
         {
           "name": "Alex Caruso",
           "pos": "SG",
@@ -2592,6 +2878,32 @@
           "tradable_agg": true
         },
         {
+          "name": "MPE 3rd dude",
+          "pos": "?",
+          "sal_26": 2449421,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "MPE 4th dude",
+          "pos": "?",
+          "sal_26": 2449421,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Taurean Prince",
           "pos": "SF/PF",
           "sal_26": 4309200,
@@ -2614,6 +2926,19 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "MLE",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Room MLE",
+          "pos": "?",
+          "sal_26": 9366000,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -2709,7 +3034,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 179651488
+      "total_salary": 198815172
     },
     "MEM": {
       "abbr": "MEM",
@@ -2837,6 +3162,19 @@
           "tradable_agg": true
         },
         {
+          "name": "Richie Saunders",
+          "pos": "?",
+          "sal_26": null,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Koa Peat",
           "pos": "SF/PF",
           "sal_26": 2926800,
@@ -2926,9 +3264,35 @@
           "signed_via": "MPE",
           "tradable_alone": false,
           "tradable_agg": false
+        },
+        {
+          "name": "MPE 1st dude",
+          "pos": "?",
+          "sal_26": 2449421,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": "MPE",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "MPE 2nd dude",
+          "pos": "?",
+          "sal_26": 2449421,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": "MPE",
+          "tradable_alone": false,
+          "tradable_agg": false
         }
       ],
-      "total_salary": 208542112
+      "total_salary": 213440954
     },
     "MIA": {
       "abbr": "MIA",
@@ -2987,6 +3351,19 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "1st Round Pick",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Isaiah Evans",
+          "pos": "?",
+          "sal_26": 2185631,
+          "sal_27": 2294914,
+          "sal_28": 2695001,
+          "sal_29": 2918841,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "Chandler",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -3082,7 +3459,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 149897661
+      "total_salary": 152083293
     },
     "MIL": {
       "abbr": "MIL",
@@ -3115,6 +3492,19 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "1st Round Pick",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "MLE",
+          "pos": "?",
+          "sal_26": 6064000,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -3277,7 +3667,7 @@
         {
           "name": "Al Horford",
           "pos": "PF/C",
-          "sal_26": null,
+          "sal_26": 8616529,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -3340,7 +3730,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 201576225
+      "total_salary": 216256754
     },
     "MIN": {
       "abbr": "MIN",
@@ -3958,6 +4348,32 @@
           "tradable_agg": false
         },
         {
+          "name": "Meleek Thomas",
+          "pos": "?",
+          "sal_26": 2185631,
+          "sal_27": 2294914,
+          "sal_28": 2695001,
+          "sal_29": 2918841,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "4y 2re",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Ugonna Onyenso",
+          "pos": "?",
+          "sal_26": 2185631,
+          "sal_27": 2294914,
+          "sal_28": 2695001,
+          "sal_29": 2918841,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "4y 2re",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Jaren Jackson Jr.",
           "pos": "C",
           "sal_26": 44820000,
@@ -4049,7 +4465,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 152871872
+      "total_salary": 157243135
     },
     "ORL": {
       "abbr": "ORL",
@@ -4266,9 +4682,22 @@
           "signed_via": null,
           "tradable_alone": false,
           "tradable_agg": false
+        },
+        {
+          "name": "Felix Okpara",
+          "pos": "?",
+          "sal_26": 1,
+          "sal_27": 2,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
         }
       ],
-      "total_salary": 174543351
+      "total_salary": 174543352
     },
     "PHI": {
       "abbr": "PHI",
@@ -4487,6 +4916,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Trey Kaufman-Renn",
+          "pos": "?",
+          "sal_26": 1,
+          "sal_27": 2,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Jalen Wilson",
           "pos": "?",
           "sal_26": 470304,
@@ -4500,7 +4942,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 221431031
+      "total_salary": 221431032
     },
     "PHX": {
       "abbr": "PHX",
@@ -4630,7 +5072,7 @@
         {
           "name": "Gui Santos",
           "pos": "PF",
-          "sal_26": 10885740,
+          "sal_26": 7841740,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -4656,10 +5098,10 @@
         {
           "name": "Mark Williams",
           "pos": "C",
-          "sal_26": 12000000,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
+          "sal_26": 15044000,
+          "sal_27": 15796200,
+          "sal_28": 16548400,
+          "sal_29": 17300600,
           "sal_30": null,
           "bird": "Full",
           "signed_via": "1st Round Pick",
@@ -4676,6 +5118,32 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "Des. Rookie",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "MPE 1st dude",
+          "pos": "?",
+          "sal_26": null,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "MPE 2nd dude",
+          "pos": "?",
+          "sal_26": null,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
           "tradable_alone": false,
           "tradable_agg": false
         }
@@ -4873,6 +5341,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Day'Ron Sharpe",
+          "pos": "C",
+          "sal_26": 15044000,
+          "sal_27": 15796200,
+          "sal_28": 16548400,
+          "sal_29": 17300600,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "MLE",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Jordan Nwora",
           "pos": "?",
           "sal_26": 848891,
@@ -4886,7 +5367,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 185665100
+      "total_salary": 200709100
     },
     "SAC": {
       "abbr": "SAC",
@@ -5233,15 +5714,15 @@
           "tradable_agg": false
         },
         {
-          "name": "Shaedon Sharpe",
-          "pos": "SG/SF",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
+          "name": "Malique Lewis",
+          "pos": "?",
+          "sal_26": 1358082,
+          "sal_27": 2294914,
+          "sal_28": 2695001,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
-          "signed_via": "1st Round Pick",
+          "signed_via": "3y 2RE",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -5337,7 +5818,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 205160068
+      "total_salary": 206518150
     },
     "TOR": {
       "abbr": "TOR",
@@ -5413,6 +5894,32 @@
           "tradable_agg": false
         },
         {
+          "name": "VJ Edgecombe",
+          "pos": "SG",
+          "sal_26": 11664324,
+          "sal_27": 12247540,
+          "sal_28": 15480891,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "1st Round Pick",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "AJ Green",
+          "pos": "SG",
+          "sal_26": 5000000,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Early",
+          "signed_via": "MPE",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Zach LaVine",
           "pos": "SG/SF",
           "sal_26": 20000000,
@@ -5426,28 +5933,41 @@
           "tradable_agg": false
         },
         {
-          "name": "AJ Green",
-          "pos": "SG",
-          "sal_26": null,
+          "name": "MLE",
+          "pos": "?",
+          "sal_26": 6064000,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
-          "bird": "Early",
-          "signed_via": "MPE",
+          "bird": null,
+          "signed_via": null,
           "tradable_alone": false,
           "tradable_agg": false
         },
         {
-          "name": "VJ Edgecombe",
-          "pos": "SG",
-          "sal_26": 11664324,
-          "sal_27": 12247540,
-          "sal_28": 15480891,
+          "name": "MPE 1st dude",
+          "pos": "?",
+          "sal_26": 2449421,
+          "sal_27": null,
+          "sal_28": null,
           "sal_29": null,
           "sal_30": null,
-          "bird": "Full",
-          "signed_via": "1st Round Pick",
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "MPE 2nd dude",
+          "pos": "?",
+          "sal_26": 2449421,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -5478,15 +5998,15 @@
           "tradable_agg": false
         },
         {
-          "name": "Day'Ron Sharpe",
-          "pos": "C",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
+          "name": "Ryan Conwell",
+          "pos": "?",
+          "sal_26": 2185631,
+          "sal_27": 2294914,
+          "sal_28": 2695001,
+          "sal_29": 2918841,
           "sal_30": null,
-          "bird": "Early",
-          "signed_via": "MLE",
+          "bird": "Full",
+          "signed_via": "4y 2re",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -5556,7 +6076,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 192017551
+      "total_salary": 210166024
     }
   },
   "fas": [
@@ -5593,7 +6113,7 @@
     {
       "name": "Jimmy Butler",
       "fpg": 98.78,
-      "signed_team": "DET"
+      "signed_team": "ATL"
     },
     {
       "name": "LeBron James",
@@ -5658,7 +6178,7 @@
     {
       "name": "Shaedon Sharpe",
       "fpg": 69.17,
-      "signed_team": "SAS"
+      "signed_team": null
     },
     {
       "name": "Bennedict Mathurin",
@@ -5738,7 +6258,7 @@
     {
       "name": "Draymond Green",
       "fpg": 60.21,
-      "signed_team": null
+      "signed_team": "BOS"
     },
     {
       "name": "Lawson Lovering",
@@ -5853,7 +6373,7 @@
     {
       "name": "Day'Ron Sharpe",
       "fpg": 51.08,
-      "signed_team": "TOR"
+      "signed_team": "POR"
     },
     {
       "name": "Brook Lopez",
@@ -6668,7 +7188,7 @@
     {
       "name": "Kyle Lowry",
       "fpg": 9.7,
-      "signed_team": "DET"
+      "signed_team": null
     },
     {
       "name": "Adou Thiero",
@@ -7403,11 +7923,11 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-08-03T10:49:21.212932+00:00",
+    "last_updated": "2026-08-03T17:03:48.044811+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
-    "players_count": 394,
+    "players_count": 434,
     "fas_count": 366,
-    "fas_available_count": 288
+    "fas_available_count": 289
   }
 }
