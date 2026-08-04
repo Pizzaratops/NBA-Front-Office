@@ -78,7 +78,7 @@
     },
     "LAC": {
       "owner_cap": 217356167,
-      "left": 50209535
+      "left": 50244249
     },
     "LAL": {
       "owner_cap": 212978602,
@@ -134,11 +134,11 @@
     },
     "SAS": {
       "owner_cap": 217599098,
-      "left": 11080947
+      "left": 5016947
     },
     "TOR": {
       "owner_cap": 211000401,
-      "left": 834376
+      "left": 3283797
     },
     "UT": {
       "owner_cap": 213001356,
@@ -2739,7 +2739,7 @@
         {
           "name": "cap space",
           "pos": "?",
-          "sal_26": 2357836,
+          "sal_26": 2323122,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -2802,7 +2802,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 167146631
+      "total_salary": 167111917
     },
     "LAL": {
       "abbr": "LAL",
@@ -5623,6 +5623,19 @@
       "gm": "TVG",
       "players": [
         {
+          "name": "MLE",
+          "pos": "?",
+          "sal_26": 6064000,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Luka Dončić",
           "pos": "PG/SF",
           "sal_26": 57736350,
@@ -5805,7 +5818,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 206518150
+      "total_salary": 212582150
     },
     "TOR": {
       "abbr": "TOR",
@@ -5933,20 +5946,7 @@
           "tradable_agg": false
         },
         {
-          "name": "MPE 1st dude",
-          "pos": "?",
-          "sal_26": 2449421,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": null,
-          "signed_via": null,
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "MPE 2nd dude",
+          "name": "MPE",
           "pos": "?",
           "sal_26": 2449421,
           "sal_27": null,
@@ -6063,7 +6063,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 210166024
+      "total_salary": 207716603
     }
   },
   "fas": [
@@ -7910,7 +7910,7 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-08-04T00:03:13.589460+00:00",
+    "last_updated": "2026-08-04T09:42:29.091695+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
     "players_count": 433,
