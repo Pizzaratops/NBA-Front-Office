@@ -34,7 +34,7 @@
     },
     "BOS": {
       "owner_cap": 216493641,
-      "left": 10852408
+      "left": 13567929
     },
     "BRK": {
       "owner_cap": 213988679,
@@ -94,7 +94,7 @@
     },
     "MIL": {
       "owner_cap": 216256754,
-      "left": 0
+      "left": 8616528
     },
     "MIN": {
       "owner_cap": 210943834,
@@ -417,19 +417,6 @@
       "gm": "Denver",
       "players": [
         {
-          "name": "Keyshawn Hall",
-          "pos": "?",
-          "sal_26": 1357761,
-          "sal_27": 2294371,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Early",
-          "signed_via": "2y 2RE",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Killian Hayes",
           "pos": "PG/SG",
           "sal_26": 8593200,
@@ -560,19 +547,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Nate Bittle",
-          "pos": "?",
-          "sal_26": 1357761,
-          "sal_27": 2294371,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Early",
-          "signed_via": "2y 2RE",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Daron Holmes",
           "pos": "SF/PF",
           "sal_26": 3530822,
@@ -625,19 +599,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Jarred Vanderbilt",
-          "pos": "PF",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Early",
-          "signed_via": "MPE",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Draymond Green",
           "pos": "PF/C",
           "sal_26": 15044000,
@@ -662,9 +623,35 @@
           "signed_via": "Bird Rights",
           "tradable_alone": false,
           "tradable_agg": false
+        },
+        {
+          "name": "Nate Bittle",
+          "pos": "?",
+          "sal_26": 1,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Keyshawn Hall",
+          "pos": "?",
+          "sal_26": 1,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
         }
       ],
-      "total_salary": 205641232
+      "total_salary": 202925711
     },
     "BRK": {
       "abbr": "BRK",
@@ -3667,7 +3654,7 @@
         {
           "name": "Al Horford",
           "pos": "PF/C",
-          "sal_26": 8616529,
+          "sal_26": null,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -3730,7 +3717,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 216256754
+      "total_salary": 207640225
     },
     "MIN": {
       "abbr": "MIN",
@@ -6568,7 +6555,7 @@
     {
       "name": "Jarred Vanderbilt",
       "fpg": 38.53,
-      "signed_team": "BOS"
+      "signed_team": null
     },
     {
       "name": "Pat Spencer",
@@ -7923,11 +7910,11 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-08-03T17:03:48.044811+00:00",
+    "last_updated": "2026-08-04T00:03:13.589460+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
-    "players_count": 434,
+    "players_count": 433,
     "fas_count": 366,
-    "fas_available_count": 289
+    "fas_available_count": 290
   }
 }
