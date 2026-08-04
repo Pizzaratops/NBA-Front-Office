@@ -30,7 +30,7 @@
   "owner_caps": {
     "ATL": {
       "owner_cap": 218686296,
-      "left": 20109639
+      "left": 9671295
     },
     "BOS": {
       "owner_cap": 216493641,
@@ -58,7 +58,7 @@
     },
     "DEN": {
       "owner_cap": 206884586,
-      "left": 36349258
+      "left": 21305258
     },
     "DET": {
       "owner_cap": 200528000,
@@ -126,7 +126,7 @@
     },
     "POR": {
       "owner_cap": 205388761,
-      "left": 4679660
+      "left": 0
     },
     "SAC": {
       "owner_cap": 214253246,
@@ -213,7 +213,7 @@
         {
           "name": "Aaron Wiggins",
           "pos": "SG/SF",
-          "sal_26": null,
+          "sal_26": 11796426,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -278,9 +278,9 @@
         {
           "name": "Bryce Hopkins",
           "pos": "?",
-          "sal_26": 1358082,
-          "sal_27": 2294914,
-          "sal_28": 2695001,
+          "sal_26": null,
+          "sal_27": null,
+          "sal_28": null,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
@@ -293,9 +293,9 @@
           "pos": "SF",
           "sal_26": 7254273,
           "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
+          "sal_28": 1358082,
+          "sal_29": 2294914,
+          "sal_30": 2695001,
           "bird": "Full",
           "signed_via": "1st Round Pick",
           "tradable_alone": false,
@@ -406,7 +406,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 198576656
+      "total_salary": 209015000
     },
     "BOS": {
       "abbr": "BOS",
@@ -1796,6 +1796,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Jaylen Wells",
+          "pos": "SG/SF",
+          "sal_26": 15044000,
+          "sal_27": 15044000,
+          "sal_28": 15044000,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "MLE",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Jalen Wilson",
           "pos": "SF",
           "sal_26": 5134000,
@@ -1926,7 +1939,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 170535328
+      "total_salary": 185579328
     },
     "DET": {
       "abbr": "DET",
@@ -5174,11 +5187,11 @@
         {
           "name": "Trey Alexander",
           "pos": "SG",
-          "sal_26": 2296272,
+          "sal_26": null,
           "sal_27": 2486994,
           "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
+          "sal_29": 2296272,
+          "sal_30": 2296272,
           "bird": "Full",
           "signed_via": "4y 2RE",
           "tradable_alone": false,
@@ -5187,10 +5200,10 @@
         {
           "name": "Jordan Goodwin",
           "pos": "PG",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
+          "sal_26": 6975933,
+          "sal_27": 7534007,
+          "sal_28": 8092082,
+          "sal_29": 8650156,
           "sal_30": null,
           "bird": "Early",
           "signed_via": "MPE",
@@ -5354,7 +5367,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 200709100
+      "total_salary": 205388761
     },
     "SAC": {
       "abbr": "SAC",
@@ -7896,6 +7909,11 @@
       "name": "Chris Duarte",
       "fpg": 0.0,
       "signed_team": null
+    },
+    {
+      "name": "Super Mario Hezonja",
+      "fpg": null,
+      "signed_team": null
     }
   ],
   "my_teams": [
@@ -7910,11 +7928,11 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-08-04T09:42:29.091695+00:00",
+    "last_updated": "2026-08-04T16:46:04.388741+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
-    "players_count": 433,
-    "fas_count": 366,
-    "fas_available_count": 290
+    "players_count": 434,
+    "fas_count": 367,
+    "fas_available_count": 291
   }
 }
