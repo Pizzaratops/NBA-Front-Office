@@ -38,7 +38,7 @@
     },
     "BRK": {
       "owner_cap": 213988679,
-      "left": 7423100
+      "left": 10828416
     },
     "CHA": {
       "owner_cap": 211381286,
@@ -46,23 +46,23 @@
     },
     "CHI": {
       "owner_cap": 213608478,
-      "left": 5628425
+      "left": 4759833
     },
     "CLE": {
       "owner_cap": 209715554,
-      "left": 7378434
+      "left": 3747026
     },
     "DAL": {
       "owner_cap": 217383504,
-      "left": 9142921
+      "left": -1377055
     },
     "DEN": {
       "owner_cap": 206884586,
-      "left": 4805258
+      "left": -194741
     },
     "DET": {
       "owner_cap": 200528000,
-      "left": 38949296
+      "left": 33497521
     },
     "GS": {
       "owner_cap": 217401467,
@@ -78,15 +78,15 @@
     },
     "LAC": {
       "owner_cap": 217356167,
-      "left": 43201371
+      "left": 40355488
     },
     "LAL": {
       "owner_cap": 212978602,
-      "left": 24409964
+      "left": 16180893
     },
     "MEM": {
       "owner_cap": 217373916,
-      "left": 3932961
+      "left": 8831803
     },
     "MIA": {
       "owner_cap": 210181846,
@@ -98,7 +98,7 @@
     },
     "MIN": {
       "owner_cap": 210943834,
-      "left": 18783762
+      "left": 14149225
     },
     "NOP": {
       "owner_cap": 208469929,
@@ -134,19 +134,19 @@
     },
     "SAS": {
       "owner_cap": 217599098,
-      "left": 5016947
+      "left": 2567526
     },
     "TOR": {
       "owner_cap": 211000401,
-      "left": 16797218
+      "left": 12297218
     },
     "UT": {
       "owner_cap": 213001356,
-      "left": 5065045
+      "left": -712210
     },
     "WA": {
       "owner_cap": 212269393,
-      "left": 15133342
+      "left": 3069342
     }
   },
   "teams": {
@@ -688,45 +688,6 @@
           "tradable_agg": false
         },
         {
-          "name": "MPE 1st dude",
-          "pos": "?",
-          "sal_26": 2449421,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": null,
-          "signed_via": null,
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "MPE 2nd dude",
-          "pos": "?",
-          "sal_26": 2449421,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": null,
-          "signed_via": null,
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "MPE 3rd dude",
-          "pos": "?",
-          "sal_26": 2449421,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": null,
-          "signed_via": null,
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Pelle Larsson",
           "pos": "SG/SF",
           "sal_26": 11000000,
@@ -749,32 +710,6 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "s&t LBR",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "Simone Fontecchio",
-          "pos": "SF",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Non",
-          "signed_via": "MPE",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "MLE remainder",
-          "pos": "?",
-          "sal_26": 4044000,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": null,
-          "signed_via": null,
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -857,7 +792,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 206565579
+      "total_salary": 203160263
     },
     "CHA": {
       "abbr": "CHA",
@@ -1100,19 +1035,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Russell Westbrook",
-          "pos": "PG",
-          "sal_26": 8000000,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "Cap, LBR",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Tre Johnson",
           "pos": "SG",
           "sal_26": 8649522,
@@ -1187,6 +1109,19 @@
           "sal_30": null,
           "bird": null,
           "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Jonathan Isaac",
+          "pos": "PF",
+          "sal_26": 4368592,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Early",
+          "signed_via": "BAE",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -1295,7 +1230,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 207980053
+      "total_salary": 208848645
     },
     "CLE": {
       "abbr": "CLE",
@@ -1305,6 +1240,19 @@
       "coach": "",
       "gm": "Gerald",
       "players": [
+        {
+          "name": "Russell Westbrook",
+          "pos": "PG",
+          "sal_26": 8000000,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "Cap, LBR",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
         {
           "name": "De'Anthony Melton",
           "pos": "PG/SG",
@@ -1423,19 +1371,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Jonathan Isaac",
-          "pos": "PF",
-          "sal_26": 4368592,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Early",
-          "signed_via": "BAE",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Ziaire Williams",
           "pos": "SF/PF",
           "sal_26": 6000000,
@@ -1501,7 +1436,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 202337119
+      "total_salary": 205968527
     },
     "DAL": {
       "abbr": "DAL",
@@ -1579,8 +1514,8 @@
         {
           "name": "Josh Okogie",
           "pos": "SG/SF",
-          "sal_26": null,
-          "sal_27": null,
+          "sal_26": 3506659,
+          "sal_27": 3700320,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
@@ -1694,7 +1629,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 208240582
+      "total_salary": 218760559
     },
     "DEN": {
       "abbr": "DEN",
@@ -1902,18 +1837,18 @@
         {
           "name": "Jay Huff",
           "pos": "C",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
+          "sal_26": 5000000,
+          "sal_27": 5000000,
+          "sal_28": 5000000,
           "sal_29": null,
           "sal_30": null,
-          "bird": "Early",
-          "signed_via": "MPE",
+          "bird": "Full",
+          "signed_via": "MPE, then EBR",
           "tradable_alone": false,
           "tradable_agg": false
         }
       ],
-      "total_salary": 202079328
+      "total_salary": 207079328
     },
     "DET": {
       "abbr": "DET",
@@ -1923,6 +1858,19 @@
       "coach": "",
       "gm": "Elias",
       "players": [
+        {
+          "name": "Bruce Thornton",
+          "pos": "PG",
+          "sal_26": 2185631,
+          "sal_27": 2294914,
+          "sal_28": 2695001,
+          "sal_29": 2918841,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "4y 2re",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
         {
           "name": "Cameron Payne",
           "pos": "PG/SG",
@@ -2002,19 +1950,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Herbert Jones",
-          "pos": "SG/SF/PF",
-          "sal_26": 13937574,
-          "sal_27": 14898786,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "Chandler vet ext",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "AJ Johnson",
           "pos": "SG",
           "sal_26": 2816006,
@@ -2024,19 +1959,6 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "1st Round Pick",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "Bruce Thornton",
-          "pos": "PG",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "4y RE",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -2067,15 +1989,15 @@
           "tradable_agg": false
         },
         {
-          "name": "Jayson Tatum",
-          "pos": "SF/PF",
-          "sal_26": 49488300,
-          "sal_27": 53447364,
+          "name": "Herbert Jones",
+          "pos": "SG/SF/PF",
+          "sal_26": 13937574,
+          "sal_27": 14898786,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
-          "signed_via": "LBR",
+          "signed_via": "Chandler vet ext",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -2102,6 +2024,19 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "1st Round Pick",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Jayson Tatum",
+          "pos": "SF/PF",
+          "sal_26": 49488300,
+          "sal_27": 53447364,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "LBR",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -2171,7 +2106,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 161578703
+      "total_salary": 167030478
     },
     "HOU": {
       "abbr": "HOU",
@@ -2776,7 +2711,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 174154795
+      "total_salary": 177000678
     },
     "LAL": {
       "abbr": "LAL",
@@ -2906,8 +2841,8 @@
         {
           "name": "Andre Drummond",
           "pos": "C",
-          "sal_26": 9000000,
-          "sal_27": 9000000,
+          "sal_26": 7000000,
+          "sal_27": 7350000,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
@@ -2943,7 +2878,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 188568638
+      "total_salary": 196797709
     },
     "MEM": {
       "abbr": "MEM",
@@ -3173,35 +3108,9 @@
           "signed_via": "MPE",
           "tradable_alone": false,
           "tradable_agg": false
-        },
-        {
-          "name": "MPE 1st dude",
-          "pos": "?",
-          "sal_26": 2449421,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": null,
-          "signed_via": "MPE",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "MPE 2nd dude",
-          "pos": "?",
-          "sal_26": 2449421,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": null,
-          "signed_via": "MPE",
-          "tradable_alone": false,
-          "tradable_agg": false
         }
       ],
-      "total_salary": 213440954
+      "total_salary": 208542112
     },
     "MIA": {
       "abbr": "MIA",
@@ -3858,7 +3767,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 192160071
+      "total_salary": 196794608
     },
     "NOP": {
       "abbr": "NOP",
@@ -5688,7 +5597,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 212582150
+      "total_salary": 215031571
     },
     "TOR": {
       "abbr": "TOR",
@@ -5907,7 +5816,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 194203182
+      "total_salary": 198703182
     }
   },
   "fas": [
@@ -7749,10 +7658,10 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-08-05T16:26:02.587375+00:00",
+    "last_updated": "2026-08-05T23:54:50.722423+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
-    "players_count": 421,
+    "players_count": 414,
     "fas_count": 365,
     "fas_available_count": 287
   }
