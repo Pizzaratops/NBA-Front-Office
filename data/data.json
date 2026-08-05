@@ -90,7 +90,7 @@
     },
     "MIA": {
       "owner_cap": 210181846,
-      "left": 58098552
+      "left": 46098552
     },
     "MIL": {
       "owner_cap": 216256754,
@@ -102,7 +102,7 @@
     },
     "NOP": {
       "owner_cap": 208469929,
-      "left": 18781285
+      "left": 16460177
     },
     "NY": {
       "owner_cap": 219970768,
@@ -146,7 +146,7 @@
     },
     "WA": {
       "owner_cap": 212269393,
-      "left": 9069342
+      "left": 15133342
     }
   },
   "teams": {
@@ -3303,6 +3303,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Dylan Cardwell",
+          "pos": "PF/C",
+          "sal_26": 12000000,
+          "sal_27": 12000000,
+          "sal_28": 12000000,
+          "sal_29": 12000000,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "Cap Space",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Clint Capela",
           "pos": "C",
           "sal_26": 15300000,
@@ -3329,7 +3342,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 152083293
+      "total_salary": 164083293
     },
     "MIL": {
       "abbr": "MIL",
@@ -3910,13 +3923,13 @@
         {
           "name": "Jake LaRavia",
           "pos": "SF",
-          "sal_26": 7678892,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
+          "sal_26": 10000000,
+          "sal_27": 10500000,
+          "sal_28": 11000000,
+          "sal_29": 11500000,
           "sal_30": null,
           "bird": "Full",
-          "signed_via": "QO",
+          "signed_via": "LBR",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -4064,7 +4077,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 189688643
+      "total_salary": 192009751
     },
     "OKC": {
       "abbr": "OKC",
@@ -4078,8 +4091,8 @@
           "name": "Collin Sexton",
           "pos": "PG/SG",
           "sal_26": 10000000,
-          "sal_27": 10500000,
-          "sal_28": 11000000,
+          "sal_27": 10000000,
+          "sal_28": 10000000,
           "sal_29": null,
           "sal_30": null,
           "bird": "Full",
@@ -5042,19 +5055,6 @@
           "tradable_agg": true
         },
         {
-          "name": "Trey Alexander",
-          "pos": "SG",
-          "sal_26": null,
-          "sal_27": 2486994,
-          "sal_28": null,
-          "sal_29": 2296272,
-          "sal_30": 2296272,
-          "bird": "Full",
-          "signed_via": "4y 2RE",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Jordan Goodwin",
           "pos": "PG",
           "sal_26": 6975933,
@@ -5063,7 +5063,7 @@
           "sal_29": 8650156,
           "sal_30": null,
           "bird": "Early",
-          "signed_via": "MPE",
+          "signed_via": "MPE, then EBR",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -6210,7 +6210,7 @@
     {
       "name": "Dylan Cardwell",
       "fpg": 51.66,
-      "signed_team": null
+      "signed_team": "MIA"
     },
     {
       "name": "Brandon Williams",
@@ -7775,11 +7775,11 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-08-04T23:58:42.154751+00:00",
+    "last_updated": "2026-08-05T09:40:45.073796+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
     "players_count": 423,
     "fas_count": 365,
-    "fas_available_count": 287
+    "fas_available_count": 286
   }
 }
