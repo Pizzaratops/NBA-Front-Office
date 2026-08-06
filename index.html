@@ -2,1552 +2,344 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NBA Front Office — The Offseason, Mapped / Die Offseason im Überblick</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg: #0a0c10;
-  --surface: #111318;
-  --surface2: #1a1d24;
-  --surface3: #20232c;
-  --border: #252830;
-  --text: #e8eaf0;
-  --muted: #5a6070;
-  --dim: #8a94a8;
-
-  --cba: #2f8fe0;
-  --cba-dim: rgba(47,143,224,0.10);
-  --cba-line: rgba(47,143,224,0.35);
-
-  --league: #F9A01B;
-  --league-dim: rgba(249,160,27,0.10);
-  --league-line: rgba(249,160,27,0.35);
-
-  --green: #00c07a;
-  --green-dim: rgba(0,192,122,0.10);
-  --red: #ff4560;
-  --red-dim: rgba(255,69,96,0.10);
-  --retired: #565b68;
-
-  --font-display: 'Bebas Neue', sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
-  --font-body: 'IBM Plex Sans', sans-serif;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: var(--font-body);
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  font-size: 15px;
-}
-
-a { color: inherit; }
-
-/* ── TOP NAV ── */
-.topnav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(10,12,16,0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
-  padding: 12px 24px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.topnav .brand {
-  font-family: var(--font-display);
-  font-size: 18px;
-  letter-spacing: 1.5px;
-  margin-right: auto;
-}
-.topnav .brand span { color: var(--league); }
-.topnav a.navlink {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: .5px;
-  text-transform: uppercase;
-  color: var(--dim);
-  text-decoration: none;
-  padding: 6px 10px;
-  border-radius: 5px;
-  border: 1px solid transparent;
-  transition: all .15s;
-}
-.topnav a.navlink:hover { color: var(--text); border-color: var(--border); background: var(--surface2); }
-
-.topnav a.navlink.app-link {
-  color: var(--league);
-  border-color: var(--league-line);
-  background: var(--league-dim);
-  font-weight: 600;
-}
-.topnav a.navlink.app-link:hover { background: var(--league); color: #14100a; }
-
-/* ── HERO ── */
-.hero {
-  padding: 72px 24px 32px;
-  max-width: 860px;
-  margin: 0 auto;
-  text-align: center;
-}
-.hero .eyebrow {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--dim);
-  margin-bottom: 14px;
-}
-.hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(36px, 6.4vw, 72px);
-  line-height: 0.98;
-  letter-spacing: 1px;
-  margin-bottom: 18px;
-}
-.hero h1 .line2 { color: var(--dim); }
-.hero p.sub {
-  font-size: 16px;
-  color: var(--dim);
-  max-width: 580px;
-  margin: 0 auto;
-}
-
-.hero-cta {
-  margin-top: 28px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 14px;
-  text-decoration: none;
-  color: #14100a;
-  background: var(--league);
-  padding: 12px 22px;
-  border-radius: 8px;
-  transition: transform .15s, box-shadow .15s;
-}
-.hero-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(249,160,27,.25); }
-.hero-cta .arrow { font-family: var(--font-mono); }
-
-/* ── LEGEND ── */
-.legend {
-  max-width: 860px;
-  margin: 0 auto 64px;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-@media (max-width: 640px) { .legend { grid-template-columns: 1fr; } }
-.legend-card {
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px 18px;
-  background: var(--surface);
-  border-left: 3px solid var(--lc, var(--border));
-}
-.legend-card.cba { --lc: var(--cba); }
-.legend-card.league { --lc: var(--league); }
-.legend-card .tag {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-.legend-card.cba .tag { color: var(--cba); }
-.legend-card.league .tag { color: var(--league); }
-.legend-card p { font-size: 13px; color: var(--dim); }
-
-/* ── SECTION HEADERS ── */
-.section {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 64px 24px;
-}
-.section-head {
-  margin-bottom: 36px;
-}
-.section-head .num {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--muted);
-  letter-spacing: 2px;
-}
-.section-head h2 {
-  font-family: var(--font-display);
-  font-size: 34px;
-  letter-spacing: .5px;
-  margin-top: 6px;
-}
-.section-head p {
-  color: var(--dim);
-  max-width: 620px;
-  margin-top: 10px;
-  font-size: 14px;
-}
-
-/* ── TIMELINE ── */
-.timeline { position: relative; padding-left: 0; }
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(180deg, var(--cba-line), var(--league-line));
-  transform: translateX(-50%);
-}
-@media (max-width: 760px) {
-  .timeline::before { left: 14px; }
-}
-
-.t-node {
-  position: relative;
-  margin-bottom: 6px;
-}
-.t-date {
-  text-align: center;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text);
-  background: var(--bg);
-  display: inline-block;
-  padding: 6px 14px;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 18px;
-}
-@media (max-width: 760px) {
-  .t-date { left: 14px; transform: translateX(0); }
-}
-
-.t-row {
-  display: grid;
-  grid-template-columns: 1fr 40px 1fr;
-  gap: 0 18px;
-  align-items: start;
-  margin-bottom: 40px;
-}
-@media (max-width: 760px) {
-  .t-row { grid-template-columns: 1fr; padding-left: 34px; gap: 12px; }
-  .t-row .t-spacer { display: none; }
-}
-
-.t-card {
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px 18px;
-  background: var(--surface);
-  position: relative;
-}
-.t-card.cba { border-left: 3px solid var(--cba); }
-.t-card.league { border-left: 3px solid var(--league); }
-.t-card.retired {
-  border-left: 3px solid var(--retired);
-  opacity: .55;
-}
-.t-card .k-tag {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  font-weight: 700;
-  margin-bottom: 8px;
-  display: inline-block;
-}
-.t-card.cba .k-tag { color: var(--cba); }
-.t-card.league .k-tag { color: var(--league); }
-.t-card.retired .k-tag { color: var(--retired); }
-.t-card h3 {
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-.t-card p {
-  font-size: 13px;
-  color: var(--dim);
-  margin-bottom: 8px;
-}
-.t-card .src {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  color: var(--muted);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  border-bottom: 1px dotted var(--muted);
-}
-.t-card .src:hover { color: var(--text); border-color: var(--text); }
-.t-card .part-tag {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--muted);
-  margin-top: 8px;
-}
-
-.t-dot {
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  background: var(--bg);
-  border: 2px solid var(--border);
-  justify-self: center;
-  margin-top: 6px;
-}
-@media (max-width: 760px) {
-  .t-dot { position: absolute; left: 9px; margin-top: 0; }
-}
-
-.t-empty { visibility: hidden; }
-@media (max-width: 760px) { .t-empty { display: none; } }
-
-/* ── CALLOUT ── */
-.callout {
-  border: 1px solid rgba(255,69,96,.35);
-  background: var(--red-dim);
-  border-radius: 10px;
-  padding: 16px 18px;
-  margin: 28px 0;
-  font-size: 13px;
-}
-.callout .tag {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--red);
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-/* ── FLOWCHART ACCORDIONS ── */
-.flow-list { display: flex; flex-direction: column; gap: 12px; }
-.flow-item {
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--surface);
-  overflow: hidden;
-}
-.flow-trigger {
-  width: 100%;
-  text-align: left;
-  background: none;
-  border: none;
-  color: var(--text);
-  font-family: var(--font-body);
-  padding: 18px 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 15px;
-  font-weight: 600;
-}
-.flow-trigger .q-mono {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--muted);
-  font-weight: 400;
-}
-.flow-trigger .chev {
-  margin-left: auto;
-  color: var(--muted);
-  transition: transform .2s;
-  font-family: var(--font-mono);
-}
-.flow-item.open .chev { transform: rotate(45deg); }
-.flow-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .25s ease;
-}
-.flow-item.open .flow-body { max-height: 2000px; }
-.flow-inner { padding: 4px 20px 22px; }
-
-.chain { display: flex; flex-direction: column; gap: 0; }
-.chain-step {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-}
-.chain-step .num-badge {
-  width: 26px; height: 26px;
-  border-radius: 50%;
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--dim);
-  flex-shrink: 0;
-}
-.chain-step .step-body { padding-bottom: 18px; flex: 1; }
-.chain-step .step-body h4 { font-size: 13.5px; margin-bottom: 3px; }
-.chain-step .step-body p { font-size: 12.5px; color: var(--dim); }
-.chain-connector {
-  width: 1px;
-  background: var(--border);
-  margin-left: 13px;
-  height: 14px;
-}
-.branch {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin: 4px 0 14px 40px;
-}
-@media (max-width: 560px) { .branch { grid-template-columns: 1fr; } }
-.branch-box {
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 10px 12px;
-  font-size: 12.5px;
-}
-.branch-box.yes { border-color: rgba(0,192,122,.4); background: var(--green-dim); }
-.branch-box.no { border-color: rgba(255,69,96,.4); background: var(--red-dim); }
-.branch-box .lbl {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 4px;
-}
-.branch-box.yes .lbl { color: var(--green); }
-.branch-box.no .lbl { color: var(--red); }
-
-/* ── QUICK LINKS ── */
-.link-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 12px;
-}
-.link-card {
-  display: block;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 14px 16px;
-  background: var(--surface);
-  text-decoration: none;
-  transition: border-color .15s, background .15s;
-}
-.link-card:hover { border-color: var(--dim); background: var(--surface2); }
-.link-card .lc-title { font-size: 13.5px; font-weight: 600; margin-bottom: 3px; }
-.link-card .lc-url { font-family: var(--font-mono); font-size: 10.5px; color: var(--muted); word-break: break-all; }
-
-footer {
-  text-align: center;
-  padding: 48px 24px 80px;
-  color: var(--muted);
-  font-size: 12px;
-  font-family: var(--font-mono);
-}
-
-
-.lang-switch {
-  display: flex;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 2px;
-  gap: 2px;
-  background: var(--surface2);
-}
-.lang-btn {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .5px;
-  padding: 5px 12px;
-  border-radius: 16px;
-  border: none;
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  transition: all .15s;
-}
-.lang-btn:hover { color: var(--text); }
-.lang-btn.active {
-  background: var(--league);
-  color: #14100a;
-}
-.lang-panel { display: none; }
-.lang-panel.active { display: block; }
-
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>NBA Front Office — Uğur</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<div class="lang-panel" id="panel-en" data-lang="en">
-
-
-<nav class="topnav">
-  <div class="brand">NBA <span>FRONT OFFICE</span></div>
-  <div class="lang-switch" role="group" aria-label="Language">
-    <button class="lang-btn" data-setlang="en" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" data-setlang="de" onclick="setLang('de')">DE</button>
-  </div>
-  <a class="navlink" href="#calendar-en">Calendar</a>
-  <a class="navlink" href="#decisions-en">Decisions</a>
-  <a class="navlink" href="#links-en">Rule Library</a>
-  <a class="navlink app-link" href="app.html">Open the App →</a>
-</nav>
-
-<header class="hero">
-  <div class="eyebrow">NBAFO Onboarding · Offseason Field Guide</div>
-  <h1>THE OFFSEASON,<br><span class="line2">MAPPED.</span></h1>
-  <p class="sub">Every deadline from June 25 to the trade deadline — what the real NBA CBA requires, and what our league does differently. Follow the spine top to bottom.</p>
-  <a class="hero-cta" href="app.html">Go straight to the roster app <span class="arrow">→</span></a>
-</header>
-
-<div class="legend">
-  <div class="legend-card cba">
-    <div class="tag">🏀 Blue — Real CBA Rule</div>
-    <p>What the actual, real-world Collective Bargaining Agreement requires. Click any 🔗 to read the source.</p>
-  </div>
-  <div class="legend-card league">
-    <div class="tag">🏆 Gold — NBAFO House Rule</div>
-    <p>How our league actually runs it — Daniel-as-agent, posting etiquette, deadlines, and the stuff that only exists here.</p>
-  </div>
-</div>
-
-<section class="section" id="calendar-en">
-  <div class="section-head">
-    <div class="num">01 / CALENDAR</div>
-    <h2>The Spine</h2>
-    <p>Two lanes, one timeline. Left = what the CBA actually says. Right = what that looks like in our league. Where a box is greyed out, it's a rule that's since been retired — don't use it.</p>
-  </div>
-
-  <div class="timeline">
-
-    <!-- JUNE 25 -->
-    <div class="t-node">
-      <div class="t-date">JUN 25</div>
-      <div class="t-row">
-        <div class="t-card cba">
-          <span class="k-tag">CBA</span>
-          <h3>Player option deadline (RFA carve-out)</h3>
-          <p>If declining a player option would make that player restricted rather than unrestricted, the option decision is due a few days earlier than the normal deadline, so the league has time to process the resulting Qualifying Offer.</p>
-          <a class="src" href="https://cms.nba.com/wp-content/uploads/sites/4/2024/11/2024-25-CBA-101.pdf" target="_blank">🔗 NBA CBA 101 (official)</a>
-          <div class="part-tag">→ Part 5, Step 1</div>
-        </div>
-        <div class="t-dot"></div>
-        <div class="t-card t-empty"></div>
-      </div>
+<div id="app">
+  <div id="topnav">
+    <div class="logo">NBA<span>FO</span></div>
+    <div class="nav-sep"></div>
+    <div class="nav-section-tabs">
+      <button class="nav-tab active" onclick="showPage('roster')" id="tab-roster">📋 Roster</button>
+      <button class="nav-tab" onclick="showPage('fa')" id="tab-fa">🆓 Free Agents</button>
+      <button class="nav-tab" onclick="showPage('trade')" id="tab-trade">🔄 Trade Calc</button>
+      <button class="nav-tab" onclick="showPage('tools')" id="tab-tools">🛠 Tools</button>
+      <button class="nav-tab" onclick="showPage('teams')" id="tab-teams">🏀 Teams</button>
     </div>
-
-    <!-- JUNE 29 -->
-    <div class="t-node">
-      <div class="t-date">JUN 29 · 5:00 PM ET</div>
-      <div class="t-row">
-        <div class="t-card cba">
-          <span class="k-tag">CBA</span>
-          <h3>Options & Qualifying Offers are due</h3>
-          <p>Team options, rookie-scale-adjacent decisions, and Qualifying Offers (which create Restricted Free Agent status) must be resolved by this deadline. Miss it and the decision is made for you — usually the worst way.</p>
-          <a class="src" href="https://cbaguide.com/transactions/signings/rfa/" target="_blank">🔗 cbaguide.com — RFA</a>
-          <div class="part-tag">→ Part 5, Step 1 · Part 9</div>
-        </div>
-        <div class="t-dot"></div>
-        <div class="t-card league">
-          <span class="k-tag">NBAFO</span>
-          <h3>Post it in Transactions — no PMs</h3>
-          <p>Dedicated threads exist for QOs, team options, rookie extensions, and renouncements. A one-liner is enough: <em>"Lopez – yes, Gaines – no."</em> Daniel processes it from there.</p>
-          <div class="part-tag">Addendum Q31</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- JULY 1 -->
-    <div class="t-node">
-      <div class="t-date">JUL 1</div>
-      <div class="t-row">
-        <div class="t-card cba">
-          <span class="k-tag">CBA</span>
-          <h3>New league year begins</h3>
-          <p>New cap, tax, and apron figures take effect. The Moratorium period starts — deals can be agreed to, but nothing can be signed yet.</p>
-          <a class="src" href="https://cms.nba.com/wp-content/uploads/sites/4/2024/11/2024-25-CBA-101.pdf" target="_blank">🔗 NBA CBA 101 (official)</a>
-          <div class="part-tag">→ Part 5, Step 4</div>
-        </div>
-        <div class="t-dot"></div>
-        <div class="t-card league">
-          <span class="k-tag">NBAFO</span>
-          <h3>This year's numbers post in CtrlPanel</h3>
-          <p>Cap, apron, and MLE figures for the new season land in the CtrlPanel sheet around this date — usually a small bump from last year.</p>
-          <div class="part-tag">Addendum Q47</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- MORATORIUM -->
-    <div class="t-node">
-      <div class="t-date">JUL 1 – 5</div>
-      <div class="t-row">
-        <div class="t-card cba">
-          <span class="k-tag">CBA</span>
-          <h3>Moratorium: negotiate, don't sign</h3>
-          <p>Teams and players can agree to terms verbally ("agreed in principle"), but nothing is official and no trades can be executed until the moratorium lifts.</p>
-          <div class="part-tag">→ Part 5, Step 4</div>
-        </div>
-        <div class="t-dot"></div>
-        <div class="t-card league">
-          <span class="k-tag">NBAFO</span>
-          <h3>Negotiate with "the agent" — Daniel</h3>
-          <p>Daniel represents every free agent. "How about…" and "I'll give you…" are not offers. Every negotiation should end with <em>"Should I post it?" → "Yes, please."</em> Deadlines are set per-player, not by a fixed calendar date — and a deadline is the agent's <em>last</em> chance to sign you, not the first.</p>
-          <div class="part-tag">Addendum Q21, Q49, Q73</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- JULY 6 -->
-    <div class="t-node">
-      <div class="t-date">JUL 6 +</div>
-      <div class="t-row">
-        <div class="t-card cba">
-          <span class="k-tag">CBA</span>
-          <h3>Signing period opens</h3>
-          <p>Agreed-upon deals become official. The general order that makes sense: your own Bird-Rights free agents first (near cap-neutral), then cap space, then remaining exceptions.</p>
-          <div class="part-tag">→ Part 5, Step 5 · Part 7</div>
-        </div>
-        <div class="t-dot"></div>
-        <div class="t-card league">
-          <span class="k-tag">NBAFO</span>
-          <h3>The house signing order (Q54)</h3>
-          <p>1) Players with high cap holds first — signing below the hold <em>lowers</em> your cap hit. 2) Spend your cap room. 3) Use Bird Rights on low-hold players. 4) Room MLE last. Out of order? Just tell the agent.</p>
-          <div class="part-tag">Addendum Q54, Q61</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SIGN AND TRADE (parallel, not date-bound) -->
-    <div class="t-node">
-      <div class="t-date">ANY TIME DURING FA</div>
-      <div class="t-row">
-        <div class="t-card cba">
-          <span class="k-tag">CBA</span>
-          <h3>Sign-and-trade needs 3-way consent</h3>
-          <p>Unlike a normal signing, a sign-and-trade also needs the <em>old</em> team's consent — not just the player's and the new team's.</p>
-          <div class="part-tag">→ Part 3, "Optionality"</div>
-        </div>
-        <div class="t-dot"></div>
-        <div class="t-card league">
-          <span class="k-tag">NBAFO</span>
-          <h3>How the agent runs it (Q51)</h3>
-          <p>An S&amp;T offer isn't "real" until the trade is agreed in principle. Only then can Daniel use it to force the Bird-Rights team to choose: complete the S&amp;T, take their own 2nd-best offer, or lose the player outright.</p>
-          <div class="part-tag">Addendum Q51 — see full flowchart below</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- RFA WINDOW -->
-    <div class="t-node">
-      <div class="t-date">JUL – MAR 1</div>
-      <div class="t-row">
-        <div class="t-card cba">
-          <span class="k-tag">CBA</span>
-          <h3>Restricted free agency window</h3>
-          <p>An RFA can sign an offer sheet with any team; his original team then has roughly two days to match every principal term. If nothing happens by March 1, he can no longer switch teams that season.</p>
-          <a class="src" href="https://atlhawksfanatic.github.io/NBA-CBA/free-agency.html" target="_blank">🔗 CBA Article 11 text</a>
-          <div class="part-tag">→ Part 9 (full)</div>
-        </div>
-        <div class="t-dot"></div>
-        <div class="t-card league">
-          <span class="k-tag">NBAFO</span>
-          <h3>Bid on your own RFA anyway (Q55)</h3>
-          <p>Otherwise he may just prefer his Qualifying Offer and walk as a UFA next summer. If someone else's offer beats yours, you still get the chance to match.</p>
-          <div class="part-tag">Addendum Q55, Q63</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- OCT 31 -->
-    <div class="t-node">
-      <div class="t-date">OCT 31</div>
-      <div class="t-row">
-        <div class="t-card cba">
-          <span class="k-tag">CBA</span>
-          <h3>Rookie-scale team option deadline</h3>
-          <p>3rd- and 4th-year rookie-scale options are decided a full year ahead of the season they cover.</p>
-          <div class="part-tag">→ Part 5, Step 7</div>
-        </div>
-        <div class="t-dot"></div>
-        <div class="t-card league">
-          <span class="k-tag">NBAFO</span>
-          <h3>Roster shrinks to 15</h3>
-          <p>Max roster size is 20 during free agency, dropping to 15 after this date — a house limit, not a real-NBA number (the real active-roster cap is 15 + up to 3 two-way slots).</p>
-          <div class="part-tag">Addendum Q75</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- DEC 15 -->
-    <div class="t-node">
-      <div class="t-date">DEC 15 / JAN 15</div>
-      <div class="t-row">
-        <div class="t-card cba">
-          <span class="k-tag">CBA</span>
-          <h3>Trade-eligibility windows open</h3>
-          <p>Most free-agent signees become tradable Dec 15 (or 3 months after signing, whichever's later). A smaller group — big Bird-Rights raises on over-the-cap teams — waits until Jan 15.</p>
-          <div class="part-tag">→ Part 5, Step 8 · Part 8</div>
-        </div>
-        <div class="t-dot"></div>
-        <div class="t-card league">
-          <span class="k-tag">NBAFO</span>
-          <h3>Stashed rookies untradeable too</h3>
-          <p>A Stashed Rookie Exception signing can't be traded until Dec 15 either — same date, different mechanism.</p>
-          <div class="part-tag">Addendum, Stashed Rookie Exception rules</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- FEB -->
-    <div class="t-node">
-      <div class="t-date">FEBRUARY</div>
-      <div class="t-row">
-        <div class="t-card cba">
-          <span class="k-tag">CBA</span>
-          <h3>Trade deadline</h3>
-          <p>Exact date is set season by season. Salary matching and aggregation rules tighten the closer your team salary sits to the two aprons.</p>
-          <a class="src" href="https://overtheapron.com/terms/second-apron" target="_blank">🔗 Second apron rules</a>
-          <div class="part-tag">→ Part 8, Part A</div>
-        </div>
-        <div class="t-dot"></div>
-        <div class="t-card league">
-          <span class="k-tag">NBAFO</span>
-          <h3>Trade Etiquette applies right up to the wire</h3>
-          <p>Post the full breakdown, wait for agreement from every side, then get league-office approval before touching any newly-acquired asset again.</p>
-          <div class="part-tag">Addendum Q20 — see checklist below</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- RETIRED -->
-    <div class="t-node">
-      <div class="t-date">RETIRED SINCE 2024</div>
-      <div class="t-row">
-        <div class="t-card t-empty"></div>
-        <div class="t-dot"></div>
-        <div class="t-card retired">
-          <span class="k-tag">⚠ No longer in effect</span>
-          <h3>The old "Owner Cap"</h3>
-          <p>Some older reference material still describes an active Owner Cap with its own MPE/SRE carve-outs. Per Q71 of this addendum, it was retired in 2024 — <strong>the CBA's real second apron now does that job.</strong> If you see Owner Cap language elsewhere, treat it as historical.</p>
-          <div class="part-tag">Addendum Q71</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="section" id="decisions-en">
-  <div class="section-head">
-    <div class="num">02 / DECISIONS</div>
-    <h2>Common Forks</h2>
-    <p>Not everything in a GM's life is date-driven. These are the recurring decision trees — click to expand.</p>
-  </div>
-
-  <div class="flow-list">
-
-    <!-- FLOW 1 -->
-    <div class="flow-item">
-      <button class="flow-trigger" onclick="this.parentElement.classList.toggle('open')">
-        Do I actually have cap space?
-        <span class="q-mono">Addendum Q33–36 · Part 2</span>
-        <span class="chev">+</span>
+    <div class="nav-right">
+      <span class="nav-team-label" id="nav-team-label">GM: Uğur · 2026-27</span>
+      <button class="theme-btn" onclick="toggleTheme()">
+        <div class="theme-dot"></div>
+        <span id="theme-label">DARK</span>
       </button>
-      <div class="flow-body"><div class="flow-inner">
-        <div class="chain">
-          <div class="chain-step">
-            <div class="num-badge">1</div>
-            <div class="step-body">
-              <h4>Check total salaries (cell D28) vs. the cap</h4>
-              <p>This is guaranteed contracts only — it is not your real number yet.</p>
+    </div>
+  </div>
+  <div id="sidebar-overlay" onclick="closeSidebar()"></div>
+  <div id="main-body">
+    <div id="sidebar">
+      <div class="sidebar-section-label">My Teams</div>
+      <div id="sidebar-my-teams"></div>
+      <div class="sidebar-section-label" style="margin-top:14px">All Teams</div>
+      <div id="sidebar-all-teams"></div>
+    </div>
+    <div id="content">
+      <div id="mobile-team-strip">
+        <div class="mobile-team-dot" id="strip-dot"></div>
+        <div class="mobile-team-name" id="strip-name">Philadelphia 76ers</div>
+        <button class="mobile-hamburger" onclick="openSidebar()">☰</button>
+      </div>
+      <!-- ROSTER PAGE -->
+      <div class="page active" id="page-roster">
+        <div id="roster-team-header"></div>
+        <div id="cap-bar-section"></div>
+        <div class="roster-toolbar">
+          <button class="filter-btn active" onclick="setFilter('all',this)">All</button>
+          <button class="filter-btn" onclick="setFilter('expiring',this)">Expiring</button>
+          <button class="filter-btn" onclick="setFilter('caps',this)">Cap Risks</button>
+          <button class="filter-btn" onclick="setFilter('tradable',this)">Tradable</button>
+          <button class="filter-btn" onclick="setFilter('bird',this)">Bird Rights</button>
+          <button class="filter-btn" onclick="setFilter('options',this)">PO/TO</button>
+          <input class="search-box" id="roster-search" type="text" placeholder="Suche..." oninput="renderRoster()"><button class="export-btn" id="export-csv-btn" onclick="exportRosterCSV()">⬇ CSV</button><button class="export-btn" id="export-md-btn" onclick="exportRosterMarkdown()">📋 MD</button>
+        </div>
+        <div class="roster-wrap" id="roster-table-wrap"></div>
+      </div>
+      <!-- FA PAGE -->
+      <div class="page" id="page-fa">
+        <div class="fa-toolbar">
+          <span style="font-family:var(--font-display);font-size:20px;letter-spacing:1px">Free Agents 2026</span>
+          <input class="fa-search" id="fa-search" type="text" placeholder="Suche Spieler..." oninput="renderFA()">
+          <select id="fa-sort-select" onchange="setFASort()" style="padding:5px 8px;background:var(--surface2);border:1px solid var(--border);border-radius:5px;color:var(--text);font-size:11px;outline:none">
+            <option value="fpg-1">FPG ↓</option>
+            <option value="fpg1">FPG ↑</option>
+            <option value="name-1">Name A-Z</option>
+            <option value="fairval-1">Fair Value ↓</option>
+            <option value="sl-1">🏀 SL GP (25+26) ↓</option>
+            <option value="slupside-1">🔥 SL Upside (25+26) ↓</option>
+          </select>
+          <label style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--dim);cursor:pointer;white-space:nowrap"><input type="checkbox" id="fa-sl-only" onchange="renderFA()" style="accent-color:var(--team-c1)"> 🏀 nur mit SL-Sample (25+26)</label>
+        </div>
+        <div class="fa-table-wrap" id="fa-table-wrap"></div>
+      </div>
+      <!-- TRADE PAGE -->
+      <div class="page" id="page-trade">
+        <div class="trade-page">
+          <div class="trade-header-row">
+            <span class="trade-page-title">⚖️ Trade Calculator</span>
+            <button class="trade-reset-btn" onclick="resetTrade()">↺ Reset</button>
+          </div>
+          <div class="trade-sides">
+            <div class="trade-side">
+              <div class="trade-side-header">
+                <span class="trade-side-label">Team A</span>
+                <select class="trade-team-select" id="trade-team-a" onchange="updateTradeSide('a')">
+                  <option value="">— Team wählen —</option>
+                </select>
+              </div>
+              <div class="trade-side-body">
+                <div class="picker-wrap" id="picker-wrap-a">
+                  <input class="trade-player-search" id="trade-search-a" type="text" placeholder="Spieler suchen…" oninput="showDropdown('a')" onfocus="showDropdown('a')" autocomplete="off">
+                  <div class="trade-player-dropdown" id="dropdown-a" style="display:none"></div>
+                </div>
+                <div class="trade-players-list" id="trade-players-a"></div>
+                <div class="manual-add-row">
+                  <input class="manual-input" id="manual-name-a" type="text" placeholder="Spielername (manuell)">
+                  <input class="manual-input" id="manual-sal-a" type="number" placeholder="Gehalt $" style="max-width:110px">
+                  <button class="manual-add-btn" onclick="manualAdd('a')">+ Add</button>
+                </div>
+              </div>
+              <div class="trade-totals">
+                <span class="trade-total-label">OUTGOING</span>
+                <span class="trade-total-val" id="total-a">$0</span>
+              </div>
+            </div>
+            <div class="trade-side">
+              <div class="trade-side-header">
+                <span class="trade-side-label">Team B</span>
+                <select class="trade-team-select" id="trade-team-b" onchange="updateTradeSide('b')">
+                  <option value="">— Team wählen —</option>
+                </select>
+              </div>
+              <div class="trade-side-body">
+                <div class="picker-wrap" id="picker-wrap-b">
+                  <input class="trade-player-search" id="trade-search-b" type="text" placeholder="Spieler suchen…" oninput="showDropdown('b')" onfocus="showDropdown('b')" autocomplete="off">
+                  <div class="trade-player-dropdown" id="dropdown-b" style="display:none"></div>
+                </div>
+                <div class="trade-players-list" id="trade-players-b"></div>
+                <div class="manual-add-row">
+                  <input class="manual-input" id="manual-name-b" type="text" placeholder="Spielername (manuell)">
+                  <input class="manual-input" id="manual-sal-b" type="number" placeholder="Gehalt $" style="max-width:110px">
+                  <button class="manual-add-btn" onclick="manualAdd('b')">+ Add</button>
+                </div>
+              </div>
+              <div class="trade-totals">
+                <span class="trade-total-label">OUTGOING</span>
+                <span class="trade-total-val" id="total-b">$0</span>
+              </div>
             </div>
           </div>
-          <div class="chain-connector"></div>
-          <div class="chain-step">
-            <div class="num-badge">2</div>
-            <div class="step-body">
-              <h4>Check every other charge — 99% of the time it's cap holds</h4>
-              <p>Free-agent cap holds are almost always the reason "so few players under contract" still leaves you with zero room.</p>
-            </div>
+          <div class="trade-verdict">
+            <div class="verdict-title">📊 Trade Analyse</div>
+            <div class="verdict-grid" id="trade-verdict"></div>
           </div>
-          <div class="chain-connector"></div>
-          <div class="chain-step">
-            <div class="num-badge">3</div>
-            <div class="step-body">
-              <h4>Read D53 — your real cap space, after everything</h4>
-            </div>
+          <div class="tpe-section">
+            <div class="tpe-title">💜 Traded Player Exceptions</div>
+            <div id="tpe-results"><div style="color:var(--muted);font-size:12px">Füge Spieler hinzu um TPEs zu berechnen.</div></div>
           </div>
-          <div class="chain-connector"></div>
-          <div class="chain-step">
-            <div class="num-badge">4</div>
-            <div class="step-body">
-              <h4>Read D33 — are you hard-capped this season?</h4>
-              <p>This flag applies for the whole season regardless of whether you currently have room.</p>
+          <div class="cba-ref">
+            <div class="cba-ref-title">📖 CBA 2026-27 Referenz</div>
+            <div class="cba-grid">
+              <div class="cba-item"><div class="cba-item-label">Salary Cap</div><div class="cba-item-val" style="color:var(--green)">$165,000,000</div></div>
+              <div class="cba-item"><div class="cba-item-label">Luxury Tax</div><div class="cba-item-val" style="color:var(--yellow)">$201,000,000</div></div>
+              <div class="cba-item"><div class="cba-item-label">1st Apron</div><div class="cba-item-val" style="color:var(--orange)">$209,000,000</div></div>
+              <div class="cba-item"><div class="cba-item-label">2nd Apron</div><div class="cba-item-val" style="color:var(--red)">$222,000,000</div></div>
+              <div class="cba-item"><div class="cba-item-label">Non-Tax MLE</div><div class="cba-item-val">$15,048,000</div></div>
+              <div class="cba-item"><div class="cba-item-label">Tax MLE</div><div class="cba-item-val">$6,065,000</div></div>
+              <div class="cba-item"><div class="cba-item-label">Room MLE</div><div class="cba-item-val">$9,369,000</div></div>
+              <div class="cba-item"><div class="cba-item-label">BAE</div><div class="cba-item-val">$5,478,000</div></div>
             </div>
           </div>
         </div>
-        <div class="branch">
-          <div class="branch-box yes"><span class="lbl">D53 &gt; 0</span>You have real cap space. See "signing order" below.</div>
-          <div class="branch-box no"><span class="lbl">D53 ≤ 0</span>You need Bird Rights, an exception, or a renouncement to add anyone above the minimum.</div>
-        </div>
-        <p style="font-size:12.5px;color:var(--dim);margin-top:6px">🔗 <a class="src" href="https://www.cbafaq.com" target="_blank">cbafaq.com</a> — the master reference for every charge that can eat into cap space.</p>
-      </div></div>
-    </div>
-
-    <!-- FLOW 2 -->
-    <div class="flow-item">
-      <button class="flow-trigger" onclick="this.parentElement.classList.toggle('open')">
-        I have cap room — what order do I sign people in?
-        <span class="q-mono">Addendum Q54 · Part 5, Step 5</span>
-        <span class="chev">+</span>
-      </button>
-      <div class="flow-body"><div class="flow-inner">
-        <div class="chain">
-          <div class="chain-step">
-            <div class="num-badge">1</div>
-            <div class="step-body"><h4>Sign players with high cap holds first</h4><p>If the real contract's first-year salary is lower than the hold, your total cap hit goes <em>down</em> the moment you sign him.</p></div>
-          </div>
-          <div class="chain-connector"></div>
-          <div class="chain-step">
-            <div class="num-badge">2</div>
-            <div class="step-body"><h4>Spend your actual cap room</h4><p>On outside targets, while you still have real space to spend.</p></div>
-          </div>
-          <div class="chain-connector"></div>
-          <div class="chain-step">
-            <div class="num-badge">3</div>
-            <div class="step-body"><h4>Use Bird Rights on your remaining low-hold players</h4><p>These don't need cap room at all — save the room for players who do.</p></div>
-          </div>
-          <div class="chain-connector"></div>
-          <div class="chain-step">
-            <div class="num-badge">4</div>
-            <div class="step-body"><h4>Room MLE, last</h4><p>Once your cap room converts to this exception, use it to round out the roster.</p></div>
-          </div>
-        </div>
-        <p style="font-size:12.5px;color:var(--dim)">Need to go out of order for a specific deal? Just tell the agent — Daniel will work with it.</p>
-      </div></div>
-    </div>
-
-    <!-- FLOW 3 -->
-    <div class="flow-item">
-      <button class="flow-trigger" onclick="this.parentElement.classList.toggle('open')">
-        Should I renounce this guy?
-        <span class="q-mono">Addendum Q35, Q61, Q63–64 · Part 4</span>
-        <span class="chev">+</span>
-      </button>
-      <div class="flow-body"><div class="flow-inner">
-        <div class="chain">
-          <div class="chain-step">
-            <div class="num-badge">1</div>
-            <div class="step-body"><h4>Do you need the cap space right now, for a specific deal?</h4></div>
-          </div>
-        </div>
-        <div class="branch">
-          <div class="branch-box no"><span class="lbl">No</span>Don't renounce. Keep every hold until a real decision forces the question — as the commish puts it, "is it really so hard to renounce them all in October?"</div>
-          <div class="branch-box yes"><span class="lbl">Yes</span>Consider a <em>conditional</em> renouncement — see step 2.</div>
-        </div>
-        <div class="chain">
-          <div class="chain-step">
-            <div class="num-badge">2</div>
-            <div class="step-body"><h4>Tell the agent you're renouncing conditionally</h4><p>Only if the specific bid succeeds. This applies to both exceptions (Q61) and free agents themselves (Q63–64) — you're "testing the waters" until the deal is actually done.</p></div>
-          </div>
-        </div>
-        <div class="callout" style="margin:14px 0 0">
-          <div class="tag">Why this matters</div>
-          Once you renounce for real, Bird Rights are gone for that player this offseason — even if your big plan falls through and you never actually needed the room. Full mechanics in Part 4.
-        </div>
-      </div></div>
-    </div>
-
-    <!-- FLOW 4 -->
-    <div class="flow-item">
-      <button class="flow-trigger" onclick="this.parentElement.classList.toggle('open')">
-        My RFA just got an offer sheet — now what?
-        <span class="q-mono">Part 9 · Addendum Q55, Q63</span>
-        <span class="chev">+</span>
-      </button>
-      <div class="flow-body"><div class="flow-inner">
-        <div class="chain">
-          <div class="chain-step">
-            <div class="num-badge">1</div>
-            <div class="step-body"><h4>Notified of the offer sheet</h4><p>The clock starts immediately — roughly a 2-day matching window.</p></div>
-          </div>
-          <div class="chain-connector"></div>
-          <div class="chain-step">
-            <div class="num-badge">2</div>
-            <div class="step-body"><h4>Does he have 1–2 years of service?</h4><p>If so, the Arenas Provision caps Year 1 of the offer sheet at the Non-Taxpayer MLE level — your matching burden is deliberately kept low.</p></div>
-          </div>
-          <div class="chain-connector"></div>
-          <div class="chain-step">
-            <div class="num-badge">3</div>
-            <div class="step-body"><h4>Match every principal term — not just the salary</h4><p>Option years, guarantee triggers, incentive structure — all of it.</p></div>
-          </div>
-        </div>
-        <div class="branch">
-          <div class="branch-box yes"><span class="lbl">Match</span>He stays, on the exact terms of the offer sheet.</div>
-          <div class="branch-box no"><span class="lbl">Decline</span>He's gone — to the team that signed him.</div>
-        </div>
-        <p style="font-size:12.5px;color:var(--dim);margin-top:4px">🔗 <a class="src" href="https://www.hoopsrumors.com/2023/03/hoops-rumors-glossary-gilbert-arenas-provision-4.html" target="_blank">Gilbert Arenas Provision, explained</a></p>
-      </div></div>
-    </div>
-
-    <!-- FLOW 5 -->
-    <div class="flow-item">
-      <button class="flow-trigger" onclick="this.parentElement.classList.toggle('open')">
-        Running a sign-and-trade
-        <span class="q-mono">Addendum Q51</span>
-        <span class="chev">+</span>
-      </button>
-      <div class="flow-body"><div class="flow-inner">
-        <div class="chain">
-          <div class="chain-step">
-            <div class="num-badge">1</div>
-            <div class="step-body"><h4>Send the agent an offer, flagged as a sign-and-trade</h4></div>
-          </div>
-          <div class="chain-connector"></div>
-          <div class="chain-step">
-            <div class="num-badge">2</div>
-            <div class="step-body"><h4>Agent checks: is your S&amp;T offer the highest?</h4><p>If not, you're told to improve it before anything else happens.</p></div>
-          </div>
-        </div>
-        <div class="branch">
-          <div class="branch-box yes">Your S&amp;T is highest, and the Bird-Rights team's own 2nd-highest offer is #2 → that team chooses: complete the S&amp;T, or keep him on their own offer.</div>
-          <div class="branch-box no">Your S&amp;T is highest, but a 3rd team has the 2nd-best offer → the Bird-Rights team chooses: complete the S&amp;T with you, or lose him to that 3rd team.</div>
-        </div>
-        <p style="font-size:12.5px;color:var(--dim);margin-top:4px">An S&amp;T offer isn't "real" until the trade side is agreed in principle — it can't be used just to drive up competing bids.</p>
-      </div></div>
-    </div>
-
-    <!-- FLOW 6 -->
-    <div class="flow-item">
-      <button class="flow-trigger" onclick="this.parentElement.classList.toggle('open')">
-        Trade etiquette checklist
-        <span class="q-mono">Addendum Q20</span>
-        <span class="chev">+</span>
-      </button>
-      <div class="flow-body"><div class="flow-inner">
-        <div class="chain">
-          <div class="chain-step"><div class="num-badge">1</div><div class="step-body"><h4>Post the full breakdown</h4><p>Exactly what each side gives and gets — critical with 3+ teams or protected picks.</p></div></div>
-          <div class="chain-connector"></div>
-          <div class="chain-step"><div class="num-badge">2</div><div class="step-body"><h4>State the financial mechanism</h4><p>Cap space, TPE, aggregation — whatever makes it legal, spell it out so anyone can check it.</p></div></div>
-          <div class="chain-connector"></div>
-          <div class="chain-step"><div class="num-badge">3</div><div class="step-body"><h4>All parties agree → league office approves</h4><p>Only then are newly-acquired pieces available for a follow-up trade.</p></div></div>
-          <div class="chain-connector"></div>
-          <div class="chain-step"><div class="num-badge">4</div><div class="step-body"><h4>Shopping an asset? Use the Trade Block properly</h4><p>Post it → wait for offers → negotiate → pick your favorite → sleep on it. Skipping this process is what triggers the Deron Treatment.</p></div></div>
-        </div>
-      </div></div>
-    </div>
-
-  </div>
-</section>
-
-<section class="section" id="links-en">
-  <div class="section-head">
-    <div class="num">03 / RULE LIBRARY</div>
-    <h2>Go Straight to the Source</h2>
-    <p>Every 🔗 above points here — collected in one place for when you want to read the actual rule instead of the summary.</p>
-  </div>
-  <div class="link-grid">
-    <a class="link-card" href="https://www.cbafaq.com" target="_blank">
-      <div class="lc-title">Larry Coon's CBA FAQ</div>
-      <div class="lc-url">cbafaq.com — the reference our own addendum points to</div>
-    </a>
-    <a class="link-card" href="https://cms.nba.com/wp-content/uploads/sites/4/2024/11/2024-25-CBA-101.pdf" target="_blank">
-      <div class="lc-title">NBA CBA 101 (official)</div>
-      <div class="lc-url">cms.nba.com — the league's own plain-language primer</div>
-    </a>
-    <a class="link-card" href="https://cbaguide.com/thresholds/salarycap/" target="_blank">
-      <div class="lc-title">The Salary Cap &amp; Team Salary</div>
-      <div class="lc-url">cbaguide.com/thresholds/salarycap</div>
-    </a>
-    <a class="link-card" href="https://cbaguide.com/thresholds/apron/" target="_blank">
-      <div class="lc-title">The Two Aprons</div>
-      <div class="lc-url">cbaguide.com/thresholds/apron</div>
-    </a>
-    <a class="link-card" href="https://cbaguide.com/transactions/signings/rfa/" target="_blank">
-      <div class="lc-title">Restricted Free Agency</div>
-      <div class="lc-url">cbaguide.com/transactions/signings/rfa</div>
-    </a>
-    <a class="link-card" href="https://cbaguide.com/transactions/extensions/" target="_blank">
-      <div class="lc-title">Extensions</div>
-      <div class="lc-url">cbaguide.com/transactions/extensions</div>
-    </a>
-    <a class="link-card" href="https://www.hoopsrumors.com/2023/03/hoops-rumors-glossary-gilbert-arenas-provision-4.html" target="_blank">
-      <div class="lc-title">Gilbert Arenas Provision</div>
-      <div class="lc-url">hoopsrumors.com glossary</div>
-    </a>
-    <a class="link-card" href="https://atlhawksfanatic.github.io/NBA-CBA/free-agency.html" target="_blank">
-      <div class="lc-title">CBA Article 11 — Free Agency (full text)</div>
-      <div class="lc-url">atlhawksfanatic.github.io</div>
-    </a>
-    <a class="link-card" href="https://overtheapron.com/terms/second-apron" target="_blank">
-      <div class="lc-title">Second Apron, in depth</div>
-      <div class="lc-url">overtheapron.com/terms/second-apron</div>
-    </a>
-  </div>
-</section>
-
-<footer>
-  NBAFO Offseason Field Guide · Blue = real CBA · Gold = house rule · Grey = retired<br>
-  Deep dives on every mechanic here live in the 10-part explainer series.
-</footer>
-
-
-</div>
-
-<div class="lang-panel" id="panel-de" data-lang="de">
-
-
-<nav class="topnav">
-  <div class="brand">NBA <span>FRONT OFFICE</span></div>
-  <div class="lang-switch" role="group" aria-label="Language">
-    <button class="lang-btn" data-setlang="en" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" data-setlang="de" onclick="setLang('de')">DE</button>
-  </div>
-  <a class="navlink" href="#calendar-de">Kalender</a>
-  <a class="navlink" href="#decisions-de">Entscheidungen</a>
-  <a class="navlink" href="#links-de">Regel-Bibliothek</a>
-  <a class="navlink app-link" href="app.html">Zur App →</a>
-</nav>
-
-<header class="hero">
-  <div class="eyebrow">NBAFO Einstieg · Offseason-Leitfaden</div>
-  <h1>DIE OFFSEASON,<br><span class="line2">IM ÜBERBLICK.</span></h1>
-  <p class="sub">Jede Deadline vom 25. Juni bis zur Trade Deadline — was der echte NBA CBA (Tarifvertrag) vorschreibt, und was unsere Liga anders macht. Folge der Zeitachse von oben nach unten.</p>
-  <a class="hero-cta" href="app.html">Direkt zur Roster-App <span class="arrow">→</span></a>
-</header>
-
-<div class="legend">
-  <div class="legend-card cba">
-    <div class="tag">🏀 Blau — Echte CBA-Regel</div>
-    <p>Was das echte Collective Bargaining Agreement (Tarifvertrag) der NBA vorschreibt. Klick auf 🔗 für die Originalquelle.</p>
-  </div>
-  <div class="legend-card league">
-    <div class="tag">🏆 Gold — NBAFO-Hausregel</div>
-    <p>Wie unsere Liga es tatsächlich handhabt — Daniel als Agent (Spielervermittler), Post-Etikette, Fristen und alles, was es nur hier gibt.</p>
-  </div>
-</div>
-
-<section class="section" id="calendar-de">
-  <div class="section-head">
-    <div class="num">01 / KALENDER</div>
-    <h2>Die Zeitachse</h2>
-    <p>Zwei Spuren, eine Zeitachse. Links = was der CBA wirklich sagt. Rechts = wie das in unserer Liga aussieht. Ist eine Box ausgegraut, ist die Regel nicht mehr gültig — nicht mehr verwenden.</p>
-  </div>
-
-  <div class="timeline">
-
-    <!-- JUNE 25 -->
-    <div class="t-node">
-      <div class="t-date">25. JUNI</div>
-      <div class="t-row">
-        <div class="t-card cba">
-          <span class="k-tag">CBA</span>
-          <h3>Player-Option-Frist (Sonderfall RFA)</h3>
-          <p>Würde die Ablehnung einer Player Option (Spieleroption) den Spieler zum Restricted statt Unrestricted Free Agent machen, ist die Entscheidung ein paar Tage früher fällig als die normale Frist — damit die Liga Zeit hat, das daraus folgende Qualifying Offer (Qualifikationsangebot) zu bearbeiten.</p>
-          <a class="src" href="https://cms.nba.com/wp-content/uploads/sites/4/2024/11/2024-25-CBA-101.pdf" target="_blank">🔗 NBA CBA 101 (offiziell)</a>
-          <div class="part-tag">→ Teil 5, Schritt 1</div>
-        </div>
-        <div class="t-dot"></div>
-        <div class="t-card t-empty"></div>
       </div>
-    </div>
-
-    <!-- JUNE 29 -->
-    <div class="t-node">
-      <div class="t-date">29. JUNI · 17:00 ET</div>
-      <div class="t-row">
-        <div class="t-card cba">
-          <span class="k-tag">CBA</span>
-          <h3>Optionen & Qualifying Offers sind fällig</h3>
-          <p>Team Options (Team-Optionen), rookie-scale-nahe Entscheidungen und Qualifying Offers (die den Restricted-Free-Agent-Status auslösen) müssen bis zu dieser Frist geklärt sein. Verpasst du sie, wird die Entscheidung für dich getroffen — meist auf die schlechteste Art.</p>
-          <a class="src" href="https://cbaguide.com/transactions/signings/rfa/" target="_blank">🔗 cbaguide.com — RFA</a>
-          <div class="part-tag">→ Teil 5, Schritt 1 · Teil 9</div>
-        </div>
-        <div class="t-dot"></div>
-        <div class="t-card league">
-          <span class="k-tag">NBAFO</span>
-          <h3>Im Transactions-Board posten — keine PMs</h3>
-          <p>Es gibt eigene Threads für QOs, Team Options, Rookie Extensions (Rookie-Vertragsverlängerungen) und Renouncements (Rechteverzicht). Ein Einzeiler reicht: „Lopez – ja, Gaines – nein." Daniel übernimmt den Rest.</p>
-          <div class="part-tag">Addendum Q31</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- JULY 1 -->
-    <div class="t-node">
-      <div class="t-date">1. JULI</div>
-      <div class="t-row">
-        <div class="t-card cba">
-          <span class="k-tag">CBA</span>
-          <h3>Neues Liga-Jahr beginnt</h3>
-          <p>Neue Werte für Cap (Gehaltsobergrenze), Tax (Luxussteuer) und Apron (Zusatzgrenze) treten in Kraft. Das Moratorium (Sperrfrist) beginnt — Deals können vereinbart, aber noch nicht offiziell unterschrieben werden.</p>
-          <a class="src" href="https://cms.nba.com/wp-content/uploads/sites/4/2024/11/2024-25-CBA-101.pdf" target="_blank">🔗 NBA CBA 101 (offiziell)</a>
-          <div class="part-tag">→ Teil 5, Schritt 4</div>
-        </div>
-        <div class="t-dot"></div>
-        <div class="t-card league">
-          <span class="k-tag">NBAFO</span>
-          <h3>Die Zahlen fürs Jahr stehen im CtrlPanel</h3>
-          <p>Cap-, Apron- und MLE-Werte für die neue Saison landen um dieses Datum herum im CtrlPanel-Sheet — meist eine leichte Erhöhung gegenüber dem Vorjahr.</p>
-          <div class="part-tag">Addendum Q47</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- MORATORIUM -->
-    <div class="t-node">
-      <div class="t-date">1. – 5. JULI</div>
-      <div class="t-row">
-        <div class="t-card cba">
-          <span class="k-tag">CBA</span>
-          <h3>Moratorium: verhandeln, nicht unterschreiben</h3>
-          <p>Teams und Spieler können sich mündlich einigen („agreed in principle" / im Prinzip vereinbart), aber nichts ist offiziell, und Trades können erst nach Ende des Moratoriums vollzogen werden.</p>
-          <div class="part-tag">→ Teil 5, Schritt 4</div>
-        </div>
-        <div class="t-dot"></div>
-        <div class="t-card league">
-          <span class="k-tag">NBAFO</span>
-          <h3>Verhandeln mit „dem Agenten" — Daniel</h3>
-          <p>Daniel vertritt jeden Free Agent. „Wie wär's mit …" und „Ich gebe dir …" sind keine Angebote. Jede Verhandlung sollte enden mit: „Soll ich es posten?" → „Ja, bitte." Fristen werden pro Spieler gesetzt, nicht nach festem Kalenderdatum — und eine Frist ist die letzte, nicht die erste Chance des Agenten, dich zu verpflichten.</p>
-          <div class="part-tag">Addendum Q21, Q49, Q73</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- JULY 6 -->
-    <div class="t-node">
-      <div class="t-date">AB 6. JULI</div>
-      <div class="t-row">
-        <div class="t-card cba">
-          <span class="k-tag">CBA</span>
-          <h3>Unterschriften-Phase beginnt</h3>
-          <p>Vereinbarte Deals werden offiziell. Sinnvolle Reihenfolge: zuerst eigene Bird-Rights-Free-Agents (fast cap-neutral), dann Cap Space, dann verbleibende Exceptions (Ausnahmeregelungen).</p>
-          <div class="part-tag">→ Teil 5, Schritt 5 · Teil 7</div>
-        </div>
-        <div class="t-dot"></div>
-        <div class="t-card league">
-          <span class="k-tag">NBAFO</span>
-          <h3>Die Haus-Reihenfolge beim Unterschreiben (Q54)</h3>
-          <p>1) Spieler mit hohen Cap Holds (Cap-Reservierungen) zuerst — unterschreibst du unter dem Hold, sinkt dein Cap-Betrag. 2) Cap Room ausgeben. 3) Bird Rights bei Spielern mit niedrigem Hold nutzen. 4) Room MLE zuletzt. Andere Reihenfolge nötig? Einfach dem Agenten sagen.</p>
-          <div class="part-tag">Addendum Q54, Q61</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SIGN AND TRADE -->
-    <div class="t-node">
-      <div class="t-date">JEDERZEIT WÄHREND DER FA</div>
-      <div class="t-row">
-        <div class="t-card cba">
-          <span class="k-tag">CBA</span>
-          <h3>Sign-and-Trade braucht Zustimmung von drei Seiten</h3>
-          <p>Anders als bei einer normalen Unterschrift braucht ein Sign-and-Trade auch die Zustimmung des alten Teams — nicht nur die von Spieler und neuem Team.</p>
-          <div class="part-tag">→ Teil 3, „Optionality" (Handlungsspielraum)</div>
-        </div>
-        <div class="t-dot"></div>
-        <div class="t-card league">
-          <span class="k-tag">NBAFO</span>
-          <h3>Wie der Agent das abwickelt (Q51)</h3>
-          <p>Ein S&amp;T-Angebot ist erst „echt", wenn der Trade-Teil im Prinzip vereinbart ist. Erst dann kann Daniel damit das Bird-Rights-Team zwingen zu wählen: den S&amp;T abschließen, das eigene zweitbeste Angebot nehmen, oder den Spieler ganz verlieren.</p>
-          <div class="part-tag">Addendum Q51 — vollständiges Flowchart weiter unten</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- RFA WINDOW -->
-    <div class="t-node">
-      <div class="t-date">JULI – 1. MÄRZ</div>
-      <div class="t-row">
-        <div class="t-card cba">
-          <span class="k-tag">CBA</span>
-          <h3>Restricted-Free-Agency-Fenster</h3>
-          <p>Ein RFA (Restricted Free Agent) kann mit jedem Team ein Offer Sheet (Vertragsangebot) unterschreiben; sein bisheriges Team hat dann rund zwei Tage, um jeden Principal Term (Hauptvertragsbedingung) zu matchen. Passiert bis zum 1. März nichts, kann er diese Saison das Team nicht mehr wechseln.</p>
-          <a class="src" href="https://atlhawksfanatic.github.io/NBA-CBA/free-agency.html" target="_blank">🔗 CBA Artikel 11 (Originaltext)</a>
-          <div class="part-tag">→ Teil 9 (vollständig)</div>
-        </div>
-        <div class="t-dot"></div>
-        <div class="t-card league">
-          <span class="k-tag">NBAFO</span>
-          <h3>Trotzdem auf den eigenen RFA bieten (Q55)</h3>
-          <p>Sonst nimmt er womöglich einfach sein Qualifying Offer und geht nächsten Sommer als UFA (Unrestricted Free Agent). Bietet jemand anderes mehr, hast du trotzdem noch die Chance zu matchen.</p>
-          <div class="part-tag">Addendum Q55, Q63</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- OCT 31 -->
-    <div class="t-node">
-      <div class="t-date">31. OKTOBER</div>
-      <div class="t-row">
-        <div class="t-card cba">
-          <span class="k-tag">CBA</span>
-          <h3>Frist für Rookie-Scale Team Option</h3>
-          <p>Team Options für das 3. und 4. Jahr eines Rookie-Scale-Vertrags werden ein volles Jahr vor der betroffenen Saison entschieden.</p>
-          <div class="part-tag">→ Teil 5, Schritt 7</div>
-        </div>
-        <div class="t-dot"></div>
-        <div class="t-card league">
-          <span class="k-tag">NBAFO</span>
-          <h3>Kader schrumpft auf 15</h3>
-          <p>Maximale Kadergröße ist 20 während der Free Agency, ab diesem Datum dann 15 — eine Hausregel, keine echte NBA-Zahl (das echte Limit sind 15 Spieler plus bis zu 3 Two-Way-Plätze).</p>
-          <div class="part-tag">Addendum Q75</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- DEC 15 -->
-    <div class="t-node">
-      <div class="t-date">15. DEZ. / 15. JAN.</div>
-      <div class="t-row">
-        <div class="t-card cba">
-          <span class="k-tag">CBA</span>
-          <h3>Trade-Fähigkeit tritt in Kraft</h3>
-          <p>Die meisten neu unterschriebenen Free Agents werden am 15. Dezember handelbar (oder 3 Monate nach Unterschrift, je nachdem was später ist). Eine kleinere Gruppe — große Bird-Rights-Gehaltssprünge bei Teams über dem Cap — muss bis zum 15. Januar warten.</p>
-          <div class="part-tag">→ Teil 5, Schritt 8 · Teil 8</div>
-        </div>
-        <div class="t-dot"></div>
-        <div class="t-card league">
-          <span class="k-tag">NBAFO</span>
-          <h3>Auch gestashte Rookies nicht handelbar</h3>
-          <p>Ein über die Stashed Rookie Exception (Ausnahme für „geparkte" Rookies) unterschriebener Vertrag kann ebenfalls erst ab dem 15. Dezember gehandelt werden — gleiches Datum, anderer Mechanismus.</p>
-          <div class="part-tag">Addendum, Stashed-Rookie-Exception-Regeln</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- FEB -->
-    <div class="t-node">
-      <div class="t-date">FEBRUAR</div>
-      <div class="t-row">
-        <div class="t-card cba">
-          <span class="k-tag">CBA</span>
-          <h3>Trade Deadline (Handelsfrist)</h3>
-          <p>Das genaue Datum wird jede Saison neu festgelegt. Salary-Matching- (Gehaltsabgleich) und Aggregation-Regeln (Zusammenlegung mehrerer Gehälter) werden strenger, je näher dein Team-Gehalt an den beiden Aprons liegt.</p>
-          <a class="src" href="https://overtheapron.com/terms/second-apron" target="_blank">🔗 Second-Apron-Regeln</a>
-          <div class="part-tag">→ Teil 8, Teil A</div>
-        </div>
-        <div class="t-dot"></div>
-        <div class="t-card league">
-          <span class="k-tag">NBAFO</span>
-          <h3>Trade-Etikette gilt bis zur letzten Minute</h3>
-          <p>Vollständige Aufschlüsselung posten, auf Zustimmung aller Seiten warten, dann die Freigabe der Liga-Leitung einholen — erst danach darfst du neu erworbene Assets erneut anfassen.</p>
-          <div class="part-tag">Addendum Q20 — Checkliste weiter unten</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- RETIRED -->
-    <div class="t-node">
-      <div class="t-date">SEIT 2024 NICHT MEHR GÜLTIG</div>
-      <div class="t-row">
-        <div class="t-card t-empty"></div>
-        <div class="t-dot"></div>
-        <div class="t-card retired">
-          <span class="k-tag">⚠ Nicht mehr gültig</span>
-          <h3>Der alte „Owner Cap"</h3>
-          <p>Manche älteren Unterlagen beschreiben den Owner Cap (Besitzer-Obergrenze) noch als aktiv, mit eigenen MPE/SRE-Ausnahmen. Laut Q71 dieses Addendums wurde er 2024 abgeschafft — <strong>der echte Second Apron des CBA übernimmt diese Aufgabe jetzt.</strong> Findest du anderswo noch Owner-Cap-Sprache, behandle sie als historisch.</p>
-          <div class="part-tag">Addendum Q71</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="section" id="decisions-de">
-  <div class="section-head">
-    <div class="num">02 / ENTSCHEIDUNGEN</div>
-    <h2>Typische Weichen</h2>
-    <p>Nicht alles im GM-Alltag ist terminabhängig. Das hier sind die wiederkehrenden Entscheidungsbäume — zum Aufklappen anklicken.</p>
-  </div>
-
-  <div class="flow-list">
-
-    <!-- FLOW 1 -->
-    <div class="flow-item">
-      <button class="flow-trigger" onclick="this.parentElement.classList.toggle('open')">
-        Habe ich wirklich Cap Space?
-        <span class="q-mono">Addendum Q33–36 · Teil 2</span>
-        <span class="chev">+</span>
-      </button>
-      <div class="flow-body"><div class="flow-inner">
-        <div class="chain">
-          <div class="chain-step">
-            <div class="num-badge">1</div>
-            <div class="step-body">
-              <h4>Gesamtgehälter (Zelle D28) mit dem Cap vergleichen</h4>
-              <p>Das sind nur garantierte Verträge — noch nicht deine echte Zahl.</p>
+      <!-- TOOLS PAGE -->
+      <div class="page" id="page-tools">
+<div style="display:flex;flex-direction:column;height:100%;min-height:0;overflow:hidden">
+          <div class="tools-tabs" id="tools-tabs">
+            <button class="tool-tab active" onclick="showTool('finder')">🔍 Trade Finder</button>
+            <button class="tool-tab" onclick="showTool('maxcalc')">💰 Max Angebot</button>
+            <button class="tool-tab" onclick="showTool('fairval')">⭐ Fair Value</button>
+<button class="tool-tab" onclick="showTool('offseason')">📅 Off Season</button><button class="tool-tab" onclick="showTool('ownercap')">💰 Owner Cap</button><button class="tool-tab" onclick="showTool('fabidding')">💵 FA Bidding</button><button class="tool-tab" onclick="showTool('faranking')">📊 FA Ranking</button>
+          </div>
+  
+          <!-- TRADE FINDER -->
+          <div class="tool-panel active" id="tool-finder">
+            <div class="tool-card">
+              <div class="tool-card-title">🔍 Trade Finder</div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Spieler (aus meinem Roster)</label>
+                  <select class="form-select" id="finder-player">
+                    <option value="">— Spieler wählen —</option>
+                  </select>
+                </div>
+                <div class="form-group" style="max-width:120px">
+                  <label class="form-label">Gehalt ($)</label>
+                  <input class="form-input" id="finder-sal" type="number" placeholder="z.B. 11000000">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Ziel-Team</label>
+                  <select class="form-select" id="finder-target">
+                    <option value="all">🌍 Gesamter Markt</option>
+                  </select>
+                </div>
+                <div class="form-group" style="max-width:160px">
+                  <label class="form-label">Team-Richtung filtern</label>
+                  <select class="form-select" id="finder-direction">
+                    <option value="all">Alle Teams</option>
+                    <option value="rebuild">Rebuilder bevorzugen</option>
+                    <option value="contend">Contender bevorzugen</option>
+                  </select>
+                </div>
+                <button class="action-btn" onclick="runTradeFinder()" style="align-self:flex-end">Suchen</button>
+              </div>
+              <div id="finder-results"></div>
             </div>
           </div>
-          <div class="chain-connector"></div>
-          <div class="chain-step">
-            <div class="num-badge">2</div>
-            <div class="step-body">
-              <h4>Alle weiteren Posten prüfen — in 99 % der Fälle sind es Cap Holds</h4>
-              <p>Cap Holds (Cap-Reservierungen) von Free Agents sind fast immer der Grund, warum „so wenige Spieler unter Vertrag" trotzdem null Cap Space übrig lässt.</p>
+          <!-- MAX ANGEBOT -->
+          <div class="tool-panel" id="tool-maxcalc">
+            <div class="tool-card">
+              <div class="tool-card-title">💰 CBA Max-Angebot Rechner</div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Spieler (aus FA-Liste)</label>
+                  <select class="form-select" id="maxcalc-player" onchange="prefillMaxCalc()">
+                    <option value="">— oder manuell eingeben —</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Letztes Gehalt ($)</label>
+                  <input class="form-input" id="maxcalc-last-sal" type="number" placeholder="z.B. 11000000">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">NBA-Erfahrung (Jahre)</label>
+                  <select class="form-select" id="maxcalc-exp">
+                    <option value="0">0–6 Jahre (25% Cap)</option>
+                    <option value="7">7–9 Jahre (30% Cap)</option>
+                    <option value="10">10+ Jahre (35% Cap)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Bird Rights</label>
+                  <select class="form-select" id="maxcalc-bird">
+                    <option value="full">Full Bird Rights</option>
+                    <option value="early">Early Bird Rights</option>
+                    <option value="non">Non-Bird / kein</option>
+                  </select>
+                </div>
+                <button class="action-btn" onclick="calcMax()" style="align-self:flex-end">Berechnen</button>
+              </div>
+              <div id="maxcalc-results"></div>
             </div>
           </div>
-          <div class="chain-connector"></div>
-          <div class="chain-step">
-            <div class="num-badge">3</div>
-            <div class="step-body">
-              <h4>D53 lesen — dein echter Cap Space, nach allem</h4>
+          <!-- FAIR VALUE -->
+          <div class="tool-panel" id="tool-fairval">
+            <div class="tool-card">
+              <div class="tool-card-title">⭐ Fantasy Fair Value</div>
+              <p style="font-size:12px;color:var(--dim);margin-bottom:12px">Basierend auf FPG-Anteil am Liga-Pool: Wie viel ist ein Spieler in Dollar wert?</p>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Anzahl Teams</label>
+                  <input class="form-input" id="fv-teams" type="number" value="12" min="6" max="30">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Roster-Plätze / Team</label>
+                  <input class="form-input" id="fv-spots" type="number" value="13" min="8" max="20">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Marktfaktor</label>
+                  <select class="form-select" id="fv-factor">
+                    <option value="0.7">0.7× (effizient)</option>
+                    <option value="1.0" selected>1.0× (Standard)</option>
+                    <option value="1.3">1.3× (Stars-Premium)</option>
+                    <option value="1.6">1.6× (Inflation)</option>
+                  </select>
+                </div>
+              </div>
+              <div id="fv-table-wrap"></div>
             </div>
           </div>
-          <div class="chain-connector"></div>
-          <div class="chain-step">
-            <div class="num-badge">4</div>
-            <div class="step-body">
-              <h4>D33 lesen — bist du diese Saison hard-capped (mit harter Obergrenze)?</h4>
-              <p>Dieses Flag gilt für die ganze Saison, egal ob du gerade Spielraum hast oder nicht.</p>
+
+          <!-- OFF SEASON PLANER -->
+<div class="tool-panel" id="tool-offseason" style="gap:16px">
+            <div class="tool-card" style="padding-bottom:16">
+              <div class="tool-card-title">📅 Off Season Planer</div>
+              <p style="font-size:12px;color:var(--dim);margin-bottom:12px">Plane deine Roster-Entscheidungen: Wer bleibt, wie, zu welchem Preis?</p>
+              <div class="form-row" style="margin-bottom:0">
+                <div class="form-group">
+                  <label class="form-label">Team</label>
+                  <select class="form-select" id="os-team" onchange="renderOffSeason()">
+                    <option value="PHI">Philadelphia 76ers</option>
+                    <option value="UT">Utah Jazz</option>
+                  </select>
+                </div>
+              </div>
             </div>
+            <div id="os-roster-cards" style="display:flex;flex-direction:column;gap:10px"></div>
+            <div class="tool-card" id="os-summary" style="background:var(--surface);border:1px solid var(--border);border-radius:10px"></div>
           </div>
-        </div>
-        <div class="branch">
-          <div class="branch-box yes"><span class="lbl">D53 &gt; 0</span>Du hast echten Cap Space. Siehe „Reihenfolge beim Unterschreiben" unten.</div>
-          <div class="branch-box no"><span class="lbl">D53 ≤ 0</span>Du brauchst Bird Rights, eine Exception oder ein Renouncement (Rechteverzicht), um jemanden über dem Minimum zu verpflichten.</div>
-        </div>
-        <p style="font-size:12.5px;color:var(--dim);margin-top:6px">🔗 <a class="src" href="https://www.cbafaq.com" target="_blank">cbafaq.com</a> — die Referenz für jeden Posten, der Cap Space frisst.</p>
-      </div></div>
-    </div>
 
-    <!-- FLOW 2 -->
-    <div class="flow-item">
-      <button class="flow-trigger" onclick="this.parentElement.classList.toggle('open')">
-        Ich habe Cap Room — in welcher Reihenfolge unterschreibe ich?
-        <span class="q-mono">Addendum Q54 · Teil 5, Schritt 5</span>
-        <span class="chev">+</span>
-      </button>
-      <div class="flow-body"><div class="flow-inner">
-        <div class="chain">
-          <div class="chain-step">
-            <div class="num-badge">1</div>
-            <div class="step-body"><h4>Zuerst Spieler mit hohen Cap Holds unterschreiben</h4><p>Ist das Erstjahresgehalt des echten Vertrags niedriger als der Hold, sinkt dein gesamter Cap-Betrag in dem Moment, in dem du unterschreibst.</p></div>
-          </div>
-          <div class="chain-connector"></div>
-          <div class="chain-step">
-            <div class="num-badge">2</div>
-            <div class="step-body"><h4>Deinen echten Cap Room ausgeben</h4><p>Für externe Ziele, solange noch echter Spielraum vorhanden ist.</p></div>
-          </div>
-          <div class="chain-connector"></div>
-          <div class="chain-step">
-            <div class="num-badge">3</div>
-            <div class="step-body"><h4>Bird Rights bei verbleibenden Spielern mit niedrigem Hold nutzen</h4><p>Die brauchen gar keinen Cap Room — spar ihn dir für die, die ihn wirklich brauchen.</p></div>
-          </div>
-          <div class="chain-connector"></div>
-          <div class="chain-step">
-            <div class="num-badge">4</div>
-            <div class="step-body"><h4>Room MLE zuletzt</h4><p>Sobald dein Cap Room in diese Exception übergeht, nutze sie, um den Kader abzurunden.</p></div>
-          </div>
-        </div>
-        <p style="font-size:12.5px;color:var(--dim)">Für einen bestimmten Deal eine andere Reihenfolge nötig? Einfach dem Agenten sagen — Daniel arbeitet damit.</p>
-      </div></div>
-    </div>
+          <!-- FA OFFER SHEET BUILDER -->
+          <div class="tool-panel" id="tool-fabidding" style="gap:16px"></div>
 
-    <!-- FLOW 3 -->
-    <div class="flow-item">
-      <button class="flow-trigger" onclick="this.parentElement.classList.toggle('open')">
-        Sollte ich bei ihm renouncen (verzichten)?
-        <span class="q-mono">Addendum Q35, Q61, Q63–64 · Teil 4</span>
-        <span class="chev">+</span>
-      </button>
-      <div class="flow-body"><div class="flow-inner">
-        <div class="chain">
-          <div class="chain-step">
-            <div class="num-badge">1</div>
-            <div class="step-body"><h4>Brauchst du den Cap Space gerade jetzt, für einen bestimmten Deal?</h4></div>
-          </div>
+          <!-- FA RANKING -->
+          <div class="tool-panel" id="tool-faranking" style="gap:16px"></div>
         </div>
-        <div class="branch">
-          <div class="branch-box no"><span class="lbl">Nein</span>Nicht renouncen. Behalte jeden Hold, bis eine echte Entscheidung es erzwingt — wie der Commissioner sagt: „Ist es wirklich so schwer, im Oktober alle auf einmal zu renouncen?"</div>
-          <div class="branch-box yes"><span class="lbl">Ja</span>Erwäge einen bedingten Renouncement — siehe Schritt 2.</div>
-        </div>
-        <div class="chain">
-          <div class="chain-step">
-            <div class="num-badge">2</div>
-            <div class="step-body"><h4>Dem Agenten sagen, dass du bedingt renouncst</h4><p>Nur falls das konkrete Angebot erfolgreich ist. Gilt sowohl für Exceptions (Q61) als auch für Free Agents selbst (Q63–64) — du „testest das Wasser", bis der Deal wirklich steht.</p></div>
-          </div>
-        </div>
-        <div class="callout" style="margin:14px 0 0">
-          <div class="tag">Warum das wichtig ist</div>
-          Renouncst du wirklich, sind die Bird Rights für diesen Spieler diese Offseason weg — selbst wenn dein großer Plan scheitert und du den Platz nie gebraucht hättest. Vollständige Mechanik in Teil 4.
-        </div>
-      </div></div>
-    </div>
+      </div>
 
-    <!-- FLOW 4 -->
-    <div class="flow-item">
-      <button class="flow-trigger" onclick="this.parentElement.classList.toggle('open')">
-        Mein RFA hat gerade ein Offer Sheet bekommen — was jetzt?
-        <span class="q-mono">Teil 9 · Addendum Q55, Q63</span>
-        <span class="chev">+</span>
-      </button>
-      <div class="flow-body"><div class="flow-inner">
-        <div class="chain">
-          <div class="chain-step">
-            <div class="num-badge">1</div>
-            <div class="step-body"><h4>Benachrichtigung über das Offer Sheet</h4><p>Die Uhr läuft sofort — rund zwei Tage Zeit zum Matchen.</p></div>
+<!-- OWNER CAP DASHBOARD -->
+          <div class="tool-panel" id="tool-ownercap" style="gap:16px">
+            <div class="tool-card" style="flex-shrink:0">
+              <div class="tool-card-title">💰 Owner Cap Dashboard</div>
+              <p style="font-size:12px;color:var(--dim);margin-bottom:12px">Alle 30 Teams und ihre individuelle Owner Cap Auslastung.</p>
+              <select class="form-select" id="oc-sort-select" onchange="renderOwnerCapDashboard()" style="max-width:180px">
+                <option value="pct">Auslastung ↓</option>
+                <option value="left">Verbleibend ↓</option>
+                <option value="cap">Owner Cap ↓</option>
+                <option value="name">Team Name</option>
+              </select>
+            </div>
+            <div class="oc-table-wrap" id="oc-table-wrap"></div>
           </div>
-          <div class="chain-connector"></div>
-          <div class="chain-step">
-            <div class="num-badge">2</div>
-            <div class="step-body"><h4>Hat er 1–2 Jahre Service Time (Diensterfahrung)?</h4><p>Falls ja, deckelt die Arenas Provision Jahr 1 des Offer Sheets auf Höhe der Non-Taxpayer MLE — deine Matching-Last wird bewusst niedrig gehalten.</p></div>
-          </div>
-          <div class="chain-connector"></div>
-          <div class="chain-step">
-            <div class="num-badge">3</div>
-            <div class="step-body"><h4>Jeden Principal Term matchen — nicht nur das Gehalt</h4><p>Optionsjahre, Garantie-Auslöser, Bonusstruktur — alles davon.</p></div>
-          </div>
+      
+      <!-- TEAMS PAGE -->
+      <div class="page" id="page-teams">
+        <div class="teams-toolbar">
+          <span style="font-family:var(--font-display);font-size:20px;letter-spacing:1px">League Overview</span>
+          <select id="teams-sort-select" onchange="renderTeamsTable()" style="padding:5px 8px;background:var(--surface2);border:1px solid var(--border);border-radius:5px;color:var(--text);font-size:11px;outline:none">
+            <option value="name">Team Name</option>
+            <option value="salary">Salary ↓</option>
+            <option value="space">Cap Space ↓</option>
+            <option value="gm">GM Name</option>
+          </select>
         </div>
-        <div class="branch">
-          <div class="branch-box yes"><span class="lbl">Matchen</span>Er bleibt, zu exakt denselben Konditionen wie im Offer Sheet.</div>
-          <div class="branch-box no"><span class="lbl">Ablehnen</span>Er ist weg — zum Team, das ihn unterschrieben hat.</div>
+        <div class="teams-page">
+          <div id="teams-table-wrap" style="overflow:auto"></div>
         </div>
-        <p style="font-size:12.5px;color:var(--dim);margin-top:4px">🔗 <a class="src" href="https://www.hoopsrumors.com/2023/03/hoops-rumors-glossary-gilbert-arenas-provision-4.html" target="_blank">Gilbert Arenas Provision, erklärt</a></p>
-      </div></div>
+      </div>
+    </div><!-- /content -->
+    <div id="detail-panel">
+      <div id="detail-panel-inner"></div>
     </div>
-
-    <!-- FLOW 5 -->
-    <div class="flow-item">
-      <button class="flow-trigger" onclick="this.parentElement.classList.toggle('open')">
-        Einen Sign-and-Trade abwickeln
-        <span class="q-mono">Addendum Q51</span>
-        <span class="chev">+</span>
-      </button>
-      <div class="flow-body"><div class="flow-inner">
-        <div class="chain">
-          <div class="chain-step">
-            <div class="num-badge">1</div>
-            <div class="step-body"><h4>Dem Agenten ein Angebot schicken, markiert als Sign-and-Trade</h4></div>
-          </div>
-          <div class="chain-connector"></div>
-          <div class="chain-step">
-            <div class="num-badge">2</div>
-            <div class="step-body"><h4>Agent prüft: ist dein S&amp;T-Angebot das höchste?</h4><p>Wenn nicht, wirst du gebeten nachzubessern, bevor sonst etwas passiert.</p></div>
-          </div>
-        </div>
-        <div class="branch">
-          <div class="branch-box yes">Dein S&amp;T ist das höchste, und das zweitbeste Angebot stammt vom Bird-Rights-Team selbst → dieses Team entscheidet: S&amp;T abschließen oder ihn mit dem eigenen Angebot behalten.</div>
-          <div class="branch-box no">Dein S&amp;T ist das höchste, aber ein drittes Team hat das zweitbeste Angebot → das Bird-Rights-Team entscheidet: S&amp;T mit dir abschließen oder ihn an das dritte Team verlieren.</div>
-        </div>
-        <p style="font-size:12.5px;color:var(--dim);margin-top:4px">Ein S&amp;T-Angebot ist erst „echt", wenn die Trade-Seite im Prinzip vereinbart ist — es darf nicht nur genutzt werden, um konkurrierende Gebote hochzutreiben.</p>
-      </div></div>
+  </div><!-- /main-body -->
+  <div id="mobile-bottom-nav">
+    <div class="mnav-inner">
+      <button class="mnav-btn active" id="mnav-roster" onclick="showPage('roster')"><span class="micon">📋</span><span>Roster</span></button>
+      <button class="mnav-btn" id="mnav-fa" onclick="showPage('fa')"><span class="micon">🆓</span><span>FAs</span></button>
+      <button class="mnav-btn" id="mnav-trade" onclick="showPage('trade')"><span class="micon">🔄</span><span>Trade</span></button>
+      <button class="mnav-btn" id="mnav-tools" onclick="showPage('tools')"><span class="micon">🛠</span><span>Tools</span></button>
+      <button class="mnav-btn" id="mnav-teams" onclick="showPage('teams')"><span class="micon">🏀</span><span>Teams</span></button>
     </div>
-
-    <!-- FLOW 6 -->
-    <div class="flow-item">
-      <button class="flow-trigger" onclick="this.parentElement.classList.toggle('open')">
-        Checkliste Trade-Etikette
-        <span class="q-mono">Addendum Q20</span>
-        <span class="chev">+</span>
-      </button>
-      <div class="flow-body"><div class="flow-inner">
-        <div class="chain">
-          <div class="chain-step"><div class="num-badge">1</div><div class="step-body"><h4>Vollständige Aufschlüsselung posten</h4><p>Genau, was jede Seite gibt und bekommt — entscheidend bei 3+ Teams oder geschützten Picks.</p></div></div>
-          <div class="chain-connector"></div>
-          <div class="chain-step"><div class="num-badge">2</div><div class="step-body"><h4>Den finanziellen Mechanismus nennen</h4><p>Cap Space, TPE (Trade Exception), Aggregation — was auch immer den Trade legal macht, ausbuchstabieren, damit jeder es prüfen kann.</p></div></div>
-          <div class="chain-connector"></div>
-          <div class="chain-step"><div class="num-badge">3</div><div class="step-body"><h4>Alle Parteien stimmen zu → Liga-Leitung genehmigt</h4><p>Erst dann sind neu erworbene Spieler für einen Folge-Trade verfügbar.</p></div></div>
-          <div class="chain-connector"></div>
-          <div class="chain-step"><div class="num-badge">4</div><div class="step-body"><h4>Willst du einen Spieler anbieten? Den Trade Block richtig nutzen</h4><p>Posten → auf Angebote warten → verhandeln → Favorit wählen → eine Nacht drüber schlafen. Wer diesen Prozess überspringt, riskiert die Deron Treatment.</p></div></div>
-        </div>
-      </div></div>
-    </div>
-
   </div>
-</section>
-
-<section class="section" id="links-de">
-  <div class="section-head">
-    <div class="num">03 / REGEL-BIBLIOTHEK</div>
-    <h2>Direkt zur Quelle</h2>
-    <p>Jeder 🔗 oben führt hierher — alles an einem Ort, für den Fall, dass du die echte Regel statt der Zusammenfassung lesen willst.</p>
-  </div>
-  <div class="link-grid">
-    <a class="link-card" href="https://www.cbafaq.com" target="_blank">
-      <div class="lc-title">Larry Coons CBA FAQ</div>
-      <div class="lc-url">cbafaq.com — die Referenz, auf die unser eigenes Addendum verweist</div>
-    </a>
-    <a class="link-card" href="https://cms.nba.com/wp-content/uploads/sites/4/2024/11/2024-25-CBA-101.pdf" target="_blank">
-      <div class="lc-title">NBA CBA 101 (offiziell)</div>
-      <div class="lc-url">cms.nba.com — die eigene, leicht verständliche Einführung der Liga</div>
-    </a>
-    <a class="link-card" href="https://cbaguide.com/thresholds/salarycap/" target="_blank">
-      <div class="lc-title">Der Salary Cap &amp; Team Salary</div>
-      <div class="lc-url">cbaguide.com/thresholds/salarycap</div>
-    </a>
-    <a class="link-card" href="https://cbaguide.com/thresholds/apron/" target="_blank">
-      <div class="lc-title">Die zwei Aprons</div>
-      <div class="lc-url">cbaguide.com/thresholds/apron</div>
-    </a>
-    <a class="link-card" href="https://cbaguide.com/transactions/signings/rfa/" target="_blank">
-      <div class="lc-title">Restricted Free Agency</div>
-      <div class="lc-url">cbaguide.com/transactions/signings/rfa</div>
-    </a>
-    <a class="link-card" href="https://cbaguide.com/transactions/extensions/" target="_blank">
-      <div class="lc-title">Extensions (Vertragsverlängerungen)</div>
-      <div class="lc-url">cbaguide.com/transactions/extensions</div>
-    </a>
-    <a class="link-card" href="https://www.hoopsrumors.com/2023/03/hoops-rumors-glossary-gilbert-arenas-provision-4.html" target="_blank">
-      <div class="lc-title">Gilbert Arenas Provision</div>
-      <div class="lc-url">hoopsrumors.com Glossar</div>
-    </a>
-    <a class="link-card" href="https://atlhawksfanatic.github.io/NBA-CBA/free-agency.html" target="_blank">
-      <div class="lc-title">CBA Artikel 11 — Free Agency (Volltext)</div>
-      <div class="lc-url">atlhawksfanatic.github.io</div>
-    </a>
-    <a class="link-card" href="https://overtheapron.com/terms/second-apron" target="_blank">
-      <div class="lc-title">Second Apron im Detail</div>
-      <div class="lc-url">overtheapron.com/terms/second-apron</div>
-    </a>
-  </div>
-</section>
-
-<footer>
-  NBAFO Offseason-Leitfaden · Blau = echter CBA · Gold = Hausregel · Grau = nicht mehr gültig<br>
-  Vertiefungen zu jedem Mechanismus gibt es in der 10-teiligen Erklärserie.
-</footer>
-
-
-</div>
-
-<script>
-function setLang(lang) {
-  document.querySelectorAll('.lang-panel').forEach(p => {
-    p.classList.toggle('active', p.dataset.lang === lang);
-  });
-  document.querySelectorAll('.lang-btn').forEach(b => {
-    b.classList.toggle('active', b.dataset.setlang === lang);
-  });
-  document.documentElement.lang = lang;
-  try { localStorage.setItem('nbafo_lang', lang); } catch (e) {}
-}
-
-(function() {
-  var saved = null;
-  try { saved = localStorage.getItem('nbafo_lang'); } catch (e) {}
-  var initial = saved || (navigator.language && navigator.language.toLowerCase().startsWith('de') ? 'de' : 'en');
-  setLang(initial);
-})();
-</script>
-
+</div><!-- /app -->
+<script src="js/app.js"></script>
+<script src="js/fa-bidding.js"></script>
+<script src="js/fa-ranking.js"></script>
+<script src="js/fa-sl-enhance.js"></script>
 </body>
 </html>
