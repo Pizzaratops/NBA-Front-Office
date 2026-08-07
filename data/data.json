@@ -5951,7 +5951,7 @@
           "name": "Adou Thiero",
           "pos": "?",
           "sal_26": 1,
-          "sal_27": 2,
+          "sal_27": null,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
@@ -8035,7 +8035,7 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-08-07T15:43:09.025149+00:00",
+    "last_updated": "2026-08-07T23:28:10.243238+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
     "players_count": 443,
