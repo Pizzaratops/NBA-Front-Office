@@ -110,7 +110,7 @@
     },
     "OKC": {
       "owner_cap": 213636805,
-      "left": 41393669
+      "left": 41393667
     },
     "ORL": {
       "owner_cap": 208919409,
@@ -118,7 +118,7 @@
     },
     "PHI": {
       "owner_cap": 221431032,
-      "left": -2185118
+      "left": -2
     },
     "PHX": {
       "owner_cap": 216566517,
@@ -146,7 +146,7 @@
     },
     "WA": {
       "owner_cap": 212269393,
-      "left": -1380080
+      "left": -1851300
     }
   },
   "teams": {
@@ -4517,6 +4517,32 @@
           "tradable_agg": true
         },
         {
+          "name": "Vsevolod Ishchenko",
+          "pos": "?",
+          "sal_26": 1,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Tarik Biberović",
+          "pos": "?",
+          "sal_26": 1,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Oscar Tshiebwe",
           "pos": "?",
           "sal_26": 1000000,
@@ -4530,7 +4556,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 172243135
+      "total_salary": 172243137
     },
     "ORL": {
       "abbr": "ORL",
@@ -4903,19 +4929,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Mohamed Diawara",
-          "pos": "SF/PF",
-          "sal_26": 2185116,
-          "sal_27": 2571895,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Early",
-          "signed_via": "MPE",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Yaxel Lendeborg",
           "pos": "PF",
           "sal_26": 6417360,
@@ -4951,19 +4964,6 @@
           "sal_30": 30626728,
           "bird": "Full",
           "signed_via": "1st Round Pick",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "Jaylen Clark",
-          "pos": "?",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Non",
-          "signed_via": "MPE",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -5046,7 +5046,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 223616150
+      "total_salary": 221431034
     },
     "PHX": {
       "abbr": "PHX",
@@ -7070,7 +7070,7 @@
     {
       "name": "Mohamed Diawara",
       "fpg": 19.89,
-      "signed_team": "PHI"
+      "signed_team": null
     },
     {
       "name": "Patrick Baldwin",
@@ -8035,11 +8035,11 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-08-07T23:28:10.243238+00:00",
+    "last_updated": "2026-08-08T07:52:56.795660+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
     "players_count": 443,
     "fas_count": 365,
-    "fas_available_count": 263
+    "fas_available_count": 264
   }
 }
