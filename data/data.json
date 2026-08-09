@@ -2583,19 +2583,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Myron Gardner",
-          "pos": "SF",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Non",
-          "signed_via": "MPE",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Khris Middleton",
           "pos": "SF",
           "sal_26": 16200000,
@@ -3769,19 +3756,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Pete Nance",
-          "pos": "PF",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Non",
-          "signed_via": "MPE",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Alperen Şengün",
           "pos": "C",
           "sal_26": 41368072,
@@ -3906,19 +3880,6 @@
           "sal_30": null,
           "bird": "Early",
           "signed_via": "MPE",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "Jordan Clarkson",
-          "pos": "PG/SG",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "EBR",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -6685,7 +6646,7 @@
     {
       "name": "Jordan Clarkson",
       "fpg": 38.3,
-      "signed_team": "MIN"
+      "signed_team": "LAL"
     },
     {
       "name": "Kenrich Williams",
@@ -6840,7 +6801,7 @@
     {
       "name": "Pete Nance",
       "fpg": 29.31,
-      "signed_team": "MIL"
+      "signed_team": null
     },
     {
       "name": "Tyrese Martin",
@@ -6860,7 +6821,7 @@
     {
       "name": "Myron Gardner",
       "fpg": 28.88,
-      "signed_team": "IND"
+      "signed_team": null
     },
     {
       "name": "Jabari Walker",
@@ -8035,11 +7996,11 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-08-09T07:56:15.329849+00:00",
+    "last_updated": "2026-08-09T15:20:23.027321+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
-    "players_count": 443,
+    "players_count": 440,
     "fas_count": 365,
-    "fas_available_count": 264
+    "fas_available_count": 266
   }
 }
