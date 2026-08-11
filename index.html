@@ -198,9 +198,62 @@ a { color: inherit; }
   font-size: 14px;
 }
 
-/* ── TIMELINE ── */
-.timeline { position: relative; padding-left: 0; }
-.timeline::before {
+/* ── TIMELINE — SHARED ── */
+.timeline { position: relative; }
+
+/* ── TIMELINE — HORIZONTAL (default, "A-side") ── */
+.timeline.layout-h {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  overflow-x: auto;
+  overflow-y: visible;
+  gap: 0;
+  padding: 46px 10px 28px;
+  scroll-snap-type: x proximity;
+}
+.timeline.layout-h::before {
+  content: '';
+  position: absolute;
+  top: 21px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cba-line), var(--league-line));
+  z-index: 0;
+}
+.timeline.layout-h .t-node {
+  position: relative;
+  flex: 0 0 auto;
+  width: 272px;
+  margin-right: 24px;
+  scroll-snap-align: start;
+}
+.timeline.layout-h .t-node:last-child { margin-right: 0; }
+.timeline.layout-h .t-dot {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.timeline.layout-h .t-date {
+  position: static;
+  left: auto;
+  transform: none;
+  display: block;
+  width: max-content;
+  margin: 34px auto 16px;
+}
+.timeline.layout-h .t-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.timeline.layout-h .t-empty { display: none; }
+
+/* ── TIMELINE — VERTICAL ("B-side") ── */
+.timeline.layout-v::before {
   content: '';
   position: absolute;
   left: 50%;
@@ -211,14 +264,13 @@ a { color: inherit; }
   transform: translateX(-50%);
 }
 @media (max-width: 760px) {
-  .timeline::before { left: 14px; }
+  .timeline.layout-v::before { left: 14px; }
 }
-
-.t-node {
+.timeline.layout-v .t-node {
   position: relative;
   margin-bottom: 6px;
 }
-.t-date {
+.timeline.layout-v .t-date {
   text-align: center;
   font-family: var(--font-mono);
   font-size: 12px;
@@ -235,10 +287,9 @@ a { color: inherit; }
   margin-bottom: 18px;
 }
 @media (max-width: 760px) {
-  .t-date { left: 14px; transform: translateX(0); }
+  .timeline.layout-v .t-date { left: 14px; transform: translateX(0); }
 }
-
-.t-row {
+.timeline.layout-v .t-row {
   display: grid;
   grid-template-columns: 1fr 40px 1fr;
   gap: 0 18px;
@@ -246,9 +297,64 @@ a { color: inherit; }
   margin-bottom: 40px;
 }
 @media (max-width: 760px) {
-  .t-row { grid-template-columns: 1fr; padding-left: 34px; gap: 12px; }
-  .t-row .t-spacer { display: none; }
+  .timeline.layout-v .t-row { grid-template-columns: 1fr; padding-left: 34px; gap: 12px; }
 }
+.timeline.layout-v .t-dot {
+  justify-self: center;
+  margin-top: 6px;
+}
+@media (max-width: 760px) {
+  .timeline.layout-v .t-dot { position: absolute; left: 9px; margin-top: 0; }
+}
+.timeline.layout-v .t-empty { visibility: hidden; }
+@media (max-width: 760px) { .timeline.layout-v .t-empty { display: none; } }
+
+/* ── TIMELINE CONTROLS (view switch + banner export) ── */
+.tl-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.view-switch {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2px;
+  gap: 2px;
+  background: var(--surface2);
+}
+.view-btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  padding: 6px 13px;
+  border-radius: 16px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all .15s;
+}
+.view-btn:hover { color: var(--text); }
+.view-btn.active { background: var(--cba); color: #08131e; }
+.export-btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--dim);
+  cursor: pointer;
+  transition: all .15s;
+}
+.export-btn:hover { border-color: var(--league); color: var(--league); }
+.export-btn:disabled { opacity: .5; cursor: wait; }
 
 .t-card {
   border: 1px solid var(--border);
@@ -308,15 +414,11 @@ a { color: inherit; }
   border-radius: 50%;
   background: var(--bg);
   border: 2px solid var(--border);
-  justify-self: center;
-  margin-top: 6px;
-}
-@media (max-width: 760px) {
-  .t-dot { position: absolute; left: 9px; margin-top: 0; }
+  margin: 0;
 }
 
 .t-empty { visibility: hidden; }
-@media (max-width: 760px) { .t-empty { display: none; } }
+
 
 /* ── CALLOUT ── */
 .callout {
@@ -532,10 +634,17 @@ footer {
   <div class="section-head">
     <div class="num">01 / CALENDAR</div>
     <h2>The Spine</h2>
-    <p>Two lanes, one timeline. Left = what the CBA actually says. Right = what that looks like in our league. Where a box is greyed out, it's a rule that's since been retired — don't use it.</p>
+    <p>Two lanes, one timeline. Blue = what the CBA actually says. Gold = what that looks like in our league. Scroll sideways to follow it — or switch to the vertical B-side view. Where a box is greyed out, it's a rule that's since been retired.</p>
+    <div class="tl-controls">
+      <div class="view-switch" role="group" aria-label="Timeline view">
+        <button class="view-btn" data-view="h" onclick="setView('h')">↔ Horizontal</button>
+        <button class="view-btn" data-view="v" onclick="setView('v')">↕ Vertical (B-side)</button>
+      </div>
+      <button class="export-btn" onclick="downloadTimelineImage(this)">🖼 Download banner (PNG)</button>
+    </div>
   </div>
 
-  <div class="timeline">
+  <div class="timeline layout-h">
 
     <!-- JUNE 25 -->
     <div class="t-node">
@@ -1049,10 +1158,17 @@ footer {
   <div class="section-head">
     <div class="num">01 / KALENDER</div>
     <h2>Die Zeitachse</h2>
-    <p>Zwei Spuren, eine Zeitachse. Links = was der CBA wirklich sagt. Rechts = wie das in unserer Liga aussieht. Ist eine Box ausgegraut, ist die Regel nicht mehr gültig — nicht mehr verwenden.</p>
+    <p>Zwei Spuren, eine Zeitachse. Blau = was der CBA wirklich sagt. Gold = wie das in unserer Liga aussieht. Seitwärts scrollen zum Durchgehen — oder auf die vertikale B-Seite umschalten. Ist eine Box ausgegraut, ist die Regel nicht mehr gültig.</p>
+    <div class="tl-controls">
+      <div class="view-switch" role="group" aria-label="Zeitachsen-Ansicht">
+        <button class="view-btn" data-view="h" onclick="setView('h')">↔ Horizontal</button>
+        <button class="view-btn" data-view="v" onclick="setView('v')">↕ Vertikal (B-Seite)</button>
+      </div>
+      <button class="export-btn" onclick="downloadTimelineImage(this)">🖼 Banner herunterladen (PNG)</button>
+    </div>
   </div>
 
-  <div class="timeline">
+  <div class="timeline layout-h">
 
     <!-- JUNE 25 -->
     <div class="t-node">
@@ -1529,6 +1645,7 @@ footer {
 
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
 function setLang(lang) {
   document.querySelectorAll('.lang-panel').forEach(p => {
@@ -1541,11 +1658,66 @@ function setLang(lang) {
   try { localStorage.setItem('nbafo_lang', lang); } catch (e) {}
 }
 
+/* Timeline orientation: applies to every .timeline on the page at once,
+   so the choice survives switching between EN/DE. */
+function setView(view) {
+  document.querySelectorAll('.timeline').forEach(function (t) {
+    t.classList.toggle('layout-h', view === 'h');
+    t.classList.toggle('layout-v', view === 'v');
+  });
+  document.querySelectorAll('.view-btn').forEach(function (b) {
+    b.classList.toggle('active', b.dataset.view === view);
+  });
+  try { localStorage.setItem('nbafo_view', view); } catch (e) {}
+}
+
+/* Renders the timeline of the currently active language panel as a PNG,
+   always in the horizontal ("banner") orientation regardless of the
+   view currently on screen, by rendering a detached, un-clipped clone. */
+function downloadTimelineImage(btn) {
+  if (typeof html2canvas === 'undefined') {
+    alert('Image export needs an internet connection to load html2canvas — try again once you\'re online. / Der Bild-Export braucht eine Internetverbindung (html2canvas) — bitte online erneut versuchen.');
+    return;
+  }
+  var activePanel = document.querySelector('.lang-panel.active');
+  var original = activePanel.querySelector('.timeline');
+  var clone = original.cloneNode(true);
+
+  clone.classList.remove('layout-v');
+  clone.classList.add('layout-h');
+  clone.style.overflow = 'visible';
+  clone.style.width = 'max-content';
+  clone.style.position = 'fixed';
+  clone.style.top = '0';
+  clone.style.left = '0';
+  clone.style.zIndex = '-1';
+  clone.style.background = '#0a0c10';
+  document.body.appendChild(clone);
+
+  var originalLabel = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = '…';
+
+  html2canvas(clone, { backgroundColor: '#0a0c10', scale: 2, useCORS: true }).then(function (canvas) {
+    var link = document.createElement('a');
+    link.download = 'nbafo-offseason-timeline.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  }).catch(function (err) {
+    alert('Export failed: ' + err);
+  }).finally(function () {
+    document.body.removeChild(clone);
+    btn.disabled = false;
+    btn.textContent = originalLabel;
+  });
+}
+
 (function() {
-  var saved = null;
-  try { saved = localStorage.getItem('nbafo_lang'); } catch (e) {}
+  var saved = null, savedView = null;
+  try { saved = localStorage.getItem('nbafo_lang'); savedView = localStorage.getItem('nbafo_view'); } catch (e) {}
   var initial = saved || (navigator.language && navigator.language.toLowerCase().startsWith('de') ? 'de' : 'en');
   setLang(initial);
+  setView(savedView === 'v' ? 'v' : 'h');
 })();
 </script>
 
