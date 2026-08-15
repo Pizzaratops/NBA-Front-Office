@@ -50,7 +50,7 @@
     },
     "CLE": {
       "owner_cap": 209715554,
-      "left": 3747026
+      "left": 3747025
     },
     "DAL": {
       "owner_cap": 217383504,
@@ -1590,9 +1590,22 @@
           "signed_via": "Cap Space",
           "tradable_alone": false,
           "tradable_agg": false
+        },
+        {
+          "name": "Trayce Jackson-Davis",
+          "pos": "?",
+          "sal_26": 1,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
         }
       ],
-      "total_salary": 205968527
+      "total_salary": 205968528
     },
     "DAL": {
       "abbr": "DAL",
@@ -7996,10 +8009,10 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-08-15T07:35:43.915983+00:00",
+    "last_updated": "2026-08-15T15:10:29.796835+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
-    "players_count": 440,
+    "players_count": 441,
     "fas_count": 365,
     "fas_available_count": 266
   }
