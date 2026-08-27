@@ -78,7 +78,7 @@
     },
     "LAC": {
       "owner_cap": 217356167,
-      "left": 39093307
+      "left": 38398342
     },
     "LAL": {
       "owner_cap": 212978602,
@@ -2789,15 +2789,15 @@
           "tradable_agg": false
         },
         {
-          "name": "Caleb Love",
-          "pos": "SG",
-          "sal_26": 2150917,
-          "sal_27": 2525901,
-          "sal_28": 2735698,
+          "name": "Vít Krejčí",
+          "pos": "PG/SG/SF",
+          "sal_26": 2845883,
+          "sal_27": 3219451,
+          "sal_28": null,
           "sal_29": null,
           "sal_30": null,
-          "bird": "Full",
-          "signed_via": "MLE",
+          "bird": "Early",
+          "signed_via": "MPE",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -2945,7 +2945,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 178262859
+      "total_salary": 178957824
     },
     "LAL": {
       "abbr": "LAL",
@@ -6524,7 +6524,7 @@
     {
       "name": "Vít Krejčí",
       "fpg": 46.8,
-      "signed_team": null
+      "signed_team": "LAC"
     },
     {
       "name": "Svi Mykhailiuk",
@@ -8009,11 +8009,11 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-08-27T04:10:59.764684+00:00",
+    "last_updated": "2026-08-27T18:11:23.451179+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
     "players_count": 441,
     "fas_count": 365,
-    "fas_available_count": 266
+    "fas_available_count": 265
   }
 }
