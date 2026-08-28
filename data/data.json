@@ -78,7 +78,7 @@
     },
     "LAC": {
       "owner_cap": 217356167,
-      "left": 38398342
+      "left": 37738091
     },
     "LAL": {
       "owner_cap": 212978602,
@@ -2828,19 +2828,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Jack Kayil",
-          "pos": "?",
-          "sal_26": 2185631,
-          "sal_27": 2294914,
-          "sal_28": 2695001,
-          "sal_29": 2918841,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "4y 2re",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Kevin Durant",
           "pos": "SF/PF",
           "sal_26": 32000000,
@@ -2865,6 +2852,19 @@
           "signed_via": "Rook Extension",
           "tradable_alone": true,
           "tradable_agg": true
+        },
+        {
+          "name": "Micah Potter",
+          "pos": "PF/C",
+          "sal_26": 2845883,
+          "sal_27": 3219451,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Early",
+          "signed_via": "MPE",
+          "tradable_alone": false,
+          "tradable_agg": false
         },
         {
           "name": "Jeremy Sochan",
@@ -2945,7 +2945,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 178957824
+      "total_salary": 179618076
     },
     "LAL": {
       "abbr": "LAL",
@@ -6534,7 +6534,7 @@
     {
       "name": "Micah Potter",
       "fpg": 45.94,
-      "signed_team": null
+      "signed_team": "LAC"
     },
     {
       "name": "Javonte Green",
@@ -8009,11 +8009,11 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-08-28T06:27:43.090364+00:00",
+    "last_updated": "2026-08-28T19:21:31.790280+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
     "players_count": 441,
     "fas_count": 365,
-    "fas_available_count": 265
+    "fas_available_count": 264
   }
 }
