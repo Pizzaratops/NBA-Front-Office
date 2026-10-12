@@ -78,11 +78,11 @@
     },
     "LAC": {
       "owner_cap": 217356167,
-      "left": 37738091
+      "left": 40598091
     },
     "LAL": {
       "owner_cap": 212978602,
-      "left": 12674234
+      "left": 9814234
     },
     "MEM": {
       "owner_cap": 217373916,
@@ -2776,19 +2776,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Kevin Porter Jr.",
-          "pos": "PG/SG",
-          "sal_26": 16660000,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": null,
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Sam Merrill",
           "pos": "SG",
           "sal_26": 6500000,
@@ -2865,6 +2852,19 @@
           "signed_via": "Rook Extension",
           "tradable_alone": true,
           "tradable_agg": true
+        },
+        {
+          "name": "Rui Hachimura",
+          "pos": "SF/PF",
+          "sal_26": 13800000,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": "LBR",
+          "tradable_alone": false,
+          "tradable_agg": false
         },
         {
           "name": "Micah Potter",
@@ -2958,7 +2958,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 179618076
+      "total_salary": 176758076
     },
     "LAL": {
       "abbr": "LAL",
@@ -2968,6 +2968,19 @@
       "coach": "",
       "gm": "LA Chris",
       "players": [
+        {
+          "name": "Kevin Porter Jr.",
+          "pos": "PG/SG",
+          "sal_26": 16660000,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Full",
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
         {
           "name": "Jordan Clarkson",
           "pos": "SG/SF",
@@ -3056,19 +3069,6 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "MLE",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "Rui Hachimura",
-          "pos": "SF/PF",
-          "sal_26": 13800000,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "LBR",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -3177,7 +3177,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 200304368
+      "total_salary": 203164368
     },
     "MEM": {
       "abbr": "MEM",
@@ -4596,7 +4596,7 @@
           "name": "Rob Dillingham",
           "pos": "PG",
           "sal_26": 9117058,
-          "sal_27": 11551312,
+          "sal_27": null,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
@@ -5073,7 +5073,7 @@
           "name": "Devin Carter",
           "pos": "PG/SG",
           "sal_26": 4679186,
-          "sal_27": 7173193,
+          "sal_27": null,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
@@ -8022,7 +8022,7 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-10-12T01:59:25.323252+00:00",
+    "last_updated": "2026-10-12T16:38:16.866122+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
     "players_count": 442,
