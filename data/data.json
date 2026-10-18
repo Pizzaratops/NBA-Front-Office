@@ -138,7 +138,7 @@
     },
     "TOR": {
       "owner_cap": 211000401,
-      "left": 12297216
+      "left": 9847795
     },
     "UT": {
       "owner_cap": 213001356,
@@ -2051,7 +2051,7 @@
       "c1": "#C8102E",
       "c2": "#006BB6",
       "coach": "",
-      "gm": "Elias",
+      "gm": "none",
       "players": [
         {
           "name": "Bruce Thornton",
@@ -6063,6 +6063,19 @@
           "tradable_agg": false
         },
         {
+          "name": "Jabari Walker",
+          "pos": "SF/PF/C",
+          "sal_26": 2449421,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Non",
+          "signed_via": "MPE",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
           "name": "Kyle Kuzma",
           "pos": "SF/PF",
           "sal_26": 22680000,
@@ -6180,7 +6193,7 @@
           "tradable_agg": false
         }
       ],
-      "total_salary": 198703184
+      "total_salary": 201152605
     }
   },
   "fas": [
@@ -6852,7 +6865,7 @@
     {
       "name": "Jabari Walker",
       "fpg": 28.78,
-      "signed_team": null
+      "signed_team": "TOR"
     },
     {
       "name": "Garrison Mathews",
@@ -8022,11 +8035,11 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-10-18T12:00:17.515094+00:00",
+    "last_updated": "2026-10-18T17:39:03.173672+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
-    "players_count": 442,
+    "players_count": 443,
     "fas_count": 365,
-    "fas_available_count": 264
+    "fas_available_count": 263
   }
 }
