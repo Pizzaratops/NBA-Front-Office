@@ -534,19 +534,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Daron Holmes",
-          "pos": "SF/PF",
-          "sal_26": 3530822,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": null,
-          "signed_via": "1st Round Pick",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Carter Bryant",
           "pos": "SF/PF",
           "sal_26": 4887792,
@@ -641,6 +628,19 @@
           "name": "Tobe Awaka",
           "pos": "?",
           "sal_26": 1,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Daron Holmes",
+          "pos": "?",
+          "sal_26": 3530822,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -8035,7 +8035,7 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-10-18T17:39:03.173672+00:00",
+    "last_updated": "2026-10-19T00:42:06.109445+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
     "players_count": 443,
