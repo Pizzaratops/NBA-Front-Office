@@ -1178,19 +1178,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Cam Christie",
-          "pos": "SG",
-          "sal_26": 2449421,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "2y 2w => QO",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Tre Johnson",
           "pos": "SG",
           "sal_26": 8649522,
@@ -1390,6 +1377,19 @@
           "pos": "?",
           "sal_26": 1,
           "sal_27": 2,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Cam Christie",
+          "pos": "?",
+          "sal_26": 2449421,
+          "sal_27": null,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
@@ -8035,7 +8035,7 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-10-19T14:31:45.395779+00:00",
+    "last_updated": "2026-10-19T20:16:53.896827+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
     "players_count": 443,
