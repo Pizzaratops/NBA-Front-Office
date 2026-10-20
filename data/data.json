@@ -4645,19 +4645,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Julian Phillips",
-          "pos": "SF",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "4y 2RE",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Royce O'Neale",
           "pos": "SF/PF",
           "sal_26": 5477000,
@@ -8035,10 +8022,10 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-10-20T01:27:13.015999+00:00",
+    "last_updated": "2026-10-20T12:38:17.562155+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
-    "players_count": 443,
+    "players_count": 442,
     "fas_count": 365,
     "fas_available_count": 263
   }
