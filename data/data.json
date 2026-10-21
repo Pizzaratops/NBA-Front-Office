@@ -2351,19 +2351,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Jaden Ivey",
-          "pos": "SG",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "1st Round Pick",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Austin Reaves",
           "pos": "SG",
           "sal_26": 32997395,
@@ -2631,19 +2618,6 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "4y 2RE",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "Trendon Watford",
-          "pos": "PF",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "2w => MPE",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -3201,19 +3175,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Blake Wesley",
-          "pos": "PG",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "1st Round Pick",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Jalen Brunson",
           "pos": "PG",
           "sal_26": 44820000,
@@ -3262,19 +3223,6 @@
           "sal_30": null,
           "bird": "Early",
           "signed_via": "Gilbert",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "Richie Saunders",
-          "pos": "?",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": null,
-          "signed_via": null,
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -3370,19 +3318,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Kevin Love",
-          "pos": "PF/C",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Non",
-          "signed_via": "MPE",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Julius Randle",
           "pos": "PF",
           "sal_26": 26000000,
@@ -3405,19 +3340,6 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "1st Round Pick",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "Thomas Bryant",
-          "pos": "C",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Non",
-          "signed_via": "MPE",
           "tradable_alone": false,
           "tradable_agg": false
         }
@@ -4155,19 +4077,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Talen Horton-Tucker",
-          "pos": "SG/SF",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Early",
-          "signed_via": "MPE",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Kevin Huerter",
           "pos": "SG/SF",
           "sal_26": 16150000,
@@ -4216,19 +4125,6 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "1st Round Pick",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
-          "name": "Jeremiah Robinson-Earl",
-          "pos": "PF/C",
-          "sal_26": null,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "QO",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -6597,7 +6493,7 @@
     {
       "name": "Jaden Ivey",
       "fpg": 42.76,
-      "signed_team": "HOU"
+      "signed_team": null
     },
     {
       "name": "DeAndre Jordan",
@@ -6632,7 +6528,7 @@
     {
       "name": "Kevin Love",
       "fpg": 41.1,
-      "signed_team": "MEM"
+      "signed_team": null
     },
     {
       "name": "Dru Smith",
@@ -6727,7 +6623,7 @@
     {
       "name": "Trendon Watford",
       "fpg": 34.7,
-      "signed_team": "IND"
+      "signed_team": null
     },
     {
       "name": "Wendell Moore",
@@ -6752,7 +6648,7 @@
     {
       "name": "Thomas Bryant",
       "fpg": 32.85,
-      "signed_team": "MEM"
+      "signed_team": null
     },
     {
       "name": "Skal Labissiere",
@@ -6887,7 +6783,7 @@
     {
       "name": "Jeremiah Robinson-Earl",
       "fpg": 27.12,
-      "signed_team": "NOP"
+      "signed_team": null
     },
     {
       "name": "Jaylen Clark",
@@ -6997,7 +6893,7 @@
     {
       "name": "Blake Wesley",
       "fpg": 22.43,
-      "signed_team": "MEM"
+      "signed_team": null
     },
     {
       "name": "Gary Harris",
@@ -7557,7 +7453,7 @@
     {
       "name": "Talen Horton-Tucker",
       "fpg": 0.0,
-      "signed_team": "NOP"
+      "signed_team": null
     },
     {
       "name": "Maxwell Lewis",
@@ -8022,11 +7918,11 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-10-21T01:11:21.969250+00:00",
+    "last_updated": "2026-10-21T12:50:02.460869+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
-    "players_count": 442,
+    "players_count": 434,
     "fas_count": 365,
-    "fas_available_count": 263
+    "fas_available_count": 270
   }
 }
