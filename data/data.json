@@ -62,7 +62,7 @@
     },
     "DET": {
       "owner_cap": 200528000,
-      "left": 29120992
+      "left": 25244463
     },
     "GS": {
       "owner_cap": 217401467,
@@ -82,7 +82,7 @@
     },
     "LAL": {
       "owner_cap": 212978602,
-      "left": 9814234
+      "left": 5937705
     },
     "MEM": {
       "owner_cap": 217373916,
@@ -2067,19 +2067,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Cameron Payne",
-          "pos": "PG/SG",
-          "sal_26": 7299873,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "EBR",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Tyus Jones",
           "pos": "PG",
           "sal_26": 16492000,
@@ -2135,7 +2122,7 @@
           "name": "AJ Johnson",
           "pos": "SG",
           "sal_26": 2816006,
-          "sal_27": 5080074,
+          "sal_27": null,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
@@ -2187,7 +2174,7 @@
           "name": "Cody Williams",
           "pos": "SG/SF",
           "sal_26": 7559225,
-          "sal_27": 9600216,
+          "sal_27": null,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
@@ -2237,7 +2224,7 @@
         },
         {
           "name": "Precious Achiuwa",
-          "pos": "PF",
+          "pos": "PF/C",
           "sal_26": 3366143,
           "sal_27": 3534450,
           "sal_28": null,
@@ -2245,6 +2232,19 @@
           "sal_30": null,
           "bird": "Early",
           "signed_via": "MLE",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Trey Lyles",
+          "pos": "PF",
+          "sal_26": 3876529,
+          "sal_27": 4070355,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Early",
+          "signed_via": "MPE",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -2286,9 +2286,22 @@
           "signed_via": null,
           "tradable_alone": false,
           "tradable_agg": false
+        },
+        {
+          "name": "Cameron Payne",
+          "pos": "?",
+          "sal_26": 7299873,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
         }
       ],
-      "total_salary": 171407007
+      "total_salary": 175283536
     },
     "HOU": {
       "abbr": "HOU",
@@ -3008,19 +3021,6 @@
           "tradable_agg": false
         },
         {
-          "name": "Taurean Prince",
-          "pos": "SF/PF",
-          "sal_26": 4309200,
-          "sal_27": 4514400,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "MLE",
-          "tradable_alone": false,
-          "tradable_agg": false
-        },
-        {
           "name": "Svi Mykhailiuk",
           "pos": "SF",
           "sal_26": 3506659,
@@ -3043,6 +3043,19 @@
           "sal_30": null,
           "bird": "Full",
           "signed_via": "MLE",
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Georges Niang",
+          "pos": "SF/PF/C",
+          "sal_26": 3876529,
+          "sal_27": 4070355,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": "Early",
+          "signed_via": "MPE",
           "tradable_alone": false,
           "tradable_agg": false
         },
@@ -3149,9 +3162,22 @@
           "signed_via": null,
           "tradable_alone": false,
           "tradable_agg": false
+        },
+        {
+          "name": "Taurean Prince",
+          "pos": "?",
+          "sal_26": 4309200,
+          "sal_27": 4514400,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
         }
       ],
-      "total_salary": 203164368
+      "total_salary": 207040897
     },
     "MEM": {
       "abbr": "MEM",
@@ -7341,7 +7367,7 @@
     {
       "name": "Georges Niang",
       "fpg": 0.0,
-      "signed_team": null
+      "signed_team": "LAL"
     },
     {
       "name": "Spencer Dinwiddie",
@@ -7441,7 +7467,7 @@
     {
       "name": "Trey Lyles",
       "fpg": 0.0,
-      "signed_team": null
+      "signed_team": "DET"
     },
     {
       "name": "Alec Burks",
@@ -7931,11 +7957,11 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-10-26T00:56:08.797393+00:00",
+    "last_updated": "2026-10-26T14:03:50.974233+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
-    "players_count": 435,
+    "players_count": 437,
     "fas_count": 365,
-    "fas_available_count": 270
+    "fas_available_count": 268
   }
 }
