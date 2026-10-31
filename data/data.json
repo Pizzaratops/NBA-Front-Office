@@ -2080,19 +2080,6 @@
           "tradable_agg": true
         },
         {
-          "name": "Cole Anthony",
-          "pos": "PG/SG",
-          "sal_26": 8781300,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "bird": "Full",
-          "signed_via": "LBR RFA match",
-          "tradable_alone": true,
-          "tradable_agg": true
-        },
-        {
           "name": "Jordan Hawkins",
           "pos": "SG",
           "sal_26": 5690921,
@@ -2213,7 +2200,7 @@
           "name": "Tidjane Salaun",
           "pos": "PF",
           "sal_26": 5744863,
-          "sal_27": 7623433,
+          "sal_27": null,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
@@ -2291,6 +2278,19 @@
           "name": "Cameron Payne",
           "pos": "?",
           "sal_26": 7299873,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false
+        },
+        {
+          "name": "Cole Anthony",
+          "pos": "?",
+          "sal_26": 8781300,
           "sal_27": null,
           "sal_28": null,
           "sal_29": null,
@@ -7957,7 +7957,7 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-10-31T01:57:12.379457+00:00",
+    "last_updated": "2026-10-31T13:29:45.169086+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 26,
     "players_count": 437,
