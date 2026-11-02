@@ -1,0 +1,178 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Part 10 — Putting It All Together: A Complete Offseason Simulation – NBAFO CBA Series</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet"><style>
+:root{--bg:#0a0c10;--surface:#111318;--surface2:#1a1d24;--border:#252830;--text:#e8eaf0;--dim:#8a94a8;--blue:#3b82f6;--gold:#eab308}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 'IBM Plex Sans',system-ui,sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:20px 16px 80px}
+nav.top{display:flex;gap:12px;justify-content:space-between;align-items:center;padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--border);font:600 12px 'IBM Plex Mono',monospace;position:sticky;top:0;z-index:5;flex-wrap:wrap}
+a{color:var(--blue)}nav.top a{color:var(--dim);text-decoration:none}nav.top a:hover{color:var(--text)}
+h1{font:400 38px/1.1 'Bebas Neue',sans-serif;letter-spacing:1px;margin:28px 0 12px}h2{font-size:22px;margin:36px 0 8px;border-bottom:1px solid var(--border);padding-bottom:6px}h3{font-size:18px;margin:26px 0 6px;color:var(--gold)}
+pre{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;font:13px/1.45 'IBM Plex Mono',monospace}
+code{font-family:'IBM Plex Mono',monospace;font-size:.9em}
+.tw{overflow-x:auto;margin:14px 0}table{border-collapse:collapse;font-size:14px;min-width:100%}th,td{border:1px solid var(--border);padding:7px 10px;text-align:left;vertical-align:top}th{background:var(--surface2)}
+hr{border:0;border-top:1px solid var(--border);margin:28px 0}blockquote{border-left:3px solid var(--blue);margin:14px 0;padding:2px 14px;color:var(--dim)}
+.pn{display:flex;justify-content:space-between;gap:12px;margin-top:48px;font:600 13px 'IBM Plex Mono',monospace}
+ul.toc{list-style:none;padding:0}ul.toc li{margin:0}ul.toc a{display:block;padding:12px 14px;margin:8px 0;background:var(--surface);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text)}ul.toc a:hover{border-color:var(--blue)}ul.toc small{color:var(--dim);display:block}
+</style></head><body><nav class="top"><a href="../index.html">← Offseason Guide</a><a href="index.html">All parts</a></nav><div class="wrap"><h1>Part 10 — Putting It All Together: A Complete Offseason Simulation</h1>
+<p><em>(New segment. This is a fictional team and roster, built to exercise every rule from Parts 1–9 in the correct order. Every dollar figure below is consistent with the CBA figures used throughout this series — cap $165,000,000 / tax $201,000,000 / first apron $209,000,000 / second apron $222,000,000. Luxury tax bracket math in the final section is illustrative — the full mechanics get their own dedicated segment. No real players, teams, or transactions are depicted.)</em></p>
+<p>You are the general manager of the <strong>Portland Pioneers</strong>, a fictional franchise. It is June 20. Here is your roster.</p>
+<pre><code class="language-text">PORTLAND PIONEERS — Cap Sheet, June 20
+────────────────────────────────────────────────────────
+Player                   Status              2026-27 Salary
+────────────────────────────────────────────────────────
+Franchise Star (age 26)  Under contract      $48,000,000
+Starting Wing            Under contract      $19,500,000
+Starting Center          Player option       $16,000,000
+3rd-year Guard           Rookie-scale, RFA-eligible  $6,200,000 (expiring)
+2nd-year Forward         Rookie-scale team option    $4,900,000 (option year)
+Veteran Big              Unrestricted FA (expiring)  $11,000,000 (last salary)
+Bench Wing               Full Bird FA (expiring)     $9,000,000 (last salary)
+Two young minimums       Under contract      $2,300,000 combined
+────────────────────────────────────────────────────────
+Guaranteed salary (excl. options/FAs): ~$71,800,000
+</code></pre>
+<p>Using Segment 1's four questions before touching a single number:</p>
+<pre><code class="language-text">1. Competitive window?    Playoff team, not yet a clear contender —
+                           &quot;balance&quot; mode.
+2. Core (3–5 untouchables)? Franchise Star, Starting Wing,
+                           3rd-year Guard (breakout trajectory).
+3. Extension bombs ahead?  3rd-year Guard is RFA-eligible THIS summer;
+                           2nd-year Forward's rookie option looms in
+                           October.
+4. Ownership constraint?   Tax is acceptable; second apron only for
+                           a real title push.
+</code></pre>
+<hr />
+<h1>June 25–29: The Forced Decisions</h1>
+<p>Following Segment 5's calendar, three decisions are due before free agency even opens.</p>
+<p><strong>Starting Center's player option ($16M).</strong> He'll opt in — no decision needed from you, this one's his call, but it locks $16M onto your books either way.</p>
+<p><strong>2nd-year Forward's rookie-scale team option.</strong> This one isn't due until October 31 (Segment 5, Step 7) — noted for later, not a June decision.</p>
+<p><strong>3rd-year Guard: Qualifying Offer.</strong> He's a core piece (Segment 1, Question 2) on a cheap rookie-scale salary about to expire. You tender his QO by June 29, 5:00 PM ET, converting him into a restricted free agent and securing your Right of First Refusal (Segment 9).</p>
+<pre><code class="language-text">June 29, 5:00 PM ET
+        │
+        ▼
+QO tendered to 3rd-year Guard ─► He is now a restricted free agent.
+                                  You hold matching rights.
+</code></pre>
+<hr />
+<h1>Building the Real Cap Sheet</h1>
+<p>With the option exercised and the QO tendered, your team salary picture (Segment 2) now includes cap holds for your two remaining free agents.</p>
+<pre><code class="language-text">Guaranteed salary (Star + Wing + Center option + rookies + minimums):  $95,300,000
+Cap hold — 3rd-year Guard (rookie-scale, below-average salary,
+           so 300% of his $6.2M prior salary, per Segment 6):          $18,600,000
+Cap hold — Veteran Big (Non-Bird, since he's only been here 1 year,
+           120% of his $11M prior salary, per Segment 6):              $13,200,000
+Cap hold — Bench Wing (Full Bird, above-average salary,
+           so 150% of his $9M prior salary, per Segment 6):            $13,500,000
+────────────────────────────────────────────────────────────────────────────────
+Team Salary:                                                          $140,600,000
+</code></pre>
+<p>Salary Cap: $165,000,000 → <strong>you are a cap-space team</strong>, roughly $24.4M below the cap before any decisions.</p>
+<hr />
+<h1>The Bird Rights Strategy Call</h1>
+<p>Per Segment 4's decision logic:</p>
+<pre><code class="language-text">3rd-year Guard  → Core piece → KEEP the hold, use Non-Bird/QO leverage
+Bench Wing      → Full Bird, valuable rotation piece → KEEP the hold
+Veteran Big     → Replaceable, Non-Bird only → CANDIDATE to renounce
+                   if cap space is needed elsewhere
+</code></pre>
+<p>You decide to keep all three holds for now — as Segment 4 emphasized, <em>never give away flexibility before you have to.</em> You have real cap space regardless.</p>
+<hr />
+<h1>July 1–5: The Moratorium</h1>
+<p>You identify one external target: a 27-year-old starting-caliber forward available in unrestricted free agency, seeking a deal in the $20M/year range. During the moratorium, you and his agent agree to a <strong>4-year, $84M deal</strong> ($20M starting salary, 8%-adjacent raises within cap-room signing rules) in principle. Nothing is official yet (Segment 5, Step 4).</p>
+<hr />
+<h1>July 6: Signing Period Opens</h1>
+<p>Following Segment 5's priority order:</p>
+<p><strong>1. Handle your own free agents first.</strong> You re-sign the <strong>Bench Wing</strong> using his Full Bird Rights to a 2-year, $19.5M deal (a modest raise, well under his max). His $13.5M hold is replaced by his actual $9.75M first-year salary — this <em>frees up</em> cap room rather than costing you any.</p>
+<p><strong>2. Use cap space on the external target.</strong> You officially sign the forward: 4 years, $84M, $20M in Year 1.</p>
+<p><strong>3. Fill out the roster with what's left.</strong> After the forward's signing, recalculate:</p>
+<pre><code class="language-text">Team Salary after Bench Wing re-sign and Forward signing:
+$95,300,000 (guaranteed core, minus prior Bench Wing hold)
+   − $13,500,000 (remove Bench Wing hold)
+   + $9,750,000  (Bench Wing actual Year 1 salary)
+   + $20,000,000 (Forward signing)
+   + $18,600,000 (3rd-year Guard hold, still active — RFA in progress)
+   + $13,200,000 (Veteran Big hold, still active)
+────────────────────────────────────────────────
+= $143,350,000
+</code></pre>
+<p>You still have roughly $21.6M in cap room relative to the $165M cap — enough that the MLE/BAE distinctions from Segment 7 don't even matter yet; you're still operating with room to spare, and you use a portion of it to add a backup big on a minimum-plus deal.</p>
+<hr />
+<h1>The Restricted Free Agency Sub-Plot</h1>
+<p>Your 3rd-year Guard has 2 years of service — just outside the Arenas Provision's 1-or-2-year window... actually, at exactly 2 years, he <strong>is</strong> still covered by it (Segment 9). A rival team, the fictional <strong>Cascade Kings</strong>, signs him to an offer sheet structured exactly like Segment 9's example:</p>
+<pre><code class="language-text">Year 1: $15,048,000  (capped at your era's Non-Taxpayer MLE level)
+Year 2: $15,800,000  (5% raise)
+Year 3: $38,500,000  (jump to &quot;as-if-maxed&quot; number)
+Year 4: $40,200,000  (4.5% raise)
+</code></pre>
+<p>The Kings only needed cap room for the <em>average</em> of those four years (~$27.4M) to make the offer. But your matching burden, per the Arenas Provision, is just the <strong>Year 1 number</strong> — and since you're still comfortably below the cap, matching is trivial. You match within the two-day window (Segment 9, Step 5). He's yours, at those exact terms, principal terms and all.</p>
+<pre><code class="language-text">Offer sheet signed ──► Notified ──► You match by the deadline
+                                            │
+                                            ▼
+                            3rd-year Guard stays a Pioneer,
+                            now on a 4-year, $109.5M contract
+</code></pre>
+<hr />
+<h1>The Veteran Big Decision</h1>
+<p>With the Guard now signed, your remaining cap room has shrunk. The Veteran Big's market has cooled — no outside offers materialized. You let his $13.2M Non-Bird hold sit unrenounced (no cost to doing so) and eventually re-sign him using his Non-Bird Rights to a 1-year, $9.9M deal (within the 120%-of-prior-salary Non-Bird ceiling from Segment 3).</p>
+<hr />
+<h1>October 31: The Rookie Option Deadline</h1>
+<p>Per Segment 5, Step 7, you exercise the 2nd-year Forward's rookie-scale team option, locking in his cost-controlled Year 3 salary and buying yourself another year before an extension or restricted free agency decision is required on him.</p>
+<hr />
+<h1>December 15: Trade Eligibility Opens</h1>
+<p>The Forward you signed in July becomes trade-eligible (Segment 5, Step 8; Segment 8, Part A). You don't move him — but you now have a fully tradable asset if a deadline opportunity appears.</p>
+<hr />
+<h1>February: The Trade Deadline</h1>
+<p>By February, your team salary sits at roughly <strong>$213,000,000</strong> — comfortably above the first apron ($209M) but below the second ($222M). Applying Segment 8's matching tiers, you're limited to <strong>110% + $100,000</strong> salary matching, not the standard 125%. You still have the ability to aggregate contracts (aggregation is only banned above the <em>second</em> apron), so you package your backup big and a bench guard — combined $14M — to take back a $15.5M rotation piece from a selling team, comfortably inside your 110% ceiling.</p>
+<pre><code class="language-text">Outgoing: $14,000,000 combined
+Matching ceiling (first-apron tier): $14,000,000 × 110% + $100,000
+                                    = $15,500,000
+Incoming: $15,500,000 — exactly at the ceiling. Legal.
+</code></pre>
+<p>Had you already been above the <em>second</em> apron, this trade would have been illegal on two counts: no aggregation allowed at all, and the strict 100% matching ceiling would have capped the incoming salary at $14,000,000 flat.</p>
+<hr />
+<h1>The Season-End Tax Bill (Illustrative)</h1>
+<p>Your final team salary lands at <strong>$213,000,000</strong> — $12,000,000 above the $201,000,000 tax line. Using the standard (non-repeater) bracket structure referenced throughout this series — roughly $1.00/$1.25/$3.50/$4.75 per dollar across ascending brackets, with each bracket spanning a few million dollars — a $12M overage lands you partway into the third bracket, for an estimated luxury tax bill in the <strong>$25–30M range</strong> on top of your payroll itself. That's a real, material cost — exactly the "ownership must be willing to pay it" tension from Segment 1's fourth question, and precisely why the full mechanics of this calculation get their own dedicated segment rather than a rough estimate like this one.</p>
+<hr />
+<h1>Season Recap</h1>
+<pre><code class="language-text">GM MINDSET (Part 1):        Correctly identified as a &quot;balance&quot; team;
+                             stayed disciplined below the second apron
+                             all season.
+
+CAP MANAGEMENT (Part 2):    Entered the summer with real cap space by
+                             calculating true team salary, not just
+                             guaranteed contracts.
+
+BIRD RIGHTS (Part 3):       Retained Full Bird Rights on the Bench Wing
+                             and used them for a below-market re-sign.
+
+CAP HOLDS (Part 4):         Never renounced a player before it was
+                             necessary — kept every hold until a real
+                             decision required releasing it.
+
+GM WORKFLOW (Part 5):       Handled the QO deadline, moratorium, and
+                             signing order exactly on schedule.
+
+EXCEPTIONS (Part 7):        Ultimately didn't need the MLE/BAE this
+                             year — cap space covered everything —
+                             but knew they were there if needed.
+
+TRADES (Part 8):            Used aggregation correctly under first-
+                             apron matching rules at the deadline.
+
+RESTRICTED FREE AGENCY
+(Part 9):                   Matched an Arenas Provision offer sheet
+                             using nothing but cap room, keeping a
+                             core piece at a price a rival team
+                             thought you couldn't afford to match.
+</code></pre>
+<p>Every decision in this simulation traces back to a specific rule from Parts 1 through 9. That's the actual day-to-day experience of running an NBA front office: not memorizing the CBA for its own sake, but recognizing, in real time, which specific rule governs the specific decision in front of you — and, as Segment 1 opened with, never losing sight of the fact that every one of these tools exists to serve exactly three goals: win future games, preserve optionality, and avoid irreversible mistakes.</p>
+<hr />
+<h1>Where This Leaves You</h1>
+<p>Two structural topics were referenced constantly across this series but never got their own full treatment: the exact mechanics of the <strong>Luxury Tax and the two Aprons</strong> (the bracket system briefly previewed above, the repeater tax, and precisely how the tax bill compounds), and the deeper trade-value mechanics around the <strong>frozen first-round pick rule</strong> for repeat second-apron teams. Whenever you're ready, those would round out the series completely — but with Parts 1 through 10 in hand, you already have what most fans, and a fair number of media analysts, never bother to learn: a working mental model of how an NBA front office actually thinks, deadline by deadline, dollar by dollar.</p>
+<hr />
+<h2>Glossary (terms used in this segment)</h2>
+<ul>
+<li><strong>Cap-space team</strong> — A team operating below the salary cap, able to sign players by simply spending down available room rather than relying on exceptions (see Part 2).</li>
+<li><strong>First-apron matching tier</strong> — The 110%-plus-$100,000 salary-matching ceiling that applies to trades once a team's salary exceeds the first apron (see Part 8).</li>
+<li><strong>Illustrative tax bracket</strong> — A simplified, rounded version of the real luxury-tax bracket system, used here to show the <em>shape</em> of the cost without claiming exact bracket boundaries for a specific season.</li>
+</ul><div class="pn"><a href="teil-9.html">← Part 9</a><span></span></div></div></body></html>
