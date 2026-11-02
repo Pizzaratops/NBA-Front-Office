@@ -249,7 +249,7 @@ function renderRoster(){
     const safeName=p.name.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
     html+=`<tr class="player-row${sel?' selected':''}" onclick="selectPlayer('${safeName}','${currentTeam}')">
       <td><div class="player-name-cell">${isMine?'<span class="my-team-star">⭐</span>':''}<span>${p.name}</span></div></td>
-      <td><span class="pos-badge">${p.pos}</span></td>
+      <td><span class="pos-badge"${p.pos_src?` title="Position aus Fantrax (im Sheet nicht markiert)"`:''}>${p.pos}${p.pos_src?'*':''}</span></td>
       ${salCells}<td>${optHtml}</td><td>${birdHtml}</td><td>${trade}</td>
     </tr>`;
   });

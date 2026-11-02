@@ -139,6 +139,45 @@ def find_team_tab(wb, abbr):
     return None
 
 
+# ── Fantrax als Ergänzung für Lücken im Sheet ─────────────────────────────
+# Öffentliche Fantrax-API (keine Anmeldung, aus GitHub Actions erreichbar):
+# alle NBA-Spieler mit Position. Füllt Positionen, die im Sheet fehlen ("?").
+FANTRAX_PLAYERS_URL = "https://www.fantrax.com/fxea/general/getPlayerIds?sport=NBA"
+FX_POS = {"PG": ["PG"], "SG": ["SG"], "SF": ["SF"], "PF": ["PF"], "C": ["C"],
+          "G": ["PG", "SG"], "F": ["SF", "PF"], "GF": ["SG", "SF"], "FC": ["PF", "C"]}
+
+
+def norm_name(n):
+    import unicodedata
+    n = unicodedata.normalize("NFD", str(n)).encode("ascii", "ignore").decode().lower()
+    n = re.sub(r"[^a-z ]", "", n)
+    n = re.sub(r"\s+(jr|sr|ii|iii|iv)$", "", n.strip())
+    return re.sub(r"\s+", " ", n)
+
+
+def fetch_fantrax_positions():
+    try:
+        req = urllib.request.Request(FANTRAX_PLAYERS_URL, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+    except Exception as e:
+        print(f"  ⚠️ Fantrax nicht erreichbar ({e}) — Positionslücken bleiben.", file=sys.stderr)
+        return {}
+    out = {}
+    for v in (data or {}).values():
+        raw = str(v.get("name") or "")
+        name = " ".join(reversed([x.strip() for x in raw.split(",", 1)])) if "," in raw else raw
+        pos = []
+        for x in re.split(r"[,/ ]+", str(v.get("position") or "")):
+            for y in FX_POS.get(x.strip().upper(), []):
+                if y not in pos:
+                    pos.append(y)
+        if name and pos:
+            out[norm_name(name)] = "/".join(sorted(pos, key=POS_LABELS.index))
+    print(f"  Fantrax: {len(out)} Spieler mit Position geladen.")
+    return out
+
+
 def workbook_export_url(sheet_id: str) -> str:
     # Lädt die GESAMTE Arbeitsmappe (alle Tabs) als .xlsx - keine gid nötig.
     return f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx"
@@ -453,6 +492,18 @@ def build_data(wb, existing: dict) -> dict:
 
     # Owner Cap ist laut Addendum Q71 seit 2024 abgeschafft → nicht mehr ausgeben
     owner_caps = {}
+    # Positionslücken (im Sheet nicht markiert) aus Fantrax füllen
+    missing = [p for t in teams.values() for p in t["players"] + t.get("waived", []) if p.get("pos") in (None, "", "?")]
+    if missing:
+        fx = fetch_fantrax_positions()
+        filled = 0
+        for p in missing:
+            pos = fx.get(norm_name(p["name"]))
+            if pos:
+                p["pos"], p["pos_src"] = pos, "fantrax"
+                filled += 1
+        print(f"  Positionen ergänzt: {filled}/{len(missing)} aus Fantrax"
+              + (f" — weiter offen: {[p['name'] for p in missing if p.get('pos') == '?']}" if filled < len(missing) else ""))
     cba = parse_ctrlpanel(wb)
     fas = parse_fa26(wb, rostered)
 
