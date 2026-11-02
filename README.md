@@ -17,6 +17,7 @@ Exceptions), Free Agents, Trade Calculator/Finder und CBA-Tools. Stand der Doku:
 
 ```
 data/data.json          ← automatisch aus dem Google Sheet (3x täglich)
+data/player-values.json ← FP/G im NBAFO-Scoring je Spieler (scripts/build_player_values.py, 3x täglich)
 data/fa-sl-sample.json  ← Summer League 2026 (scripts/build_fa_sl_sample.py, 1x pro Sommer)
 data/fa-ranking.json    ← FA-Ranking, Snapshot 19.07.2026 (Composite, nicht automatisch)
 data/fa-value-tiers.json← Vertrags-Tiers zum Ranking, Snapshot 19.07.2026
@@ -43,6 +44,14 @@ Der Owner Cap ist laut Addendum Q71 seit 2024 abgeschafft und wird nicht mehr au
 das frühere Owner-Cap-Dashboard ist jetzt **Tools → Cap & Exceptions**.
 
 `meta.sheet_tabs` listet alle Tabs des Sheets (hilft, wenn etwas umbenannt wird).
+
+## FP/G und Teamstärke
+
+`scripts/build_player_values.py` rechnet aus den täglichen ESPN-Box-Scores des MFHFB-HQ-Repos
+die Fantasy-Punkte im NBAFO-Scoring (Fantrax: PTS 2, OREB 2.5, DREB 2, AST 2.5, STL 5, BLK 5,
+3PTM 3, TO −3, FG verfehlt −2.5, FTM 1, FT verfehlt −2, MIN 1, +/− 1.5). Die App zeigt FP/G und
+L14 im Roster; **Stärke** = Summe der 8 besten FP/G (8 aktive Slots) mit Rang unter 30 (Teams-Seite,
+Team-Kopf), und der Trade Calculator zeigt, wie sich die Stärke beider Teams durch den Trade ändert.
 
 ## Trade-Regeln in der App
 

@@ -28,12 +28,16 @@ jobs:
       - name: Daten von Google Sheets holen
         run: python3 scripts/update_data.py
 
+      - name: FP/G im NBAFO-Scoring (Box Scores aus MFHFB HQ)
+        continue-on-error: true
+        run: python3 scripts/build_player_values.py
+
       - name: Änderungen committen (nur falls etwas geändert wurde)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet -- data/data.json; then
-            git add data/data.json
+          if ! git diff --quiet -- data/data.json data/player-values.json || [ -n "$(git status --porcelain data/player-values.json)" ]; then
+            git add data/data.json data/player-values.json
             git commit -m "Auto-Update draft-data $(date -u +'%Y-%m-%d %H:%M UTC')"
             git push
           else

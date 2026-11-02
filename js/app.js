@@ -5,6 +5,8 @@
 let DIRECTIONS = {};
 let OWNER_CAPS = {};
 let TEAMS = {};
+let PV = {};      // player-values.json: FP/G im NBAFO-Scoring (aus MFHFB-HQ-Box-Scores)
+let PV_META = null;
 let FAS = [];
 let MY_TEAMS = [];
 let CBA = { cap:165000000, tax:201000000, apron1:209000000, apron2:222000000, avgSal:10000000 };
@@ -151,6 +153,21 @@ function fmtFlagYears(p){
   return Object.entries(p.flags).map(([y,f])=>`20${y}-${+y+1}: ${L[f]||f}`).join(' · ');
 }
 
+
+// ══ FP/G (NBAFO-Scoring) + Teamstärke ═══════════════
+function pvKey(n){ return String(n||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z ]/g,'').replace(/\s+(jr|sr|ii|iii|iv|v)$/,'').replace(/\s+/g,' ').trim(); }
+function pv(name){ return PV[pvKey(name)]||null; }
+function fpgOf(name){ const v=pv(name); return v&&v.gp?v.fpg:null; }
+// Stärke = Summe der 8 besten FP/G (8 aktive Slots: PG, PG, SG, SF, SF, PF, C, C)
+function teamStrength(t, without=[], plus=[]){
+  const vals=[...t.players.filter(p=>!without.includes(p.name)).map(p=>fpgOf(p.name)||0), ...plus.map(n=>fpgOf(n)||0)].sort((a,b)=>b-a);
+  return vals.slice(0,8).reduce((a,b)=>a+b,0);
+}
+function strengthRanks(){
+  const list=Object.entries(TEAMS).map(([a,t])=>[a,teamStrength(t)]).sort((x,y)=>y[1]-x[1]);
+  const r={}; list.forEach(([a,v],i)=>{r[a]={rank:i+1,val:v};}); return r;
+}
+
 // ══ RENDER TEAM ══════════════════
 function renderTeam(){
   const t=TEAMS[currentTeam]; if(!t) return;
@@ -166,6 +183,7 @@ function renderTeam(){
       </div>
       <div class="team-header-caps">
         ${directionBadge(currentTeam)}
+        ${PV_META?(()=>{const R=strengthRanks()[currentTeam];return R?`<div class="cap-pill" style="background:var(--surface2);color:var(--text)" title="Summe der 8 besten FP/G (NBAFO-Scoring) · Rang unter 30"><span class="pill-label">Stärke</span><span>${R.val.toFixed(0)} · #${R.rank}</span></div>`:'';})():''}
         <div class="cap-pill ${status.cls}"><span class="pill-label">Total</span><span>${fmtM(t.total_salary)}</span></div>
         <div class="cap-pill ${status.cls}"><span>${status.label}</span></div>
         <div class="cap-pill" style="background:var(--surface2);color:var(--dim)">
@@ -215,6 +233,7 @@ function renderRoster(){
     if(currentFilter==='options') return p.opt==='PO'||p.opt==='TO';
     return true;
   });
+  players=players.map(p=>({...p,fpg:fpgOf(p.name)}));
   players.sort((a,b)=>{
     let va=a[currentSort.col]??0,vb=b[currentSort.col]??0;
     if(typeof va==='string') va=va.toLowerCase();
@@ -228,7 +247,7 @@ function renderRoster(){
   const thSort=(col,label)=>{const s=currentSort.col===col;return `<th class="${s?'sorted':''}" onclick="sortRoster('${col}')">${label}${s?(currentSort.dir===-1?' ↓':' ↑'):''}</th>`;};
   const isMine=MY_TEAMS.includes(currentTeam);
   let html=`<table class="roster-table"><thead><tr>
-    <th onclick="sortRoster('name')">Spieler</th><th>Pos</th>
+    <th onclick="sortRoster('name')">Spieler</th><th>Pos</th>${thSort('fpg','FP/G')}<th title="Schnitt der letzten 14 Tage">L14</th>
     ${LABELS.map((l,i)=>thSort(YEARS[i],l)).join('')}
     <th>OPT</th><th>Bird</th><th>Trade</th>
   </tr></thead><tbody>`;
@@ -250,6 +269,7 @@ function renderRoster(){
     html+=`<tr class="player-row${sel?' selected':''}" onclick="selectPlayer('${safeName}','${currentTeam}')">
       <td><div class="player-name-cell">${isMine?'<span class="my-team-star">⭐</span>':''}<span>${p.name}</span></div></td>
       <td><span class="pos-badge"${p.pos_src?` title="Position aus Fantrax (im Sheet nicht markiert)"`:''}>${p.pos}${p.pos_src?'*':''}</span></td>
+      ${(()=>{const v=pv(p.name);return `<td class="sal-cell" title="${v?`${v.gp} Spiele · ${v.min} Min${v.last?' · zuletzt '+v.last.map(x=>x[1]).join(', '):''}`:'noch kein Einsatz'}">${v&&v.gp?v.fpg.toFixed(1):'—'}</td><td class="sal-cell">${v&&v.l14!=null?v.l14.toFixed(1):'—'}</td>`;})()}
       ${salCells}<td>${optHtml}</td><td>${birdHtml}</td><td>${trade}</td>
     </tr>`;
   });
@@ -439,15 +459,18 @@ function renderTeamsTable(){
   let teams=Object.entries(TEAMS).map(([abbr,t])=>({
     abbr, ...t,
     space: Math.max(0, CBA.cap - t.total_salary),
-    status: apronStatus(t.total_salary)
+    status: apronStatus(t.total_salary),
+    str: teamStrength(t)
   }));
-  if(sortBy==='salary') teams.sort((a,b)=>b.total_salary-a.total_salary);
+  const SR=strengthRanks();
+  if(sortBy==='strength') teams.sort((a,b)=>b.str-a.str);
+  else if(sortBy==='salary') teams.sort((a,b)=>b.total_salary-a.total_salary);
   else if(sortBy==='space') teams.sort((a,b)=>b.space-a.space);
   else if(sortBy==='gm') teams.sort((a,b)=>(a.gm||'').localeCompare(b.gm||''));
   else teams.sort((a,b)=>a.name.localeCompare(b.name));
 
   let html=`<table class="teams-table"><thead><tr>
-    <th>Team</th><th>GM</th><th class="right">Salary</th><th class="right">vs Cap</th><th class="right">Cap Space</th><th>Status</th><th>Richtung</th><th>Spieler</th>
+    <th>Team</th><th>GM</th><th class="right" title="Summe der 8 besten FP/G im NBAFO-Scoring (8 aktive Slots) · Rang">Stärke</th><th class="right">Salary</th><th class="right">vs Cap</th><th class="right">Cap Space</th><th>Status</th><th>Richtung</th><th>Spieler</th>
   </tr></thead><tbody>`;
   teams.forEach(t=>{
     const isMine=MY_TEAMS.includes(t.abbr);
@@ -459,6 +482,7 @@ function renderTeamsTable(){
         <span style="font-weight:${isMine?'700':'400'}">${t.name}${isMine?' ⭐':''}</span>
       </div></td>
       <td style="color:var(--dim);font-size:11px">${t.gm||'—'}</td>
+      <td class="right" style="font-family:var(--font-mono)">${PV_META?`${t.str.toFixed(0)} <span style="color:var(--muted)">#${SR[t.abbr].rank}</span>`:'—'}</td>
       <td class="right">${fmtM(t.total_salary)}</td>
       <td class="right">${vsCapStr}</td>
       <td class="right">${t.space>0?`<span style="color:var(--green)">${fmtM(t.space)}</span>`:'—'}</td>
@@ -551,7 +575,7 @@ function renderTradeList(side){
     list.innerHTML=players.map((p,i)=>`
       <div class="trade-player-chip">
         <div class="chip-name">${p.name}${p.manual?' <span style="font-size:10px;color:var(--muted)">(manuell)</span>':''}</div>
-        <div class="chip-sal">${fmtM(p.sal)}</div>
+        <div class="chip-sal">${fmtM(p.sal)}${fpgOf(p.name)!=null?` · <span style="color:var(--dim)">${fpgOf(p.name).toFixed(1)} FP/G</span>`:''}</div>
         <button class="chip-remove" onclick="removeTradePlayer('${side}',${i})">✕</button>
       </div>`).join('');
   }
@@ -613,8 +637,16 @@ function renderTradeVerdict(){
     <div class="verdict-item"><div class="verdict-item-label">APRON-REGELUNG</div><div class="verdict-item-val ${apronOk?'ok':'bad'}">${apronOk?'✓ OK':'✗ VIOLATION'}</div>${apronNote?`<div style="font-size:11px;color:var(--red);margin-top:3px">${apronNote}</div>`:''}</div>
     <div class="verdict-item"><div class="verdict-item-label">DIFFERENZ</div><div class="verdict-item-val">${fmtM(Math.abs(totA-totB))}</div><div style="font-size:11px;color:var(--dim);margin-top:3px">${fmtM(totA)} ↔ ${fmtM(totB)}</div></div>
     <div class="verdict-item"><div class="verdict-item-label">GEHALTS-VERHÄLTNIS</div><div class="verdict-item-val">${larger>0?(smaller/larger*100).toFixed(1)+'%':'—'}</div><div style="font-size:11px;color:var(--dim);margin-top:3px">Regel: unter 1st Apron 200 %/+$${(7.5*cbaScale()).toFixed(1)}M/125 %, darüber 100 %</div></div>
-    ${teamA?`<div class="verdict-item"><div class="verdict-item-label">${teamA.name}</div><div class="verdict-item-val ${checkA.status?.cls||''}">${fmtM(checkA.newSal)}</div><div style="font-size:11px;color:var(--dim);margin-top:3px">${checkA.note}</div></div>`:''}
-    ${teamB?`<div class="verdict-item"><div class="verdict-item-label">${teamB.name}</div><div class="verdict-item-val ${checkB.status?.cls||''}">${fmtM(checkB.newSal)}</div><div style="font-size:11px;color:var(--dim);margin-top:3px">${checkB.note}</div></div>`:''}`;
+    ${teamA?`<div class="verdict-item" data-team-side="a"><div class="verdict-item-label">${teamA.name}</div><div class="verdict-item-val ${checkA.status?.cls||''}">${fmtM(checkA.newSal)}</div><div style="font-size:11px;color:var(--dim);margin-top:3px">${checkA.note}</div></div>`:''}
+    ${teamB?`<div class="verdict-item" data-team-side="b"><div class="verdict-item-label">${teamB.name}</div><div class="verdict-item-val ${checkB.status?.cls||''}">${fmtM(checkB.newSal)}</div><div style="font-size:11px;color:var(--dim);margin-top:3px">${checkB.note}</div></div>`:''}`;
+  if(PV_META&&teamA&&teamB){
+    const nA=tradePlayers.a.map(p=>p.name), nB=tradePlayers.b.map(p=>p.name);
+    const sum=l=>l.reduce((s,n)=>s+(fpgOf(n)||0),0);
+    const imp=(t,out,inn)=>{const b=teamStrength(t),a=teamStrength(t,out,inn);return {b,a,d:a-b};};
+    const iA=imp(teamA,nA,nB), iB=imp(teamB,nB,nA);
+    const cell=(t,i)=>`<div class="verdict-item"><div class="verdict-item-label">STÄRKE ${t.name}</div><div class="verdict-item-val ${i.d>=0?'ok':'bad'}">${i.d>=0?'+':''}${i.d.toFixed(1)}</div><div style="font-size:11px;color:var(--dim);margin-top:3px">Top-8 FP/G ${i.b.toFixed(0)} → ${i.a.toFixed(0)}</div></div>`;
+    verdict.innerHTML+=`<div class="verdict-item"><div class="verdict-item-label">FP/G GEGEBEN ↔ ERHALTEN</div><div class="verdict-item-val">${sum(nA).toFixed(1)} ↔ ${sum(nB).toFixed(1)}</div><div style="font-size:11px;color:var(--dim);margin-top:3px">NBAFO-Scoring, Saison bisher</div></div>`+cell(teamA,iA)+cell(teamB,iB);
+  }
   renderTPE(totA,totB,tradeTeam.a,tradeTeam.b);
 }
 
@@ -1068,6 +1100,10 @@ async function loadDataAndInit(){
     if(wrap) wrap.innerHTML = '<div style="padding:40px;text-align:center;color:#ff4560;font-family:sans-serif">⚠️ Konnte data/data.json nicht laden.<br><small>'+err+'</small></div>';
     return;
   }
+  try {
+    const r2 = await fetch('data/player-values.json', {cache:'no-store'});
+    if(r2.ok){ const v=await r2.json(); PV_META=v; Object.entries(v.players||{}).forEach(([n,x])=>{ PV[pvKey(n)]=x; }); }
+  } catch(e) { console.warn('player-values.json fehlt', e); }
   buildSidebar();
   setTeamColors(currentTeam);
   updateMobileStrip(currentTeam);
@@ -1127,7 +1163,7 @@ function calcCompatScore(abbr,inSal,outSal){
     if(!verdict) return;
     const items=[...verdict.querySelectorAll('.verdict-item')];
     [cA,cB].forEach((c,i)=>{
-      const el=items[items.length-2+i];
+      const el=verdict.querySelector(`.verdict-item[data-team-side="${i?'b':'a'}"]`)||items[items.length-2+i];
       if(!c||!el||el.querySelector('.compat-badge')) return;
       const d=document.createElement('div');
       d.style.marginTop='6px';
