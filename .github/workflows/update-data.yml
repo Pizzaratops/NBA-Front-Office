@@ -36,12 +36,16 @@ jobs:
         continue-on-error: true
         run: python3 scripts/sync_fantrax.py
 
+      - name: Finanzen & Entlastungs-Trades
+        continue-on-error: true
+        run: python3 scripts/build_finance.py
+
       - name: Änderungen committen (nur falls etwas geändert wurde)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet -- data/data.json data/player-values.json data/fantrax.json || [ -n "$(git status --porcelain data/)" ]; then
-            git add data/data.json data/player-values.json data/fantrax.json
+          if ! git diff --quiet -- data/data.json data/player-values.json data/fantrax.json data/finance.json || [ -n "$(git status --porcelain data/)" ]; then
+            git add data/data.json data/player-values.json data/fantrax.json data/finance.json
             git commit -m "Auto-Update draft-data $(date -u +'%Y-%m-%d %H:%M UTC')"
             git push
           else

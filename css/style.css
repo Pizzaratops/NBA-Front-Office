@@ -446,3 +446,30 @@ tr.oc-row:hover{background:var(--surface2)}
 .liga-bump .lb-lab{fill:var(--dim);font:10px var(--font-mono)}
 .liga-bump .lb-lab.on{fill:var(--text);font-weight:700}
 @media(max-width:700px){.liga-page{padding:12px}}
+/* Finanzen (js/finance.js) */
+.fin-controls{display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:12px;color:var(--dim)}
+.fin-controls label{display:flex;align-items:center;gap:8px}
+.fin-controls .form-select{max-width:240px}
+.fin-table td,.fin-table th{white-space:nowrap;font-size:12px}
+.fin-table tr.strong td{border-top:1px solid var(--border)}
+.fin-table tr.muted td{color:var(--dim);font-size:11px}
+.fin-table td.fin-flag-PO{color:var(--yellow)}
+.fin-table td.fin-flag-TO{color:var(--blue)}
+.fin-table td.fin-flag-NG{color:#9fc5e8}
+.fin-table tr.fin-mine td{background:color-mix(in srgb,var(--blue) 10%,transparent)}
+.fin-issues{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.fin-issue-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 12px;display:grid;gap:6px;align-content:start}
+.fin-issue-h{display:flex;justify-content:space-between;font-family:var(--font-display);font-size:16px;letter-spacing:.5px}
+.fin-issue{font-size:12px;line-height:1.45;color:var(--dim)}
+.fin-issue.bad{color:var(--red)}
+.fin-issue.warn{color:var(--text)}
+.fin-trades{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:10px}
+.fin-trade{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 12px;display:grid;gap:8px;font-size:12px}
+.fin-trade-body{display:grid;gap:4px}
+.fin-trade .te-label{display:inline-block;min-width:96px;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;color:var(--muted)}
+.fin-trade-kpis{display:flex;flex-wrap:wrap;gap:6px 12px;font-family:var(--font-mono);font-size:11px}
+.fin-trade-years{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:11px;color:var(--dim)}
+.fin-sweet{color:var(--orange)}
+.fin-check{gap:6px}
+.opt-badge.QO{background:rgba(215,255,0,.12);color:#d7ff00;border:1px solid #d7ff00}
+.liga-page>*{flex-shrink:0}

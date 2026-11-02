@@ -19,6 +19,7 @@ Exceptions), Free Agents, Trade Calculator/Finder und CBA-Tools. Stand der Doku:
 data/data.json          ← automatisch aus dem Google Sheet (3x täglich)
 data/player-values.json ← FP/G im NBAFO-Scoring je Spieler (scripts/build_player_values.py, 3x täglich)
 data/fantrax.json       ← Fantrax-Liga mfr0b97kmqgsztrm: Tabelle, Wochen-Scores, Kader-Abgleich (scripts/sync_fantrax.py, 3x täglich)
+data/finance.json       ← Finanzmodell + Entlastungs-Trades (scripts/build_finance.py, 3x täglich)
 data/fa-sl-sample.json  ← Summer League 2026 (scripts/build_fa_sl_sample.py, 1x pro Sommer)
 data/fa-ranking.json    ← FA-Ranking, Snapshot 19.07.2026 (Composite, nicht automatisch)
 data/fa-value-tiers.json← Vertrags-Tiers zum Ranking, Snapshot 19.07.2026
@@ -61,6 +62,15 @@ Kader jeder Woche (Weekly Lineups). Die Wochen-Scores rechnet es selbst nach (ak
 `player-values.json`; Montagsspiele zählen zur neuen Woche) — der Abgleich mit den Fantrax-Punkten
 liegt bei 100 %. Seite **📈 Tabelle**: Fantrax-Bilanz, Ø Punkte/Woche, Zwischenstand, Stärke-Rang,
 Punkte je Woche, Rolling Rankings (kumulierte All-Play-Bilanz) und Kader-Abgleich Fantrax ↔ Sheet.
+
+## Finanzen (💼)
+
+`scripts/build_finance.py` → `data/finance.json`: Gehälter je Saison (2026-27 bis 2030-31; Player Options
+als gezogen, Team Options wahlweise), Dead Money, Kader-Auffüllung auf 12, Cap-Projektion (Wachstum in der
+App einstellbar, Standard 7 %), Probleme je Saison (Apron, auslaufende Leistungsträger mit QO/Bird Rights
+und Marktwert, Options, Überbezahlungen), Liga-Finanzen aller Teams (Space, Luft, TPEs aus dem
+Finances-Tab, MLE) und Entlastungs-Trades für die eigenen Teams. Spielerwert = Marktpreis nach FP/G,
+gefittet über alle Veteranenverträge der Liga (Form der NBAFO-Vertragsformel, Alterskurve ab 30).
 
 ## Trade-Regeln in der App
 

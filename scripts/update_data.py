@@ -399,6 +399,40 @@ def parse_finances(wb) -> dict:
     return owner_caps
 
 
+def parse_finances_full(wb) -> dict:
+    """Finances-Tab: je Team FO Hard Cap (früher „Owner cap“), Hard-Cap-Auslöser,
+    MLE/BAE-Status und ALLE Traded Player Exceptions (bis zu 3 je Team) mit Ablauf."""
+    ws = wb["Finances"]
+    rows = list(ws.iter_rows(min_row=1, max_row=40, values_only=True))
+    head = [str(h or "").strip() for h in rows[0]]
+    out = {}
+    for row in rows[1:]:
+        abbr = NAME_TO_ABBR.get(str(row[0] or "").strip())
+        if not abbr:
+            continue
+        tpes = []
+        for i, h in enumerate(head):
+            if h == "Trade Exception" and i < len(row):
+                amt = num(row[i])
+                exp = row[i + 1] if i + 1 < len(row) else None
+                if amt and amt > 0:
+                    tpes.append({"amount": amt, "expires": txt(exp)})
+        def col(name):
+            for i, h in enumerate(head):
+                if h.lower().startswith(name.lower()) and i < len(row):
+                    return row[i]
+            return None
+        out[abbr] = {
+            "fo_hard_cap": num(col("Owner cap")),
+            "salary_wo_holds": num(col("Team salary")),
+            "hard_cap_trigger": txt(col("Hard cap by")),
+            "mle_status": txt(col("MLE lost")),
+            "bae_status": txt(col("BAE")),
+            "tpes": tpes,
+        }
+    return out
+
+
 def parse_ctrlpanel(wb) -> dict:
     ws = wb["CtrlPanel"]
     label_map = {
@@ -407,6 +441,13 @@ def parse_ctrlpanel(wb) -> dict:
         "first apron": "apron1",
         "second apron": "apron2",
         "average salary": "avgSal",
+        "bi-annual exception": "bae",
+        "mid level exception": "mle",
+        '"mini" mle, tax payers': "mini_mle",
+        "room mle": "room_mle",
+        "roster charge": "roster_charge",
+        "1y vet min": "vet_min_1y",
+        "2y vet min": "vet_min_2y",
     }
     cba = {}
     for row in ws.iter_rows(values_only=True):
@@ -440,6 +481,7 @@ def parse_fa26(wb, rostered: dict) -> list:
             fpg = None
         fas.append({
             "name": name,
+            "age": num(row[1]) if len(row) > 1 else None,
             "fpg": fpg,
             "signed_team": rostered.get(name),
         })
@@ -504,6 +546,14 @@ def build_data(wb, existing: dict) -> dict:
                 filled += 1
         print(f"  Positionen ergänzt: {filled}/{len(missing)} aus Fantrax"
               + (f" — weiter offen: {[p['name'] for p in missing if p.get('pos') == '?']}" if filled < len(missing) else ""))
+    try:
+        finances = parse_finances_full(wb)
+    except Exception as e:
+        print(f"  ⚠️ Finances-Tab nicht lesbar: {e}", file=sys.stderr)
+        finances = {}
+    for abbr, f in finances.items():
+        if abbr in teams:
+            teams[abbr]["finances"] = f
     cba = parse_ctrlpanel(wb)
     fas = parse_fa26(wb, rostered)
 
