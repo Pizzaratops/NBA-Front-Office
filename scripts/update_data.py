@@ -109,6 +109,36 @@ NAME_TO_ABBR = {
 DEFAULT_MY_TEAMS = ["PHI", "UT"]
 
 
+# Mögliche andere Tab-Namen je Team (Sheet-Schreibweisen ändern sich gelegentlich).
+TAB_ALIASES = {
+    "BRK": ["BKN", "Brooklyn"], "GS": ["GSW", "GOS", "Golden State", "Warriors"],
+    "NOP": ["NO", "NOR", "New Orleans"], "NY": ["NYK", "New York", "Knicks"],
+    "PHX": ["PHO", "Phoenix"], "SAS": ["SA", "San Antonio"],
+    "UT": ["UTA", "UTAH", "Utah", "Jazz"], "WA": ["WAS", "WSH", "Washington", "Wizards"],
+}
+
+
+def find_team_tab(wb, abbr):
+    """Findet den Tab eines Teams: exakt, dann ohne Groß/Klein/Leerzeichen, dann Aliasse."""
+    if abbr in wb.sheetnames:
+        return abbr
+    norm = lambda x: re.sub(r"[^a-z0-9]", "", str(x).lower())
+    by_norm = {norm(n): n for n in wb.sheetnames}
+    for cand in [abbr] + TAB_ALIASES.get(abbr, []) + [TEAM_META.get(abbr, {}).get("name", "")]:
+        if cand and norm(cand) in by_norm:
+            return by_norm[norm(cand)]
+    # Tab, dessen erste Zeile den Team-Vollnamen enthält
+    full = TEAM_META.get(abbr, {}).get("name", "").lower()
+    for n in wb.sheetnames:
+        try:
+            v = wb[n].cell(row=1, column=1).value
+        except Exception:
+            continue
+        if full and isinstance(v, str) and full in v.lower():
+            return n
+    return None
+
+
 def workbook_export_url(sheet_id: str) -> str:
     # Lädt die GESAMTE Arbeitsmappe (alle Tabs) als .xlsx - keine gid nötig.
     return f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx"
@@ -274,11 +304,24 @@ def build_data(wb, existing: dict) -> dict:
     directions = {}
     rostered = {}  # Spielername -> Team-Abkürzung
 
+    stale = []
     for abbr in TEAM_ABBRS:
-        if abbr not in wb.sheetnames:
-            print(f"  ⚠️ Tab '{abbr}' nicht im Sheet gefunden, überspringe.", file=sys.stderr)
+        tab = find_team_tab(wb, abbr)
+        if not tab:
+            # Tab fehlt/umbenannt: alten Stand behalten statt das Team zu verlieren
+            old_team = existing.get("teams", {}).get(abbr)
+            print(f"  ⚠️ Tab für '{abbr}' nicht gefunden (Kandidaten: {TAB_ALIASES.get(abbr, [])}). "
+                  f"{'Behalte alten Stand.' if old_team else 'Kein alter Stand vorhanden.'}", file=sys.stderr)
+            if old_team:
+                teams[abbr] = {**old_team, "stale": True}
+                directions[abbr] = existing.get("directions", {}).get(abbr, "")
+                for p in old_team.get("players", []):
+                    rostered[p["name"]] = abbr
+                stale.append(abbr)
             continue
-        ws = wb[abbr]
+        if tab != abbr:
+            print(f"  ↪ '{abbr}' aus Tab '{tab}' gelesen.")
+        ws = wb[tab]
         direction, gm, players, total_salary = parse_team_sheet(ws)
         directions[abbr] = direction
         meta = TEAM_META.get(abbr, {})
@@ -316,6 +359,8 @@ def build_data(wb, existing: dict) -> dict:
             "players_count": sum(len(t["players"]) for t in teams.values()),
             "fas_count": len(fas),
             "fas_available_count": sum(1 for f in fas if not f["signed_team"]),
+            "stale_teams": stale,
+            "sheet_tabs": list(wb.sheetnames),
         },
     }
 
@@ -334,7 +379,7 @@ def main() -> int:
         print(f"❌ Fehler beim Laden der Arbeitsmappe: {e}", file=sys.stderr)
         return 1
 
-    print(f"  {len(wb.sheetnames)} Tabs gefunden.")
+    print(f"  {len(wb.sheetnames)} Tabs gefunden: {wb.sheetnames}")
     data = build_data(wb, existing)
 
     with open(DATA_PATH, "w", encoding="utf-8") as f:
