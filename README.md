@@ -1,82 +1,65 @@
-# NBA Front Office
+# NBA Front Office (NBAFO)
 
 https://pizzaratops.github.io/NBA-Front-Office/
 
-Fantasy-Front-Office-Tool: Roster, Free Agents, Trade Calculator, CBA-Tools und Off-Season-Planer.
+Begleit-Tool für die NBAFO-Liga: Offseason-Guide, Roster-App (Kader, Gehälter, Optionen,
+Exceptions), Free Agents, Trade Calculator/Finder und CBA-Tools. Stand der Doku: 02.11.2026.
 
-## Struktur
+## Seiten
+
+| Datei | Inhalt |
+|---|---|
+| `index.html` | Offseason-Guide (EN/DE), Timeline, Regel-Bibliothek |
+| `app.html` | Roster-App: `js/app.js` + `fa-bidding.js`, `fa-ranking.js`, `fa-sl-enhance.js` |
+| `daten.html` | Datenstatus (letztes Update, Quelle) |
+
+## Daten
 
 ```
-.
-├── .github/workflows/update-data.yml   ← GitHub Action, holt 3x täglich die Sheet-Daten
-├── css/style.css                       ← komplettes Styling
-├── data/data.json                      ← alle Team-/Spieler-/FA-Daten (wird automatisch aktualisiert)
-├── js/app.js                           ← komplette App-Logik
-├── scripts/update_data.py              ← Skript, das das Google Sheet lädt und data/data.json schreibt
-├── daten.html                          ← zeigt an, wann/woher die Daten zuletzt aktualisiert wurden
-├── index.html                          ← die App selbst
-└── README.md
+data/data.json          ← automatisch aus dem Google Sheet (3x täglich)
+data/fa-sl-sample.json  ← Summer League 2026 (scripts/build_fa_sl_sample.py, 1x pro Sommer)
+data/fa-ranking.json    ← FA-Ranking, Snapshot 19.07.2026 (Composite, nicht automatisch)
+data/fa-value-tiers.json← Vertrags-Tiers zum Ranking, Snapshot 19.07.2026
 ```
 
-Vorher war alles (CSS, JS und alle Daten) in einer einzigen `index.html` zusammengefasst.
-Jetzt ist es sauber getrennt, damit:
-- die Daten automatisch per GitHub Action aktualisiert werden können, ohne den Code anzufassen,
-- man CSS/JS einzeln bearbeiten kann,
-- `data/data.json` auch von anderen Tools/Skripten wiederverwendet werden kann.
+### Automatische Aktualisierung
 
-## Automatische Aktualisierung (3x täglich)
+`.github/workflows/update-data.yml` läuft um 07:00, 15:00 und 23:00 UTC (und manuell über
+*Actions → Auto-Update Data → Run workflow*). `scripts/update_data.py` lädt das komplette
+Sheet (`1REnOtl5b7IQSbxBaeGPPs6KnPwhHmwY8vltQcVh6jgQ`) als xlsx und baut `data/data.json` neu.
 
-`.github/workflows/update-data.yml` läuft automatisch um 07:00, 15:00 und 23:00 UTC
-(anpassbar über die `cron`-Zeilen in der Datei) und außerdem manuell über
-**Actions → Auto-Update Data → Run workflow**.
+Aus jedem Team-Tab (`ATL` … `WAS`; abweichende Tab-Namen wie `GSW`/`NYK`/`UTA`/`WAS`
+werden automatisch erkannt, fehlende Tabs behalten den alten Stand mit `stale: true`):
 
-Der Workflow:
-1. checkt das Repo aus,
-2. führt `scripts/update_data.py` aus, welches den öffentlichen CSV-Export
-   des Google Sheets lädt (`.../export?format=csv&gid=82`),
-3. schreibt die Werte in `data/data.json`,
-4. committet & pusht die Änderung automatisch (nur wenn sich etwas geändert hat).
+- **Kader** (`players`): Gehälter 2026-27 bis 2031-32, Positionen, QO, Bird Rights, Signed via, Notizen
+- **Optionen aus den Zellfarben** (Legende im Tab): `PO`, `TO`, `QO`, `NG` (nicht garantiert)
+  → `flags` je Saison, `opt`/`opt_year` = nächste Option
+- **Two-way** (`two_way`) und **Waived** (`waived`, `dead_money`) getrennt vom Kader
+- **Exceptions** (`exceptions`): Taxpayer, MLE-Typ + Rest, BAE, DPE, TPEs (Betrag + Ablauf),
+  Hard Cap, Cap Space
+- **CBA-Werte** aus `CtrlPanel`, **FA-Pool** aus `FA26`
 
-### ⚠️ Noch zu erledigen: Spalten-Mapping
+Der Owner Cap ist laut Addendum Q71 seit 2024 abgeschafft und wird nicht mehr ausgegeben;
+das frühere Owner-Cap-Dashboard ist jetzt **Tools → Cap & Exceptions**.
 
-Ich hatte keinen Lesezugriff auf dein Google Sheet, daher weiß
-`scripts/update_data.py` aktuell noch **nicht**, welche Spalte z.B. „Gehalt“,
-„Spielername“ oder „Bird Rights“ enthält. Das Skript lädt das Sheet bereits
-zuverlässig herunter (das funktioniert, weil GitHub-Actions-Runner freien
-Internetzugriff haben — im Gegensatz zu meiner Sandbox hier), schreibt aber
-erstmal nur den Zeitstempel + die Zeilenanzahl nach `data.json`, ohne die
-eigentlichen Spielerdaten zu verändern.
+`meta.sheet_tabs` listet alle Tabs des Sheets (hilft, wenn etwas umbenannt wird).
 
-So schließt du die Lücke:
-1. Öffne dein Sheet, schau dir die Spaltenüberschriften der ersten Zeile an.
-2. Öffne `scripts/update_data.py`, Funktion `parse_sheet_to_data()`.
-3. Ersetze den TODO-Block durch echtes Mapping deiner Spalten auf die Felder
-   in `data/data.json` (Beispielcode ist bereits als Kommentar vorhanden).
-4. Committen, pushen — beim nächsten automatischen Lauf (oder manuell über
-   „Run workflow“) werden dann echte Werte übernommen.
+## Trade-Regeln in der App
 
-Falls du mir die Spaltenüberschriften deines Sheets schickst, schreibe ich dir
-das Mapping gerne fertig.
-
-### Sheet muss "öffentlich mit Link" sein
-
-Der CSV-Export (`/export?format=csv&gid=...`) funktioniert nur, wenn das
-Sheet auf „Jeder mit dem Link kann ansehen“ freigegeben ist. Falls es aktuell
-noch privat ist: Sheet öffnen → *Freigeben* → *Jeder mit dem Link* → *Betrachter*.
-
-### Mehrere Tabs / Reiter im Sheet
-
-Falls Teams, Free Agents und Owner-Caps auf unterschiedlichen Tabs liegen,
-in `scripts/update_data.py` einfach die Liste `SHEETS` um weitere
-`{"name": "...", "gid": "..."}`-Einträge ergänzen (die `gid` steht in der
-URL, wenn du den jeweiligen Tab im Sheet anklickst).
+Salary Matching nach NBA-CBA 2023, Schwellen mit dem Cap skaliert (Basis 2023-24: $136.0M):
+unter dem 1st Apron nach dem Trade 200 % + $0.3M bis $9.1M, +$9.1M bis $35.2M, darüber 125 % + $0.3M;
+über dem 1st Apron höchstens 100 %; über dem 2nd Apron keine Gehalts-Aggregation; Hard Cap wird
+geprüft. Trade Calculator und Trade Finder prüfen beide Seiten.
 
 ## Lokal testen
 
 ```bash
+pip install openpyxl
 python3 scripts/update_data.py   # aktualisiert data/data.json
-python3 -m http.server 8000      # dann im Browser: http://localhost:8000
+python3 -m http.server 8000      # http://localhost:8000/app.html
 ```
 
-(`index.html` lädt `data/data.json` per `fetch()` — das braucht einen echten
-HTTP-Server, `file://` funktioniert wegen CORS nicht.)
+## Offen
+
+- Erklärserie Teil 1–10 liegt noch nicht im Repo („→ Teil X“ im Guide sind reine Labels).
+- 17 Spieler haben im Sheet keine Positions-Markierung (Anzeige „?“).

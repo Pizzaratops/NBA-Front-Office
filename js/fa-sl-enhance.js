@@ -1,8 +1,8 @@
 // ══════════════════════════════════════════════════════════════════
-// FA — SUMMER LEAGUE 25+26 ENHANCEMENT
+// FA — SUMMER LEAGUE 2026 ENHANCEMENT
 // Attaches Summer-League participation (2025 + 2026 combined, games
 // played, per-game stat line) onto the existing FAS objects so the
-// Free-Agents page can sort by it ("🏀 SL GP (25+26) ↓"), filter to
+// Free-Agents page can sort by it ("🏀 SL GP (2026) ↓"), filter to
 // "nur mit SL-Sample", and sort by the derived "🔥 SL Upside" score.
 //
 // Source: data/fa-sl-sample.json — static snapshot (nbadraft.app
@@ -65,7 +65,7 @@ function faslBadge(name) {
   const sl = FASL_DATA[name];
   if (!sl || !sl.gp) return '';
   const line = `${sl.pts ?? '—'}/${sl.reb ?? '—'}/${sl.ast ?? '—'} · ${sl.min}min`;
-  return `<span class="fasl-badge" title="Summer League 25+26: ${sl.gp} Spiele, ${line}">🏀 ${sl.gp}</span>`;
+  return `<span class="fasl-badge" title="Summer League 2026: ${sl.gp} Spiele, ${line}">🏀 ${sl.gp}</span>`;
 }
 
 // helper: read the player name a rendered <tr> belongs to
@@ -162,7 +162,7 @@ function faslAddUpsideColumn() {
   const arrow = FASL_UPSIDE_SORT_ACTIVE ? (FASL_UPSIDE_SORT_DIR === 1 ? ' ↑' : ' ↓') : '';
   th.textContent = '🔥 SL Upside' + arrow;
   th.style.cursor = 'pointer';
-  th.title = `Punkte+Rebounds+Assists pro Minute (SL 25+26), auf 36 Min. hochgerechnet. Nur ab ${FASL_UPSIDE_MIN_GP}+ SL-Spielen, sonst „—“.`;
+  th.title = `Punkte+Rebounds+Assists pro Minute (SL 2026), auf 36 Min. hochgerechnet. Nur ab ${FASL_UPSIDE_MIN_GP}+ SL-Spielen, sonst „—“.`;
   th.classList.toggle('sorted', FASL_UPSIDE_SORT_ACTIVE);
   th.onclick = () => {
     if (FASL_UPSIDE_SORT_ACTIVE) FASL_UPSIDE_SORT_DIR *= -1;
@@ -199,7 +199,7 @@ function faslApplyUpsideSort() {
     const b = faslUpsideScore(FASL_DATA[faslNameFromRow(trB)]);
     const va = a == null ? -Infinity : a;
     const vb = b == null ? -Infinity : b;
-    return va < vb ? dir : va > vb ? -dir : 0;
+    return va < vb ? -dir : va > vb ? dir : 0;
   });
   rows.forEach(tr => tbody.appendChild(tr)); // appendChild on existing node = move
 }

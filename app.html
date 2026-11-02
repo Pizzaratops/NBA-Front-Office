@@ -64,12 +64,12 @@
           <select id="fa-sort-select" onchange="setFASort()" style="padding:5px 8px;background:var(--surface2);border:1px solid var(--border);border-radius:5px;color:var(--text);font-size:11px;outline:none">
             <option value="fpg-1">FPG ↓</option>
             <option value="fpg1">FPG ↑</option>
-            <option value="name-1">Name A-Z</option>
+            <option value="name1">Name A-Z</option>
             <option value="fairval-1">Fair Value ↓</option>
-            <option value="sl-1">🏀 SL GP (25+26) ↓</option>
-            <option value="slupside-1">🔥 SL Upside (25+26) ↓</option>
+            <option value="sl-1">🏀 SL GP (2026) ↓</option>
+            <option value="slupside-1">🔥 SL Upside (2026) ↓</option>
           </select>
-          <label style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--dim);cursor:pointer;white-space:nowrap"><input type="checkbox" id="fa-sl-only" onchange="renderFA()" style="accent-color:var(--team-c1)"> 🏀 nur mit SL-Sample (25+26)</label>
+          <label style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--dim);cursor:pointer;white-space:nowrap"><input type="checkbox" id="fa-sl-only" onchange="renderFA()" style="accent-color:var(--team-c1)"> 🏀 nur mit SL-Sample (2026)</label>
         </div>
         <div class="fa-table-wrap" id="fa-table-wrap"></div>
       </div>
@@ -160,7 +160,7 @@
             <button class="tool-tab active" onclick="showTool('finder')">🔍 Trade Finder</button>
             <button class="tool-tab" onclick="showTool('maxcalc')">💰 Max Angebot</button>
             <button class="tool-tab" onclick="showTool('fairval')">⭐ Fair Value</button>
-<button class="tool-tab" onclick="showTool('offseason')">📅 Off Season</button><button class="tool-tab" onclick="showTool('ownercap')">💰 Owner Cap</button><button class="tool-tab" onclick="showTool('fabidding')">💵 FA Bidding</button><button class="tool-tab" onclick="showTool('faranking')">📊 FA Ranking</button>
+<button class="tool-tab" onclick="showTool('offseason')">📅 Off Season</button><button class="tool-tab" onclick="showTool('ownercap')">💼 Cap &amp; Exceptions</button><button class="tool-tab" onclick="showTool('fabidding')">💵 FA Bidding</button><button class="tool-tab" onclick="showTool('faranking')">📊 FA Ranking</button>
           </div>
   
           <!-- TRADE FINDER -->
@@ -289,23 +289,26 @@
 
           <!-- FA RANKING -->
           <div class="tool-panel" id="tool-faranking" style="gap:16px"></div>
-        </div>
-      </div>
 
-<!-- OWNER CAP DASHBOARD -->
+          <!-- OWNER CAP DASHBOARD -->
           <div class="tool-panel" id="tool-ownercap" style="gap:16px">
             <div class="tool-card" style="flex-shrink:0">
-              <div class="tool-card-title">💰 Owner Cap Dashboard</div>
-              <p style="font-size:12px;color:var(--dim);margin-bottom:12px">Alle 30 Teams und ihre individuelle Owner Cap Auslastung.</p>
-              <select class="form-select" id="oc-sort-select" onchange="renderOwnerCapDashboard()" style="max-width:180px">
-                <option value="pct">Auslastung ↓</option>
-                <option value="left">Verbleibend ↓</option>
-                <option value="cap">Owner Cap ↓</option>
+              <div class="tool-card-title">💼 Cap &amp; Exceptions — alle Teams</div>
+              <p style="font-size:12px;color:var(--dim);margin-bottom:12px">Wer kann in Trades Gehalt aufnehmen? Abstand zu den Aprons bzw. zum Hard Cap, verfügbare MLE/BAE, Traded Player Exceptions, Two-way und Dead Money — direkt aus dem Sheet. (Owner Cap gibt es laut Addendum Q71 seit 2024 nicht mehr.)</p>
+              <select class="form-select" id="oc-sort-select" onchange="renderOwnerCapDashboard()" style="max-width:220px">
+                <option value="room">Luft bis Apron/Hard Cap ↓</option>
+                <option value="salary">Gehalt ↓</option>
+                <option value="mle">MLE übrig ↓</option>
+                <option value="tpe">Größte TPE ↓</option>
                 <option value="name">Team Name</option>
               </select>
             </div>
             <div class="oc-table-wrap" id="oc-table-wrap"></div>
           </div>
+        </div>
+      </div>
+
+
       
       <!-- TEAMS PAGE -->
       <div class="page" id="page-teams">

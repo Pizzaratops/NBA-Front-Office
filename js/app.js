@@ -130,6 +130,27 @@ function showTool(t){
   if(t==='ownercap') renderOwnerCapDashboard();
 }
 
+
+// ══ CBA-Helfer (Stand 02.11.2026) ═══════════════════
+// Salary Matching nach NBA-CBA 2023, Schwellen mit dem Cap skaliert
+// (Basis 2023-24: Cap $136.021M, $7.5M / $29M / $250k).
+function cbaScale(){ return (CBA.cap||164961000)/136021000; }
+function maxIncoming(out, newSal, team){
+  // Team unter dem Cap nach dem Trade: kein Matching nötig
+  if(newSal<=CBA.cap) return Infinity;
+  // über dem 1st Apron nach dem Trade: höchstens 100 %
+  if(newSal>CBA.apron1) return out;
+  const k=cbaScale(), T1=7500000*k, T2=29000000*k, B=250000*k;
+  if(out<=T1) return 2*out+B;
+  if(out<=T2) return out+T1;
+  return 1.25*out+B;
+}
+function fmtFlagYears(p){
+  if(!p.flags) return '';
+  const L={PO:'Player Option',TO:'Team Option',QO:'Qualifying Offer',NG:'nicht garantiert'};
+  return Object.entries(p.flags).map(([y,f])=>`20${y}-${+y+1}: ${L[f]||f}`).join(' · ');
+}
+
 // ══ RENDER TEAM ══════════════════
 function renderTeam(){
   const t=TEAMS[currentTeam]; if(!t) return;
@@ -141,7 +162,7 @@ function renderTeam(){
       <div class="team-color-bar" style="background:linear-gradient(to bottom,${t.c1},${t.c2})"></div>
       <div>
         <div class="team-header-name">${t.name}</div>
-        <div class="team-header-meta">GM: ${t.gm||'—'} · Coach: ${t.coach||'—'} · ${t.players.length} Spieler${isMine?' ⭐':''}</div>
+        <div class="team-header-meta">GM: ${t.gm||'—'} · Coach: ${t.coach||'—'} · ${t.players.length} Spieler${(t.two_way||[]).length?` + ${t.two_way.length} Two-way`:''}${t.dead_money?` · Dead Money ${fmtM(t.dead_money)}`:''}${t.stale?' · ⚠️ alter Stand':''}${isMine?' ⭐':''}</div>
       </div>
       <div class="team-header-caps">
         ${directionBadge(currentTeam)}
@@ -198,7 +219,7 @@ function renderRoster(){
     let va=a[currentSort.col]??0,vb=b[currentSort.col]??0;
     if(typeof va==='string') va=va.toLowerCase();
     if(typeof vb==='string') vb=vb.toLowerCase();
-    return va<vb?currentSort.dir:-currentSort.dir;
+    return va<vb?-currentSort.dir:va>vb?currentSort.dir:0;
   });
   const wrap=document.getElementById('roster-table-wrap');
   if(!players.length){wrap.innerHTML='<div class="no-results">Keine Spieler gefunden.</div>';return;}
@@ -214,7 +235,8 @@ function renderRoster(){
   players.forEach(p=>{
     const sel=selectedPlayer&&selectedPlayer.name===p.name&&selectedPlayer.team===currentTeam;
     const birdHtml=p.bird?`<span class="bird-badge ${p.bird.toLowerCase()}">${p.bird}</span>`:'—';
-    const optHtml=p.opt?`<span class="opt-badge ${p.opt}">${p.opt}</span>`:'—';
+    const ng=p.flags&&Object.values(p.flags).includes('NG');
+    const optHtml=(p.opt||ng)?`<span title="${fmtFlagYears(p)}">${p.opt?`<span class="opt-badge ${p.opt}">${p.opt} ${p.opt_year?p.opt_year.slice(2,4)+'/'+p.opt_year.slice(-2):''}</span>`:''}${ng?' <span class="opt-badge NG">NG</span>':''}</span>`:'—';
     const trade=p.tradable_alone?'<span class="tradable-yes">✓</span>':p.tradable_agg?'<span style="color:var(--orange);font-size:11px">Agg</span>':'<span class="tradable-no">—</span>';
     const salCells=YEARS.map((yr,i)=>{
       const v=p[yr];const prev=i>0?p[YEARS[i-1]]:null;
@@ -231,7 +253,21 @@ function renderRoster(){
       ${salCells}<td>${optHtml}</td><td>${birdHtml}</td><td>${trade}</td>
     </tr>`;
   });
-  wrap.innerHTML=html+'</tbody></table>';
+  wrap.innerHTML=html+'</tbody></table>'+teamExtrasHtml(t);
+}
+function teamExtrasHtml(t){
+  const ex=t.exceptions||{};
+  const items=[];
+  if(ex.mle_type) items.push(`<b>${ex.mle_type}</b>: ${fmtM(ex.mle_left||0)} übrig`);
+  if(ex.bae_left) items.push(`<b>BAE</b>: ${fmtM(ex.bae_left)}`);
+  if(ex.dpe_left) items.push(`<b>DPE</b>: ${fmtM(ex.dpe_left)}`);
+  (ex.tpes||[]).forEach(x=>items.push(`<b>TPE</b>: ${fmtM(x.amount)}${x.expires?` (bis ${x.expires})`:''}`));
+  if(ex.hard_cap) items.push(`<b>Hard Cap</b>: ${fmtM(ex.hard_cap)} (Luft ${fmtM(ex.hard_cap-t.total_salary)})`);
+  if(ex.taxpayer!=null) items.push(ex.taxpayer?'Taxpayer':'kein Taxpayer');
+  const tw=(t.two_way||[]).map(p=>p.name);
+  const wv=(t.waived||[]).map(p=>`${p.name} ${fmtM(p.sal_26||0)}${p.sal_27?` / ${fmtM(p.sal_27)}`:''}`);
+  if(!items.length&&!tw.length&&!wv.length) return '';
+  return `<div class="team-extras">${items.length?`<div><span class="te-label">Exceptions</span>${items.join(' · ')}</div>`:''}${tw.length?`<div><span class="te-label">Two-way</span>${tw.join(' · ')}</div>`:''}${wv.length?`<div><span class="te-label">Waived (Dead Money)</span>${wv.join(' · ')}</div>`:''}</div>`;
 }
 function sortRoster(col){
   if(currentSort.col===col) currentSort.dir*=-1;
@@ -351,7 +387,7 @@ function renderFA(){
   fas.sort((a,b)=>{
     let va=a[faSort.col]??0,vb=b[faSort.col]??0;
     if(typeof va==='string'){va=va.toLowerCase();vb=vb.toLowerCase();}
-    return va<vb?faSort.dir:-faSort.dir;
+    return va<vb?-faSort.dir:va>vb?faSort.dir:0;
   });
   const maxFpg=Math.max(...FAS.map(f=>f.fpg||0));
   function recBadge(rank,fpg,fairVal,signedTeam){
@@ -542,31 +578,41 @@ function renderTradeVerdict(){
     return;
   }
   const larger=Math.max(totA,totB),smaller=Math.min(totA,totB);
-  let matching=false,matchingNote='';
-  if(larger===0){matching=true;matchingNote='Kein Salary-Match nötig';}
-  else if(larger<=7500000){matching=true;matchingNote='Unter $7.5M — vereinfachte Regeln';}
-  else{const ratio=smaller/larger;matching=ratio>=0.85;matchingNote=`Match ${matching?'OK':'FAIL'}: ${(ratio*100).toFixed(1)}% (min 85%)`;}
   const teamA=tradeTeam.a?TEAMS[tradeTeam.a]:null;
   const teamB=tradeTeam.b?TEAMS[tradeTeam.b]:null;
+  // Salary Matching je Team (CBA 2023, skaliert): eingehend ≤ erlaubt(ausgehend)
+  function matchFor(team,out,inp,nOut){
+    if(!team) return {ok:true,note:''};
+    const newSal=team.total_salary-out+inp;
+    if(inp<=out) return {ok:true,note:`${team.name}: nimmt weniger auf als abgegeben`};
+    const max=maxIncoming(out,newSal,team);
+    const hard=(team.exceptions||{}).hard_cap;
+    if(hard&&newSal>hard) return {ok:false,note:`${team.name}: über Hard Cap ${fmtM(hard)} (${fmtM(newSal)})`};
+    if(newSal>CBA.apron2&&nOut>1) return {ok:false,note:`${team.name}: über 2nd Apron — keine Gehalts-Aggregation`};
+    const ok=inp<=max;
+    return {ok,note:`${team.name}: ${fmtM(inp)} rein, erlaubt ${max===Infinity?'unbegrenzt (unter Cap)':fmtM(max)}${newSal>CBA.apron1?' (über 1st Apron: max. 100 %)':''}`};
+  }
+  const mA=matchFor(teamA,totA,totB,tradePlayers.a.length), mB=matchFor(teamB,totB,totA,tradePlayers.b.length);
+  let matching=mA.ok&&mB.ok, matchingNote=[mA.note,mB.note].filter(Boolean).join('<br>');
+  if(!teamA&&!teamB){const ok=larger<=0||smaller/larger>=0.8;matching=ok;matchingNote='Ohne Teams nur grob geprüft (≥ 80 %)';}
   function apronCheck(team,out,inp){
     if(!team) return {ok:true,note:'Kein Team',newSal:0,status:{cls:''}};
     const newSal=team.total_salary-out+inp;
     const status=apronStatus(newSal);
-    const ok=!(team.total_salary>=CBA.apron2&&inp>out);
-    return {ok,note:`${fmtM(team.total_salary)} → ${fmtM(newSal)} (${status.label})`,newSal,status};
+    return {ok:true,note:`${fmtM(team.total_salary)} → ${fmtM(newSal)} (${status.label})`,newSal,status};
   }
   const checkA=apronCheck(teamA,totA,totB);
   const checkB=apronCheck(teamB,totB,totA);
   let apronOk=true,apronNote='';
-  if(teamA&&teamA.total_salary>=CBA.apron2&&totB>totA){apronOk=false;apronNote+=`${teamA.name} über 2nd Apron — kann kein Gehalt absorbieren! `;}
-  if(teamB&&teamB.total_salary>=CBA.apron2&&totA>totB){apronOk=false;apronNote+=`${teamB.name} über 2nd Apron — kann kein Gehalt absorbieren!`;}
+  if(teamA&&teamA.total_salary-totA+totB>CBA.apron2&&totB>totA){apronOk=false;apronNote+=`${teamA.name} landet über dem 2nd Apron und nimmt mehr Gehalt auf! `;}
+  if(teamB&&teamB.total_salary-totB+totA>CBA.apron2&&totA>totB){apronOk=false;apronNote+=`${teamB.name} landet über dem 2nd Apron und nimmt mehr Gehalt auf!`;}
   const isLegal=matching&&apronOk;
   verdict.innerHTML=`
     <div class="verdict-big ${isLegal?'legal':'illegal'}">${isLegal?'✅ TRADE LEGAL':'❌ TRADE ILLEGAL'} — CBA-Regeln ${isLegal?'erfüllt':'verletzt'}</div>
     <div class="verdict-item"><div class="verdict-item-label">SALARY MATCHING</div><div class="verdict-item-val ${matching?'ok':'bad'}">${matching?'✓ OK':'✗ FAIL'}</div><div style="font-size:11px;color:var(--dim);margin-top:3px">${matchingNote}</div></div>
     <div class="verdict-item"><div class="verdict-item-label">APRON-REGELUNG</div><div class="verdict-item-val ${apronOk?'ok':'bad'}">${apronOk?'✓ OK':'✗ VIOLATION'}</div>${apronNote?`<div style="font-size:11px;color:var(--red);margin-top:3px">${apronNote}</div>`:''}</div>
     <div class="verdict-item"><div class="verdict-item-label">DIFFERENZ</div><div class="verdict-item-val">${fmtM(Math.abs(totA-totB))}</div><div style="font-size:11px;color:var(--dim);margin-top:3px">${fmtM(totA)} ↔ ${fmtM(totB)}</div></div>
-    <div class="verdict-item"><div class="verdict-item-label">MATCHING RATIO</div><div class="verdict-item-val ${larger>0&&smaller/larger>=0.85?'ok':'bad'}">${larger>0?(smaller/larger*100).toFixed(1)+'%':'—'}</div><div style="font-size:11px;color:var(--dim);margin-top:3px">Minimum: 85%</div></div>
+    <div class="verdict-item"><div class="verdict-item-label">GEHALTS-VERHÄLTNIS</div><div class="verdict-item-val">${larger>0?(smaller/larger*100).toFixed(1)+'%':'—'}</div><div style="font-size:11px;color:var(--dim);margin-top:3px">Regel: unter 1st Apron 200 %/+$${(7.5*cbaScale()).toFixed(1)}M/125 %, darüber 100 %</div></div>
     ${teamA?`<div class="verdict-item"><div class="verdict-item-label">${teamA.name}</div><div class="verdict-item-val ${checkA.status?.cls||''}">${fmtM(checkA.newSal)}</div><div style="font-size:11px;color:var(--dim);margin-top:3px">${checkA.note}</div></div>`:''}
     ${teamB?`<div class="verdict-item"><div class="verdict-item-label">${teamB.name}</div><div class="verdict-item-val ${checkB.status?.cls||''}">${fmtM(checkB.newSal)}</div><div style="font-size:11px;color:var(--dim);margin-top:3px">${checkB.note}</div></div>`:''}`;
   renderTPE(totA,totB,tradeTeam.a,tradeTeam.b);
@@ -639,8 +685,19 @@ function runTradeFinder(){
   if(playerVal){try{const p=JSON.parse(playerVal);salOut=p.sal;playerName=p.name;}catch(e){}}
   if(manualSal>0){salOut=manualSal;}
   if(!salOut){document.getElementById('finder-results').innerHTML='<div style="color:var(--red);font-size:12px;padding:8px">Bitte Spieler oder Gehalt eingeben.</div>';return;}
-  const minMatch=salOut>7500000?salOut*0.85:0;
-  const maxMatch=salOut<=7500000?salOut*2:salOut+5000000;
+  // Eigenes Team = Team, in dessen Kader der Spieler steht (sonst erstes My Team)
+  const myAbbr=MY_TEAMS.find(a=>TEAMS[a]&&TEAMS[a].players.some(p=>p.name===playerName))||MY_TEAMS[0];
+  const me=TEAMS[myAbbr];
+  // Beide Seiten nach CBA 2023 (skaliert) prüfen
+  function legalFor(total,partner,nIn){
+    const myNew=me?me.total_salary-salOut+total:0;
+    const okMe=!me||total<=salOut||(total<=maxIncoming(salOut,myNew,me)&&!((me.exceptions||{}).hard_cap&&myNew>me.exceptions.hard_cap));
+    const pNew=partner.total_salary-total+salOut;
+    const okP=salOut<=total||(salOut<=maxIncoming(total,pNew,partner)&&!(pNew>CBA.apron2&&nIn>1)&&!((partner.exceptions||{}).hard_cap&&pNew>partner.exceptions.hard_cap));
+    return okMe&&okP;
+  }
+  const maxMatch=me?Math.min(maxIncoming(salOut,me.total_salary,me),salOut*3+1e7):salOut*2;
+  const minMatch=salOut*0.5;
   // Search teams
   let searchTeams=Object.keys(TEAMS).filter(abbr=>!MY_TEAMS.includes(abbr));
   if(target!=='all') searchTeams=searchTeams.filter(a=>a===target);
@@ -657,7 +714,7 @@ function runTradeFinder(){
     const t=TEAMS[abbr];
     // Find single player matches
     t.players.filter(p=>p.sal_26>1000).forEach(p=>{
-      if(p.sal_26>=minMatch&&p.sal_26<=maxMatch){
+      if(legalFor(p.sal_26,t,1)){
         results.push({team:abbr,players:[p],total:p.sal_26,type:'1-for-1'});
       }
     });
@@ -666,7 +723,7 @@ function runTradeFinder(){
     for(let i=0;i<players.length&&i<15;i++){
       for(let j=i+1;j<players.length&&j<15;j++){
         const combo=players[i].sal_26+players[j].sal_26;
-        if(combo>=minMatch&&combo<=maxMatch){
+        if(legalFor(combo,t,2)){
           results.push({team:abbr,players:[players[i],players[j]],total:combo,type:'2-for-1'});
         }
       }
@@ -676,18 +733,18 @@ function runTradeFinder(){
   results.sort((a,b)=>Math.abs(a.total-salOut)-Math.abs(b.total-salOut));
   results=results.slice(0,15);
   if(!results.length){
-    document.getElementById('finder-results').innerHTML=`<div style="color:var(--muted);font-size:12px;padding:12px 0">Keine passenden Matches gefunden für ${fmtM(salOut)} (Fenster: ${fmtM(minMatch)} – ${fmtM(maxMatch)}).</div>`;
+    document.getElementById('finder-results').innerHTML=`<div style="color:var(--muted);font-size:12px;padding:12px 0">Keine CBA-legalen Matches gefunden für ${fmtM(salOut)}.</div>`;
     return;
   }
   let html=`<div style="font-size:12px;color:var(--dim);margin-bottom:10px;margin-top:8px">
-    ${playerName}: ${fmtM(salOut)} · Matching-Fenster: ${fmtM(Math.round(minMatch))} – ${fmtM(Math.round(maxMatch))} · ${results.length} Ergebnisse
+    ${playerName}: ${fmtM(salOut)} · nur CBA-legale Pakete (beide Seiten geprüft, ${me?me.name+' max. '+fmtM(Math.round(maxMatch))+' zurück':''}) · ${results.length} Ergebnisse
   </div>`;
   results.forEach(r=>{
     const t=TEAMS[r.team];
     const diff=r.total-salOut;
     const diffStr=diff===0?'±0':diff>0?`+${fmtM(diff)}`:`-${fmtM(-diff)}`;
     const ratio=Math.min(r.total,salOut)/Math.max(r.total,salOut)*100;
-    const isLegal=ratio>=85||salOut<=7500000;
+    const isLegal=legalFor(r.total,t,r.players.length);
     const dir=DIRECTIONS[r.team]||'';
     html+=`<div class="trade-match-card">
       <div class="trade-match-header">
@@ -950,9 +1007,6 @@ function updateOSSummary(abbr){
     restrictions.push('ℹ️ Luxury Tax: MLE verfügbar ($6.07M Tax MLE oder $15M Non-Tax)');
     restrictions.push('ℹ️ Luxury Tax Zahlung fällig — abhängig von Repeater-Status');
   }
-  if(ownerLeft < 0){
-    restrictions.push(`🚨 OWNER CAP ÜBERSCHRITTEN um ${fmtM(-ownerLeft)} — Transaktionen blockiert!`);
-  }
 
   const summaryEl = document.getElementById('os-summary');
   const statusColor = keepTotal>=CBA.apron2?'var(--red)':keepTotal>=CBA.apron1?'var(--orange)':keepTotal>=CBA.tax?'var(--yellow)':'var(--green)';
@@ -983,10 +1037,6 @@ function updateOSSummary(abbr){
       <div class="os-summary-item">
         <div class="os-summary-label">vs 2nd Apron ($222M)</div>
         <div class="os-summary-val" style="color:${vsApron2>0?'var(--red)':'var(--green)'}">${vsApron2>0?'+':'-'}${fmtM(Math.abs(vsApron2))}</div>
-      </div>
-      <div class="os-summary-item">
-        <div class="os-summary-label">Owner Cap (${fmtM(ownerCap)})</div>
-        <div class="os-summary-val" style="color:${ownerLeft<0?'var(--red)':'var(--green)'}">Noch: ${fmtM(Math.abs(ownerLeft))} ${ownerLeft<0?'ÜBER':'frei'}</div>
       </div>
       <div class="os-summary-item">
         <div class="os-summary-label">Entscheidungen</div>
@@ -1057,7 +1107,7 @@ function calcCompatScore(abbr,inSal,outSal){
   else if(newT>=CBA.apron1){s-=20;notes.push('1st Apron');}
   else if(newT>=CBA.tax){s-=8;notes.push('Luxury Tax');}
   else if(newT<CBA.cap){s+=5;notes.push('Under Cap ✓');}
-  if(cap>0){const p=newT/cap;if(p>1){s-=30;notes.push('Owner Cap ÜBER');}else if(p>0.92){s-=10;notes.push('Owner Cap knapp');}}
+  const hc=(t.exceptions||{}).hard_cap;if(hc&&newT>hc){s-=40;notes.push('über Hard Cap');}
   s=Math.max(0,Math.min(100,s));
   const cls=s>=80?'great':s>=60?'cok':s>=40?'cwarn':'bad';
   const label=s>=80?'✓ Solid':s>=60?'~ OK':s>=40?'⚠ Risky':'✗ Problem';
@@ -1116,23 +1166,28 @@ function calcCompatScore(abbr,inSal,outSal){
     });
   };
 })();
-// Owner Cap Dashboard
+// Cap & Exceptions Dashboard (ersetzt das frühere Owner-Cap-Dashboard)
 function renderOwnerCapDashboard(){
-  const sortBy=(document.getElementById('oc-sort-select')||{}).value||'pct';
+  const sortBy=(document.getElementById('oc-sort-select')||{}).value||'room';
   let teams=Object.entries(TEAMS).map(([abbr,t])=>{
-    const oc=OWNER_CAPS[abbr]||{},cap=oc.owner_cap||0,used=t.total_salary;
-    return{abbr,name:t.name,gm:t.gm||'—',c1:t.c1,cap,used,left:cap-used,pct:cap>0?used/cap*100:0,isMine:MY_TEAMS.includes(abbr)};
+    const ex=t.exceptions||{}, sal=t.total_salary||0;
+    const limit=ex.hard_cap||(sal>CBA.apron1?CBA.apron2:CBA.apron1);
+    const tpe=Math.max(0,...(ex.tpes||[]).map(x=>x.amount||0));
+    return{abbr,t,ex,sal,limit,room:limit-sal,tpe,mle:ex.mle_left||0,isMine:MY_TEAMS.includes(abbr)};
   });
-  if(sortBy==='pct') teams.sort((a,b)=>b.pct-a.pct);
-  else if(sortBy==='left') teams.sort((a,b)=>b.left-a.left);
-  else if(sortBy==='cap') teams.sort((a,b)=>b.cap-a.cap);
-  else teams.sort((a,b)=>a.name.localeCompare(b.name));
-  let html=`<table class="oc-table"><thead><tr><th>Team</th><th>GM</th><th class="right">Owner Cap</th><th class="right">Salary</th><th class="right">Verbleibend</th><th>Auslastung</th></tr></thead><tbody>`;
-  teams.forEach(t=>{
-    const over=t.left<0,pb=Math.min(t.pct,100);
-    const bc=t.pct>=100?'var(--red)':t.pct>=92?'var(--orange)':t.pct>=80?'var(--yellow)':'var(--green)';
-    const lc=over?'var(--red)':t.left<8e6?'var(--orange)':'var(--green)';
-    html+=`<tr class="oc-row"><td><div style="display:flex;align-items:center;gap:8px"><div class="team-dot" style="background:${t.c1}"></div><span style="font-weight:${t.isMine?700:400}">${t.name}${t.isMine?' ⭐':''}</span></div></td><td style="color:var(--dim);font-size:11px">${t.gm}</td><td class="right">$${(t.cap/1e6).toFixed(1)}M</td><td class="right">$${(t.used/1e6).toFixed(1)}M</td><td class="right" style="color:${lc};font-family:var(--font-mono);font-weight:600">${over?'–':'+'}$${(Math.abs(t.left)/1e6).toFixed(1)}M</td><td><div class="oc-bar-wrap"><div class="oc-bar-track"><div class="oc-bar-fill" style="width:${pb}%;background:${bc}"></div></div><span class="oc-pct" style="color:${bc}">${t.pct.toFixed(0)}%</span></div></td></tr>`;
+  const by={room:(a,b)=>b.room-a.room,salary:(a,b)=>b.sal-a.sal,mle:(a,b)=>b.mle-a.mle,tpe:(a,b)=>b.tpe-a.tpe,name:(a,b)=>a.t.name.localeCompare(b.t.name)};
+  teams.sort(by[sortBy]||by.room);
+  let html=`<table class="oc-table"><thead><tr><th>Team</th><th class="right">Gehalt</th><th>Status</th><th class="right" title="Abstand zum Hard Cap, sonst zum nächsten Apron">Luft</th><th>MLE</th><th class="right">BAE</th><th class="right">TPE</th><th class="right">2W</th><th class="right">Dead $</th></tr></thead><tbody>`;
+  teams.forEach(x=>{
+    const st=apronStatus(x.sal), lc=x.room<0?'var(--red)':x.room<5e6?'var(--orange)':'var(--green)';
+    const lim=x.ex.hard_cap?'Hard Cap':x.sal>CBA.apron1?'Apron 2':'Apron 1';
+    html+=`<tr class="oc-row"><td><div style="display:flex;align-items:center;gap:8px"><div class="team-dot" style="background:${x.t.c1}"></div><span style="font-weight:${x.isMine?700:400}">${x.t.name}${x.isMine?' ⭐':''}</span></div><div style="color:var(--dim);font-size:10px">${x.t.gm||''}</div></td>
+      <td class="right">${fmtM(x.sal)}</td><td><span class="cap-pill ${st.cls}" style="font-size:10px">${st.label}</span></td>
+      <td class="right" style="color:${lc};font-family:var(--font-mono);font-weight:600" title="bis ${lim} (${fmtM(x.limit)})">${x.room<0?'–':'+'}${fmtM(Math.abs(x.room))} <span style="color:var(--muted);font-weight:400">${lim}</span></td>
+      <td style="font-size:11px">${x.ex.mle_type?`${x.ex.mle_type.replace(' MLE','')}: ${fmtM(x.mle)}`:'—'}</td>
+      <td class="right">${x.ex.bae_left?fmtM(x.ex.bae_left):'—'}</td>
+      <td class="right">${(x.ex.tpes||[]).length?(x.ex.tpes.map(e=>fmtM(e.amount)).join(', ')):'—'}</td>
+      <td class="right">${(x.t.two_way||[]).length}</td><td class="right">${x.t.dead_money?fmtM(x.t.dead_money):'—'}</td></tr>`;
   });
   const el=document.getElementById('oc-table-wrap');
   if(el) el.innerHTML=html+'</tbody></table>';

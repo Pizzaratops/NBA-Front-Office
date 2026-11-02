@@ -11,6 +11,18 @@ let FAR_DATA = [];
 let FAR_READY = false;
 let FAR_SORT = { col: 'c', dir: -1 };
 let FAR_TIER_FILTER = '';
+let FAR_ONLY_FREE = true;
+
+// Wer steht aktuell (data.json, Sheet-Sync) bei welchem NBAFO-Team? Das
+// Ranking selbst ist ein Snapshot vom 19.07.2026 — vergebene Spieler werden
+// deshalb live markiert bzw. standardmäßig ausgeblendet.
+function farOwnerMap() {
+  const m = {};
+  Object.entries(typeof TEAMS !== 'undefined' ? TEAMS : {}).forEach(([abbr, t]) => {
+    [...(t.players || []), ...(t.two_way || [])].forEach(p => { m[p.name] = abbr; });
+  });
+  return m;
+}
 
 const FAR_TIER_CLASS = { "Star/Max": "max", "Non-Tax MLE": "high", "BAE": "mid", "Vet-Min": "min", "Two-Way": "min" };
 const FAR_TIER_LABEL = {
@@ -34,7 +46,8 @@ function farRenderShell() {
   el.innerHTML = `
     <div class="tool-card" style="flex-shrink:0">
       <div class="tool-card-title">📊 FA Ranking <span class="fab-pill" id="far-count-pill">0 Spieler</span></div>
-      <p style="font-size:12px;color:var(--dim);margin-bottom:12px">Composite aus 25/26-Produktion, StickyScore, TTHQ-Live-Z (2026 SL) und ESPN-Real-Fit-Signal. Statische Momentaufnahme, kein Live-Feed.</p>
+      <p style="font-size:12px;color:var(--dim);margin-bottom:12px">Composite aus 25/26-Produktion, StickyScore, TTHQ-Live-Z (2026 SL) und ESPN-Real-Fit-Signal. Momentaufnahme vom 19.07.2026 (Werte werden nicht neu berechnet). Wer inzwischen bei einem NBAFO-Team unterschrieben hat, kommt live aus dem Sheet und ist standardmäßig ausgeblendet.</p>
+      <label style="font-size:12px;color:var(--dim);display:flex;gap:6px;align-items:center;margin-bottom:10px"><input type="checkbox" id="far-only-free" checked onchange="FAR_ONLY_FREE=this.checked;farRender()"> nur noch verfügbare Spieler</label>
       <div class="form-row" style="margin-bottom:0">
         <div class="form-group">
           <label class="form-label">Suche</label>
@@ -81,7 +94,9 @@ function farRender() {
   const wrap = document.getElementById('far-table-wrap');
   if (!wrap) return;
   const search = (document.getElementById('far-search').value || '').toLowerCase();
-  let rows = FAR_DATA;
+  const owner = farOwnerMap();
+  let rows = FAR_DATA.map(r => ({ ...r, own: owner[r.n] || null }));
+  if (FAR_ONLY_FREE) rows = rows.filter(r => !r.own);
   if (search) rows = rows.filter(r => r.n.toLowerCase().includes(search));
   if (FAR_TIER_FILTER) rows = rows.filter(r => farEffectiveTier(r) === FAR_TIER_FILTER);
 
@@ -91,10 +106,11 @@ function farRender() {
     if (va === null || va === undefined) va = col === 'n' ? '' : -999;
     if (vb === null || vb === undefined) vb = col === 'n' ? '' : -999;
     if (typeof va === 'string') { va = va.toLowerCase(); vb = vb.toLowerCase(); }
-    return va < vb ? dir : va > vb ? -dir : 0;
+    return va < vb ? -dir : va > vb ? dir : 0;
   });
 
   document.getElementById('far-count-pill').textContent = `${rows.length} / ${FAR_DATA.length} Spieler`;
+  if (!rows.length) { wrap.innerHTML = '<div class="no-results">Keine Spieler für diese Auswahl.</div>'; return; }
 
   const hdr = (label, key, extraCls) => {
     const sorted = FAR_SORT.col === key ? ' sorted' : '';
@@ -105,7 +121,8 @@ function farRender() {
   let html = `<table class="fa-table"><thead><tr>
     ${hdr('Spieler', 'n')}
     <th>Pos</th>
-    <th>Team</th>
+    <th>NBA</th>
+    <th>NBAFO</th>
     ${hdr('FP/G 25/26', 'fpg', 'right')}
     ${hdr('Sticky', 'sk', 'right')}
     ${hdr('TTHQ-Z', 'tz', 'right')}
@@ -122,6 +139,7 @@ function farRender() {
       <td><span style="font-weight:600">${r.n}</span></td>
       <td style="color:var(--dim);font-size:11px">${r.p || '—'}</td>
       <td style="color:var(--dim);font-size:11px">${r.t || '—'}</td>
+      <td style="font-size:11px;${r.own ? 'color:var(--orange);font-weight:600' : 'color:var(--green)'}">${r.own ? 'vergeben: ' + r.own : 'frei'}</td>
       <td class="right">${r.fpg != null ? r.fpg.toFixed(1) : '—'}</td>
       <td class="right">${r.sk != null ? r.sk.toFixed(1) : '—'}</td>
       <td class="right">${r.tz != null ? r.tz.toFixed(1) + (r.tgp ? ' (' + r.tgp + ' Sp.)' : '') : '—'}</td>

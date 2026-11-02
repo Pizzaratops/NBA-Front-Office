@@ -171,21 +171,72 @@ def parse_gm(raw) -> str:
     return text.split(",")[0].strip()
 
 
+# Hintergrundfarben der Gehaltszellen (Legende in jedem Team-Tab, Spalte G):
+# Player Option, Team Option, QO submitted, Non Guaranteed. Die Farben
+# schwanken leicht (FFD966/FFD666/FFD466), deshalb nächste Legendenfarbe.
+OPT_COLORS = {"PO": (0xFF, 0xD9, 0x66), "TO": (0xCC, 0xCC, 0xCC), "QO": (0xD7, 0xFF, 0x00),
+              "NG": (0x9F, 0xC5, 0xE8)}
+YEAR_KEYS = ["26", "27", "28", "29", "30", "31"]  # Spalten D..I
+
+
+def cell_flag(cell):
+    """Option/Garantie-Status einer Gehaltszelle aus der Füllfarbe (None = normal)."""
+    try:
+        f = cell.fill
+        if not f or f.fill_type is None or f.fgColor is None or f.fgColor.type != "rgb":
+            return None
+        rgb = str(f.fgColor.rgb)[-6:]
+        r, g, b = int(rgb[0:2], 16), int(rgb[2:4], 16), int(rgb[4:6], 16)
+    except Exception:
+        return None
+    if (r, g, b) == (255, 255, 255):
+        return None
+    best, dist = None, 10 ** 9
+    for k, (R, G, B) in OPT_COLORS.items():
+        d = (r - R) ** 2 + (g - G) ** 2 + (b - B) ** 2
+        if d < dist:
+            best, dist = k, d
+    return best if dist <= 60 ** 2 else None
+
+
+def txt(v):
+    if v is None:
+        return None
+    if hasattr(v, "strftime"):
+        return v.strftime("%Y-%m-%d")
+    t = str(v).strip()
+    return t or None
+
+
 def parse_team_sheet(ws):
-    """Liest einen Team-Tab und gibt (direction, gm, players, total_salary) zurück."""
+    """Liest einen Team-Tab.
+
+    Gibt (direction, gm, players, total_salary, extra) zurück:
+      players  = aktiver Kader (ohne Two-way, ohne Waived)
+      extra    = {two_way, waived, dead_money, exceptions}
+    Optionen (PO/TO), QO und nicht garantierte Jahre kommen aus den Zellfarben.
+    """
     direction_raw = ws.cell(row=3, column=1).value
     direction = direction_raw.strip() if isinstance(direction_raw, str) else ""
     gm = parse_gm(ws.cell(row=2, column=1).value)
 
-    players = []
+    players, two_way, waived = [], [], []
     total_salary = None
+    section = "roster"
+    end_row = ws.max_row
     for r in range(3, ws.max_row + 1):
+        label = ws.cell(row=r, column=1).value
+        if isinstance(label, str):
+            ll = label.lower()
+            if "two-way" in ll or "two way" in ll:
+                section = "two_way"
+            elif "waived" in ll:
+                section = "waived"
         col1 = ws.cell(row=r, column=2).value
         if isinstance(col1, str) and col1.strip() == "Total salaries":
-            # Spalte C = "CAP HIT", Spalte D = "2026-27" (aktuelle Saison).
-            # Für Cap-/Apron-Vergleiche muss die aktuelle Saison genommen werden,
-            # nicht der Cap Hit (der z.B. Signing-Bonus-Verteilung o.ä. enthalten kann).
+            # Spalte D = "2026-27" (aktuelle Saison) — für Cap/Apron maßgeblich
             total_salary = num(ws.cell(row=r, column=4).value)
+            end_row = r
             break
         if not isinstance(col1, str) or not col1.strip():
             continue
@@ -193,6 +244,13 @@ def parse_team_sheet(ws):
         name = col1.strip()
         row = [ws.cell(row=r, column=c).value for c in range(1, 23)]
 
+        if section == "two_way":
+            # Gehaltsspalten enthalten hier Vertragsjahre (1/2), keine Dollar
+            two_way.append({"name": name, "years": num(row[3]), "note": txt(row[6])})
+            continue
+
+        flags = {YEAR_KEYS[i]: cell_flag(ws.cell(row=r, column=4 + i)) for i in range(6)}
+        flags = {k: v for k, v in flags.items() if v}
         pos_flags = [POS_LABELS[i] for i, c in enumerate(POS_COLS) if row[c] not in (None, "")]
         pos = "/".join(pos_flags) if pos_flags else "?"
 
@@ -205,8 +263,8 @@ def parse_team_sheet(ws):
             bird = "Non"
 
         signed_via = row[17].strip() if isinstance(row[17], str) and row[17].strip() else None
-
-        players.append({
+        opt_years = sorted(k for k, v in flags.items() if v in ("PO", "TO"))
+        entry = {
             "name": name,
             "pos": pos,
             "sal_26": num(row[3]),
@@ -214,16 +272,67 @@ def parse_team_sheet(ws):
             "sal_28": num(row[5]),
             "sal_29": num(row[6]),
             "sal_30": num(row[7]),
+            "sal_31": num(row[8]),
+            "qo": num(row[9]),
             "bird": bird,
             "signed_via": signed_via,
             "tradable_alone": bool(row[15]),
             "tradable_agg": bool(row[16]),
-        })
+            "trade_note": " / ".join(x for x in (txt(row[15]), txt(row[16])) if x) or None,
+            "notes": txt(row[21]),
+            # erste Option (für Badge/Filter) + alle markierten Jahre
+            "opt": flags[opt_years[0]] if opt_years else None,
+            "opt_year": ("20" + opt_years[0] + "-" + str(int(opt_years[0]) + 1)) if opt_years else None,
+            "flags": flags or None,
+        }
+        if section == "waived":
+            waived.append(entry)
+        else:
+            players.append(entry)
 
     if total_salary is None:
-        total_salary = sum(p["sal_26"] or 0 for p in players)
+        total_salary = sum((p["sal_26"] or 0) for p in players + waived)
 
-    return direction, gm, players, total_salary
+    # ── Block unter „Total salaries“: Tax, Exceptions, Cap Space ──
+    ex = {"tpes": []}
+    block = None
+    for r in range(end_row, min(ws.max_row, end_row + 45) + 1):
+        a = ws.cell(row=r, column=1).value
+        b = ws.cell(row=r, column=2).value
+        c = ws.cell(row=r, column=3).value
+        d = ws.cell(row=r, column=4).value
+        if isinstance(a, str) and a.strip():
+            block = a.strip().lower()
+        bl = str(b).strip().lower() if isinstance(b, str) else ""
+        if bl == "tax payer?":
+            ex["taxpayer"] = str(c).strip().lower() == "yes"
+        elif bl == "cap room?":
+            ex["cap_room"] = str(c).strip().lower() == "yes"
+        elif bl.startswith("bae/mle/s&t"):
+            ex["hard_cap"] = num(d)
+        elif block and block.startswith("bi-annual") and bl == "left":
+            ex["bae_left"] = num(d)
+        elif block and block.startswith("disabled") and bl == "left":
+            ex["dpe_left"] = num(d)
+        elif block and block.startswith("traded player") and num(b):
+            ex["tpes"].append({"amount": num(b), "expires": txt(d)})
+        elif block and block.startswith("mid-level"):
+            if "granted" in bl and str(d).strip().lower() == "yes":
+                ex["mle_type"] = b.replace(" granted", "").strip()
+            if bl == "left":
+                ex["mle_left"] = num(d)
+        elif block and block.startswith("cap space"):
+            ex["cap_space"] = num(d)
+        elif block and block.startswith("roster charge"):
+            ex["roster_charge"] = num(d)
+
+    extra = {
+        "two_way": two_way,
+        "waived": waived,
+        "dead_money": sum((p["sal_26"] or 0) for p in waived),
+        "exceptions": ex,
+    }
+    return direction, gm, players, total_salary, extra
 
 
 def parse_finances(wb) -> dict:
@@ -322,7 +431,7 @@ def build_data(wb, existing: dict) -> dict:
         if tab != abbr:
             print(f"  ↪ '{abbr}' aus Tab '{tab}' gelesen.")
         ws = wb[tab]
-        direction, gm, players, total_salary = parse_team_sheet(ws)
+        direction, gm, players, total_salary, extra = parse_team_sheet(ws)
         directions[abbr] = direction
         meta = TEAM_META.get(abbr, {})
         existing_team = existing.get("teams", {}).get(abbr, {})
@@ -335,11 +444,15 @@ def build_data(wb, existing: dict) -> dict:
             "gm": gm,
             "players": players,
             "total_salary": total_salary,
+            **extra,
         }
-        for p in players:
+        for p in players + extra["waived"]:
+            rostered[p["name"]] = abbr
+        for p in extra["two_way"]:
             rostered[p["name"]] = abbr
 
-    owner_caps = parse_finances(wb)
+    # Owner Cap ist laut Addendum Q71 seit 2024 abgeschafft → nicht mehr ausgeben
+    owner_caps = {}
     cba = parse_ctrlpanel(wb)
     fas = parse_fa26(wb, rostered)
 
