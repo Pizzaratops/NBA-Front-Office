@@ -18,6 +18,7 @@ Exceptions), Free Agents, Trade Calculator/Finder und CBA-Tools. Stand der Doku:
 ```
 data/data.json          ← automatisch aus dem Google Sheet (3x täglich)
 data/player-values.json ← FP/G im NBAFO-Scoring je Spieler (scripts/build_player_values.py, 3x täglich)
+data/fantrax.json       ← Fantrax-Liga mfr0b97kmqgsztrm: Tabelle, Wochen-Scores, Kader-Abgleich (scripts/sync_fantrax.py, 3x täglich)
 data/fa-sl-sample.json  ← Summer League 2026 (scripts/build_fa_sl_sample.py, 1x pro Sommer)
 data/fa-ranking.json    ← FA-Ranking, Snapshot 19.07.2026 (Composite, nicht automatisch)
 data/fa-value-tiers.json← Vertrags-Tiers zum Ranking, Snapshot 19.07.2026
@@ -52,6 +53,14 @@ die Fantasy-Punkte im NBAFO-Scoring (Fantrax: PTS 2, OREB 2.5, DREB 2, AST 2.5, 
 3PTM 3, TO −3, FG verfehlt −2.5, FTM 1, FT verfehlt −2, MIN 1, +/− 1.5). Die App zeigt FP/G und
 L14 im Roster; **Stärke** = Summe der 8 besten FP/G (8 aktive Slots) mit Rang unter 30 (Teams-Seite,
 Team-Kopf), und der Trade Calculator zeigt, wie sich die Stärke beider Teams durch den Trade ändert.
+
+## Tabelle (Fantrax)
+
+`scripts/sync_fantrax.py` holt über die öffentliche Fantrax-API (fxea) Liga-Infos, Tabelle und die
+Kader jeder Woche (Weekly Lineups). Die Wochen-Scores rechnet es selbst nach (aktive Spieler × FP aus
+`player-values.json`; Montagsspiele zählen zur neuen Woche) — der Abgleich mit den Fantrax-Punkten
+liegt bei 100 %. Seite **📈 Tabelle**: Fantrax-Bilanz, Ø Punkte/Woche, Zwischenstand, Stärke-Rang,
+Punkte je Woche, Rolling Rankings (kumulierte All-Play-Bilanz) und Kader-Abgleich Fantrax ↔ Sheet.
 
 ## Trade-Regeln in der App
 

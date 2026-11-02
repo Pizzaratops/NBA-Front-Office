@@ -102,6 +102,8 @@ def main():
             "l14": avg([x[1] for x in L if x[0] >= cut14]),
             "l7": avg([x[1] for x in L if x[0] >= cut7]),
             "last": [[x[0][5:], x[1]] for x in L[-5:]],
+            # komplettes Spiel-Log (Datum, FP) — für Wochen-Scores in sync_fantrax.py
+            "g": [[x[0], x[1]] for x in L],
             "approx": sum(1 for x in L if x[4]),
         }
     out = {"updated": datetime.now(timezone.utc).isoformat(), "season_start": SEASON_START.isoformat(),

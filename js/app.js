@@ -115,7 +115,7 @@ function showPage(pg){
   document.getElementById('page-'+pg).classList.add('active');
   const tab=document.getElementById('tab-'+pg);
   if(tab) tab.classList.add('active');
-  const mnavMap={roster:'roster',fa:'fa',trade:'trade',tools:'tools',teams:'teams'};
+  const mnavMap={roster:'roster',fa:'fa',trade:'trade',tools:'tools',teams:'teams',liga:'liga'};
   setMobileNav(mnavMap[pg]||'roster');
   if(pg==='fa') renderFA();
   if(pg==='trade') renderTradeVerdict();

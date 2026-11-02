@@ -433,3 +433,16 @@ tr.oc-row:hover{background:var(--surface2)}
 .team-extras{margin:10px 16px 16px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:var(--surface2);font-size:12px;display:grid;gap:6px;color:var(--dim)}
 .team-extras b{color:var(--text)}
 .team-extras .te-label{display:inline-block;min-width:150px;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+/* Tabelle / Liga (js/liga.js) */
+.liga-page{padding:20px;overflow:auto;height:100%;display:flex;flex-direction:column;gap:14px}
+.liga-title{font-family:var(--font-display);font-size:22px;letter-spacing:1px}
+.liga-sub{font-size:11px;color:var(--dim)}
+.liga-h2{font-family:var(--font-display);font-size:17px;letter-spacing:.5px;margin-top:8px}
+.liga-table td,.liga-table th{white-space:nowrap}
+.liga-table th{cursor:pointer}
+.liga-bump-wrap{overflow:auto;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:8px}
+.liga-bump{width:100%;min-width:520px;height:auto;display:block}
+.liga-bump .lb-head{fill:var(--muted);font:600 10px var(--font-mono)}
+.liga-bump .lb-lab{fill:var(--dim);font:10px var(--font-mono)}
+.liga-bump .lb-lab.on{fill:var(--text);font-weight:700}
+@media(max-width:700px){.liga-page{padding:12px}}

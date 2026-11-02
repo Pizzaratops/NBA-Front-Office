@@ -18,6 +18,7 @@
       <button class="nav-tab" onclick="showPage('trade')" id="tab-trade">🔄 Trade Calc</button>
       <button class="nav-tab" onclick="showPage('tools')" id="tab-tools">🛠 Tools</button>
       <button class="nav-tab" onclick="showPage('teams')" id="tab-teams">🏀 Teams</button>
+      <button class="nav-tab" onclick="showPage('liga')" id="tab-liga">📈 Tabelle</button>
     </div>
     <div class="nav-right">
       <span class="nav-team-label" id="nav-team-label">GM: Uğur · 2026-27</span>
@@ -311,6 +312,8 @@
 
       
       <!-- TEAMS PAGE -->
+      <div class="page" id="page-liga"><div class="liga-page" id="liga-wrap"></div></div>
+
       <div class="page" id="page-teams">
         <div class="teams-toolbar">
           <span style="font-family:var(--font-display);font-size:20px;letter-spacing:1px">League Overview</span>
@@ -338,6 +341,7 @@
       <button class="mnav-btn" id="mnav-trade" onclick="showPage('trade')"><span class="micon">🔄</span><span>Trade</span></button>
       <button class="mnav-btn" id="mnav-tools" onclick="showPage('tools')"><span class="micon">🛠</span><span>Tools</span></button>
       <button class="mnav-btn" id="mnav-teams" onclick="showPage('teams')"><span class="micon">🏀</span><span>Teams</span></button>
+      <button class="mnav-btn" id="mnav-liga" onclick="showPage('liga')"><span class="micon">📈</span><span>Tabelle</span></button>
     </div>
   </div>
 </div><!-- /app -->
@@ -345,5 +349,6 @@
 <script src="js/fa-bidding.js"></script>
 <script src="js/fa-ranking.js"></script>
 <script src="js/fa-sl-enhance.js"></script>
+<script src="js/liga.js"></script>
 </body>
 </html>
