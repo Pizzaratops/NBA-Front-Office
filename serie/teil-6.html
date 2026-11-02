@@ -1,0 +1,174 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Part 6 — Bird Rights &amp; Cap Holds: The Numbers Behind the Concept – NBAFO CBA Series</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet"><style>
+:root{--bg:#0a0c10;--surface:#111318;--surface2:#1a1d24;--border:#252830;--text:#e8eaf0;--dim:#8a94a8;--blue:#3b82f6;--gold:#eab308}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 'IBM Plex Sans',system-ui,sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:20px 16px 80px}
+nav.top{display:flex;gap:12px;justify-content:space-between;align-items:center;padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--border);font:600 12px 'IBM Plex Mono',monospace;position:sticky;top:0;z-index:5;flex-wrap:wrap}
+a{color:var(--blue)}nav.top a{color:var(--dim);text-decoration:none}nav.top a:hover{color:var(--text)}
+h1{font:400 38px/1.1 'Bebas Neue',sans-serif;letter-spacing:1px;margin:28px 0 12px}h2{font-size:22px;margin:36px 0 8px;border-bottom:1px solid var(--border);padding-bottom:6px}h3{font-size:18px;margin:26px 0 6px;color:var(--gold)}
+pre{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;font:13px/1.45 'IBM Plex Mono',monospace}
+code{font-family:'IBM Plex Mono',monospace;font-size:.9em}
+.tw{overflow-x:auto;margin:14px 0}table{border-collapse:collapse;font-size:14px;min-width:100%}th,td{border:1px solid var(--border);padding:7px 10px;text-align:left;vertical-align:top}th{background:var(--surface2)}
+hr{border:0;border-top:1px solid var(--border);margin:28px 0}blockquote{border-left:3px solid var(--blue);margin:14px 0;padding:2px 14px;color:var(--dim)}
+.pn{display:flex;justify-content:space-between;gap:12px;margin-top:48px;font:600 13px 'IBM Plex Mono',monospace}
+ul.toc{list-style:none;padding:0}ul.toc li{margin:0}ul.toc a{display:block;padding:12px 14px;margin:8px 0;background:var(--surface);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text)}ul.toc a:hover{border-color:var(--blue)}ul.toc small{color:var(--dim);display:block}
+</style></head><body><nav class="top"><a href="../index.html">← Offseason Guide</a><a href="index.html">All parts</a></nav><div class="wrap"><h1>Part 6 — Bird Rights &amp; Cap Holds: The Numbers Behind the Concept</h1>
+<p><em>(New segment. A quick note before we start: your original outline listed "Bird Rights &amp; Cap Holds" as its own chapter, but you've already covered the concepts thoroughly in Parts 3 and 4 — why they exist, the three tiers, why holds are larger than salaries, what renouncing actually does. Re-explaining all of that here would just repeat those segments. So this chapter does something different and genuinely new: it's the technical reference table that Parts 3 and 4 deliberately deferred — the actual percentages, so you can calculate a real cap hold instead of estimating one. Think of it as the appendix Parts 3–4 pointed forward to, not a retelling of them. Glossary at the end.)</em></p>
+<p>Parts 3 and 4 gave you the <em>why</em>. This part gives you the <em>how much</em>.</p>
+<p>Every cap hold is calculated off a fixed formula in the CBA, based on three inputs: which Bird tier the player has, how his prior salary compares to the league's average player salary, and whether he's coming straight off a rookie-scale contract. Once you know those three things, the hold isn't a guess — it's arithmetic.</p>
+<hr />
+<h1>The One Rule That Governs Everything Here</h1>
+<p>Before the tables: every cap hold, no matter how the formula below calculates it, is capped at the maximum salary that player is eligible to sign for. The formula can suggest a number larger than his max — in that case, his hold is simply set at his max, not the formula's output.</p>
+<pre><code class="language-text">Formula Output
+        │
+        ▼
+   Is it bigger than his
+   applicable max salary?
+        │
+   ┌────┴────┐
+   │         │
+  Yes        No
+   │         │
+   ▼         ▼
+Hold = Max   Hold = Formula
+Salary       Output
+</code></pre>
+<p>This matters most for aging stars on max contracts. A 150%-of-prior-salary hold on a $50M annual max player would be $75M — far beyond what he's even allowed to re-sign for — so his real hold gets capped down to his actual max salary number instead.</p>
+<hr />
+<h1>The Cap Hold Table</h1>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Free agent type</th>
+<th>Hold if prior salary was <strong>below</strong> league average</th>
+<th>Hold if prior salary was <strong>above</strong> league average</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First-round pick just off his rookie-scale contract</td>
+<td>300% of prior salary</td>
+<td>250% of prior salary</td>
+</tr>
+<tr>
+<td>Full Bird Rights (3+ years, non-rookie-scale)</td>
+<td>190% of prior salary</td>
+<td>150% of prior salary</td>
+</tr>
+<tr>
+<td>Early Bird Rights (2 years)</td>
+<td>130% of prior salary (flat, regardless of average)</td>
+<td>130% of prior salary</td>
+</tr>
+<tr>
+<td>Non-Bird Rights (under 2 years)</td>
+<td>120% of prior salary (flat)</td>
+<td>120% of prior salary</td>
+</tr>
+<tr>
+<td>Minimum-salary veteran</td>
+<td>Two-year veteran minimum (or one-year minimum, if he only has 1 year of experience)</td>
+<td>same</td>
+</tr>
+<tr>
+<td>Unsigned first-round pick (hasn't signed his rookie deal yet)</td>
+<td>120% of his rookie-scale slot value</td>
+<td>same</td>
+</tr>
+<tr>
+<td>Restricted free agent (any tier above)</td>
+<td><strong>The greater of</strong> his calculated hold from this table, <strong>or</strong> his Qualifying Offer amount</td>
+<td>same</td>
+</tr>
+<tr>
+<td>Two-way contract player</td>
+<td>One-year veteran minimum</td>
+<td>same</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>(All figures capped at the player's applicable maximum salary, per the rule above.)</em></p>
+<p>Notice something important: a first-round pick finishing his rookie-scale deal gets a <em>higher</em> hold percentage (300%/250%) than a veteran with Full Bird Rights (190%/150%). That looks backwards at first — why would a cheaper player get charged a bigger multiplier? The answer is the same loophole-prevention logic from Segment 4: rookies are the players most likely to have a <em>huge</em> gap between their expiring salary and their actual market value (a 4th-year player making $8M might be worth $35M), so the CBA needs an especially aggressive hold percentage to stop teams from using their expiring rookie-scale bargains to manufacture cheap cap room.</p>
+<hr />
+<h1>Worked Examples</h1>
+<p><strong>Example 1 — Full Bird veteran, below-average salary.</strong>
+A Full Bird Rights player earned $14M last season. Say the league's average player salary that year is roughly $16M — so $14M counts as <em>below</em> average.</p>
+<pre><code class="language-text">$14,000,000 × 190% = $26,600,000
+</code></pre>
+<p>His cap hold is <strong>$26.6M</strong>, unless that exceeds his max salary, in which case it's capped there instead.</p>
+<p><strong>Example 2 — Full Bird veteran, above-average salary.</strong>
+A Full Bird Rights player earned $30M last season, comfortably above the league average.</p>
+<pre><code class="language-text">$30,000,000 × 150% = $45,000,000
+</code></pre>
+<p>His cap hold is <strong>$45M</strong> — again, unless his actual max salary (based on his years of experience) is lower, in which case the hold is set at that max instead.</p>
+<p><strong>Example 3 — Early Bird.</strong>
+An Early Bird Rights player earned $9M last season.</p>
+<pre><code class="language-text">$9,000,000 × 130% = $11,700,000
+</code></pre>
+<p>His cap hold is <strong>$11.7M</strong>, flat — the "above/below average" split only applies to Full Bird and rookie-scale holds, not Early Bird or Non-Bird.</p>
+<p><strong>Example 4 — Rookie-scale, below average.</strong>
+A first-round pick finishing his rookie-scale deal earned $6.5M in his final season, well below league average.</p>
+<pre><code class="language-text">$6,500,000 × 300% = $19,500,000
+</code></pre>
+<p>His cap hold is <strong>$19.5M</strong> — despite him only earning $6.5M the year before. This is the exact scenario that surprised the reader in Segment 4's "$11M salary, $28M hold" example; the real multiplier for a young player like that can run as high as 300%, so a hold in the high-$20M-to-low-$30M range on an $11M salary is entirely plausible.</p>
+<hr />
+<h1>The Hold Is Not the Same Number as What You Can Actually Offer</h1>
+<p>This is the single most common mix-up, so it's worth isolating clearly. The <strong>cap hold</strong> is the placeholder number sitting on your cap sheet while the player is unsigned. The <strong>exception size</strong> is the maximum you're actually allowed to offer him once you sit down to write the contract. For Full Bird and Non-Bird Rights, those two numbers are closely related. For Early Bird Rights, they are noticeably different:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Bird tier</th>
+<th>Cap hold (placeholder, while unsigned)</th>
+<th>Maximum you can actually offer (the exception itself)</th>
+<th>Max years</th>
+<th>Max annual raise</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full Bird</td>
+<td>190%/150% of prior salary (capped at max)</td>
+<td>Up to the player's full max salary</td>
+<td>5</td>
+<td>8%</td>
+</tr>
+<tr>
+<td>Early Bird</td>
+<td>130% of prior salary (flat)</td>
+<td>The <strong>greater of</strong> 175% of prior salary, or 104.5% of the league's average player salary</td>
+<td>4</td>
+<td>8%</td>
+</tr>
+<tr>
+<td>Non-Bird</td>
+<td>120% of prior salary (flat)</td>
+<td>120% of prior salary</td>
+<td>4</td>
+<td>5%</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Addition — a genuine catch worth flagging in your own web app:</em> looking back at the <code>index.html</code> data model, the Early Bird <code>extension_options</code> entries list the description as <em>"Re-sign up to 175% of prior salary or avg salary"</em> but the <code>max_pct</code> field is set to <code>"130% of prior year or avg salary"</code>. Based on the table above, 130% is actually the <strong>cap hold</strong> formula, not the re-signing ceiling — the real Early Bird exception amount is 175% of prior salary (or 104.5% of the league average, whichever is greater), matching the description text rather than the <code>max_pct</code> field. It looks like the <code>max_pct</code> value for Early Bird got set to the hold percentage instead of the exception percentage. Worth a one-line fix in the data file so the sidebar's extension-simulator math for Early Bird players is not understating what they can actually be offered.</p>
+<hr />
+<h1>Why This Reference Table Matters in Practice</h1>
+<p>Every one of the scenarios from Parts 3 and 4 depends on getting this arithmetic right:</p>
+<ul>
+<li>Deciding whether to renounce a player (Part 4) requires knowing exactly how much cap space his hold is actually occupying — not a rough guess.</li>
+<li>Deciding whether a Bird-Rights re-signing is "cap neutral" (Part 5, Step 5) requires comparing the real contract number against the real hold number, not an approximation.</li>
+<li>Restricted free agency (mentioned in Part 5, and covered fully in a later segment) hinges on the rule that an RFA's hold is <em>whichever is greater</em> — his calculated free-agent amount, or his Qualifying Offer — which can matter a lot for a young player on a small rookie-scale salary with a much larger QO.</li>
+</ul>
+<hr />
+<h1>Key Takeaways</h1>
+<p>Cap holds are not an arbitrary placeholder — they follow a fixed formula keyed to Bird-Rights tier, whether the player's prior salary was above or below the league average, and whether he's coming straight off a rookie-scale deal, always capped at his actual maximum salary. Rookies get the most aggressive multiplier (up to 300%) precisely because they have the widest gap between current pay and true value. And critically, the cap hold you see on a cap sheet is not always the same number as the maximum contract you're allowed to offer — Early Bird Rights is the clearest example, where the hold (130%) is meaningfully smaller than the actual re-signing ceiling (175%, or 104.5% of the league average, whichever is greater).</p>
+<hr />
+<h2>Looking Ahead</h2>
+<p>With Parts 3, 4, and 6 together, you now have the complete Bird Rights and cap-hold toolkit — concept, strategy, and exact math. Combined with Part 5's calendar, you know both <em>what</em> the tools do and <em>when</em> you're allowed to use them.</p>
+<p>The natural next step is the piece both of those parts kept referencing without fully explaining: <strong>the Luxury Tax and the two Aprons</strong> — the financial and structural ceiling that determines which of these tools are even available to your team in the first place, and what it actually costs, in dollars and in lost flexibility, to operate above them.</p>
+<hr />
+<h2>Glossary (terms used in this segment)</h2>
+<ul>
+<li><strong>League average player salary</strong> — The league-wide average salary figure the CBA uses as the threshold for several cap-hold and exception calculations; recalculated each season.</li>
+<li><strong>Rookie-scale slot value</strong> — The predetermined salary a first-round draft pick is assigned based on where he was picked, before he's actually signed his contract.</li>
+<li><strong>Exception size</strong> — The maximum contract a team is legally allowed to offer a player using a specific tool (e.g., the Early Bird Exception), as distinct from his cap hold, which is just the placeholder reserving space while he's unsigned.</li>
+<li><strong>Qualifying Offer (QO) amount</strong> — The specific one-year salary tied to a restricted free agent's Qualifying Offer, which sets a floor under his cap hold if it's larger than his calculated free-agent amount.</li>
+</ul><div class="pn"><a href="teil-5.html">← Part 5</a><a href="teil-7.html">Part 7 →</a></div></div></body></html>

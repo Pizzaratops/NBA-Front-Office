@@ -1,0 +1,226 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Part 8 — Trades &amp; Extensions: Matching Salary, Aggregation, and Extension Strategy – NBAFO CBA Series</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet"><style>
+:root{--bg:#0a0c10;--surface:#111318;--surface2:#1a1d24;--border:#252830;--text:#e8eaf0;--dim:#8a94a8;--blue:#3b82f6;--gold:#eab308}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 'IBM Plex Sans',system-ui,sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:20px 16px 80px}
+nav.top{display:flex;gap:12px;justify-content:space-between;align-items:center;padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--border);font:600 12px 'IBM Plex Mono',monospace;position:sticky;top:0;z-index:5;flex-wrap:wrap}
+a{color:var(--blue)}nav.top a{color:var(--dim);text-decoration:none}nav.top a:hover{color:var(--text)}
+h1{font:400 38px/1.1 'Bebas Neue',sans-serif;letter-spacing:1px;margin:28px 0 12px}h2{font-size:22px;margin:36px 0 8px;border-bottom:1px solid var(--border);padding-bottom:6px}h3{font-size:18px;margin:26px 0 6px;color:var(--gold)}
+pre{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;font:13px/1.45 'IBM Plex Mono',monospace}
+code{font-family:'IBM Plex Mono',monospace;font-size:.9em}
+.tw{overflow-x:auto;margin:14px 0}table{border-collapse:collapse;font-size:14px;min-width:100%}th,td{border:1px solid var(--border);padding:7px 10px;text-align:left;vertical-align:top}th{background:var(--surface2)}
+hr{border:0;border-top:1px solid var(--border);margin:28px 0}blockquote{border-left:3px solid var(--blue);margin:14px 0;padding:2px 14px;color:var(--dim)}
+.pn{display:flex;justify-content:space-between;gap:12px;margin-top:48px;font:600 13px 'IBM Plex Mono',monospace}
+ul.toc{list-style:none;padding:0}ul.toc li{margin:0}ul.toc a{display:block;padding:12px 14px;margin:8px 0;background:var(--surface);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text)}ul.toc a:hover{border-color:var(--blue)}ul.toc small{color:var(--dim);display:block}
+</style></head><body><nav class="top"><a href="../index.html">← Offseason Guide</a><a href="index.html">All parts</a></nav><div class="wrap"><h1>Part 8 — Trades &amp; Extensions: Matching Salary, Aggregation, and Extension Strategy</h1>
+<p><em>(New segment. Continues using your league's 2026-27 CBA figures — cap $165,000,000 / tax $201,000,000 / first apron $209,000,000 / second apron $222,000,000 (rounded for the examples — exact league values: cap $164,961,000 / tax $200,428,000 / first apron $209,015,000 / second apron $221,686,000) — for consistency with earlier segments. Glossary at the end.)</em></p>
+<p>Everything so far has been about <em>acquiring</em> players — through Bird Rights, through exceptions, through cap space. This segment covers the other half of roster construction: moving players you already have, and locking up players before they even reach free agency.</p>
+<p>Both trades and extensions run on the same underlying idea introduced back in Segment 1: every transaction has a legal ceiling, and the ceiling depends on where your team sits relative to the cap and the two aprons.</p>
+<hr />
+<h1>Part A: Salary Matching in Trades</h1>
+<h2>Why Matching Rules Exist</h2>
+<p>If teams could trade any salary for any other salary with no restriction, an over-the-cap team could simply trade a $2M bench player for a $40M superstar, instantly blowing past every cap rule a signing would have to respect. Salary matching exists to close that gap — it makes trades follow roughly the same spending discipline as free-agent signings.</p>
+<h2>The Three Matching Tiers</h2>
+<p>How much incoming salary you're allowed to take on, relative to what you send out, depends on where your team salary sits.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Team status</th>
+<th>Incoming salary can be up to...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Below the first apron</td>
+<td>125% of outgoing salary, plus $100,000 (more generous for very small outgoing salaries)</td>
+</tr>
+<tr>
+<td>First apron to second apron</td>
+<td>110% of outgoing salary, plus $100,000</td>
+</tr>
+<tr>
+<td>Above the second apron</td>
+<td>100% of outgoing salary — you cannot take back <em>more</em> than you send out</td>
+</tr>
+</tbody>
+</table></div>
+<pre><code class="language-text">Send out: $20M in salary
+──────────────────────────────────────────────
+Below first apron:     can receive up to $25.1M
+First apron territory: can receive up to $22.1M
+Above second apron:    can receive up to $20.0M (exactly)
+</code></pre>
+<p>Notice the pattern: the further above the aprons you are, the closer trades have to be to a strict dollar-for-dollar swap. This is deliberate — the aprons are designed to make it progressively harder for the league's highest-spending teams to use trades as a workaround for the exceptions they've lost access to.</p>
+<h2>Aggregation</h2>
+<p><strong>Aggregation</strong> means combining the salaries of two or more outgoing players into a single trade to match one larger incoming salary — for example, sending out a $12M player and an $8M player together to match a $20M player coming back.</p>
+<pre><code class="language-text">Outgoing:  Player A ($12M)  +  Player B ($8M)  =  $20M combined
+
+Incoming:  Player C ($20M range, within matching tier)
+</code></pre>
+<p><strong>Teams above the second apron cannot aggregate salaries at all.</strong> Every incoming player in a second-apron trade has to be matched by a single outgoing salary on its own — no combining smaller contracts to add up to a bigger one. This is one of the most cited practical consequences of the second apron, because it's exactly the kind of trade (bundling role players' salaries to bring in one star) that many teams historically used to upgrade the roster.</p>
+<h2>The Two-Month Aggregation Cooldown</h2>
+<p>There's a second, less well-known restriction: <strong>a player who was just acquired via salary matching or a cap exception generally cannot be aggregated into a further trade for two months after that first trade.</strong> This exists to prevent teams from using a player purely as a salary-matching pass-through, flipping him again immediately in a second deal.</p>
+<p>There is one notable carve-out: a player traded on or before roughly mid-December of a given season can still be aggregated again right around that season's trade deadline, even if the strict two-month window hasn't technically closed — a scheduling accommodation the league added so the cooldown doesn't accidentally freeze out legitimate deadline activity.</p>
+<pre><code class="language-text">Trade 1: Team acquires Player X
+                │
+                ▼
+        2-month cooldown
+       (cannot re-aggregate X)
+                │
+                ▼
+Exception: if Trade 1 happened by mid-December,
+X can still be aggregated at the trade deadline
+                │
+                ▼
+        Cooldown lifts / deadline exception applies
+                │
+                ▼
+        Player X can now be aggregated freely
+</code></pre>
+<hr />
+<h1>Part B: Extension Strategy</h1>
+<h2>The Basic Veteran Extension</h2>
+<p>A player on a non-rookie-scale contract becomes eligible to sign an extension after the <strong>second anniversary</strong> of signing that contract (or, if the contract has already been extended once before and that extension stretched the total deal to 5 or 6 years, eligibility resets to the <strong>third anniversary</strong> of that prior extension).</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Standard veteran extension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total length (remaining years + new years)</td>
+<td>2 to 5 seasons</td>
+</tr>
+<tr>
+<td>First-year extension salary</td>
+<td>The greater of 140% of his final season's salary, or 140% of that year's league-average player salary</td>
+</tr>
+<tr>
+<td>Annual raise/decrease</td>
+<td>Up to 8%</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Addition:</em> the 140% rule is a double-edged sword worth understanding as a GM. It guarantees a real raise over the player's current salary — but if his current salary was already well below his true market value (a classic "team got a bargain" situation), 140% of an underpaid number can still land below what he'd get by simply reaching free agency and negotiating from scratch. This is exactly why some underpaid stars decline early extension offers and choose to bet on themselves in restricted or unrestricted free agency instead — it isn't stubbornness, it's arithmetic.</p>
+<h2>Eligibility Requirement Tied Back to Bird Rights</h2>
+<p>A player can only sign a standard veteran extension if, by the end of his <em>current</em> contract (before the extension even takes effect), he will have accumulated <strong>Full Bird Rights</strong> with the team offering it. This directly ties Part 8 back to Part 3 — a team can't use an extension to jump ahead of the Bird-Rights clock; the player has to already be on track to earn those rights the normal way.</p>
+<h2>The Designated Veteran Extension ("Supermax")</h2>
+<p>A separate, more generous extension track exists for a small group of accomplished players.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Designated Veteran Extension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total length (remaining + new)</td>
+<td>Up to 6 seasons</td>
+</tr>
+<tr>
+<td>First-year salary</td>
+<td>30–35% of the salary cap</td>
+</tr>
+<tr>
+<td>Annual raise</td>
+<td>8%</td>
+</tr>
+</tbody>
+</table></div>
+<p>To qualify, a player generally needs to meet service-time and accolade thresholds — for example, players entering their 8th or 9th season with only one or two years left on their current deal can qualify early if they've won MVP in one of the prior three seasons, been named Defensive Player of the Year in one of the prior two seasons, or made an All-NBA team in the most recent season or two of the prior three. Players with 10+ years of service can already reach the 30–35% max tier through ordinary means, but the Designated Veteran path lets a team lock in an elite, younger player on this higher tier <em>before</em> he ever has to test the market.</p>
+<pre><code class="language-text">Ordinary path to 30–35% max salary:
+        Reach 10 years of NBA service
+                     │
+                     ▼
+              Eligible for that tier
+
+Designated Veteran (&quot;Supermax&quot;) path:
+        7–9 years of service
+                +
+        MVP / DPOY / All-NBA accolade
+        in the recent qualifying window
+                     │
+                     ▼
+        Eligible early, without waiting
+        for the 10-year threshold
+</code></pre>
+<p>This is the mechanism behind headlines like "Player X signs a supermax extension" — it's not a separate, unlimited category of money; it's simply the earliest possible access to the top max tier, reserved for players who've already proven it at an elite level.</p>
+<h2>Extend-and-Trade</h2>
+<p>If a team wants to extend a player <em>and</em> trade him in the same transaction, the normal extension rules (140% first-year salary, up to 5 or 6 years, 8% raises) do not apply. Instead, an extend-and-trade is capped much more tightly:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Extend-and-trade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First-year salary</td>
+<td>Up to 120% of his prior salary</td>
+</tr>
+<tr>
+<td>Max new years</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Annual raise</td>
+<td>Up to 5%</td>
+</tr>
+</tbody>
+</table></div>
+<pre><code class="language-text">Normal Extension          Extend-and-Trade
+──────────────────         ──────────────────
+Up to 140% raise    vs.    Up to 120% raise
+Up to 6 years (supermax)   Up to 4 new years
+Up to 8% annual raises     Up to 5% annual raises
+</code></pre>
+<p>This exists for the same reason as the two-month aggregation cooldown above: without it, a team could give a player a huge, team-friendly-for-the-trade-partner extension purely to inflate his value as a trade chip, rather than because the extension reflects his actual market. Capping the extend-and-trade terms much closer to a routine re-signing removes that incentive.</p>
+<hr />
+<h1>Bringing It Together: The GM's Extension Decision Tree</h1>
+<pre><code class="language-text">Player becomes extension-eligible
+              │
+              ▼
+   Will he have Full Bird Rights
+   by the end of his current deal?
+              │
+        ┌─────┴─────┐
+        │           │
+       No          Yes
+        │           │
+        ▼           ▼
+  Cannot extend   Does 140% of his current
+  him yet         salary reflect his real
+                  market value?
+                       │
+                 ┌─────┴─────┐
+                 │           │
+                Yes          No
+                 │           │
+                 ▼           ▼
+          Extend now    Let him play toward
+          — lock in a   free agency, where
+          below-market  Bird Rights or the
+          long-term     open market can pay
+          deal          him properly
+</code></pre>
+<p>This decision tree is a direct continuation of Segment 1's core question — <em>does this move increase championship equity, or preserve optionality more effectively than the alternative</em> — now applied specifically to the extension-versus-free-agency choice.</p>
+<hr />
+<h1>Key Takeaways</h1>
+<p>Trades and extensions both operate on the same underlying principle as every other tool in this series: the closer your team salary sits to the aprons, the tighter the rules become. Salary matching tightens from 125% to 110% to a strict 100% as you cross each apron, and aggregation — combining multiple contracts to match one big salary — disappears entirely above the second apron. Extensions have their own separate ceiling logic: a standard veteran extension caps first-year salary at 140% of the player's current pay, a Designated Veteran extension opens the 30–35% max tier early for elite young players, and an extend-and-trade is deliberately capped far below either of those to prevent teams from using extensions as trade-value manipulation.</p>
+<hr />
+<h2>Looking Ahead</h2>
+<p>With Bird Rights, cap holds, exceptions, trades, and extensions now covered, the two structural pieces still missing are the ones referenced constantly throughout this series without ever getting their own full explanation: <strong>the Luxury Tax and the two Aprons themselves</strong> (why they exist, exactly how the tax bill is calculated, and the repeater tax), and <strong>Restricted Free Agency</strong> as its own dedicated process (qualifying offers, offer sheets, and matching strategy in full). Let me know which you'd like next.</p>
+<hr />
+<h2>Glossary (terms used in this segment)</h2>
+<ul>
+<li><strong>Salary matching</strong> — The CBA rule limiting how much incoming salary a team can take on in a trade, relative to what it sends out; the allowed percentage shrinks as a team crosses each apron.</li>
+<li><strong>Aggregation</strong> — Combining two or more outgoing players' salaries in a single trade to match one larger incoming salary; unavailable to teams above the second apron.</li>
+<li><strong>Two-month cooldown</strong> — The restriction preventing a recently-acquired player from being aggregated into a further trade for roughly two months after he was acquired.</li>
+<li><strong>Veteran extension</strong> — A new contract signed before a player's current deal expires, capped at 140% of his current salary in year one, for up to 5 seasons total (6 for a Designated Veteran Extension).</li>
+<li><strong>Designated Veteran Extension ("Supermax")</strong> — An extension track letting elite young players (based on service time plus MVP/DPOY/All-NBA accolades) access the 30–35%-of-cap max tier earlier than the standard 10-year threshold.</li>
+<li><strong>Extend-and-trade</strong> — A more tightly capped version of an extension (120% raise, 4 years, 5% annual raises) used when a player is extended and traded in the same transaction.</li>
+</ul><div class="pn"><a href="teil-7.html">← Part 7</a><a href="teil-9.html">Part 9 →</a></div></div></body></html>

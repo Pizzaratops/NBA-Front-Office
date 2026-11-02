@@ -1,0 +1,323 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Part 2 — Understanding the Salary Cap: Looking at Your Team Like a GM – NBAFO CBA Series</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet"><style>
+:root{--bg:#0a0c10;--surface:#111318;--surface2:#1a1d24;--border:#252830;--text:#e8eaf0;--dim:#8a94a8;--blue:#3b82f6;--gold:#eab308}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 'IBM Plex Sans',system-ui,sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:20px 16px 80px}
+nav.top{display:flex;gap:12px;justify-content:space-between;align-items:center;padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--border);font:600 12px 'IBM Plex Mono',monospace;position:sticky;top:0;z-index:5;flex-wrap:wrap}
+a{color:var(--blue)}nav.top a{color:var(--dim);text-decoration:none}nav.top a:hover{color:var(--text)}
+h1{font:400 38px/1.1 'Bebas Neue',sans-serif;letter-spacing:1px;margin:28px 0 12px}h2{font-size:22px;margin:36px 0 8px;border-bottom:1px solid var(--border);padding-bottom:6px}h3{font-size:18px;margin:26px 0 6px;color:var(--gold)}
+pre{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px;overflow-x:auto;font:13px/1.45 'IBM Plex Mono',monospace}
+code{font-family:'IBM Plex Mono',monospace;font-size:.9em}
+.tw{overflow-x:auto;margin:14px 0}table{border-collapse:collapse;font-size:14px;min-width:100%}th,td{border:1px solid var(--border);padding:7px 10px;text-align:left;vertical-align:top}th{background:var(--surface2)}
+hr{border:0;border-top:1px solid var(--border);margin:28px 0}blockquote{border-left:3px solid var(--blue);margin:14px 0;padding:2px 14px;color:var(--dim)}
+.pn{display:flex;justify-content:space-between;gap:12px;margin-top:48px;font:600 13px 'IBM Plex Mono',monospace}
+ul.toc{list-style:none;padding:0}ul.toc li{margin:0}ul.toc a{display:block;padding:12px 14px;margin:8px 0;background:var(--surface);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text)}ul.toc a:hover{border-color:var(--blue)}ul.toc small{color:var(--dim);display:block}
+</style></head><body><nav class="top"><a href="../index.html">← Offseason Guide</a><a href="index.html">All parts</a></nav><div class="wrap"><h1>Part 2 — Understanding the Salary Cap: Looking at Your Team Like a GM</h1>
+<p><em>(Revised version — corrections and additions marked inline. Math in the examples has been checked and is consistent. Glossary at the end.)</em></p>
+<p>Now that you've established your organization's direction, it's time to open the document that every NBA front office lives in during the offseason: the team's cap sheet.</p>
+<p>Many fans assume that this is simply a spreadsheet showing player salaries. In reality, it is much more than that. A cap sheet is a financial map of every current and future obligation your franchise has under the Collective Bargaining Agreement. It tells you not only what you owe your current players, but also what rights you possess, which exceptions you may use, and how much flexibility you truly have.</p>
+<p>One of the most common misconceptions among newer fans is the belief that a team with expiring contracts automatically has cap space. In practice, that is often false. Likewise, seeing a team with a $180 million payroll does not necessarily mean it has no way to improve the roster. The salary cap is not a spending limit in the traditional sense; it is a system of rules that determines <em>how</em> you are allowed to acquire players.</p>
+<p>Before we discuss Bird Rights, exceptions, or free agency, you need to understand how NBA executives interpret a cap sheet.</p>
+<hr />
+<h1>The Salary Cap Is a Gatekeeper, Not a Budget</h1>
+<p>The NBA operates under what is known as a <strong>soft salary cap</strong>. This distinction is fundamental.</p>
+<p>In leagues like the NFL, the salary cap functions largely as a hard ceiling. Once a team reaches it, it must shed salary before adding new players. The NBA is different. Teams are allowed — even expected — to exceed the salary cap, provided they have a legal mechanism for doing so.</p>
+<p>Imagine the cap as the entrance to a building rather than a wall.</p>
+<pre><code>              Salary Cap
+──────────────────────────────────
+          Can you walk through?
+
+      YES                    NO
+      │                      │
+Use cap space        Need a legal exception
+                     (Bird Rights, MLE, etc.)
+</code></pre>
+<p>This is why championship contenders are almost always above the salary cap. They are not breaking the rules; they are simply using different rules than teams with cap space.</p>
+<p><em>Addition:</em> the cap is genuinely "soft" only up to a point. Above the second apron, several of those "legal exceptions" stop being available at all (no taxpayer Mid-Level Exception, no salary aggregation in trades, and more — Segment 3 covers this). So the building metaphor is accurate for most of the structure, but near the very top floor, some doors really do get locked. It is not a hard cap in the NFL sense, but it is not infinitely soft either.</p>
+<hr />
+<h1>The First Question Every GM Asks</h1>
+<p>The first thing a front office wants to know on June 30 is surprisingly simple:</p>
+<blockquote>
+<p><strong>"What is our team salary?"</strong></p>
+</blockquote>
+<p>Not luxury tax.
+Not apron status.
+Not available exceptions.</p>
+<p>Everything begins with team salary.</p>
+<p>Suppose your payroll looks like this.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Player</th>
+<th style="text-align: right;">2026–27 Salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Franchise Star</td>
+<td style="text-align: right;">$54M</td>
+</tr>
+<tr>
+<td>All-Star Wing</td>
+<td style="text-align: right;">$39M</td>
+</tr>
+<tr>
+<td>Starting Center</td>
+<td style="text-align: right;">$22M</td>
+</tr>
+<tr>
+<td>Starting PG</td>
+<td style="text-align: right;">$16M</td>
+</tr>
+<tr>
+<td>Young Forward</td>
+<td style="text-align: right;">$9M</td>
+</tr>
+<tr>
+<td>Bench Players</td>
+<td style="text-align: right;">$27M</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Guaranteed Salary: $167M</strong></p>
+<p><em>(Checked: 54+39+22+16+9+27 = $167M — the table is arithmetically consistent.)</em></p>
+<p>At first glance, many people would conclude:</p>
+<blockquote>
+<p>"Our payroll is $167 million."</p>
+</blockquote>
+<p>An NBA executive immediately asks a different question.</p>
+<blockquote>
+<p><strong>"Is $167 million actually our team salary?"</strong></p>
+</blockquote>
+<p>The answer is often <strong>no</strong>.</p>
+<hr />
+<h1>Team Salary Is More Than Player Salaries</h1>
+<p>The CBA defines <strong>team salary</strong> very broadly. It includes far more than the guaranteed contracts currently sitting on your roster.</p>
+<p>For example:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Counts Toward Team Salary</th>
+<th>Does Not Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Guaranteed contracts</td>
+<td>Coaching salaries</td>
+</tr>
+<tr>
+<td>Dead money (e.g. stretched-out waived contracts)</td>
+<td>Arena expenses</td>
+</tr>
+<tr>
+<td>Cap holds</td>
+<td>Scouting department</td>
+</tr>
+<tr>
+<td>Incomplete roster charges</td>
+<td>Team travel</td>
+</tr>
+<tr>
+<td>Likely incentive bonuses</td>
+<td>Front office payroll</td>
+</tr>
+</tbody>
+</table></div>
+<p>This distinction is critical because the salary cap is concerned only with basketball-related <strong>player</strong> salary obligations, not with the franchise's general operating costs.</p>
+<p><em>Correction/clarification:</em> the original draft said "certain bonuses" count. To be precise, the CBA splits incentive bonuses into two categories: a <strong>"likely" bonus</strong> (one the player has a realistic chance of earning based on the prior season, e.g. games-played thresholds he already regularly hits) counts against team salary immediately, while an <strong>"unlikely" bonus</strong> (one that would require a big jump in role or performance) does not count until it is actually earned. This distinction matters at the trade deadline, since a team's cap number can shift depending on which bucket a bonus falls into.</p>
+<p>Imagine that you waived a player last season but are still paying him through a stretched contract (the <strong>Stretch Provision</strong>, which lets a team spread a waived player's remaining guaranteed money over more seasons instead of paying it all at once). Although he no longer plays for your team, his salary still counts against your team salary because the financial obligation remains — this is what "dead money" means.</p>
+<p>Similarly, an unsigned free agent may continue to occupy cap space because of his <strong>cap hold</strong>. From a fan's perspective he is "off the roster." From the league's perspective, you still possess valuable contractual rights to re-sign him, and those rights have value. Therefore they occupy space until you either use them or relinquish them.</p>
+<hr />
+<h1>Why Cap Holds Exist</h1>
+<p>Cap holds are one of the most misunderstood concepts in the NBA CBA, but they solve a very specific problem.</p>
+<p>Imagine there were no cap holds.</p>
+<p>You have a superstar whose contract expires today.</p>
+<pre><code>July 1
+
+Player Salary Yesterday:
+$45M
+
+Today:
+$0
+</code></pre>
+<p>Without cap holds, your payroll would suddenly decrease by $45 million.</p>
+<p>That would allow you to sign another max-level free agent using newly created cap space. After exhausting that cap space, you could simply re-sign your original superstar using Bird Rights.</p>
+<pre><code>Cap Space Created
+
+↓ Sign Max Free Agent
+
+↓ Re-sign Existing Superstar
+
+Result:
+Two max players for the price of one cap slot
+</code></pre>
+<p>If this were legal, every team would exploit it immediately. The salary cap would lose much of its purpose. This is, historically, exactly why the league introduced cap holds — to close this loophole.</p>
+<p>Instead of disappearing from your books, the player's salary is replaced by a placeholder amount — the cap hold — which reserves space until a decision is made.</p>
+<pre><code>Contract Expires
+
+        ↓
+
+Player becomes Free Agent
+
+        ↓
+
+Cap Hold replaces salary
+
+        ↓
+
+GM chooses
+
+ ┌───────────────┐
+ │ Re-sign him   │
+ └───────────────┘
+
+        or
+
+ ┌───────────────┐
+ │ Renounce him  │
+ └───────────────┘
+</code></pre>
+<p>Only once you renounce the player do you regain the cap room associated with that hold. However, renouncing him also means giving up the special rights attached to him — a trade-off we will examine in detail when we reach Bird Rights.</p>
+<p><em>Addition:</em> the size of a cap hold is not a flat placeholder number — it depends on which type of Bird Rights the player has and, for full Bird Rights, on his years of service and prior salary. A Non-Bird free agent's hold is calculated differently from an Early Bird or Full Bird free agent's hold. Segment 6 will give you the exact percentages; for now, just know that the hold is always designed to be large enough to prevent the loophole described above — otherwise a team could let a star's cap hold sit low, use the "freed" space elsewhere, and still count on re-signing him cheaply.</p>
+<hr />
+<h1>Guaranteed Salary Is Only the Beginning</h1>
+<p>Suppose your guaranteed contracts total $138 million.</p>
+<p>A casual observer might conclude that you have substantial cap room.</p>
+<p>A GM starts asking additional questions.</p>
+<ul>
+<li>Do we have restricted free agents?</li>
+<li>Which unrestricted free agents still carry cap holds?</li>
+<li>Are there players with non-guaranteed contracts?</li>
+<li>Do we owe dead money?</li>
+<li>How many roster spots are empty? (Fewer than 12 signed players triggers an <strong>incomplete roster charge</strong> — a placeholder charge, at essentially rookie-minimum level, applied for each empty spot below 12, so a team can't artificially inflate its apparent cap room by simply not filling out the roster.)</li>
+<li>Are there likely performance bonuses?</li>
+</ul>
+<p>Every one of those questions changes the calculation.</p>
+<p>Consequently, the process looks less like arithmetic and more like assembling a financial puzzle.</p>
+<pre><code>Guaranteed Salary
+
+        +
+
+Cap Holds
+
+        +
+
+Dead Money
+
+        +
+
+Roster Charges
+
+        +
+
+Likely Bonuses
+
+        =
+
+Official Team Salary
+</code></pre>
+<p>Only after every piece has been included can you determine your actual cap position.</p>
+<p><em>Addition — the other side of the coin:</em> the CBA does not only limit how much you can spend; it also sets a <strong>salary floor</strong>, currently 90% of the salary cap. A team whose team salary finishes the season below that floor must pay the shortfall out to its own players. This is the one spending rule the CBA actually forces on every team, regardless of ownership's preferences — everything above the floor is a choice.</p>
+<hr />
+<h1>Why Teams Sometimes Stay Above the Cap on Purpose</h1>
+<p>At first glance, remaining above the salary cap seems irrational. If cap space provides flexibility, shouldn't every team strive to create as much of it as possible?</p>
+<p>In reality, cap space is only one form of flexibility, and often it is not the most valuable one.</p>
+<p>Consider two hypothetical franchises.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Team A</th>
+<th>Team B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$40M in cap space</td>
+<td>$15M above the cap</td>
+</tr>
+<tr>
+<td>Renounced its free agents to open that space</td>
+<td>Kept its free agents' cap holds and Bird Rights</td>
+</tr>
+<tr>
+<td>No incumbent free agents</td>
+<td>Can re-sign its own players above the cap</td>
+</tr>
+<tr>
+<td>Few exceptions remaining once space is spent</td>
+<td>Full access to over-the-cap tools</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Correction:</em> the original version implied that having cap space automatically costs you Bird Rights. That's not quite right — the causation runs the other way. Bird Rights and cap holds exist for the <em>same</em> free agents at the <em>same</em> time; to convert a free agent's cap hold into usable cap space, a team typically has to <strong>renounce</strong> him, and renouncing is what extinguishes his Bird Rights. So it's not "cap space vs. Bird Rights" as two unrelated features — it's that <em>using</em> cap space is usually the specific action that costs you Bird Rights on the players whose holds you cleared.</p>
+<p>Many fans instinctively choose Team A because it possesses significant cap room.</p>
+<p>An experienced executive often prefers Team B.</p>
+<p>Why? Because Team B has more ways to improve the roster. Although it lacks cap space, it can still:</p>
+<ul>
+<li>re-sign its own free agents through Bird Rights,</li>
+<li>use the Mid-Level Exception,</li>
+<li>sign minimum-salary veterans,</li>
+<li>execute trades,</li>
+<li>and preserve continuity.</li>
+</ul>
+<p>Team A may have only one meaningful opportunity to spend its cap space. Once that money is committed, most of its flexibility disappears, and the players it renounced to create that space are now free to sign elsewhere.</p>
+<p>This illustrates an important principle that surprises many new fans:</p>
+<blockquote>
+<p><strong>Being above the salary cap does not mean you are trapped. It simply means you must operate through exceptions rather than through cap space.</strong></p>
+</blockquote>
+<hr />
+<h1>The Three Types of Teams</h1>
+<p>Once a GM knows the team's official salary, the franchise falls into one of three broad categories.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Team Type</th>
+<th>Primary Strategy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Under the cap</td>
+<td>Spend cap space first, then use remaining exceptions.</td>
+</tr>
+<tr>
+<td>Slightly over the cap</td>
+<td>Operate primarily through Bird Rights and exceptions.</td>
+</tr>
+<tr>
+<td>Deep into tax/aprons</td>
+<td>Focus on managing restrictions while retaining championship talent.</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Addition:</em> this three-way split is a useful simplification for this stage of the series, but the real CBA actually recognizes more granular tiers within "over the cap" — a team can be over the cap but under the tax line, a taxpayer but under the first apron, over the first apron, or over the second apron, and each tier removes a different, specific set of tools. Segment 3 (Luxury Tax &amp; Aprons) walks through all of them individually. Think of today's three categories as the zoomed-out map, and Segment 3 as zooming in.</p>
+<p>Everything that follows in the offseason depends on identifying which of these categories you occupy.</p>
+<hr />
+<h1>The Most Common Beginner Mistake</h1>
+<p>New fans often assume that every offseason begins by asking, "Which free agents should we sign?"</p>
+<p>Experienced GMs ask a much earlier question:</p>
+<blockquote>
+<p><strong>"What legal mechanisms do we possess to add talent?"</strong></p>
+</blockquote>
+<p>Two teams may pursue the same player, but one can only offer the veteran minimum while the other can offer the full Mid-Level Exception. Their interest is identical, yet their available tools differ dramatically because of their cap positions.</p>
+<p>Understanding those tools begins with understanding your team salary.</p>
+<hr />
+<h1>Key Takeaways</h1>
+<p>Before a single phone call is made to a free agent, an NBA front office must know precisely where it stands financially. That means calculating <strong>team salary</strong>, not merely adding up player contracts. Team salary includes guaranteed salaries, cap holds, dead money, roster charges, and likely incentive bonuses, all of which determine how the franchise is allowed to build its roster. It also has a floor, not just a ceiling: every team must finish the season at or above 90% of the cap.</p>
+<p>The salary cap itself is best understood not as a spending limit but as a gatekeeper. Teams below it can spend cap space directly, while teams above it must rely on exceptions and retained rights. Since most successful teams intentionally remain over the cap in order to preserve those rights, having cap space is not inherently superior. It is simply one roster-building tool among many — and using it usually has a cost, namely the Bird Rights and cap holds you have to renounce to unlock it.</p>
+<p>In the next chapter, we will build directly on this foundation by examining <strong>Bird Rights</strong>, arguably the single most important mechanism in the NBA CBA. You will see why championship teams often go out of their way to remain above the salary cap, and why losing Bird Rights can quietly eliminate options that are impossible to recreate later.</p>
+<hr />
+<h2>Glossary (terms used in this segment)</h2>
+<ul>
+<li><strong>Cap sheet</strong> — The full internal document/spreadsheet a team uses to track every salary, hold, and charge counting against its cap.</li>
+<li><strong>Soft cap</strong> — A cap that teams are allowed to exceed through specific legal mechanisms (exceptions), as opposed to a hard cap that can never be crossed.</li>
+<li><strong>Team salary</strong> — The CBA-defined total of everything counted against a team's cap: guaranteed contracts, cap holds, dead money, roster charges, and likely bonuses.</li>
+<li><strong>Cap hold</strong> — A placeholder salary amount that "reserves" cap space for a team's own free agent until he is re-signed or renounced.</li>
+<li><strong>Dead money</strong> — Salary a team still owes and still counts against its cap for a player no longer on the roster (e.g., through the Stretch Provision).</li>
+<li><strong>Stretch Provision</strong> — The rule allowing a team to spread a waived player's remaining guaranteed salary over additional seasons instead of paying/counting it all immediately.</li>
+<li><strong>Incomplete roster charge</strong> — A placeholder charge applied when a team has fewer than 12 signed players, so an empty roster spot cannot be used to fake extra cap room.</li>
+<li><strong>Likely / unlikely bonus</strong> — An incentive bonus counts against team salary now if it is "likely" (realistically achievable based on recent play); "unlikely" bonuses only count once actually earned.</li>
+<li><strong>Salary floor</strong> — The minimum team salary (90% of the cap) every team must reach by season's end, with any shortfall paid directly to the players.</li>
+<li><strong>Renounce</strong> — The formal act of giving up a free agent's cap hold (and with it, his Bird Rights), which frees the cap space his hold was occupying.</li>
+</ul><div class="pn"><a href="teil-1.html">← Part 1</a><a href="teil-3.html">Part 3 →</a></div></div></body></html>

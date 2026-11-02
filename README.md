@@ -61,5 +61,5 @@ python3 -m http.server 8000      # http://localhost:8000/app.html
 
 ## Offen
 
-- Erklärserie Teil 1–10 liegt noch nicht im Repo („→ Teil X“ im Guide sind reine Labels).
+- Erklärserie liegt unter `serie/` (Teil 1–10, nur Englisch); die „→ Part/Teil X“-Hinweise im Guide verlinken dorthin.
 - 17 Spieler haben im Sheet keine Positions-Markierung (Anzeige „?“).
