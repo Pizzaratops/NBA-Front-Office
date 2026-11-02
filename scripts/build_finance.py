@@ -169,7 +169,9 @@ def main():
         with_to["26"] = t["total_salary"]
         count = {y: sum(1 for r in rows if r["sal"][y]) for y in YEARS}
         fin = t.get("finances") or {}
-        tpes = [x for x in (fin.get("tpes") or (t.get("exceptions") or {}).get("tpes") or [])
+        # TPEs: Finances-Tab ist maßgeblich (Team-Tabs enthalten teils Platzhalter, z. B. WAS 41,2M = Max-Gehalt)
+        src = fin["tpes"] if "tpes" in fin else (t.get("exceptions") or {}).get("tpes") or []
+        tpes = [x for x in src
                 if (parse_date(x.get("expires")) or date(2100, 1, 1)) >= TODAY]
         fpgs = sorted([r["fpg"] or 0 for r in rows], reverse=True)
         teams[abbr] = {
