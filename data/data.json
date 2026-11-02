@@ -410,6 +410,19 @@
         "mle_left": 0,
         "roster_charge": 0,
         "cap_space": -48384413
+      },
+      "finances": {
+        "fo_hard_cap": 218686296,
+        "salary_wo_holds": 203094220,
+        "hard_cap_trigger": "17.07.26",
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": [
+          {
+            "amount": 4774192,
+            "expires": "16.07.27"
+          }
+        ]
       }
     },
     "BOS": {
@@ -790,6 +803,14 @@
         "mle_left": 0,
         "roster_charge": 0,
         "cap_space": -43441712
+      },
+      "finances": {
+        "fo_hard_cap": 216493641,
+        "salary_wo_holds": 202925712,
+        "hard_cap_trigger": "23.06.26",
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": []
       }
     },
     "BRK": {
@@ -1152,6 +1173,14 @@
         "mle_left": 0,
         "roster_charge": 0,
         "cap_space": -44054002
+      },
+      "finances": {
+        "fo_hard_cap": 213988679,
+        "salary_wo_holds": 208564667,
+        "hard_cap_trigger": null,
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": []
       }
     },
     "CHA": {
@@ -1531,6 +1560,14 @@
         "mle_left": 366000,
         "roster_charge": 0,
         "cap_space": -17876851
+      },
+      "finances": {
+        "fo_hard_cap": 211381286,
+        "salary_wo_holds": 182837850,
+        "hard_cap_trigger": "07.04.26",
+        "mle_status": "lost",
+        "bae_status": "lost",
+        "tpes": []
       }
     },
     "CHI": {
@@ -1916,6 +1953,19 @@
         "mle_left": 0,
         "roster_charge": 0,
         "cap_space": -47686410
+      },
+      "finances": {
+        "fo_hard_cap": 213608478,
+        "salary_wo_holds": 206798068,
+        "hard_cap_trigger": "29.06.26",
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": [
+          {
+            "amount": 3632408,
+            "expires": "05.08.27"
+          }
+        ]
       }
     },
     "CLE": {
@@ -2267,6 +2317,19 @@
         "mle_left": 3046471,
         "roster_charge": 0,
         "cap_space": -66554000
+      },
+      "finances": {
+        "fo_hard_cap": 209715554,
+        "salary_wo_holds": 205968528,
+        "hard_cap_trigger": "Nembhard s&t",
+        "mle_status": null,
+        "bae_status": "used on Jonathan Isaac",
+        "tpes": [
+          {
+            "amount": 22500000,
+            "expires": "31.07.26"
+          }
+        ]
       }
     },
     "DAL": {
@@ -2631,6 +2694,14 @@
         "mle_left": 6064000,
         "roster_charge": 0,
         "cap_space": -62489186
+      },
+      "finances": {
+        "fo_hard_cap": 217383504,
+        "salary_wo_holds": 221386186,
+        "hard_cap_trigger": null,
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": []
       }
     },
     "DEN": {
@@ -2976,6 +3047,14 @@
         "mle_left": 0,
         "roster_charge": 0,
         "cap_space": -42118327
+      },
+      "finances": {
+        "fo_hard_cap": 206884586,
+        "salary_wo_holds": 207079328,
+        "hard_cap_trigger": null,
+        "mle_status": null,
+        "bae_status": "used on Jalen Wilson",
+        "tpes": []
       }
     },
     "DET": {
@@ -3390,6 +3469,23 @@
         "mle_left": 7401328,
         "roster_charge": 0,
         "cap_space": -32566033
+      },
+      "finances": {
+        "fo_hard_cap": 200528000,
+        "salary_wo_holds": 178569935,
+        "hard_cap_trigger": null,
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": [
+          {
+            "amount": 3991320,
+            "expires": "02.02.27"
+          },
+          {
+            "amount": 2187450,
+            "expires": "02.02.2027"
+          }
+        ]
       }
     },
     "GS": {
@@ -3757,6 +3853,14 @@
         "mle_left": 9366000,
         "roster_charge": 0,
         "cap_space": -1813061
+      },
+      "finances": {
+        "fo_hard_cap": 217401467,
+        "salary_wo_holds": 166774059,
+        "hard_cap_trigger": null,
+        "mle_status": "lost",
+        "bae_status": "lost",
+        "tpes": []
       }
     },
     "HOU": {
@@ -4090,6 +4194,14 @@
         "mle_left": 0,
         "roster_charge": 0,
         "cap_space": -13763009
+      },
+      "finances": {
+        "fo_hard_cap": 204637244,
+        "salary_wo_holds": 178724008,
+        "hard_cap_trigger": "28.06.26",
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": []
       }
     },
     "IND": {
@@ -4434,6 +4546,14 @@
         "mle_left": 0,
         "roster_charge": 0,
         "cap_space": -44054000
+      },
+      "finances": {
+        "fo_hard_cap": 218518038,
+        "salary_wo_holds": 208073578,
+        "hard_cap_trigger": null,
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": []
       }
     },
     "LAC": {
@@ -4786,6 +4906,14 @@
         "mle_left": 0,
         "roster_charge": 0,
         "cap_space": -11797076
+      },
+      "finances": {
+        "fo_hard_cap": 217356167,
+        "salary_wo_holds": 176758076,
+        "hard_cap_trigger": null,
+        "mle_status": "lost",
+        "bae_status": "used on Mo Gueye",
+        "tpes": []
       }
     },
     "LAL": {
@@ -5162,6 +5290,14 @@
         "mle_left": 2366000,
         "roster_charge": 0,
         "cap_space": -42079897
+      },
+      "finances": {
+        "fo_hard_cap": 212978602,
+        "salary_wo_holds": 207040897,
+        "hard_cap_trigger": null,
+        "mle_status": "lost",
+        "bae_status": "lost",
+        "tpes": []
       }
     },
     "MEM": {
@@ -5479,6 +5615,14 @@
         "mle_left": 0,
         "roster_charge": 0,
         "cap_space": -47893641
+      },
+      "finances": {
+        "fo_hard_cap": 217373916,
+        "salary_wo_holds": 212418641,
+        "hard_cap_trigger": null,
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": []
       }
     },
     "MIA": {
@@ -5754,6 +5898,19 @@
         "mle_left": 9366000,
         "roster_charge": 0,
         "cap_space": 28838402
+      },
+      "finances": {
+        "fo_hard_cap": 210181846,
+        "salary_wo_holds": 164083293,
+        "hard_cap_trigger": "16.07.26",
+        "mle_status": "lost",
+        "bae_status": "lost",
+        "tpes": [
+          {
+            "amount": 1663189,
+            "expires": "16.07.27"
+          }
+        ]
       }
     },
     "MIL": {
@@ -6131,6 +6288,19 @@
         "mle_left": 0,
         "roster_charge": 0,
         "cap_space": -54457175
+      },
+      "finances": {
+        "fo_hard_cap": 216256754,
+        "salary_wo_holds": 210685256,
+        "hard_cap_trigger": null,
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": [
+          {
+            "amount": 9022422,
+            "expires": "01.08.27"
+          }
+        ]
       }
     },
     "MIN": {
@@ -6481,6 +6651,19 @@
         "mle_left": 0,
         "roster_charge": 0,
         "cap_space": -43527383
+      },
+      "finances": {
+        "fo_hard_cap": 210943834,
+        "salary_wo_holds": 196794608,
+        "hard_cap_trigger": null,
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": [
+          {
+            "amount": 6216775,
+            "expires": "14.12.27"
+          }
+        ]
       }
     },
     "NOP": {
@@ -6818,6 +7001,19 @@
         "mle_left": 15044000,
         "roster_charge": 0,
         "cap_space": -47712617
+      },
+      "finances": {
+        "fo_hard_cap": 208469929,
+        "salary_wo_holds": 192009751,
+        "hard_cap_trigger": "01.07.26",
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": [
+          {
+            "amount": 142866,
+            "expires": "07.04.27"
+          }
+        ]
       }
     },
     "NY": {
@@ -7201,6 +7397,35 @@
         "mle_left": 15044000,
         "roster_charge": 0,
         "cap_space": -60450334
+      },
+      "finances": {
+        "fo_hard_cap": 219970768,
+        "salary_wo_holds": 192644838,
+        "hard_cap_trigger": "07.04.26",
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": [
+          {
+            "amount": 2378870,
+            "expires": "07.04.27"
+          },
+          {
+            "amount": 4388145,
+            "expires": "01.08.2027"
+          },
+          {
+            "amount": 2750000,
+            "expires": "01.08.2027"
+          },
+          {
+            "amount": 886008,
+            "expires": "01.08.2027"
+          },
+          {
+            "amount": 5478480,
+            "expires": "01.08.2027"
+          }
+        ]
       }
     },
     "OKC": {
@@ -7587,6 +7812,14 @@
         "mle_left": 44000,
         "roster_charge": 0,
         "cap_space": -12803138
+      },
+      "finances": {
+        "fo_hard_cap": 213636805,
+        "salary_wo_holds": 172243138,
+        "hard_cap_trigger": null,
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": []
       }
     },
     "ORL": {
@@ -7940,6 +8173,19 @@
         "mle_left": 18889,
         "roster_charge": 0,
         "cap_space": -19760105
+      },
+      "finances": {
+        "fo_hard_cap": 208919409,
+        "salary_wo_holds": 180020352,
+        "hard_cap_trigger": "28.06.26",
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": [
+          {
+            "amount": 4681863,
+            "expires": "25.01.27"
+          }
+        ]
       }
     },
     "PHI": {
@@ -8302,6 +8548,14 @@
         "mle_left": 6064000,
         "roster_charge": 0,
         "cap_space": -62534036
+      },
+      "finances": {
+        "fo_hard_cap": 221431032,
+        "salary_wo_holds": 221431034,
+        "hard_cap_trigger": null,
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": []
       }
     },
     "PHX": {
@@ -8634,6 +8888,14 @@
         "mle_left": 0,
         "roster_charge": 0,
         "cap_space": -60332580
+      },
+      "finances": {
+        "fo_hard_cap": 216566517,
+        "salary_wo_holds": 221465358,
+        "hard_cap_trigger": null,
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": []
       }
     },
     "POR": {
@@ -8990,6 +9252,14 @@
         "mle_left": 0,
         "roster_charge": 0,
         "cap_space": -44054001
+      },
+      "finances": {
+        "fo_hard_cap": 205388761,
+        "salary_wo_holds": 208912877,
+        "hard_cap_trigger": null,
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": []
       }
     },
     "SAC": {
@@ -9422,6 +9692,19 @@
         "mle_left": 300,
         "roster_charge": 0,
         "cap_space": -72182271
+      },
+      "finances": {
+        "fo_hard_cap": 214253246,
+        "salary_wo_holds": 209014699,
+        "hard_cap_trigger": "15.07.26",
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": [
+          {
+            "amount": 28127971,
+            "expires": "01.07.27"
+          }
+        ]
       }
     },
     "SAS": {
@@ -9783,6 +10066,14 @@
         "mle_left": 0,
         "roster_charge": 0,
         "cap_space": -50070574
+      },
+      "finances": {
+        "fo_hard_cap": 217599098,
+        "salary_wo_holds": 215031574,
+        "hard_cap_trigger": null,
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": []
       }
     },
     "TOR": {
@@ -10153,6 +10444,43 @@
         "mle_left": 7862394,
         "roster_charge": 0,
         "cap_space": -73521730
+      },
+      "finances": {
+        "fo_hard_cap": 211000401,
+        "salary_wo_holds": 201152605,
+        "hard_cap_trigger": "01.07.26",
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": [
+          {
+            "amount": 2712831,
+            "expires": "24.01.27"
+          },
+          {
+            "amount": 1348396,
+            "expires": "02.02.27"
+          },
+          {
+            "amount": 4341123,
+            "expires": "02.02.27"
+          },
+          {
+            "amount": 4949904,
+            "expires": "03.02.27"
+          },
+          {
+            "amount": 3209419,
+            "expires": "07.04.27"
+          },
+          {
+            "amount": 4411134,
+            "expires": "01.07.27"
+          },
+          {
+            "amount": 3017923,
+            "expires": "15.07.27"
+          }
+        ]
       }
     },
     "UT": {
@@ -10527,6 +10855,19 @@
         "mle_left": 6064000,
         "roster_charge": 0,
         "cap_space": -51711888
+      },
+      "finances": {
+        "fo_hard_cap": 213001356,
+        "salary_wo_holds": 209964481,
+        "hard_cap_trigger": null,
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": [
+          {
+            "amount": 644406,
+            "expires": "07.04.27"
+          }
+        ]
       }
     },
     "WA": {
@@ -10915,1832 +11256,2205 @@
         "mle_left": 0,
         "roster_charge": 0,
         "cap_space": -89962921
+      },
+      "finances": {
+        "fo_hard_cap": 212269393,
+        "salary_wo_holds": 214120693,
+        "hard_cap_trigger": null,
+        "mle_status": null,
+        "bae_status": null,
+        "tpes": []
       }
     }
   },
   "fas": [
     {
       "name": "Shai Gilgeous-Alexander",
+      "age": null,
       "fpg": 131.5,
       "signed_team": "LAC"
     },
     {
       "name": "Luka Dončić",
+      "age": null,
       "fpg": 127.99,
       "signed_team": "SAS"
     },
     {
       "name": "Jayson Tatum",
+      "age": null,
       "fpg": 105.93,
       "signed_team": "DET"
     },
     {
       "name": "Kevin Durant",
+      "age": null,
       "fpg": 105.84,
       "signed_team": "LAC"
     },
     {
       "name": "Walker Kessler",
+      "age": null,
       "fpg": 100.1,
       "signed_team": "MIA"
     },
     {
       "name": "Jalen Duren",
+      "age": null,
       "fpg": 99.74,
       "signed_team": "SAC"
     },
     {
       "name": "Jimmy Butler",
+      "age": null,
       "fpg": 98.78,
       "signed_team": "ATL"
     },
     {
       "name": "LeBron James",
+      "age": null,
       "fpg": 93.55,
       "signed_team": "POR"
     },
     {
       "name": "Paolo Banchero",
+      "age": null,
       "fpg": 90.91,
       "signed_team": "LAL"
     },
     {
       "name": "Fred VanVleet",
+      "age": null,
       "fpg": 86.3,
       "signed_team": "NOP"
     },
     {
       "name": "Jabari Smith",
+      "age": null,
       "fpg": 85.1,
       "signed_team": "PHI"
     },
     {
       "name": "Alondes Williams",
+      "age": null,
       "fpg": 83.45,
       "signed_team": null
     },
     {
       "name": "Norman Powell",
+      "age": null,
       "fpg": 78.68,
       "signed_team": "LAL"
     },
     {
       "name": "Miles Bridges",
+      "age": null,
       "fpg": 77.93,
       "signed_team": "BRK"
     },
     {
       "name": "Nikola Vučević",
+      "age": null,
       "fpg": 77.5,
       "signed_team": "ORL"
     },
     {
       "name": "Peyton Watson",
+      "age": null,
       "fpg": 77.09,
       "signed_team": "SAC"
     },
     {
       "name": "Julian Champagnie",
+      "age": null,
       "fpg": 76.79,
       "signed_team": "MIN"
     },
     {
       "name": "Neemias Queta",
+      "age": null,
       "fpg": 76.73,
       "signed_team": "CHA"
     },
     {
       "name": "Duncan Robinson",
+      "age": null,
       "fpg": 71.74,
       "signed_team": "BOS"
     },
     {
       "name": "Shaedon Sharpe",
+      "age": null,
       "fpg": 69.17,
       "signed_team": "GS"
     },
     {
       "name": "Bennedict Mathurin",
+      "age": null,
       "fpg": 68.85,
       "signed_team": "GS"
     },
     {
       "name": "Davion Mitchell",
+      "age": null,
       "fpg": 68.34,
       "signed_team": "HOU"
     },
     {
       "name": "Andrew Nembhard",
+      "age": null,
       "fpg": 67.0,
       "signed_team": "CLE"
     },
     {
       "name": "Ayo Dosunmu",
+      "age": null,
       "fpg": 66.26,
       "signed_team": "WA"
     },
     {
       "name": "Mark Williams",
+      "age": null,
       "fpg": 66.26,
       "signed_team": "PHX"
     },
     {
       "name": "Kadary Richmond",
+      "age": null,
       "fpg": 65.93,
       "signed_team": null
     },
     {
       "name": "Tim Hardaway",
+      "age": null,
       "fpg": 64.94,
       "signed_team": null
     },
     {
       "name": "Royce O'Neale",
+      "age": null,
       "fpg": 64.13,
       "signed_team": "ORL"
     },
     {
       "name": "Tari Eason",
+      "age": null,
       "fpg": 63.52,
       "signed_team": "CHI"
     },
     {
       "name": "Keegan Murray",
+      "age": null,
       "fpg": 63.37,
       "signed_team": "POR"
     },
     {
       "name": "Sandro Mamukelashvili",
+      "age": null,
       "fpg": 61.44,
       "signed_team": "LAL"
     },
     {
       "name": "Harrison Barnes",
+      "age": null,
       "fpg": 61.11,
       "signed_team": "HOU"
     },
     {
       "name": "Leaky Black",
+      "age": null,
       "fpg": 61.02,
       "signed_team": null
     },
     {
       "name": "Julian Reese",
+      "age": null,
       "fpg": 60.58,
       "signed_team": null
     },
     {
       "name": "Pelle Larsson",
+      "age": null,
       "fpg": 60.42,
       "signed_team": "BRK"
     },
     {
       "name": "Draymond Green",
+      "age": null,
       "fpg": 60.21,
       "signed_team": "BOS"
     },
     {
       "name": "Lawson Lovering",
+      "age": null,
       "fpg": 59.63,
       "signed_team": null
     },
     {
       "name": "Kris Dunn",
+      "age": null,
       "fpg": 59.42,
       "signed_team": "GS"
     },
     {
       "name": "Andersson Garcia",
+      "age": null,
       "fpg": 57.55,
       "signed_team": null
     },
     {
       "name": "Collin Sexton",
+      "age": null,
       "fpg": 57.47,
       "signed_team": "OKC"
     },
     {
       "name": "Max Strus",
+      "age": null,
       "fpg": 57.4,
       "signed_team": "MIL"
     },
     {
       "name": "Jordan Goodwin",
+      "age": null,
       "fpg": 57.2,
       "signed_team": "POR"
     },
     {
       "name": "Al Horford",
+      "age": null,
       "fpg": 56.32,
       "signed_team": "HOU"
     },
     {
       "name": "Kennedy Chandler",
+      "age": null,
       "fpg": 55.83,
       "signed_team": null
     },
     {
       "name": "Jock Landale",
+      "age": null,
       "fpg": 55.02,
       "signed_team": "BRK"
     },
     {
       "name": "Landry Shamet",
+      "age": null,
       "fpg": 54.34,
       "signed_team": "LAL"
     },
     {
       "name": "Daniel Gafford",
+      "age": null,
       "fpg": 54.28,
       "signed_team": "DEN"
     },
     {
       "name": "Robert Williams",
+      "age": null,
       "fpg": 54.23,
       "signed_team": "LAC"
     },
     {
       "name": "Jake LaRavia",
+      "age": null,
       "fpg": 53.99,
       "signed_team": "NOP"
     },
     {
       "name": "Aaron Wiggins",
+      "age": null,
       "fpg": 53.93,
       "signed_team": "CHI"
     },
     {
       "name": "AJ Green",
+      "age": null,
       "fpg": 53.62,
       "signed_team": "IND"
     },
     {
       "name": "Dominick Barlow",
+      "age": null,
       "fpg": 52.56,
       "signed_team": "CHA"
     },
     {
       "name": "Zach Collins",
+      "age": null,
       "fpg": 52.37,
       "signed_team": "POR"
     },
     {
       "name": "Jaylen Wells",
+      "age": null,
       "fpg": 52.36,
       "signed_team": "DEN"
     },
     {
       "name": "Dylan Cardwell",
+      "age": null,
       "fpg": 51.66,
       "signed_team": "MIA"
     },
     {
       "name": "Brandon Williams",
+      "age": null,
       "fpg": 51.6,
       "signed_team": "WA"
     },
     {
       "name": "Precious Achiuwa",
+      "age": null,
       "fpg": 51.17,
       "signed_team": "DET"
     },
     {
       "name": "Day'Ron Sharpe",
+      "age": null,
       "fpg": 51.08,
       "signed_team": "POR"
     },
     {
       "name": "Brook Lopez",
+      "age": null,
       "fpg": 51.07,
       "signed_team": "SAS"
     },
     {
       "name": "Jalen Slawson",
+      "age": null,
       "fpg": 50.92,
       "signed_team": "UT"
     },
     {
       "name": "Blake Hinson",
+      "age": null,
       "fpg": 50.5,
       "signed_team": "BRK"
     },
     {
       "name": "Jay Huff",
+      "age": null,
       "fpg": 50.38,
       "signed_team": "DEN"
     },
     {
       "name": "Gui Santos",
+      "age": null,
       "fpg": 49.8,
       "signed_team": "PHX"
     },
     {
       "name": "Marvin Bagley",
+      "age": null,
       "fpg": 49.74,
       "signed_team": "MEM"
     },
     {
       "name": "Jordan Miller",
+      "age": null,
       "fpg": 49.49,
       "signed_team": "CHA"
     },
     {
       "name": "Daniss Jenkins",
+      "age": null,
       "fpg": 48.73,
       "signed_team": "CHA"
     },
     {
       "name": "Jaxson Hayes",
+      "age": null,
       "fpg": 48.55,
       "signed_team": null
     },
     {
       "name": "DaQuan Jeffries",
+      "age": null,
       "fpg": 48.13,
       "signed_team": null
     },
     {
       "name": "Andre Drummond",
+      "age": null,
       "fpg": 47.94,
       "signed_team": "LAL"
     },
     {
       "name": "Scotty Pippen",
+      "age": null,
       "fpg": 46.99,
       "signed_team": "SAS"
     },
     {
       "name": "Vít Krejčí",
+      "age": null,
       "fpg": 46.8,
       "signed_team": "LAC"
     },
     {
       "name": "Svi Mykhailiuk",
+      "age": null,
       "fpg": 46.72,
       "signed_team": "LAL"
     },
     {
       "name": "Micah Potter",
+      "age": null,
       "fpg": 45.94,
       "signed_team": "LAC"
     },
     {
       "name": "Javonte Green",
+      "age": null,
       "fpg": 45.84,
       "signed_team": "PHX"
     },
     {
       "name": "Luka Garza",
+      "age": null,
       "fpg": 45.29,
       "signed_team": "LAL"
     },
     {
       "name": "Alex Morales",
+      "age": null,
       "fpg": 45.0,
       "signed_team": null
     },
     {
       "name": "Spencer Jones",
+      "age": null,
       "fpg": 44.6,
       "signed_team": "ATL"
     },
     {
       "name": "Klay Thompson",
+      "age": null,
       "fpg": 44.34,
       "signed_team": "TOR"
     },
     {
       "name": "T.J. McConnell",
+      "age": null,
       "fpg": 44.13,
       "signed_team": "CHA"
     },
     {
       "name": "Craig Porter",
+      "age": null,
       "fpg": 43.62,
       "signed_team": "BRK"
     },
     {
       "name": "Kyle Anderson",
+      "age": null,
       "fpg": 43.32,
       "signed_team": null
     },
     {
       "name": "Simone Fontecchio",
+      "age": null,
       "fpg": 43.13,
       "signed_team": "OKC"
     },
     {
       "name": "Jaden Ivey",
+      "age": null,
       "fpg": 42.76,
       "signed_team": null
     },
     {
       "name": "DeAndre Jordan",
+      "age": null,
       "fpg": 42.52,
       "signed_team": null
     },
     {
       "name": "Bryce McGowens",
+      "age": null,
       "fpg": 41.89,
       "signed_team": "DAL"
     },
     {
       "name": "Chaney Johnson",
+      "age": null,
       "fpg": 41.86,
       "signed_team": "GS"
     },
     {
       "name": "Bez Mbeng",
+      "age": null,
       "fpg": 41.83,
       "signed_team": null
     },
     {
       "name": "Caris LeVert",
+      "age": null,
       "fpg": 41.46,
       "signed_team": "DET"
     },
     {
       "name": "Elijah Harkless",
+      "age": null,
       "fpg": 41.2,
       "signed_team": "POR"
     },
     {
       "name": "Kevin Love",
+      "age": null,
       "fpg": 41.1,
       "signed_team": null
     },
     {
       "name": "Dru Smith",
+      "age": null,
       "fpg": 40.82,
       "signed_team": "HOU"
     },
     {
       "name": "Daeqwon Plowden",
+      "age": null,
       "fpg": 40.26,
       "signed_team": null
     },
     {
       "name": "John Konchar",
+      "age": null,
       "fpg": 40.24,
       "signed_team": null
     },
     {
       "name": "Malachi Smith",
+      "age": null,
       "fpg": 40.12,
       "signed_team": null
     },
     {
       "name": "D'Angelo Russell",
+      "age": null,
       "fpg": 39.74,
       "signed_team": "HOU"
     },
     {
       "name": "Jarred Vanderbilt",
+      "age": null,
       "fpg": 38.53,
       "signed_team": "DAL"
     },
     {
       "name": "Pat Spencer",
+      "age": null,
       "fpg": 38.53,
       "signed_team": null
     },
     {
       "name": "Jordan Clarkson",
+      "age": null,
       "fpg": 38.3,
       "signed_team": "LAL"
     },
     {
       "name": "Kenrich Williams",
+      "age": null,
       "fpg": 38.06,
       "signed_team": "DAL"
     },
     {
       "name": "Nikola Jovic",
+      "age": null,
       "fpg": 37.72,
       "signed_team": null
     },
     {
       "name": "Oscar Tshiebwe",
+      "age": null,
       "fpg": 37.71,
       "signed_team": "OKC"
     },
     {
       "name": "Tyler Burton",
+      "age": null,
       "fpg": 37.48,
       "signed_team": null
     },
     {
       "name": "Sidy Cissoko",
+      "age": null,
       "fpg": 36.87,
       "signed_team": "MIL"
     },
     {
       "name": "Colby Jones",
+      "age": null,
       "fpg": 36.82,
       "signed_team": null
     },
     {
       "name": "MarJon Beauchamp",
+      "age": null,
       "fpg": 35.99,
       "signed_team": null
     },
     {
       "name": "Nicolas Batum",
+      "age": null,
       "fpg": 35.65,
       "signed_team": null
     },
     {
       "name": "Josh Okogie",
+      "age": null,
       "fpg": 35.24,
       "signed_team": "DAL"
     },
     {
       "name": "L.J. Cryer",
+      "age": null,
       "fpg": 35.19,
       "signed_team": null
     },
     {
       "name": "Trendon Watford",
+      "age": null,
       "fpg": 34.7,
       "signed_team": null
     },
     {
       "name": "Wendell Moore",
+      "age": null,
       "fpg": 34.09,
       "signed_team": null
     },
     {
       "name": "Buddy Hield",
+      "age": null,
       "fpg": 33.79,
       "signed_team": "PHX"
     },
     {
       "name": "Jericho Sims",
+      "age": null,
       "fpg": 33.02,
       "signed_team": null
     },
     {
       "name": "Dwight Powell",
+      "age": null,
       "fpg": 32.98,
       "signed_team": null
     },
     {
       "name": "Thomas Bryant",
+      "age": null,
       "fpg": 32.85,
       "signed_team": null
     },
     {
       "name": "Skal Labissiere",
+      "age": null,
       "fpg": 32.85,
       "signed_team": null
     },
     {
       "name": "Adama Bal",
+      "age": null,
       "fpg": 32.77,
       "signed_team": null
     },
     {
       "name": "Jamaree Bouyea",
+      "age": null,
       "fpg": 32.64,
       "signed_team": null
     },
     {
       "name": "Jalen Pickett",
+      "age": null,
       "fpg": 32.57,
       "signed_team": null
     },
     {
       "name": "John Poulakidas",
+      "age": null,
       "fpg": 31.96,
       "signed_team": null
     },
     {
       "name": "DeJon Jarreau",
+      "age": null,
       "fpg": 31.95,
       "signed_team": null
     },
     {
       "name": "Colin Castleton",
+      "age": null,
       "fpg": 31.82,
       "signed_team": null
     },
     {
       "name": "Ousmane Dieng",
+      "age": null,
       "fpg": 31.8,
       "signed_team": "MIN"
     },
     {
       "name": "Jevon Carter",
+      "age": null,
       "fpg": 31.75,
       "signed_team": null
     },
     {
       "name": "Ethan Thompson",
+      "age": null,
       "fpg": 31.54,
       "signed_team": null
     },
     {
       "name": "Isaiah Stevens",
+      "age": null,
       "fpg": 31.43,
       "signed_team": null
     },
     {
       "name": "Jaden Hardy",
+      "age": null,
       "fpg": 30.57,
       "signed_team": null
     },
     {
       "name": "Gabe Vincent",
+      "age": null,
       "fpg": 30.49,
       "signed_team": null
     },
     {
       "name": "Nick Richards",
+      "age": null,
       "fpg": 29.36,
       "signed_team": null
     },
     {
       "name": "Pete Nance",
+      "age": null,
       "fpg": 29.31,
       "signed_team": "GS"
     },
     {
       "name": "Tyrese Martin",
+      "age": null,
       "fpg": 29.05,
       "signed_team": null
     },
     {
       "name": "Guerschon Yabusele",
+      "age": null,
       "fpg": 28.92,
       "signed_team": null
     },
     {
       "name": "Seth Curry",
+      "age": null,
       "fpg": 28.91,
       "signed_team": null
     },
     {
       "name": "Myron Gardner",
+      "age": null,
       "fpg": 28.88,
       "signed_team": "WA"
     },
     {
       "name": "Jabari Walker",
+      "age": null,
       "fpg": 28.78,
       "signed_team": "TOR"
     },
     {
       "name": "Garrison Mathews",
+      "age": null,
       "fpg": 28.64,
       "signed_team": null
     },
     {
       "name": "Ochai Agbaji",
+      "age": null,
       "fpg": 28.55,
       "signed_team": null
     },
     {
       "name": "Sharife Cooper",
+      "age": null,
       "fpg": 28.48,
       "signed_team": null
     },
     {
       "name": "Christian Koloko",
+      "age": null,
       "fpg": 28.3,
       "signed_team": null
     },
     {
       "name": "Kevon Looney",
+      "age": null,
       "fpg": 27.49,
       "signed_team": "MIN"
     },
     {
       "name": "Anthony Gill",
+      "age": null,
       "fpg": 27.47,
       "signed_team": null
     },
     {
       "name": "Jeremiah Robinson-Earl",
+      "age": null,
       "fpg": 27.12,
       "signed_team": null
     },
     {
       "name": "Jaylen Clark",
+      "age": null,
       "fpg": 26.71,
       "signed_team": "PHI"
     },
     {
       "name": "Branden Carlson",
+      "age": null,
       "fpg": 26.51,
       "signed_team": "BRK"
     },
     {
       "name": "Yuki Kawamura",
+      "age": null,
       "fpg": 26.45,
       "signed_team": null
     },
     {
       "name": "PJ Hall",
+      "age": null,
       "fpg": 26.21,
       "signed_team": null
     },
     {
       "name": "Bradley Beal",
+      "age": null,
       "fpg": 26.07,
       "signed_team": "MEM"
     },
     {
       "name": "Kobe Brown",
+      "age": null,
       "fpg": 25.94,
       "signed_team": null
     },
     {
       "name": "Tyson Etienne",
+      "age": null,
       "fpg": 25.76,
       "signed_team": null
     },
     {
       "name": "Caleb Martin",
+      "age": null,
       "fpg": 25.22,
       "signed_team": "DET"
     },
     {
       "name": "Dalen Terry",
+      "age": null,
       "fpg": 24.92,
       "signed_team": null
     },
     {
       "name": "Larry Nance",
+      "age": null,
       "fpg": 24.92,
       "signed_team": null
     },
     {
       "name": "Jamal Cain",
+      "age": null,
       "fpg": 24.34,
       "signed_team": "BRK"
     },
     {
       "name": "Drew Eubanks",
+      "age": null,
       "fpg": 24.24,
       "signed_team": null
     },
     {
       "name": "Rayan Rupert",
+      "age": null,
       "fpg": 24.15,
       "signed_team": null
     },
     {
       "name": "Doug McDermott",
+      "age": null,
       "fpg": 23.98,
       "signed_team": null
     },
     {
       "name": "Ron Harper",
+      "age": null,
       "fpg": 23.84,
       "signed_team": null
     },
     {
       "name": "David Jones Garcia",
+      "age": null,
       "fpg": 23.45,
       "signed_team": "GS"
     },
     {
       "name": "Chris Boucher",
+      "age": null,
       "fpg": 23.3,
       "signed_team": null
     },
     {
       "name": "Grant Nelson",
+      "age": null,
       "fpg": 23.13,
       "signed_team": null
     },
     {
       "name": "Taj Gibson",
+      "age": null,
       "fpg": 22.99,
       "signed_team": null
     },
     {
       "name": "Zeke Nnaji",
+      "age": null,
       "fpg": 22.91,
       "signed_team": null
     },
     {
       "name": "Mo Bamba",
+      "age": null,
       "fpg": 22.45,
       "signed_team": null
     },
     {
       "name": "Blake Wesley",
+      "age": null,
       "fpg": 22.43,
       "signed_team": null
     },
     {
       "name": "Gary Harris",
+      "age": null,
       "fpg": 21.93,
       "signed_team": null
     },
     {
       "name": "Nate Williams",
+      "age": null,
       "fpg": 21.78,
       "signed_team": null
     },
     {
       "name": "Jamison Battle",
+      "age": null,
       "fpg": 21.27,
       "signed_team": null
     },
     {
       "name": "Mason Plumlee",
+      "age": null,
       "fpg": 20.92,
       "signed_team": null
     },
     {
       "name": "Keshad Johnson",
+      "age": null,
       "fpg": 20.74,
       "signed_team": null
     },
     {
       "name": "Tre Mann",
+      "age": null,
       "fpg": 20.72,
       "signed_team": null
     },
     {
       "name": "Cormac Ryan",
+      "age": null,
       "fpg": 20.69,
       "signed_team": null
     },
     {
       "name": "Malaki Branham",
+      "age": null,
       "fpg": 20.64,
       "signed_team": null
     },
     {
       "name": "Chris Paul",
+      "age": null,
       "fpg": 20.5,
       "signed_team": null
     },
     {
       "name": "Ariel Hukporti",
+      "age": null,
       "fpg": 20.09,
       "signed_team": "BRK"
     },
     {
       "name": "Keaton Wallace",
+      "age": null,
       "fpg": 20.06,
       "signed_team": null
     },
     {
       "name": "Mohamed Diawara",
+      "age": null,
       "fpg": 19.89,
       "signed_team": "WA"
     },
     {
       "name": "Patrick Baldwin",
+      "age": null,
       "fpg": 19.83,
       "signed_team": null
     },
     {
       "name": "Jayson Kent",
+      "age": null,
       "fpg": 19.81,
       "signed_team": null
     },
     {
       "name": "Jeremy Sochan",
+      "age": null,
       "fpg": 19.51,
       "signed_team": "LAC"
     },
     {
       "name": "James Wiseman",
+      "age": null,
       "fpg": 18.99,
       "signed_team": null
     },
     {
       "name": "Tony Bradley",
+      "age": null,
       "fpg": 18.93,
       "signed_team": null
     },
     {
       "name": "Isaiah Livers",
+      "age": null,
       "fpg": 18.91,
       "signed_team": null
     },
     {
       "name": "Antonio Reeves",
+      "age": null,
       "fpg": 18.77,
       "signed_team": null
     },
     {
       "name": "Amir Coffey",
+      "age": null,
       "fpg": 18.16,
       "signed_team": null
     },
     {
       "name": "Chris Livingston",
+      "age": null,
       "fpg": 18.14,
       "signed_team": null
     },
     {
       "name": "Miles Kelly",
+      "age": null,
       "fpg": 17.87,
       "signed_team": null
     },
     {
       "name": "Mac McClung",
+      "age": null,
       "fpg": 17.84,
       "signed_team": null
     },
     {
       "name": "RayJ Dennis",
+      "age": null,
       "fpg": 17.82,
       "signed_team": "LAC"
     },
     {
       "name": "E.J. Liddell",
+      "age": null,
       "fpg": 17.7,
       "signed_team": null
     },
     {
       "name": "Tyler Smith",
+      "age": null,
       "fpg": 17.5,
       "signed_team": null
     },
     {
       "name": "Cam Christie",
+      "age": null,
       "fpg": 17.06,
       "signed_team": "CHI"
     },
     {
       "name": "Malevy Leons",
+      "age": null,
       "fpg": 16.32,
       "signed_team": null
     },
     {
       "name": "Duop Reath",
+      "age": null,
       "fpg": 15.85,
       "signed_team": null
     },
     {
       "name": "Pat Connaughton",
+      "age": null,
       "fpg": 15.52,
       "signed_team": null
     },
     {
       "name": "Enrique Freeman",
+      "age": null,
       "fpg": 15.49,
       "signed_team": null
     },
     {
       "name": "Luke Travers",
+      "age": null,
       "fpg": 14.72,
       "signed_team": null
     },
     {
       "name": "Charles Bassey",
+      "age": null,
       "fpg": 14.65,
       "signed_team": "BRK"
     },
     {
       "name": "Riley Minix",
+      "age": null,
       "fpg": 14.44,
       "signed_team": null
     },
     {
       "name": "Jae'Sean Tate",
+      "age": null,
       "fpg": 14.12,
       "signed_team": null
     },
     {
       "name": "JD Davison",
+      "age": null,
       "fpg": 14.07,
       "signed_team": null
     },
     {
       "name": "Brandon Clarke",
+      "age": null,
       "fpg": 13.97,
       "signed_team": null
     },
     {
       "name": "Cody Martin",
+      "age": null,
       "fpg": 13.92,
       "signed_team": null
     },
     {
       "name": "N'Faly Dante",
+      "age": null,
       "fpg": 13.1,
       "signed_team": null
     },
     {
       "name": "Lindy Waters",
+      "age": null,
       "fpg": 13.09,
       "signed_team": null
     },
     {
       "name": "Hunter Tyson",
+      "age": null,
       "fpg": 12.73,
       "signed_team": null
     },
     {
       "name": "Tristan Enaruna",
+      "age": null,
       "fpg": 12.53,
       "signed_team": null
     },
     {
       "name": "Omer Yurtseven",
+      "age": null,
       "fpg": 12.43,
       "signed_team": null
     },
     {
       "name": "Rocco Zikarsky",
+      "age": null,
       "fpg": 12.31,
       "signed_team": "LAC"
     },
     {
       "name": "Mark Sears",
+      "age": null,
       "fpg": 11.72,
       "signed_team": null
     },
     {
       "name": "Monte Morris",
+      "age": null,
       "fpg": 11.6,
       "signed_team": null
     },
     {
       "name": "Jordan McLaughlin",
+      "age": null,
       "fpg": 11.48,
       "signed_team": null
     },
     {
       "name": "Jacob Toppin",
+      "age": null,
       "fpg": 11.37,
       "signed_team": null
     },
     {
       "name": "Drew Peterson",
+      "age": null,
       "fpg": 11.3,
       "signed_team": null
     },
     {
       "name": "Dario Saric",
+      "age": null,
       "fpg": 11.05,
       "signed_team": null
     },
     {
       "name": "Chris Manon",
+      "age": null,
       "fpg": 10.51,
       "signed_team": "TOR"
     },
     {
       "name": "Orlando Robinson",
+      "age": null,
       "fpg": 10.45,
       "signed_team": null
     },
     {
       "name": "Isaiah Crawford",
+      "age": null,
       "fpg": 10.21,
       "signed_team": null
     },
     {
       "name": "Bobi Klintman",
+      "age": null,
       "fpg": 10.12,
       "signed_team": null
     },
     {
       "name": "Thanasis Antetokounmpo",
+      "age": null,
       "fpg": 9.79,
       "signed_team": null
     },
     {
       "name": "Emanuel Miller",
+      "age": null,
       "fpg": 9.71,
       "signed_team": null
     },
     {
       "name": "Kyle Lowry",
+      "age": null,
       "fpg": 9.7,
       "signed_team": null
     },
     {
       "name": "Adou Thiero",
+      "age": null,
       "fpg": 9.57,
       "signed_team": "SAS"
     },
     {
       "name": "Xavier Tillman",
+      "age": null,
       "fpg": 9.33,
       "signed_team": null
     },
     {
       "name": "TyTy Washington",
+      "age": null,
       "fpg": 9.28,
       "signed_team": null
     },
     {
       "name": "Caleb Houstan",
+      "age": null,
       "fpg": 8.79,
       "signed_team": null
     },
     {
       "name": "Joe Ingles",
+      "age": null,
       "fpg": 8.68,
       "signed_team": null
     },
     {
       "name": "Curtis Jones",
+      "age": null,
       "fpg": 8.61,
       "signed_team": null
     },
     {
       "name": "Zyon Pullin",
+      "age": null,
       "fpg": 8.37,
       "signed_team": "PHI"
     },
     {
       "name": "Trey Jemison",
+      "age": null,
       "fpg": 8.23,
       "signed_team": null
     },
     {
       "name": "Jeff Green",
+      "age": null,
       "fpg": 8.21,
       "signed_team": null
     },
     {
       "name": "Buddy Boeheim",
+      "age": null,
       "fpg": 8.0,
       "signed_team": null
     },
     {
       "name": "Sean Pedulla",
+      "age": null,
       "fpg": 7.82,
       "signed_team": "SAS"
     },
     {
       "name": "CJ Huntley",
+      "age": null,
       "fpg": 7.74,
       "signed_team": null
     },
     {
       "name": "Nigel Hayes-Davis",
+      "age": null,
       "fpg": 7.3,
       "signed_team": null
     },
     {
       "name": "Norchad Omier",
+      "age": null,
       "fpg": 6.72,
       "signed_team": null
     },
     {
       "name": "Dalano Banton",
+      "age": null,
       "fpg": 6.63,
       "signed_team": null
     },
     {
       "name": "David Roddy",
+      "age": null,
       "fpg": 6.37,
       "signed_team": null
     },
     {
       "name": "Kobe Bufkin",
+      "age": null,
       "fpg": 6.32,
       "signed_team": null
     },
     {
       "name": "Keshon Gilbert",
+      "age": null,
       "fpg": 5.58,
       "signed_team": null
     },
     {
       "name": "Jahmir Young",
+      "age": null,
       "fpg": 5.17,
       "signed_team": null
     },
     {
       "name": "Garrett Temple",
+      "age": null,
       "fpg": 5.08,
       "signed_team": null
     },
     {
       "name": "Trentyn Flowers",
+      "age": null,
       "fpg": 5.02,
       "signed_team": null
     },
     {
       "name": "Alex Antetokounmpo",
+      "age": null,
       "fpg": 4.3,
       "signed_team": null
     },
     {
       "name": "Bismack Biyombo",
+      "age": null,
       "fpg": 4.29,
       "signed_team": null
     },
     {
       "name": "Isaac Jones",
+      "age": null,
       "fpg": 3.61,
       "signed_team": null
     },
     {
       "name": "Vladislav Goldin",
+      "age": null,
       "fpg": 3.07,
       "signed_team": null
     },
     {
       "name": "Jahmyl Telfort",
+      "age": null,
       "fpg": 2.38,
       "signed_team": null
     },
     {
       "name": "Hunter Sallis",
+      "age": null,
       "fpg": 2.31,
       "signed_team": null
     },
     {
       "name": "Javonte Cooke",
+      "age": null,
       "fpg": 2.25,
       "signed_team": null
     },
     {
       "name": "Malik Beasley",
+      "age": null,
       "fpg": 0.0,
       "signed_team": "ATL"
     },
     {
       "name": "Georges Niang",
+      "age": null,
       "fpg": 0.0,
       "signed_team": "LAL"
     },
     {
       "name": "Spencer Dinwiddie",
+      "age": null,
       "fpg": 0.0,
       "signed_team": "DAL"
     },
     {
       "name": "Keon Johnson",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Dariq Whitehead",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Alex Toohey",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Emoni Bates",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Dante Exum",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Jalen Hood-Schifino",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Brandon Boston",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Ricky Council",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Bol Bol",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Malcolm Brogdon",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Tamar Bates",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Jaden Springer",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Tristen Newton",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Kenyon Martin",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Jared Butler",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Melvin Ajinca",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Juan Nunez",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Amari Bailey",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Trey Lyles",
+      "age": null,
       "fpg": 0.0,
       "signed_team": "DET"
     },
     {
       "name": "Alec Burks",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Saliou Niang",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Eric Dixon",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Kessler Edwards",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Talen Horton-Tucker",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Maxwell Lewis",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "RJ Luis",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Christian Wood",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Reece Beekman",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Jalen Bridges",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Kai Jones",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Eli John Ndiaye",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Cam Reddish",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Josh Christopher",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Torrey Craig",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Vasilije Micic",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Victor Oladipo",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Gabriele Procida",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Jalen McDaniels",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Shake Milton",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Lester Quinones",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Tarik Biberovic",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Jaylen Martin",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Adama Sanogo",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "LiAngelo Ball",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Johnny Davis",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "RJ Davis",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Keyontae Johnson",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Rokas Jokubaitis",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Josh Richardson",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Kendall Brown",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Ismael Kamagate",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Mojave King",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Damion Lee",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Kenneth Lofton",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Dennis Smith",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Damion Baugh",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Kylor Kelley",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "James Nnaji",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Ibou Badji",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "James Bouknight",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Khalifa Diop",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "AJ Griffin",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Alex Len",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Seth Lundy",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Jaylen Nowell",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Elfrid Payton",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Joshua Primo",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Matteo Spagnolo",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Daniel Theis",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "JT Thor",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Quincy Acy",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Kostas Antetokounmpo",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Charles Bediako",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Greg Brown",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Caleb Daniels",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Jesse Edwards",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Reggie Jackson",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Yam Madar",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Isaiah Mobley",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Yannick Nzosa",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Chuma Okeke",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Jared Rhoden",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Dereon Seabron",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Armel Traore",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "P.J. Tucker",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Isaiah Wong",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Alberto Abalde",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Marcus Bagley",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Juhann Begarin",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Hugo Besson",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Oshae Brissett",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Keion Brooks",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Moses Brown",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "John Butler",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Jazian Gortman",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Mouhamadou Gueye",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Cory Joseph",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Nassir Little",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Trevelin Queen",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Alex Reese",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Jackson Rowe",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Jamarion Sharp",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Lonnie Walker",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Max Abmas",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Taran Armstrong",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Armando Bacot",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "RaeQuan Battle",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Garrison Brooks",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "DJ Burns",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Matthew Cleveland",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Jae Crowder",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Jeff Dowtin",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Chris Duarte",
+      "age": null,
       "fpg": 0.0,
       "signed_team": null
     },
     {
       "name": "Super Mario Hezonja",
+      "age": null,
       "fpg": null,
       "signed_team": null
     }
@@ -12750,14 +13464,21 @@
     "UT"
   ],
   "cba": {
+    "bae": 5477000,
     "cap": 164961000,
     "tax": 200428000,
     "apron1": 209015000,
     "apron2": 221686000,
-    "avgSal": 15114623
+    "avgSal": 15114623,
+    "mle": 15044000,
+    "mini_mle": 6064000,
+    "room_mle": 9366000,
+    "roster_charge": 1357763,
+    "vet_min_1y": 2185116,
+    "vet_min_2y": 2449421
   },
   "meta": {
-    "last_updated": "2026-11-02T20:19:29.266656+00:00",
+    "last_updated": "2026-11-02T20:54:14.918231+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
     "players_count": 440,
