@@ -59,7 +59,11 @@ python3 scripts/update_data.py   # aktualisiert data/data.json
 python3 -m http.server 8000      # http://localhost:8000/app.html
 ```
 
-## Offen
+## Erklärserie
 
-- Erklärserie liegt unter `serie/` (Teil 1–10, nur Englisch); die „→ Part/Teil X“-Hinweise im Guide verlinken dorthin.
-- 17 Spieler haben im Sheet keine Positions-Markierung (Anzeige „?“).
+`serie/` enthält die CBA-Serie Teil 1–10 (Englisch); die „→ Part/Teil X“-Hinweise im Guide verlinken dorthin.
+Die Beispiele rechnen mit gerundeten Cap-Werten (165/201/209/222 Mio.), die exakten stehen jeweils dabei.
+
+## Hinweise
+
+- Positionen, die im Sheet nicht markiert sind, ergänzt `update_data.py` aus Fantrax (`pos_src: "fantrax"`, in der App mit * markiert).
