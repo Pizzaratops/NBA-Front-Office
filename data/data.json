@@ -192,7 +192,7 @@
         },
         {
           "name": "Bryce Hopkins",
-          "pos": "?",
+          "pos": "SF",
           "sal_26": 1358082,
           "sal_27": 2294914,
           "sal_28": 2695001,
@@ -211,7 +211,8 @@
           "flags": {
             "27": "NG",
             "28": "NG"
-          }
+          },
+          "pos_src": "fantrax"
         },
         {
           "name": "Cam Whitmore",
@@ -372,7 +373,7 @@
       "waived": [
         {
           "name": "Malik Beasley",
-          "pos": "?",
+          "pos": "SG",
           "sal_26": 6000000,
           "sal_27": null,
           "sal_28": null,
@@ -388,7 +389,8 @@
           "notes": null,
           "opt": null,
           "opt_year": null,
-          "flags": null
+          "flags": null,
+          "pos_src": "fantrax"
         }
       ],
       "dead_money": 6000000,
@@ -756,7 +758,7 @@
       "waived": [
         {
           "name": "Daron Holmes",
-          "pos": "?",
+          "pos": "PF",
           "sal_26": 3530822,
           "sal_27": null,
           "sal_28": null,
@@ -772,7 +774,8 @@
           "notes": null,
           "opt": null,
           "opt_year": null,
-          "flags": null
+          "flags": null,
+          "pos_src": "fantrax"
         }
       ],
       "dead_money": 3530822,
@@ -839,7 +842,7 @@
         },
         {
           "name": "Labaron Philon Jr.",
-          "pos": "?",
+          "pos": "PG",
           "sal_26": 3902760,
           "sal_27": 4097898,
           "sal_28": 4302793,
@@ -858,7 +861,8 @@
           "flags": {
             "28": "TO",
             "29": "TO"
-          }
+          },
+          "pos_src": "fantrax"
         },
         {
           "name": "Craig Porter",
@@ -1495,7 +1499,7 @@
       "waived": [
         {
           "name": "Trayce Jackson-Davis",
-          "pos": "?",
+          "pos": "C",
           "sal_26": 2405832,
           "sal_27": null,
           "sal_28": null,
@@ -1511,7 +1515,8 @@
           "notes": null,
           "opt": null,
           "opt_year": null,
-          "flags": null
+          "flags": null,
+          "pos_src": "fantrax"
         }
       ],
       "dead_money": 2405832,
@@ -1874,7 +1879,7 @@
       "waived": [
         {
           "name": "Cam Christie",
-          "pos": "?",
+          "pos": "SG",
           "sal_26": 2449421,
           "sal_27": null,
           "sal_28": null,
@@ -1890,7 +1895,8 @@
           "notes": null,
           "opt": null,
           "opt_year": null,
-          "flags": null
+          "flags": null,
+          "pos_src": "fantrax"
         }
       ],
       "dead_money": 2449421,
@@ -2002,7 +2008,7 @@
         },
         {
           "name": "Andrew Nembhard",
-          "pos": "?",
+          "pos": "SG",
           "sal_26": 17500000,
           "sal_27": 18375000,
           "sal_28": 19250000,
@@ -2018,7 +2024,8 @@
           "notes": "2026.0",
           "opt": null,
           "opt_year": null,
-          "flags": null
+          "flags": null,
+          "pos_src": "fantrax"
         },
         {
           "name": "Cason Wallace",
@@ -2418,7 +2425,7 @@
         },
         {
           "name": "Tyler Bilodeau",
-          "pos": "?",
+          "pos": "PF",
           "sal_26": 1358082,
           "sal_27": 2294914,
           "sal_28": 2695001,
@@ -2437,7 +2444,8 @@
           "flags": {
             "27": "NG",
             "28": "NG"
-          }
+          },
+          "pos_src": "fantrax"
         },
         {
           "name": "Franz Wagner",
@@ -2591,7 +2599,7 @@
       "waived": [
         {
           "name": "Spencer Dinwiddie",
-          "pos": "?",
+          "pos": "PG",
           "sal_26": 1537483,
           "sal_27": 1537483,
           "sal_28": 1537483,
@@ -2607,7 +2615,8 @@
           "notes": null,
           "opt": null,
           "opt_year": null,
-          "flags": null
+          "flags": null,
+          "pos_src": "fantrax"
         }
       ],
       "dead_money": 1537483,
@@ -3319,7 +3328,7 @@
       "waived": [
         {
           "name": "Cameron Payne",
-          "pos": "?",
+          "pos": "PG",
           "sal_26": 7299873,
           "sal_27": null,
           "sal_28": null,
@@ -3335,11 +3344,12 @@
           "notes": null,
           "opt": null,
           "opt_year": null,
-          "flags": null
+          "flags": null,
+          "pos_src": "fantrax"
         },
         {
           "name": "Cole Anthony",
-          "pos": "?",
+          "pos": "PG",
           "sal_26": 8781300,
           "sal_27": null,
           "sal_28": null,
@@ -3355,7 +3365,8 @@
           "notes": null,
           "opt": null,
           "opt_year": null,
-          "flags": null
+          "flags": null,
+          "pos_src": "fantrax"
         }
       ],
       "dead_money": 16081173,
@@ -3648,7 +3659,7 @@
         },
         {
           "name": "Braden Smith",
-          "pos": "?",
+          "pos": "PG",
           "sal_26": 2185631,
           "sal_27": 2294914,
           "sal_28": 2695001,
@@ -3667,7 +3678,8 @@
           "flags": {
             "28": "NG",
             "29": "TO"
-          }
+          },
+          "pos_src": "fantrax"
         },
         {
           "name": "Rudy Gobert",
@@ -3821,7 +3833,7 @@
         },
         {
           "name": "Davion Mitchell",
-          "pos": "?",
+          "pos": "PG",
           "sal_26": 15044000,
           "sal_27": 15796200,
           "sal_28": 16548400,
@@ -3839,7 +3851,8 @@
           "opt_year": "2029-30",
           "flags": {
             "29": "PO"
-          }
+          },
+          "pos_src": "fantrax"
         },
         {
           "name": "Austin Reaves",
@@ -4363,7 +4376,7 @@
         },
         {
           "name": "Tarris Reed Jr.",
-          "pos": "?",
+          "pos": "C",
           "sal_26": 3597120,
           "sal_27": 3776976,
           "sal_28": 3965825,
@@ -4382,7 +4395,8 @@
           "flags": {
             "28": "TO",
             "29": "TO"
-          }
+          },
+          "pos_src": "fantrax"
         },
         {
           "name": "Wendell Carter",
@@ -4556,7 +4570,7 @@
         },
         {
           "name": "Cameron Carr",
-          "pos": "?",
+          "pos": "SG",
           "sal_26": 4481280,
           "sal_27": 4705344,
           "sal_28": 4940611,
@@ -4575,7 +4589,8 @@
           "flags": {
             "28": "TO",
             "29": "TO"
-          }
+          },
+          "pos_src": "fantrax"
         },
         {
           "name": "Kevin Durant",
@@ -5115,7 +5130,7 @@
       "waived": [
         {
           "name": "Taurean Prince",
-          "pos": "?",
+          "pos": "SF",
           "sal_26": 4309200,
           "sal_27": 4514400,
           "sal_28": null,
@@ -5131,7 +5146,8 @@
           "notes": null,
           "opt": null,
           "opt_year": null,
-          "flags": null
+          "flags": null,
+          "pos_src": "fantrax"
         }
       ],
       "dead_money": 4309200,
@@ -5558,7 +5574,7 @@
         },
         {
           "name": "Isaiah Evans",
-          "pos": "?",
+          "pos": "SG",
           "sal_26": 2185631,
           "sal_27": 2294914,
           "sal_28": 2695001,
@@ -5577,7 +5593,8 @@
           "flags": {
             "28": "NG",
             "29": "TO"
-          }
+          },
+          "pos_src": "fantrax"
         },
         {
           "name": "Justin Edwards",
@@ -6983,7 +7000,7 @@
         },
         {
           "name": "Baba Miller",
-          "pos": "?",
+          "pos": "SF",
           "sal_26": 2185631,
           "sal_27": 2294914,
           "sal_28": 2695001,
@@ -7002,7 +7019,8 @@
           "flags": {
             "28": "NG",
             "29": "TO"
-          }
+          },
+          "pos_src": "fantrax"
         },
         {
           "name": "Justin Champagnie",
@@ -7365,7 +7383,7 @@
         },
         {
           "name": "Meleek Thomas",
-          "pos": "?",
+          "pos": "SG",
           "sal_26": 2185631,
           "sal_27": 2294914,
           "sal_28": 2695001,
@@ -7384,11 +7402,12 @@
           "flags": {
             "28": "NG",
             "29": "TO"
-          }
+          },
+          "pos_src": "fantrax"
         },
         {
           "name": "Ugonna Onyenso",
-          "pos": "?",
+          "pos": "C",
           "sal_26": 2185631,
           "sal_27": 2294914,
           "sal_28": 2695001,
@@ -7407,7 +7426,8 @@
           "flags": {
             "28": "NG",
             "29": "TO"
-          }
+          },
+          "pos_src": "fantrax"
         },
         {
           "name": "Jaren Jackson Jr.",
@@ -7535,7 +7555,7 @@
       "waived": [
         {
           "name": "Oscar Tshiebwe",
-          "pos": "?",
+          "pos": "C",
           "sal_26": 1000000,
           "sal_27": 1000000,
           "sal_28": 1000000,
@@ -7551,7 +7571,8 @@
           "notes": null,
           "opt": null,
           "opt_year": null,
-          "flags": null
+          "flags": null,
+          "pos_src": "fantrax"
         }
       ],
       "dead_money": 1000000,
@@ -8249,7 +8270,7 @@
       "waived": [
         {
           "name": "Jalen Wilson",
-          "pos": "?",
+          "pos": "PF",
           "sal_26": 470304,
           "sal_27": 1808800,
           "sal_28": null,
@@ -8265,7 +8286,8 @@
           "notes": null,
           "opt": null,
           "opt_year": null,
-          "flags": null
+          "flags": null,
+          "pos_src": "fantrax"
         }
       ],
       "dead_money": 470304,
@@ -8936,7 +8958,7 @@
       "waived": [
         {
           "name": "Jordan Nwora",
-          "pos": "?",
+          "pos": "SF",
           "sal_26": 848891,
           "sal_27": 848891,
           "sal_28": null,
@@ -8952,7 +8974,8 @@
           "notes": null,
           "opt": null,
           "opt_year": null,
-          "flags": null
+          "flags": null,
+          "pos_src": "fantrax"
         }
       ],
       "dead_money": 848891,
@@ -9299,7 +9322,7 @@
       "waived": [
         {
           "name": "Richaun Holmes",
-          "pos": "?",
+          "pos": "PF",
           "sal_26": 4000000,
           "sal_27": null,
           "sal_28": null,
@@ -9315,11 +9338,12 @@
           "notes": null,
           "opt": null,
           "opt_year": null,
-          "flags": null
+          "flags": null,
+          "pos_src": "fantrax"
         },
         {
           "name": "Delon Wright",
-          "pos": "?",
+          "pos": "PG",
           "sal_26": 2299343,
           "sal_27": 2299343,
           "sal_28": 2299343,
@@ -9335,11 +9359,12 @@
           "notes": null,
           "opt": null,
           "opt_year": null,
-          "flags": null
+          "flags": null,
+          "pos_src": "fantrax"
         },
         {
           "name": "Kelly Olynyk",
-          "pos": "?",
+          "pos": "C",
           "sal_26": 5087816,
           "sal_27": 5087816,
           "sal_28": 5087816,
@@ -9355,11 +9380,12 @@
           "notes": null,
           "opt": null,
           "opt_year": null,
-          "flags": null
+          "flags": null,
+          "pos_src": "fantrax"
         },
         {
           "name": "Terry Rozier",
-          "pos": "?",
+          "pos": "PG",
           "sal_26": 5333333,
           "sal_27": 5333333,
           "sal_28": 5333333,
@@ -9375,7 +9401,8 @@
           "notes": null,
           "opt": null,
           "opt_year": null,
-          "flags": null
+          "flags": null,
+          "pos_src": "fantrax"
         }
       ],
       "dead_money": 16720492,
@@ -9555,7 +9582,7 @@
         },
         {
           "name": "Malique Lewis",
-          "pos": "?",
+          "pos": "PF",
           "sal_26": 1358082,
           "sal_27": 2294914,
           "sal_28": 2695001,
@@ -9574,7 +9601,8 @@
           "flags": {
             "27": "NG",
             "28": "NG"
-          }
+          },
+          "pos_src": "fantrax"
         },
         {
           "name": "Taylor Hendricks",
@@ -9980,7 +10008,7 @@
         },
         {
           "name": "Ryan Conwell",
-          "pos": "?",
+          "pos": "SG",
           "sal_26": 2185631,
           "sal_27": 2294914,
           "sal_28": 2695001,
@@ -9999,7 +10027,8 @@
           "flags": {
             "28": "NG",
             "29": "TO"
-          }
+          },
+          "pos_src": "fantrax"
         },
         {
           "name": "Jalen Smith",
@@ -10200,7 +10229,7 @@
         },
         {
           "name": "Christian Anderson Jr.",
-          "pos": "?",
+          "pos": "PG",
           "sal_26": 4717320,
           "sal_27": 4953186,
           "sal_28": 5200845,
@@ -10219,7 +10248,8 @@
           "flags": {
             "28": "TO",
             "29": "TO"
-          }
+          },
+          "pos_src": "fantrax"
         },
         {
           "name": "Luke Kennard",
@@ -10289,7 +10319,7 @@
         },
         {
           "name": "Trevon Brazile",
-          "pos": "?",
+          "pos": "PF",
           "sal_26": 2294914,
           "sal_27": 2695001,
           "sal_28": null,
@@ -10307,11 +10337,12 @@
           "opt_year": null,
           "flags": {
             "27": "NG"
-          }
+          },
+          "pos_src": "fantrax"
         },
         {
           "name": "Brooks Barnhizer",
-          "pos": "?",
+          "pos": "SG",
           "sal_26": 2150918,
           "sal_27": null,
           "sal_28": null,
@@ -10327,7 +10358,8 @@
           "notes": "2025.0",
           "opt": null,
           "opt_year": null,
-          "flags": null
+          "flags": null,
+          "pos_src": "fantrax"
         },
         {
           "name": "Henri Veesaar",
@@ -10846,7 +10878,7 @@
       "waived": [
         {
           "name": "Maxi Kleber",
-          "pos": "?",
+          "pos": "PF",
           "sal_26": 2666666,
           "sal_27": 2666666,
           "sal_28": null,
@@ -10862,7 +10894,8 @@
           "notes": null,
           "opt": null,
           "opt_year": null,
-          "flags": null
+          "flags": null,
+          "pos_src": "fantrax"
         }
       ],
       "dead_money": 2666666,
@@ -12724,7 +12757,7 @@
     "avgSal": 15114623
   },
   "meta": {
-    "last_updated": "2026-11-02T19:50:27.613420+00:00",
+    "last_updated": "2026-11-02T19:57:52.435231+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
     "players_count": 440,
