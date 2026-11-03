@@ -2657,8 +2657,14 @@
           "flags": null
         }
       ],
-      "total_salary": 221386186,
-      "two_way": [],
+      "total_salary": 221386187,
+      "two_way": [
+        {
+          "name": "Jamison Battle",
+          "years": 1,
+          "note": null
+        }
+      ],
       "waived": [
         {
           "name": "Spencer Dinwiddie",
@@ -2693,11 +2699,11 @@
         "mle_type": "Taxpayer MLE",
         "mle_left": 6064000,
         "roster_charge": 0,
-        "cap_space": -62489186
+        "cap_space": -62489187
       },
       "finances": {
         "fo_hard_cap": 217383504,
-        "salary_wo_holds": 221386186,
+        "salary_wo_holds": 221386187,
         "hard_cap_trigger": null,
         "mle_status": null,
         "bae_status": null,
@@ -5741,6 +5747,28 @@
           "pos_src": "fantrax"
         },
         {
+          "name": "Leaky Black",
+          "pos": "SF",
+          "sal_26": 2449421,
+          "sal_27": 2664401,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "sal_31": null,
+          "qo": null,
+          "bird": "Early",
+          "signed_via": "MPE",
+          "tradable_alone": false,
+          "tradable_agg": false,
+          "trade_note": null,
+          "notes": "2026.0",
+          "opt": "TO",
+          "opt_year": "2027-28",
+          "flags": {
+            "27": "TO"
+          }
+        },
+        {
           "name": "Justin Edwards",
           "pos": "SG/SF",
           "sal_26": 5336810,
@@ -5779,6 +5807,50 @@
           "opt": null,
           "opt_year": null,
           "flags": null
+        },
+        {
+          "name": "Trendon Watford",
+          "pos": "PG/SG/SF/PF",
+          "sal_26": 2845883,
+          "sal_27": 3219451,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "sal_31": null,
+          "qo": null,
+          "bird": "Early",
+          "signed_via": "MPE",
+          "tradable_alone": false,
+          "tradable_agg": false,
+          "trade_note": null,
+          "notes": "2026.0",
+          "opt": "TO",
+          "opt_year": "2027-28",
+          "flags": {
+            "27": "TO"
+          }
+        },
+        {
+          "name": "Kyle Anderson",
+          "pos": "SF/PF",
+          "sal_26": 3876529,
+          "sal_27": 4070355,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "sal_31": null,
+          "qo": null,
+          "bird": "Early",
+          "signed_via": "MPE",
+          "tradable_alone": false,
+          "tradable_agg": false,
+          "trade_note": null,
+          "notes": "2026.0",
+          "opt": "TO",
+          "opt_year": "2027-28",
+          "flags": {
+            "27": "TO"
+          }
         },
         {
           "name": "Donovan Clingan",
@@ -5883,7 +5955,7 @@
           "flags": null
         }
       ],
-      "total_salary": 164083293,
+      "total_salary": 173255126,
       "two_way": [],
       "waived": [],
       "dead_money": 0,
@@ -5897,11 +5969,11 @@
         "mle_type": "Room MLE",
         "mle_left": 9366000,
         "roster_charge": 0,
-        "cap_space": 28838402
+        "cap_space": 19666569
       },
       "finances": {
         "fo_hard_cap": 210181846,
-        "salary_wo_holds": 164083293,
+        "salary_wo_holds": 173255126,
         "hard_cap_trigger": "16.07.26",
         "mle_status": "lost",
         "bae_status": "lost",
@@ -11464,7 +11536,7 @@
       "name": "Leaky Black",
       "age": null,
       "fpg": 61.02,
-      "signed_team": null
+      "signed_team": "MIA"
     },
     {
       "name": "Julian Reese",
@@ -11752,7 +11824,7 @@
       "name": "Kyle Anderson",
       "age": null,
       "fpg": 43.32,
-      "signed_team": null
+      "signed_team": "MIA"
     },
     {
       "name": "Simone Fontecchio",
@@ -11920,7 +11992,7 @@
       "name": "Trendon Watford",
       "age": null,
       "fpg": 34.7,
-      "signed_team": null
+      "signed_team": "MIA"
     },
     {
       "name": "Wendell Moore",
@@ -12262,7 +12334,7 @@
       "name": "Jamison Battle",
       "age": null,
       "fpg": 21.27,
-      "signed_team": null
+      "signed_team": "DAL"
     },
     {
       "name": "Mason Plumlee",
@@ -13478,12 +13550,12 @@
     "vet_min_2y": 2449421
   },
   "meta": {
-    "last_updated": "2026-11-03T03:48:12.322885+00:00",
+    "last_updated": "2026-11-03T14:56:35.411176+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
-    "players_count": 440,
+    "players_count": 443,
     "fas_count": 365,
-    "fas_available_count": 256,
+    "fas_available_count": 252,
     "stale_teams": [],
     "sheet_tabs": [
       "ABC",
@@ -13508,12 +13580,12 @@
       "DEN",
       "DET",
       "GSW",
-      "MIA",
       "HOU",
       "IND",
       "LAC",
       "LAL",
       "MEM",
+      "MIA",
       "MIL",
       "MIN",
       "NOP",
