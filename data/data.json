@@ -5949,7 +5949,7 @@
           "tradable_alone": false,
           "tradable_agg": false,
           "trade_note": null,
-          "notes": "2023,traded7/18/24",
+          "notes": "2023.0",
           "opt": null,
           "opt_year": null,
           "flags": null
@@ -13550,7 +13550,7 @@
     "vet_min_2y": 2449421
   },
   "meta": {
-    "last_updated": "2026-11-05T03:01:25.449822+00:00",
+    "last_updated": "2026-11-05T15:18:25.574984+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
     "players_count": 443,
