@@ -5660,6 +5660,26 @@
           "flags": null
         },
         {
+          "name": "Dejounte Murray",
+          "pos": "PG/SG",
+          "sal_26": 47142073,
+          "sal_27": 48589417,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "sal_31": null,
+          "qo": null,
+          "bird": "Full",
+          "signed_via": "LBR",
+          "tradable_alone": false,
+          "tradable_agg": false,
+          "trade_note": null,
+          "notes": "2024,traded11/5/26",
+          "opt": null,
+          "opt_year": null,
+          "flags": null
+        },
+        {
           "name": "Dennis Schröder",
           "pos": "PG/SG",
           "sal_26": 10575000,
@@ -5675,6 +5695,26 @@
           "tradable_agg": false,
           "trade_note": null,
           "notes": "2023.0",
+          "opt": null,
+          "opt_year": null,
+          "flags": null
+        },
+        {
+          "name": "Terance Mann",
+          "pos": "SG",
+          "sal_26": 3234968,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "sal_31": null,
+          "qo": null,
+          "bird": "Early",
+          "signed_via": "MPE",
+          "tradable_alone": false,
+          "tradable_agg": false,
+          "trade_note": null,
+          "notes": "2025,traded11/5/26",
           "opt": null,
           "opt_year": null,
           "flags": null
@@ -5767,26 +5807,6 @@
           "flags": {
             "27": "TO"
           }
-        },
-        {
-          "name": "Justin Edwards",
-          "pos": "SG/SF",
-          "sal_26": 5336810,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "sal_31": null,
-          "qo": null,
-          "bird": "Full",
-          "signed_via": "MLE RFA match",
-          "tradable_alone": false,
-          "tradable_agg": false,
-          "trade_note": null,
-          "notes": "2024 2way, 2025",
-          "opt": null,
-          "opt_year": null,
-          "flags": null
         },
         {
           "name": "Ben Simmons",
@@ -5933,29 +5953,9 @@
           "opt": null,
           "opt_year": null,
           "flags": null
-        },
-        {
-          "name": "Jarrett Allen",
-          "pos": "C",
-          "sal_26": 39100000,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "sal_31": null,
-          "qo": null,
-          "bird": "Full",
-          "signed_via": "Cap Space",
-          "tradable_alone": false,
-          "tradable_agg": false,
-          "trade_note": null,
-          "notes": "2023.0",
-          "opt": null,
-          "opt_year": null,
-          "flags": null
         }
       ],
-      "total_salary": 173255126,
+      "total_salary": 179195357,
       "two_way": [],
       "waived": [],
       "dead_money": 0,
@@ -5966,14 +5966,13 @@
         "hard_cap": 209015000,
         "bae_left": 0,
         "dpe_left": 0,
-        "mle_type": "Room MLE",
-        "mle_left": 9366000,
+        "mle_left": 0,
         "roster_charge": 0,
-        "cap_space": -8294126
+        "cap_space": null
       },
       "finances": {
         "fo_hard_cap": 210181846,
-        "salary_wo_holds": 173255126,
+        "salary_wo_holds": 179195357,
         "hard_cap_trigger": "16.07.26",
         "mle_status": "lost",
         "bae_status": "lost",
@@ -6747,26 +6746,6 @@
       "gm": "Nathan",
       "players": [
         {
-          "name": "Dejounte Murray",
-          "pos": "PG/SG",
-          "sal_26": 47142073,
-          "sal_27": 48589417,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "sal_31": null,
-          "qo": null,
-          "bird": "Full",
-          "signed_via": "LBR",
-          "tradable_alone": true,
-          "tradable_agg": true,
-          "trade_note": "yes / yes",
-          "notes": "2024.0",
-          "opt": null,
-          "opt_year": null,
-          "flags": null
-        },
-        {
           "name": "Tyler Herro",
           "pos": "SG",
           "sal_26": 25075000,
@@ -6850,26 +6829,6 @@
           "flags": null
         },
         {
-          "name": "Terance Mann",
-          "pos": "SG",
-          "sal_26": 3234968,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "sal_31": null,
-          "qo": null,
-          "bird": "Early",
-          "signed_via": "MPE",
-          "tradable_alone": false,
-          "tradable_agg": false,
-          "trade_note": null,
-          "notes": "2025.0",
-          "opt": null,
-          "opt_year": null,
-          "flags": null
-        },
-        {
           "name": "Jake LaRavia",
           "pos": "SF",
           "sal_26": 10000000,
@@ -6889,6 +6848,28 @@
           "opt_year": "2029-30",
           "flags": {
             "29": "PO"
+          }
+        },
+        {
+          "name": "Quentin Grimes",
+          "pos": "SG/SF",
+          "sal_26": 14809200,
+          "sal_27": 15514400,
+          "sal_28": 16219600,
+          "sal_29": null,
+          "sal_30": null,
+          "sal_31": null,
+          "qo": null,
+          "bird": "Full",
+          "signed_via": "MLE offer sheet",
+          "tradable_alone": false,
+          "tradable_agg": false,
+          "trade_note": null,
+          "notes": "2025,traded11/5/26",
+          "opt": "PO",
+          "opt_year": "2028-29",
+          "flags": {
+            "28": "PO"
           }
         },
         {
@@ -6977,6 +6958,26 @@
           }
         },
         {
+          "name": "Jakob Poeltl",
+          "pos": "C",
+          "sal_26": 17000000,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "sal_31": null,
+          "qo": null,
+          "bird": "Full",
+          "signed_via": "cap space",
+          "tradable_alone": false,
+          "tradable_agg": false,
+          "trade_note": null,
+          "notes": "2024,traded11/5/26",
+          "opt": null,
+          "opt_year": null,
+          "flags": null
+        },
+        {
           "name": "Yang Hansen",
           "pos": "C",
           "sal_26": 4411134,
@@ -7042,7 +7043,7 @@
           }
         }
       ],
-      "total_salary": 192009751,
+      "total_salary": 173441909,
       "two_way": [
         {
           "name": "Amari Williams",
@@ -7072,11 +7073,11 @@
         "mle_type": "Non-taxpayer MLE",
         "mle_left": 15044000,
         "roster_charge": 0,
-        "cap_space": -47712617
+        "cap_space": -29144775
       },
       "finances": {
         "fo_hard_cap": 208469929,
-        "salary_wo_holds": 192009751,
+        "salary_wo_holds": 173441909,
         "hard_cap_trigger": "01.07.26",
         "mle_status": null,
         "bae_status": null,
@@ -7245,26 +7246,24 @@
           }
         },
         {
-          "name": "Quentin Grimes",
+          "name": "Justin Edwards",
           "pos": "SG/SF",
-          "sal_26": 14809200,
-          "sal_27": 15514400,
-          "sal_28": 16219600,
+          "sal_26": 5336810,
+          "sal_27": null,
+          "sal_28": null,
           "sal_29": null,
           "sal_30": null,
           "sal_31": null,
           "qo": null,
           "bird": "Full",
-          "signed_via": "MLE offer sheet",
+          "signed_via": "MLE RFA match",
           "tradable_alone": false,
           "tradable_agg": false,
           "trade_note": null,
-          "notes": "2025.0",
-          "opt": "PO",
-          "opt_year": "2028-29",
-          "flags": {
-            "28": "PO"
-          }
+          "notes": "2024 2way, 2025,traded11/5/26",
+          "opt": null,
+          "opt_year": null,
+          "flags": null
         },
         {
           "name": "Baba Miller",
@@ -7335,6 +7334,26 @@
           }
         },
         {
+          "name": "Jarrett Allen",
+          "pos": "C",
+          "sal_26": 39100000,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "sal_31": null,
+          "qo": null,
+          "bird": "Full",
+          "signed_via": "Cap Space",
+          "tradable_alone": false,
+          "tradable_agg": false,
+          "trade_note": null,
+          "notes": "2023, traded11/5/26",
+          "opt": null,
+          "opt_year": null,
+          "flags": null
+        },
+        {
           "name": "Isaiah Stewart",
           "pos": "C",
           "sal_26": 14104200,
@@ -7355,26 +7374,6 @@
           "flags": {
             "27": "PO"
           }
-        },
-        {
-          "name": "Jakob Poeltl",
-          "pos": "C",
-          "sal_26": 17000000,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "sal_31": null,
-          "qo": null,
-          "bird": "Full",
-          "signed_via": "Cap Space",
-          "tradable_alone": false,
-          "tradable_agg": false,
-          "trade_note": null,
-          "notes": "2024.0",
-          "opt": null,
-          "opt_year": null,
-          "flags": null
         },
         {
           "name": "Victor Wembanyama",
@@ -7422,7 +7421,7 @@
           }
         }
       ],
-      "total_salary": 192644838,
+      "total_salary": 205272449,
       "two_way": [
         {
           "name": "Javon Small",
@@ -7460,19 +7459,19 @@
             "expires": "01.08.2027"
           }
         ],
-        "taxpayer": false,
+        "taxpayer": true,
         "cap_room": false,
         "hard_cap": 209015000,
-        "bae_left": 5477000,
+        "bae_left": 3742550,
         "dpe_left": 0,
         "mle_type": "Non-taxpayer MLE",
-        "mle_left": 15044000,
+        "mle_left": 3742550,
         "roster_charge": 0,
-        "cap_space": -60450334
+        "cap_space": -60042046
       },
       "finances": {
         "fo_hard_cap": 219970768,
-        "salary_wo_holds": 192644838,
+        "salary_wo_holds": 205272449,
         "hard_cap_trigger": "07.04.26",
         "mle_status": null,
         "bae_status": null,
@@ -13550,7 +13549,7 @@
     "vet_min_2y": 2449421
   },
   "meta": {
-    "last_updated": "2026-11-05T15:18:25.574984+00:00",
+    "last_updated": "2026-11-05T21:16:06.167797+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
     "players_count": 443,
