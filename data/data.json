@@ -5962,14 +5962,14 @@
       "exceptions": {
         "tpes": [],
         "taxpayer": false,
-        "cap_room": true,
+        "cap_room": false,
         "hard_cap": 209015000,
         "bae_left": 0,
         "dpe_left": 0,
         "mle_type": "Room MLE",
         "mle_left": 9366000,
         "roster_charge": 0,
-        "cap_space": 19666569
+        "cap_space": -8294126
       },
       "finances": {
         "fo_hard_cap": 210181846,
@@ -13550,7 +13550,7 @@
     "vet_min_2y": 2449421
   },
   "meta": {
-    "last_updated": "2026-11-04T20:59:02.756983+00:00",
+    "last_updated": "2026-11-05T03:01:25.449822+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
     "players_count": 443,
