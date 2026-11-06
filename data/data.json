@@ -7073,7 +7073,7 @@
         "mle_type": "Non-taxpayer MLE",
         "mle_left": 15044000,
         "roster_charge": 0,
-        "cap_space": -29144775
+        "cap_space": null
       },
       "finances": {
         "fo_hard_cap": 208469929,
@@ -13549,7 +13549,7 @@
     "vet_min_2y": 2449421
   },
   "meta": {
-    "last_updated": "2026-11-05T21:16:06.167797+00:00",
+    "last_updated": "2026-11-06T03:02:10.095169+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
     "players_count": 443,
