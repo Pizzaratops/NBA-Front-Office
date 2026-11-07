@@ -1977,26 +1977,6 @@
       "gm": "Gerald",
       "players": [
         {
-          "name": "Russell Westbrook",
-          "pos": "PG",
-          "sal_26": 8000000,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "sal_31": null,
-          "qo": null,
-          "bird": "Full",
-          "signed_via": "Cap, LBR",
-          "tradable_alone": false,
-          "tradable_agg": false,
-          "trade_note": null,
-          "notes": "2021, 2024",
-          "opt": null,
-          "opt_year": null,
-          "flags": null
-        },
-        {
           "name": "De'Anthony Melton",
           "pos": "PG/SG",
           "sal_26": 14520000,
@@ -2017,21 +1997,41 @@
           "flags": null
         },
         {
-          "name": "RJ Barrett",
-          "pos": "SG/SF",
-          "sal_26": 26750000,
-          "sal_27": null,
+          "name": "Tre Jones",
+          "pos": "PG",
+          "sal_26": 7125000,
+          "sal_27": 7125000,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
           "sal_31": null,
           "qo": null,
           "bird": "Full",
-          "signed_via": "1st Round Pick",
+          "signed_via": "LBR",
           "tradable_alone": false,
           "tradable_agg": false,
           "trade_note": null,
-          "notes": "2019, 2022 extension",
+          "notes": "2020, 2022, 2025",
+          "opt": null,
+          "opt_year": null,
+          "flags": null
+        },
+        {
+          "name": "Anfernee Simons",
+          "pos": "SG",
+          "sal_26": 19687500,
+          "sal_27": 20625000,
+          "sal_28": 21562500,
+          "sal_29": null,
+          "sal_30": null,
+          "sal_31": null,
+          "qo": null,
+          "bird": "Full",
+          "signed_via": "LBR",
+          "tradable_alone": true,
+          "tradable_agg": true,
+          "trade_note": "yes / yes",
+          "notes": "2018, 2022 RFA match, 2025 extension",
           "opt": null,
           "opt_year": null,
           "flags": null
@@ -2291,7 +2291,7 @@
           "flags": null
         }
       ],
-      "total_salary": 205968528,
+      "total_salary": 200697695,
       "two_way": [
         {
           "name": "Trayce Jackson-Davis",
@@ -2299,8 +2299,29 @@
           "note": null
         }
       ],
-      "waived": [],
-      "dead_money": 0,
+      "waived": [
+        {
+          "name": "Russell Westbrook",
+          "pos": "?",
+          "sal_26": 2666666,
+          "sal_27": 2666666,
+          "sal_28": 2666666,
+          "sal_29": null,
+          "sal_30": null,
+          "sal_31": null,
+          "qo": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false,
+          "trade_note": null,
+          "notes": null,
+          "opt": null,
+          "opt_year": null,
+          "flags": null
+        }
+      ],
+      "dead_money": 2666666,
       "exceptions": {
         "tpes": [
           {
@@ -2314,13 +2335,13 @@
         "bae_left": 0,
         "dpe_left": 0,
         "mle_type": "Non-taxpayer MLE",
-        "mle_left": 3046471,
+        "mle_left": 8317304,
         "roster_charge": 0,
         "cap_space": -66554000
       },
       "finances": {
         "fo_hard_cap": 209715554,
-        "salary_wo_holds": 205968528,
+        "salary_wo_holds": 200697695,
         "hard_cap_trigger": "Nembhard s&t",
         "mle_status": null,
         "bae_status": "used on Jonathan Isaac",
@@ -6033,26 +6054,6 @@
           "flags": null
         },
         {
-          "name": "Anfernee Simons",
-          "pos": "SG",
-          "sal_26": 19687500,
-          "sal_27": 20625000,
-          "sal_28": 21562500,
-          "sal_29": null,
-          "sal_30": null,
-          "sal_31": null,
-          "qo": null,
-          "bird": "Full",
-          "signed_via": "LBR",
-          "tradable_alone": true,
-          "tradable_agg": true,
-          "trade_note": "yes / yes",
-          "notes": "2018, 2022 RFA match, 2025 extension",
-          "opt": null,
-          "opt_year": null,
-          "flags": null
-        },
-        {
           "name": "Sergio De Larrea",
           "pos": "PG/SG",
           "sal_26": 3076920,
@@ -6076,21 +6077,21 @@
           }
         },
         {
-          "name": "Tre Jones",
-          "pos": "PG",
-          "sal_26": 7125000,
-          "sal_27": 7125000,
+          "name": "RJ Barrett",
+          "pos": "SG/SF",
+          "sal_26": 26750000,
+          "sal_27": null,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
           "sal_31": null,
           "qo": null,
           "bird": "Full",
-          "signed_via": "LBR",
+          "signed_via": "1st Round Pick",
           "tradable_alone": false,
           "tradable_agg": false,
           "trade_note": null,
-          "notes": "2020, 2022, 2025",
+          "notes": "2019, 2022 extension",
           "opt": null,
           "opt_year": null,
           "flags": null
@@ -6307,7 +6308,7 @@
           }
         }
       ],
-      "total_salary": 210685256,
+      "total_salary": 210622756,
       "two_way": [
         {
           "name": "Lachlan Olbrich",
@@ -6358,11 +6359,11 @@
         "mle_type": "Taxpayer MLE",
         "mle_left": 0,
         "roster_charge": 0,
-        "cap_space": -54457175
+        "cap_space": -54394675
       },
       "finances": {
         "fo_hard_cap": 216256754,
-        "salary_wo_holds": 210685256,
+        "salary_wo_holds": 210622756,
         "hard_cap_trigger": null,
         "mle_status": null,
         "bae_status": null,
@@ -13549,10 +13550,10 @@
     "vet_min_2y": 2449421
   },
   "meta": {
-    "last_updated": "2026-11-07T02:29:49.969459+00:00",
+    "last_updated": "2026-11-07T13:50:53.845404+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
-    "players_count": 443,
+    "players_count": 442,
     "fas_count": 365,
     "fas_available_count": 252,
     "stale_teams": [],
