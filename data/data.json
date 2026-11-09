@@ -6384,26 +6384,6 @@
       "gm": "Steve",
       "players": [
         {
-          "name": "Mike Conley",
-          "pos": "PG",
-          "sal_26": 14010331,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "sal_31": null,
-          "qo": null,
-          "bird": "Full",
-          "signed_via": "Cap Space",
-          "tradable_alone": false,
-          "tradable_agg": false,
-          "trade_note": null,
-          "notes": "2024.0",
-          "opt": null,
-          "opt_year": null,
-          "flags": null
-        },
-        {
           "name": "Anthony Black",
           "pos": "PG",
           "sal_26": 10127453,
@@ -6677,6 +6657,28 @@
           }
         },
         {
+          "name": "Mo Bamba",
+          "pos": "C",
+          "sal_26": 3506659,
+          "sal_27": 3700320,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "sal_31": null,
+          "qo": null,
+          "bird": "Early",
+          "signed_via": "MPE",
+          "tradable_alone": false,
+          "tradable_agg": false,
+          "trade_note": null,
+          "notes": "2026.0",
+          "opt": "TO",
+          "opt_year": "2027-28",
+          "flags": {
+            "27": "TO"
+          }
+        },
+        {
           "name": "Goga Bitadze",
           "pos": "C",
           "sal_26": 3176026,
@@ -6697,7 +6699,7 @@
           "flags": null
         }
       ],
-      "total_salary": 196794608,
+      "total_salary": 200301267,
       "two_way": [
         {
           "name": "Jahmai Mashack",
@@ -6705,8 +6707,30 @@
           "note": null
         }
       ],
-      "waived": [],
-      "dead_money": 0,
+      "waived": [
+        {
+          "name": "Mike Conley",
+          "pos": "PG",
+          "sal_26": 14010331,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "sal_31": null,
+          "qo": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false,
+          "trade_note": null,
+          "notes": null,
+          "opt": null,
+          "opt_year": null,
+          "flags": null,
+          "pos_src": "fantrax"
+        }
+      ],
+      "dead_money": 14010331,
       "exceptions": {
         "tpes": [
           {
@@ -6722,11 +6746,11 @@
         "mle_type": "Taxpayer MLE",
         "mle_left": 0,
         "roster_charge": 0,
-        "cap_space": -43527383
+        "cap_space": -47034042
       },
       "finances": {
         "fo_hard_cap": 210943834,
-        "salary_wo_holds": 196794608,
+        "salary_wo_holds": 200301267,
         "hard_cap_trigger": null,
         "mle_status": null,
         "bae_status": null,
@@ -12310,7 +12334,7 @@
       "name": "Mo Bamba",
       "age": null,
       "fpg": 22.45,
-      "signed_team": null
+      "signed_team": "MIN"
     },
     {
       "name": "Blake Wesley",
@@ -13550,12 +13574,12 @@
     "vet_min_2y": 2449421
   },
   "meta": {
-    "last_updated": "2026-11-09T02:18:00.444402+00:00",
+    "last_updated": "2026-11-09T17:19:56.685941+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
     "players_count": 442,
     "fas_count": 365,
-    "fas_available_count": 252,
+    "fas_available_count": 251,
     "stale_teams": [],
     "sheet_tabs": [
       "ABC",
