@@ -2678,10 +2678,15 @@
           "flags": null
         }
       ],
-      "total_salary": 221386187,
+      "total_salary": 221386188,
       "two_way": [
         {
           "name": "Jamison Battle",
+          "years": 1,
+          "note": null
+        },
+        {
+          "name": "Kobe Brown",
           "years": 1,
           "note": null
         }
@@ -2720,11 +2725,11 @@
         "mle_type": "Taxpayer MLE",
         "mle_left": 6064000,
         "roster_charge": 0,
-        "cap_space": -62489187
+        "cap_space": -62489188
       },
       "finances": {
         "fo_hard_cap": 217383504,
-        "salary_wo_holds": 221386187,
+        "salary_wo_holds": 221386188,
         "hard_cap_trigger": null,
         "mle_status": null,
         "bae_status": null,
@@ -12244,7 +12249,7 @@
       "name": "Kobe Brown",
       "age": null,
       "fpg": 25.94,
-      "signed_team": null
+      "signed_team": "DAL"
     },
     {
       "name": "Tyson Etienne",
@@ -13574,12 +13579,12 @@
     "vet_min_2y": 2449421
   },
   "meta": {
-    "last_updated": "2026-11-09T17:19:56.685941+00:00",
+    "last_updated": "2026-11-09T23:38:14.627129+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
     "players_count": 442,
     "fas_count": 365,
-    "fas_available_count": 251,
+    "fas_available_count": 250,
     "stale_teams": [],
     "sheet_tabs": [
       "ABC",
