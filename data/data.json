@@ -434,6 +434,26 @@
       "gm": "Denver",
       "players": [
         {
+          "name": "Isaiah Collier",
+          "pos": "PG/SG",
+          "sal_26": 3254315,
+          "sal_27": 5522573,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "sal_31": null,
+          "qo": 8587601,
+          "bird": "Full",
+          "signed_via": "1st Round Pick",
+          "tradable_alone": false,
+          "tradable_agg": false,
+          "trade_note": null,
+          "notes": "2024, traded 11/13/26",
+          "opt": null,
+          "opt_year": null,
+          "flags": null
+        },
+        {
           "name": "Killian Hayes",
           "pos": "PG/SG",
           "sal_26": 8593200,
@@ -545,26 +565,6 @@
           }
         },
         {
-          "name": "Jalen Suggs",
-          "pos": "SG",
-          "sal_26": 20170000,
-          "sal_27": 20170000,
-          "sal_28": 20170000,
-          "sal_29": null,
-          "sal_30": null,
-          "sal_31": null,
-          "qo": null,
-          "bird": "Full",
-          "signed_via": "LBR",
-          "tradable_alone": false,
-          "tradable_agg": false,
-          "trade_note": null,
-          "notes": "2021, 2025",
-          "opt": null,
-          "opt_year": null,
-          "flags": null
-        },
-        {
           "name": "Gradey Dick",
           "pos": "SG/SF",
           "sal_26": 7436874,
@@ -648,6 +648,28 @@
           "flags": null
         },
         {
+          "name": "Franz Wagner",
+          "pos": "SF",
+          "sal_26": 41368072,
+          "sal_27": 44074395,
+          "sal_28": 46780717,
+          "sal_29": 49487040,
+          "sal_30": null,
+          "sal_31": null,
+          "qo": null,
+          "bird": "Full",
+          "signed_via": "LBR",
+          "tradable_alone": false,
+          "tradable_agg": false,
+          "trade_note": null,
+          "notes": "2021,2025, traded 11/12/26",
+          "opt": "PO",
+          "opt_year": "2029-30",
+          "flags": {
+            "29": "PO"
+          }
+        },
+        {
           "name": "Carter Bryant",
           "pos": "SF/PF",
           "sal_26": 4887792,
@@ -668,26 +690,6 @@
           "flags": {
             "28": "TO"
           }
-        },
-        {
-          "name": "Jonathan Kuminga",
-          "pos": "SF/PF",
-          "sal_26": 24000000,
-          "sal_27": 24000000,
-          "sal_28": 24000000,
-          "sal_29": 24000000,
-          "sal_30": null,
-          "sal_31": null,
-          "qo": null,
-          "bird": "Full",
-          "signed_via": "LBR",
-          "tradable_alone": false,
-          "tradable_agg": false,
-          "trade_note": null,
-          "notes": "2021, 2025",
-          "opt": null,
-          "opt_year": null,
-          "flags": null
         },
         {
           "name": "Leonard Miller",
@@ -750,7 +752,7 @@
           "flags": null
         }
       ],
-      "total_salary": 202925712,
+      "total_salary": 203378100,
       "two_way": [
         {
           "name": "Nate Bittle",
@@ -802,11 +804,11 @@
         "mle_type": "Non-taxpayer MLE",
         "mle_left": 0,
         "roster_charge": 0,
-        "cap_space": -43441712
+        "cap_space": -43894100
       },
       "finances": {
         "fo_hard_cap": 216493641,
-        "salary_wo_holds": 202925712,
+        "salary_wo_holds": 203378100,
         "hard_cap_trigger": "23.06.26",
         "mle_status": null,
         "bae_status": null,
@@ -2384,21 +2386,21 @@
           }
         },
         {
-          "name": "Isaiah Collier",
-          "pos": "PG/SG",
-          "sal_26": 3254315,
-          "sal_27": 5522573,
-          "sal_28": null,
+          "name": "Jalen Suggs",
+          "pos": "PG",
+          "sal_26": 20170000,
+          "sal_27": 20170000,
+          "sal_28": 20170000,
           "sal_29": null,
           "sal_30": null,
           "sal_31": null,
-          "qo": 8587601,
+          "qo": null,
           "bird": "Full",
-          "signed_via": "1st Round Pick",
+          "signed_via": "LBR",
           "tradable_alone": false,
           "tradable_agg": false,
           "trade_note": null,
-          "notes": "2024.0",
+          "notes": "2021,2025, traded 11/13/26",
           "opt": null,
           "opt_year": null,
           "flags": null
@@ -2532,12 +2534,12 @@
           "pos_src": "fantrax"
         },
         {
-          "name": "Franz Wagner",
-          "pos": "SF",
-          "sal_26": 41368072,
-          "sal_27": 44074395,
-          "sal_28": 46780717,
-          "sal_29": 49487040,
+          "name": "Jonathan Kuminga",
+          "pos": "SF/PF",
+          "sal_26": 24000000,
+          "sal_27": 24000000,
+          "sal_28": 24000000,
+          "sal_29": 24000000,
           "sal_30": null,
           "sal_31": null,
           "qo": null,
@@ -2546,12 +2548,10 @@
           "tradable_alone": false,
           "tradable_agg": false,
           "trade_note": null,
-          "notes": "2021, 2025",
-          "opt": "PO",
-          "opt_year": "2029-30",
-          "flags": {
-            "29": "PO"
-          }
+          "notes": "2021,2025, traded 11/12/26",
+          "opt": null,
+          "opt_year": null,
+          "flags": null
         },
         {
           "name": "Maxime Raynaud",
@@ -2678,7 +2678,7 @@
           "flags": null
         }
       ],
-      "total_salary": 221386188,
+      "total_salary": 220933800,
       "two_way": [
         {
           "name": "Jamison Battle",
@@ -2725,11 +2725,11 @@
         "mle_type": "Taxpayer MLE",
         "mle_left": 6064000,
         "roster_charge": 0,
-        "cap_space": -62489188
+        "cap_space": -62036800
       },
       "finances": {
         "fo_hard_cap": 217383504,
-        "salary_wo_holds": 221386188,
+        "salary_wo_holds": 220933800,
         "hard_cap_trigger": null,
         "mle_status": null,
         "bae_status": null,
@@ -13579,7 +13579,7 @@
     "vet_min_2y": 2449421
   },
   "meta": {
-    "last_updated": "2026-11-13T21:03:57.783501+00:00",
+    "last_updated": "2026-11-14T02:51:51.898469+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
     "players_count": 442,
