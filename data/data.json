@@ -2293,10 +2293,15 @@
           "flags": null
         }
       ],
-      "total_salary": 200697695,
+      "total_salary": 200697696,
       "two_way": [
         {
           "name": "Trayce Jackson-Davis",
+          "years": 1,
+          "note": null
+        },
+        {
+          "name": "Norchad Omier",
           "years": 1,
           "note": null
         }
@@ -2337,13 +2342,13 @@
         "bae_left": 0,
         "dpe_left": 0,
         "mle_type": "Non-taxpayer MLE",
-        "mle_left": 8317304,
+        "mle_left": 8317303,
         "roster_charge": 0,
-        "cap_space": -66554000
+        "cap_space": -66554001
       },
       "finances": {
         "fo_hard_cap": 209715554,
-        "salary_wo_holds": 200697695,
+        "salary_wo_holds": 200697696,
         "hard_cap_trigger": "Nembhard s&t",
         "mle_status": null,
         "bae_status": "used on Jonathan Isaac",
@@ -2678,7 +2683,7 @@
           "flags": null
         }
       ],
-      "total_salary": 220933800,
+      "total_salary": 220933801,
       "two_way": [
         {
           "name": "Jamison Battle",
@@ -2687,6 +2692,11 @@
         },
         {
           "name": "Kobe Brown",
+          "years": 1,
+          "note": null
+        },
+        {
+          "name": "Malevy Leons",
           "years": 1,
           "note": null
         }
@@ -2725,11 +2735,11 @@
         "mle_type": "Taxpayer MLE",
         "mle_left": 6064000,
         "roster_charge": 0,
-        "cap_space": -62036800
+        "cap_space": -62036801
       },
       "finances": {
         "fo_hard_cap": 217383504,
-        "salary_wo_holds": 220933800,
+        "salary_wo_holds": 220933801,
         "hard_cap_trigger": null,
         "mle_status": null,
         "bae_status": null,
@@ -3121,6 +3131,30 @@
           }
         },
         {
+          "name": "L.J. Cryer",
+          "pos": "PG/SG",
+          "sal_26": 2185116,
+          "sal_27": 2571895,
+          "sal_28": 2791275,
+          "sal_29": 3019474,
+          "sal_30": null,
+          "sal_31": null,
+          "qo": null,
+          "bird": "Full",
+          "signed_via": "MLE",
+          "tradable_alone": false,
+          "tradable_agg": false,
+          "trade_note": null,
+          "notes": "2026.0",
+          "opt": null,
+          "opt_year": null,
+          "flags": {
+            "27": "NG",
+            "28": "NG",
+            "29": "NG"
+          }
+        },
+        {
           "name": "Tyus Jones",
           "pos": "PG",
           "sal_26": 16492000,
@@ -3156,26 +3190,6 @@
           "tradable_agg": false,
           "trade_note": null,
           "notes": "2023.0",
-          "opt": null,
-          "opt_year": null,
-          "flags": null
-        },
-        {
-          "name": "Eric Gordon",
-          "pos": "SG",
-          "sal_26": 14916440,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "sal_31": null,
-          "qo": null,
-          "bird": "Full",
-          "signed_via": "vet ext",
-          "tradable_alone": false,
-          "tradable_agg": false,
-          "trade_note": null,
-          "notes": "2020, 2024",
           "opt": null,
           "opt_year": null,
           "flags": null
@@ -3418,7 +3432,7 @@
           }
         }
       ],
-      "total_salary": 178569935,
+      "total_salary": 180755051,
       "two_way": [
         {
           "name": "Tyler Nickel",
@@ -3459,6 +3473,27 @@
           "pos_src": "fantrax"
         },
         {
+          "name": "Eric Gordon",
+          "pos": "SG",
+          "sal_26": 14916440,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "sal_31": null,
+          "qo": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false,
+          "trade_note": null,
+          "notes": null,
+          "opt": null,
+          "opt_year": null,
+          "flags": null,
+          "pos_src": "fantrax"
+        },
+        {
           "name": "Cole Anthony",
           "pos": "PG",
           "sal_26": 8781300,
@@ -3480,7 +3515,7 @@
           "pos_src": "fantrax"
         }
       ],
-      "dead_money": 16081173,
+      "dead_money": 30997613,
       "exceptions": {
         "tpes": [
           {
@@ -3498,13 +3533,13 @@
         "bae_left": 5477000,
         "dpe_left": 0,
         "mle_type": "Taxpayer MLE",
-        "mle_left": 7401328,
+        "mle_left": 5216212,
         "roster_charge": 0,
         "cap_space": -32566033
       },
       "finances": {
         "fo_hard_cap": 200528000,
-        "salary_wo_holds": 178569935,
+        "salary_wo_holds": 180755051,
         "hard_cap_trigger": null,
         "mle_status": null,
         "bae_status": null,
@@ -4827,16 +4862,16 @@
           }
         },
         {
-          "name": "Jeremy Sochan",
+          "name": "Larry Nance",
           "pos": "PF/C",
-          "sal_26": 2625627,
-          "sal_27": 2988178,
+          "sal_26": 2449421,
+          "sal_27": null,
           "sal_28": null,
           "sal_29": null,
           "sal_30": null,
           "sal_31": null,
           "qo": null,
-          "bird": "Early",
+          "bird": "Non",
           "signed_via": "MPE",
           "tradable_alone": false,
           "tradable_agg": false,
@@ -4844,9 +4879,7 @@
           "notes": "2026.0",
           "opt": null,
           "opt_year": null,
-          "flags": {
-            "27": "NG"
-          }
+          "flags": null
         },
         {
           "name": "Jayden Quaintance",
@@ -4912,7 +4945,7 @@
           "flags": null
         }
       ],
-      "total_salary": 176758076,
+      "total_salary": 179207497,
       "two_way": [
         {
           "name": "Rocco Zikarsky",
@@ -4925,8 +4958,30 @@
           "note": null
         }
       ],
-      "waived": [],
-      "dead_money": 0,
+      "waived": [
+        {
+          "name": "Jeremy Sochan",
+          "pos": "PF",
+          "sal_26": 2625627,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "sal_31": null,
+          "qo": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false,
+          "trade_note": null,
+          "notes": null,
+          "opt": null,
+          "opt_year": null,
+          "flags": null,
+          "pos_src": "fantrax"
+        }
+      ],
+      "dead_money": 2625627,
       "exceptions": {
         "tpes": [],
         "taxpayer": false,
@@ -4937,11 +4992,11 @@
         "mle_type": "Room MLE",
         "mle_left": 0,
         "roster_charge": 0,
-        "cap_space": -11797076
+        "cap_space": -14246497
       },
       "finances": {
         "fo_hard_cap": 217356167,
-        "salary_wo_holds": 176758076,
+        "salary_wo_holds": 179207497,
         "hard_cap_trigger": null,
         "mle_status": "lost",
         "bae_status": "used on Mo Gueye",
@@ -12015,7 +12070,7 @@
       "name": "L.J. Cryer",
       "age": null,
       "fpg": 35.19,
-      "signed_team": null
+      "signed_team": "DET"
     },
     {
       "name": "Trendon Watford",
@@ -12273,7 +12328,7 @@
       "name": "Larry Nance",
       "age": null,
       "fpg": 24.92,
-      "signed_team": null
+      "signed_team": "LAC"
     },
     {
       "name": "Jamal Cain",
@@ -12513,7 +12568,7 @@
       "name": "Malevy Leons",
       "age": null,
       "fpg": 16.32,
-      "signed_team": null
+      "signed_team": "DAL"
     },
     {
       "name": "Duop Reath",
@@ -12771,7 +12826,7 @@
       "name": "Norchad Omier",
       "age": null,
       "fpg": 6.72,
-      "signed_team": null
+      "signed_team": "CLE"
     },
     {
       "name": "Dalano Banton",
@@ -13579,12 +13634,12 @@
     "vet_min_2y": 2449421
   },
   "meta": {
-    "last_updated": "2026-11-15T14:38:01.680756+00:00",
+    "last_updated": "2026-11-15T20:01:08.084992+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
     "players_count": 442,
     "fas_count": 365,
-    "fas_available_count": 250,
+    "fas_available_count": 246,
     "stale_teams": [],
     "sheet_tabs": [
       "ABC",
