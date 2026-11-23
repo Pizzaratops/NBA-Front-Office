@@ -2123,26 +2123,6 @@
           }
         },
         {
-          "name": "Patrick Williams",
-          "pos": "SF/PF",
-          "sal_26": 17068965,
-          "sal_27": 17844827,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "sal_31": null,
-          "qo": null,
-          "bird": "Full",
-          "signed_via": "LBR RFA match",
-          "tradable_alone": true,
-          "tradable_agg": true,
-          "trade_note": "yes / 2018-09-24",
-          "notes": "2020, 2024",
-          "opt": null,
-          "opt_year": null,
-          "flags": null
-        },
-        {
           "name": "Cameron Johnson",
           "pos": "SF/PF",
           "sal_26": 26660000,
@@ -2184,6 +2164,28 @@
           "opt_year": "2028-29",
           "flags": {
             "28": "TO"
+          }
+        },
+        {
+          "name": "Jaren Jackson Jr.",
+          "pos": "C",
+          "sal_26": 44820000,
+          "sal_27": 48140000,
+          "sal_28": 51460000,
+          "sal_29": 54780000,
+          "sal_30": null,
+          "sal_31": null,
+          "qo": null,
+          "bird": "Full",
+          "signed_via": "LBR",
+          "tradable_alone": true,
+          "tradable_agg": true,
+          "trade_note": "yes / yes",
+          "notes": "2018, 2022, 2025",
+          "opt": "PO",
+          "opt_year": "2029-30",
+          "flags": {
+            "29": "PO"
           }
         },
         {
@@ -2271,29 +2273,9 @@
           "flags": {
             "28": "PO"
           }
-        },
-        {
-          "name": "Aaron Gordon",
-          "pos": "PF",
-          "sal_26": 25000000,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "sal_31": null,
-          "qo": null,
-          "bird": "Full",
-          "signed_via": "Cap Space",
-          "tradable_alone": false,
-          "tradable_agg": false,
-          "trade_note": null,
-          "notes": "2023.0",
-          "opt": null,
-          "opt_year": null,
-          "flags": null
         }
       ],
-      "total_salary": 200697696,
+      "total_salary": 203448731,
       "two_way": [
         {
           "name": "Trayce Jackson-Davis",
@@ -2342,13 +2324,13 @@
         "bae_left": 0,
         "dpe_left": 0,
         "mle_type": "Non-taxpayer MLE",
-        "mle_left": 8317303,
+        "mle_left": 5566268,
         "roster_charge": 0,
         "cap_space": -66554001
       },
       "finances": {
         "fo_hard_cap": 209715554,
-        "salary_wo_holds": 200697696,
+        "salary_wo_holds": 203448731,
         "hard_cap_trigger": "Nembhard s&t",
         "mle_status": null,
         "bae_status": "used on Jonathan Isaac",
@@ -7721,26 +7703,6 @@
           "flags": null
         },
         {
-          "name": "Johnny Juzang",
-          "pos": "SF",
-          "sal_26": 3000000,
-          "sal_27": null,
-          "sal_28": null,
-          "sal_29": null,
-          "sal_30": null,
-          "sal_31": null,
-          "qo": null,
-          "bird": null,
-          "signed_via": "MLE",
-          "tradable_alone": false,
-          "tradable_agg": false,
-          "trade_note": null,
-          "notes": "2025.0",
-          "opt": null,
-          "opt_year": null,
-          "flags": null
-        },
-        {
           "name": "Liam McNeeley",
           "pos": "SF/PF",
           "sal_26": 3688146,
@@ -7811,26 +7773,44 @@
           "pos_src": "fantrax"
         },
         {
-          "name": "Jaren Jackson Jr.",
-          "pos": "C",
-          "sal_26": 44820000,
-          "sal_27": 48140000,
-          "sal_28": 51460000,
-          "sal_29": 54780000,
+          "name": "Aaron Gordon",
+          "pos": "PF",
+          "sal_26": 25000000,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
           "sal_30": null,
           "sal_31": null,
           "qo": null,
           "bird": "Full",
-          "signed_via": "LBR",
+          "signed_via": "Cap Space",
+          "tradable_alone": false,
+          "tradable_agg": false,
+          "trade_note": null,
+          "notes": "2023.0",
+          "opt": null,
+          "opt_year": null,
+          "flags": null
+        },
+        {
+          "name": "Patrick Williams",
+          "pos": "SF/PF",
+          "sal_26": 17068965,
+          "sal_27": 17844827,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "sal_31": null,
+          "qo": null,
+          "bird": "Full",
+          "signed_via": "LBR RFA match",
           "tradable_alone": true,
           "tradable_agg": true,
-          "trade_note": "yes / yes",
-          "notes": "2018, 2022, 2025",
-          "opt": "PO",
-          "opt_year": "2029-30",
-          "flags": {
-            "29": "PO"
-          }
+          "trade_note": "yes / 2018-09-24",
+          "notes": "2020, 2024",
+          "opt": null,
+          "opt_year": null,
+          "flags": null
         },
         {
           "name": "Drew Timme",
@@ -7915,7 +7895,7 @@
           "flags": null
         }
       ],
-      "total_salary": 172243138,
+      "total_salary": 169492104,
       "two_way": [
         {
           "name": "Vsevolod Ishchenko",
@@ -7954,9 +7934,30 @@
           "opt_year": null,
           "flags": null,
           "pos_src": "fantrax"
+        },
+        {
+          "name": "Johnny Juzang",
+          "pos": "SG",
+          "sal_26": 3000000,
+          "sal_27": null,
+          "sal_28": null,
+          "sal_29": null,
+          "sal_30": null,
+          "sal_31": null,
+          "qo": null,
+          "bird": null,
+          "signed_via": null,
+          "tradable_alone": false,
+          "tradable_agg": false,
+          "trade_note": null,
+          "notes": null,
+          "opt": null,
+          "opt_year": null,
+          "flags": null,
+          "pos_src": "fantrax"
         }
       ],
-      "dead_money": 1000000,
+      "dead_money": 4000000,
       "exceptions": {
         "tpes": [],
         "taxpayer": false,
@@ -7967,11 +7968,11 @@
         "mle_type": "Taxpayer MLE",
         "mle_left": 44000,
         "roster_charge": 0,
-        "cap_space": -12803138
+        "cap_space": -10052104
       },
       "finances": {
         "fo_hard_cap": 213636805,
-        "salary_wo_holds": 172243138,
+        "salary_wo_holds": 169492104,
         "hard_cap_trigger": null,
         "mle_status": null,
         "bae_status": null,
@@ -13634,10 +13635,10 @@
     "vet_min_2y": 2449421
   },
   "meta": {
-    "last_updated": "2026-11-23T03:26:35.222622+00:00",
+    "last_updated": "2026-11-23T19:07:39.080948+00:00",
     "source": "Google Sheets (auto-fetch)",
     "teams_count": 30,
-    "players_count": 442,
+    "players_count": 441,
     "fas_count": 365,
     "fas_available_count": 246,
     "stale_teams": [],
